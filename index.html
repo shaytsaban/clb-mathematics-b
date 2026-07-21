@@ -657,10 +657,49 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
   <path d="M41 66 Q50 72 59 66" fill="none" stroke="#a0522d" stroke-width="2.4" stroke-linecap="round"/>
 </symbol>
 </svg>
+<style>
+.hello-box{
+  display:flex;align-items:center;gap:1rem;
+  background:var(--paper-raised);border:1px solid var(--border);border-radius:var(--r-lg);
+  padding:1.2rem 1.4rem;margin-bottom:1.5rem;max-width:64ch;box-shadow:var(--shadow);
+}
+.hello-box svg{width:64px;height:64px;flex:0 0 auto;}
+.hello-box p{font-size:.95rem;color:var(--ink-soft);line-height:1.65;}
+.hello-box p strong{color:var(--ink);}
+.lesson-log{
+  background:rgba(var(--accent-rgb),0.08);border:1px solid rgba(var(--accent-rgb),0.3);
+  border-radius:var(--r-md);padding:1.1rem 1.3rem;margin-bottom:1.5rem;max-width:64ch;
+}
+.lesson-log .ll-head{display:flex;align-items:center;gap:.5rem;font-weight:800;font-size:.95rem;color:var(--accent-strong);margin-bottom:.5rem;}
+.lesson-log p{font-size:.92rem;color:var(--ink-soft);line-height:1.65;}
+.lesson-log a{font-weight:700;}
+.chapter-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem;}
+.ch-card{
+  display:flex;flex-direction:column;text-decoration:none;color:inherit;
+  background:var(--paper-raised);border:1px solid var(--border);border-radius:var(--r-lg);
+  overflow:hidden;box-shadow:var(--shadow);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.ch-card:hover{transform:translateY(-3px);box-shadow:0 4px 8px rgba(21,35,29,0.09),0 14px 34px rgba(21,35,29,0.13);}
+@media (prefers-reduced-motion: reduce){.ch-card{transition:none;}.ch-card:hover{transform:none;}}
+.ch-thumb{line-height:0;}
+.ch-thumb svg{display:block;width:100%;height:auto;}
+.ch-body{padding:1rem 1.2rem 1.2rem;display:flex;flex-direction:column;gap:.35rem;flex:1;}
+.ch-num{
+  align-self:flex-start;font-family:var(--font-mono);font-size:.75rem;font-weight:700;
+  color:var(--accent-strong);background:rgba(var(--accent-rgb),0.12);
+  padding:.15rem .6rem;border-radius:99px;
+}
+.ch-body h3{font-size:1.02rem;color:var(--ink);}
+.ch-body p{font-size:.86rem;color:var(--ink-soft);line-height:1.55;flex:1;}
+.ch-enter{font-size:.82rem;font-weight:700;color:var(--accent-strong);}
+</style>
+
 
 <nav class="lesson-nav">
   <div class="wrap">
     <span class="brand">מתמטיקה ב׳ · עמוד ראשי</span>
+    <a href="#lesson-log">יומן השיעורים</a>
     <a href="#part-a">חלק א׳: הסתברות</a>
     <a href="#part-b">חלק ב׳: תכנון ליניארי</a>
   </div>
@@ -669,8 +708,13 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
 <header class="masthead">
   <div class="wrap">
     <span class="eyebrow">מתמטיקה ב׳</span>
-    <h1>כלים לקבלת החלטות: הסתברות ותכנון ליניארי</h1>
-    <p class="lede">עמוד הבית של חומרי הלימוד. כל שיעור הוא עמוד אינטראקטיבי עצמאי: הסברים מהבסיס, דיאגרמות מדורגות בלחיצה, תיבות "ד״ר צבאן מסביר" בנקודות הקשות, ותרגילים עם פתרונות מלאים.</p>
+    <h1>ברוכים הבאים לחומרי הלימוד של הקורס</h1>
+    <p class="lede">כלים לקבלת החלטות: הסתברות ותכנון ליניארי. כאן נאספים, שיעור אחרי שיעור, כל הסיכומים האינטראקטיביים של הקורס.</p>
+
+    <div class="hello-box">
+      <svg viewBox="0 0 100 100" role="img" aria-label="ד״ר צבאן"><use href="#tsabanFace"/></svg>
+      <p><strong>נעים לראות אתכם!</strong> כל תת-פרק כאן הוא הרצאה מודרכת שלמה: הסברים מהבסיס, דיאגרמות שנבנות בלחיצה שלב אחר שלב, תיבות הסבר שלי בנקודות הקשות, ותרגילים עם פתרונות מלאים. <strong>כדי להיכנס לסיכום, פשוט לחצו על הכרטיס של תת-הפרק.</strong></p>
+    </div>
 
     <div class="course-parts">
       <div class="part-card prob">
@@ -710,43 +754,107 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
   </div>
 </header>
 
+<section id="lesson-log">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">יומן השיעורים</span>
+      <h2>מה כבר למדנו יחד</h2>
+    </div>
+    <div class="lesson-log">
+      <div class="ll-head">🗓️ שיעור 1 · 21.7</div>
+      <p>בשיעור הראשון עסקנו בתתי-הפרקים <a href="chapter-1-1.html">1.1 (הסתברות משותפת)</a> ו-<a href="chapter-1-2.html">1.2 (בדיוק מאורע אחד)</a>. מומלץ לחזור על שניהם לפני השיעור הבא, ולנסות את התרגילים בסוף כל אחד. הסיכומים של תתי-הפרקים הבאים כבר זמינים למי שרוצה להקדים.</p>
+    </div>
+  </div>
+</section>
+
 <section id="part-a">
   <div class="wrap">
     <div class="sec-head">
       <span class="sec-num">חלק א׳ · פרק 1</span>
       <h2>הסתברות: כשיש יותר ממאורע אחד</h2>
-      <p class="sub">שישה תת-פרקים. מומלץ ללמוד לפי הסדר: כל תת-פרק נבנה על קודמיו, ואותה דוגמה מנחה מלווה את כולם.</p>
+      <p class="sub">שישה תת-פרקים, ואותה דוגמה מנחה מלווה את כולם. מומלץ ללמוד לפי הסדר: כל תת-פרק נבנה על קודמיו. לחיצה על כרטיס פותחת את הסיכום המלא.</p>
     </div>
-    <ul class="outcomes">
-      <li>
-        <span class="oc-mark" style="font-family:var(--font-mono);font-size:.72rem;font-weight:700">1.1</span>
-        <span class="oc-txt"><a href="chapter-1-1.html"><strong>הסתברות משותפת של מאורעות תלויים</strong></a><br>כלל הכפל: מה הסיכוי ששני מאורעות יקרו יחד. כולל מבוא מלא לקורס ולפרק.</span>
-      </li>
-      <li>
-        <span class="oc-mark" style="font-family:var(--font-mono);font-size:.72rem;font-weight:700">1.2</span>
-        <span class="oc-txt"><a href="chapter-1-2.html"><strong>בדיוק מאורע אחד מהשניים</strong></a><br>מאורע משלים, אזורי "רק", וחיסור הסתברויות.</span>
-      </li>
-      <li>
-        <span class="oc-mark" style="font-family:var(--font-mono);font-size:.72rem;font-weight:700">1.3</span>
-        <span class="oc-txt"><a href="chapter-1-3.html"><strong>היפוך ההתניה</strong></a><br>הסתברות מותנית בכיוון ההפוך: מה ידוע ומה שואלים (גישת בייס).</span>
-      </li>
-      <li>
-        <span class="oc-mark" style="font-family:var(--font-mono);font-size:.72rem;font-weight:700">1.4</span>
-        <span class="oc-txt"><a href="chapter-1-4.html"><strong>השלמת העץ</strong></a><br>התניה על ענף הכישלון, וההבדל בין ענף לעלה.</span>
-      </li>
-      <li>
-        <span class="oc-mark" style="font-family:var(--font-mono);font-size:.72rem;font-weight:700">1.5</span>
-        <span class="oc-txt"><a href="chapter-1-5.html"><strong>תלות ואי-תלות</strong></a><br>שלוש הבדיקות השקולות, והשוואת העולם האמיתי לעולם ללא תלות.</span>
-      </li>
-      <li>
-        <span class="oc-mark" style="font-family:var(--font-mono);font-size:.72rem;font-weight:700">1.6</span>
-        <span class="oc-txt"><a href="chapter-1-6.html"><strong>שאלות מסכמות במתכונת מלאה</strong></a><br>שלוש שאלות שלמות, חמישה סעיפים בכל אחת, עם פתרון מלא לכל סעיף.</span>
-      </li>
-    </ul>
+    <div class="chapter-grid">
+      <a class="ch-card" href="chapter-1-1.html">
+        <div class="ch-thumb"><svg viewBox="0 0 400 220" role="img" aria-label="מתלה בגדים עם שלושה פריטי לבוש על קולבים ולצידו שקית קנייה"><rect x="0" y="0" width="400" height="220" rx="18" fill="#F4EFE6"/><g fill="none" stroke="#2C3A34" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="108" y1="70" x2="274" y2="70"/><line x1="116" y1="70" x2="116" y2="176"/><line x1="266" y1="70" x2="266" y2="176"/><line x1="104" y1="176" x2="128" y2="176"/><line x1="254" y1="176" x2="278" y2="176"/></g><g fill="none" stroke="#2C3A34" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M132,88 L148,74 L164,88"/><path d="M148,74 L148,63 Q148,60 144,61"/><path d="M179,88 L191,74 L203,88"/><path d="M191,74 L191,63 Q191,60 187,61"/><path d="M220,88 L234,74 L248,88"/><path d="M234,74 L234,63 Q234,60 230,61"/></g><path d="M132,88 L122,96 L128,106 L132,104 L132,132 Q132,136 136,136 L160,136 Q164,136 164,132 L164,104 L168,106 L174,96 L164,88 L158,90 Q148,95 138,90 Z" fill="#159A8A"/><path d="M138,90 Q148,96 158,90" fill="none" stroke="#0C6E62" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M179,88 L176,96 L181,100 L184,112 L172,150 Q191,156 210,150 L198,112 L201,100 L206,96 L203,88 L197,90 Q191,95 185,90 Z" fill="#E6A23C"/><rect x="184" y="110" width="14" height="4" rx="1" fill="#C6832A"/><path d="M220,88 L210,98 L216,108 L220,105 L220,130 Q220,134 224,134 L244,134 Q248,134 248,130 L248,105 L252,108 L258,98 L248,88 L242,88 L234,94 L226,88 Z" fill="#E86B5A"/><path d="M226,88 L234,94 L230,97 Z" fill="#FFFFFF" stroke="#2C3A34" stroke-width="2" stroke-linejoin="round"/><path d="M242,88 L234,94 L238,97 Z" fill="#FFFFFF" stroke="#2C3A34" stroke-width="2" stroke-linejoin="round"/><line x1="234" y1="97" x2="234" y2="131" stroke="#2C3A34" stroke-width="2" stroke-linecap="round"/><circle cx="234" cy="106" r="1.4" fill="#2C3A34"/><circle cx="234" cy="116" r="1.4" fill="#2C3A34"/><circle cx="234" cy="126" r="1.4" fill="#2C3A34"/><rect x="297" y="144" width="44" height="36" rx="4" fill="#FFFFFF" stroke="#2C3A34" stroke-width="2.5" stroke-linejoin="round"/><rect x="300" y="145" width="38" height="7" rx="2" fill="#E86B5A"/><path d="M308,146 C309,133 329,133 330,146" fill="none" stroke="#2C3A34" stroke-width="2.5" stroke-linecap="round"/><line x1="319" y1="153" x2="319" y2="179" stroke="#2C3A34" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div class="ch-body">
+          <span class="ch-num">1.1</span>
+          <h3>הסתברות משותפת של מאורעות תלויים</h3>
+          <p>כלל הכפל: מה הסיכוי ששני מאורעות יקרו יחד. כולל מבוא מלא לקורס ולפרק.</p>
+          <span class="ch-enter">לחצו כאן לכניסה לסיכום המלא ←</span>
+        </div>
+      </a>
+      <a class="ch-card" href="chapter-1-2.html">
+        <div class="ch-thumb"><svg viewBox="0 0 400 220" role="img" aria-label="מכונית במבט צד עם מגן הגנה מעליה, איור ביטוח רכב"><rect x="0" y="0" width="400" height="220" rx="18" fill="#EBE3D4"/><line x1="80" y1="185" x2="320" y2="185" stroke="#0C6E62" stroke-width="3" stroke-linecap="round"/><line x1="150" y1="185" x2="172" y2="185" stroke="#E6A23C" stroke-width="3" stroke-linecap="round"/><line x1="228" y1="185" x2="250" y2="185" stroke="#E6A23C" stroke-width="3" stroke-linecap="round"/><path d="M150 130 L163 104 Q166 100 172 100 L228 100 Q234 100 237 104 L250 130 Z" fill="#159A8A" stroke="#2C3A34" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="95" y="130" width="210" height="30" rx="12" fill="#159A8A" stroke="#2C3A34" stroke-width="2.5" stroke-linejoin="round"/><rect x="98" y="151" width="204" height="8" rx="4" fill="#0C6E62"/><polygon points="166,126 175,108 197,108 197,126" fill="#F4EFE6" stroke="#2C3A34" stroke-width="2" stroke-linejoin="round"/><polygon points="203,108 225,108 234,126 203,126" fill="#F4EFE6" stroke="#2C3A34" stroke-width="2" stroke-linejoin="round"/><line x1="200" y1="132" x2="200" y2="158" stroke="#2C3A34" stroke-width="2.5" stroke-linecap="round"/><line x1="210" y1="145" x2="221" y2="145" stroke="#2C3A34" stroke-width="2.5" stroke-linecap="round"/><circle cx="301" cy="142" r="4" fill="#E6A23C"/><rect x="96" y="137" width="5" height="9" rx="2" fill="#E86B5A"/><circle cx="140" cy="162" r="16" fill="#2C3A34"/><circle cx="140" cy="162" r="8" fill="#F4EFE6"/><circle cx="140" cy="162" r="2.5" fill="#2C3A34"/><circle cx="260" cy="162" r="16" fill="#2C3A34"/><circle cx="260" cy="162" r="8" fill="#F4EFE6"/><circle cx="260" cy="162" r="2.5" fill="#2C3A34"/><path d="M178 42 Q178 36 184 34 L200 30 L216 34 Q222 36 222 42 L222 64 Q222 80 200 88 Q178 80 178 64 Z" fill="#6E78C4" stroke="#2C3A34" stroke-width="2.5" stroke-linejoin="round"/><path d="M189 59 L197 68 L212 49" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="ch-body">
+          <span class="ch-num">1.2</span>
+          <h3>בדיוק מאורע אחד מהשניים</h3>
+          <p>מאורע משלים, אזורי "רק", וחיסור הסתברויות.</p>
+          <span class="ch-enter">לחצו כאן לכניסה לסיכום המלא ←</span>
+        </div>
+      </a>
+      <a class="ch-card" href="chapter-1-3.html">
+        <div class="ch-thumb"><svg viewBox="0 0 400 220" role="img" aria-label="טיל סטארטאפ ממריא עם אש בענבר ואלמוג ומאחוריו עקומת צמיחה עולה באינדיגו"><rect x="0" y="0" width="400" height="220" rx="18" fill="#F4EFE6"/><path d="M236,176 L262,150 L286,158 L312,124 L346,96" fill="none" stroke="#6E78C4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M346,96 L333,100 M346,96 L343,111" fill="none" stroke="#6E78C4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="262" cy="150" r="3.5" fill="#6E78C4"/><circle cx="286" cy="158" r="3.5" fill="#6E78C4"/><circle cx="312" cy="124" r="3.5" fill="#6E78C4"/><path d="M124,64 L128,70 L124,76 L120,70 Z" fill="#E6A23C"/><path d="M222,60 L226,66 L222,72 L218,66 Z" fill="#159A8A"/><circle cx="248" cy="54" r="3" fill="#E86B5A"/><circle cx="149" cy="181" r="10" fill="#EBE3D4"/><circle cx="191" cy="181" r="10" fill="#FFFFFF"/><path d="M158,157 Q159,178 170,192 Q181,178 182,157 Z" fill="#E6A23C" stroke="#2C3A34" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><path d="M164,157 Q165,174 170,185 Q175,174 176,157 Z" fill="#E86B5A"/><path d="M150,128 L131,156 L152,150 Z" fill="#E86B5A" stroke="#2C3A34" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><path d="M190,128 L209,156 L188,150 Z" fill="#E86B5A" stroke="#2C3A34" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><rect x="159" y="150" width="22" height="9" rx="3" fill="#0C6E62" stroke="#2C3A34" stroke-width="2.5" stroke-linejoin="round"/><rect x="148" y="90" width="44" height="62" rx="21" fill="#FFFFFF" stroke="#2C3A34" stroke-width="2.5"/><path d="M150,96 Q152,68 170,50 Q188,68 190,96 Z" fill="#159A8A" stroke="#2C3A34" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><rect x="148" y="120" width="44" height="10" fill="#159A8A"/><circle cx="170" cy="104" r="14" fill="none" stroke="#159A8A" stroke-width="3"/><circle cx="170" cy="104" r="10" fill="#6E78C4" stroke="#2C3A34" stroke-width="2.5"/></svg></div>
+        <div class="ch-body">
+          <span class="ch-num">1.3</span>
+          <h3>היפוך ההתניה</h3>
+          <p>הסתברות מותנית בכיוון ההפוך: מה ידוע ומה שואלים (גישת בייס).</p>
+          <span class="ch-enter">לחצו כאן לכניסה לסיכום המלא ←</span>
+        </div>
+      </a>
+      <a class="ch-card" href="chapter-1-4.html">
+        <div class="ch-thumb"><svg viewBox="0 0 400 220" role="img" aria-label="איור שטוח של דלפק קבלה במרפאה עם שעון קיר גדול, כיסא המתנה, פעמון קבלה ועציץ"><rect x="0" y="0" width="400" height="220" rx="18" fill="#EBE3D4"/><g stroke-linecap="round" stroke-linejoin="round"><rect x="30" y="162" width="340" height="30" rx="12" fill="#F4EFE6"/><rect x="282" y="42" width="52" height="40" rx="4" fill="#FFFFFF" stroke="#2C3A34" stroke-width="2.5"/><circle cx="300" cy="58" r="8" fill="#E86B5A"/><rect x="308" y="62" width="18" height="13" rx="3" fill="#6E78C4"/><circle cx="125" cy="80" r="40" fill="#159A8A" stroke="#2C3A34" stroke-width="2.5"/><circle cx="125" cy="80" r="31" fill="#FFFFFF"/><line x1="125" y1="53" x2="125" y2="59" stroke="#2C3A34" stroke-width="3"/><line x1="125" y1="101" x2="125" y2="107" stroke="#2C3A34" stroke-width="3"/><line x1="89" y1="80" x2="95" y2="80" stroke="#2C3A34" stroke-width="3"/><line x1="155" y1="80" x2="161" y2="80" stroke="#2C3A34" stroke-width="3"/><line x1="125" y1="80" x2="125" y2="55" stroke="#2C3A34" stroke-width="2.5"/><line x1="125" y1="80" x2="143" y2="80" stroke="#2C3A34" stroke-width="3.5"/><circle cx="125" cy="80" r="4" fill="#6E78C4"/><rect x="167" y="140" width="30" height="6" rx="2" fill="#E6A23C"/><ellipse cx="182" cy="122" rx="5" ry="18" fill="#0C6E62"/><ellipse cx="172" cy="128" rx="4.5" ry="15" fill="#159A8A" transform="rotate(-28 172 128)"/><ellipse cx="192" cy="128" rx="4.5" ry="15" fill="#159A8A" transform="rotate(28 192 128)"/><rect x="170" y="143" width="24" height="19" rx="4" fill="#C6832A"/><rect x="60" y="106" width="13" height="42" rx="6" fill="#159A8A" stroke="#2C3A34" stroke-width="2.5"/><rect x="60" y="140" width="54" height="13" rx="6" fill="#159A8A" stroke="#2C3A34" stroke-width="2.5"/><line x1="66" y1="146" x2="108" y2="146" stroke="#0C6E62" stroke-width="2"/><line x1="66" y1="153" x2="66" y2="162" stroke="#2C3A34" stroke-width="3"/><line x1="108" y1="153" x2="108" y2="162" stroke="#2C3A34" stroke-width="3"/><rect x="236" y="112" width="122" height="50" rx="6" fill="#6E78C4" stroke="#2C3A34" stroke-width="2.5"/><rect x="236" y="113" width="122" height="4" fill="#E6A23C"/><line x1="278" y1="120" x2="278" y2="155" stroke="#2C3A34" stroke-width="2.5"/><line x1="316" y1="120" x2="316" y2="155" stroke="#2C3A34" stroke-width="2.5"/><rect x="228" y="98" width="138" height="14" rx="5" fill="#F4EFE6" stroke="#2C3A34" stroke-width="2.5"/><rect x="250" y="93" width="30" height="5" rx="2" fill="#C6832A"/><path d="M252,93 A13,13 0 0 1 278,93 Z" fill="#E6A23C" stroke="#2C3A34" stroke-width="2.5"/><circle cx="265" cy="78" r="2.5" fill="#0C6E62"/></g></svg></div>
+        <div class="ch-body">
+          <span class="ch-num">1.4</span>
+          <h3>השלמת העץ</h3>
+          <p>התניה על ענף הכישלון, וההבדל בין ענף לעלה.</p>
+          <span class="ch-enter">לחצו כאן לכניסה לסיכום המלא ←</span>
+        </div>
+      </a>
+      <a class="ch-card" href="chapter-1-5.html">
+        <div class="ch-thumb"><svg viewBox="0 0 400 220" role="img" aria-label="משאית משלוחים בצבע טורקיז במבט צד עם ערימת חבילות בענבר לצידה"><rect x="0" y="0" width="400" height="220" rx="18" fill="#F4EFE6"/><rect x="40" y="150" width="320" height="6" rx="3" fill="#EBE3D4"/><g fill="none" stroke="#2C3A34" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="185" y="86" width="130" height="64" rx="8" fill="#159A8A"/><path d="M315 104 h34 l16 22 v24 h-50 z" fill="#0C6E62"/><rect x="322" y="110" width="26" height="18" rx="4" fill="#EBE3D4"/><rect x="205" y="100" width="90" height="36" rx="5" fill="#0C6E62"/><circle cx="222" cy="152" r="18" fill="#2C3A34"/><circle cx="222" cy="152" r="7" fill="#F4EFE6" stroke="none"/><circle cx="336" cy="152" r="18" fill="#2C3A34"/><circle cx="336" cy="152" r="7" fill="#F4EFE6" stroke="none"/><rect x="70" y="112" width="46" height="38" rx="5" fill="#E6A23C"/><path d="M70 124 h46"/><path d="M93 112 v12"/><rect x="116" y="96" width="42" height="54" rx="5" fill="#C6832A"/><path d="M116 112 h42"/><path d="M137 96 v16"/><rect x="90" y="72" width="40" height="40" rx="5" fill="#E6A23C"/><path d="M90 86 h40"/><path d="M110 72 v14"/></g></svg></div>
+        <div class="ch-body">
+          <span class="ch-num">1.5</span>
+          <h3>תלות ואי-תלות</h3>
+          <p>שלוש הבדיקות השקולות, והשוואת העולם האמיתי לעולם ללא תלות.</p>
+          <span class="ch-enter">לחצו כאן לכניסה לסיכום המלא ←</span>
+        </div>
+      </a>
+      <a class="ch-card" href="chapter-1-6.html">
+        <div class="ch-thumb"><svg viewBox="0 0 400 220" role="img" aria-label="כובע סיום מונח מעל מחשב נייד פתוח עם סימני קוד על המסך">
+  <rect x="0" y="0" width="400" height="220" rx="18" fill="#EBE3D4"/>
+  <circle cx="200" cy="108" r="82" fill="#F4EFE6"/>
+  <circle cx="306" cy="64" r="7" fill="#159A8A"/>
+  <circle cx="92" cy="82" r="5" fill="#0C6E62"/>
+  <circle cx="98" cy="150" r="6" fill="#E6A23C"/>
+  <circle cx="308" cy="150" r="6" fill="#E86B5A"/>
+  <rect x="150" y="98" width="100" height="64" rx="7" fill="#6E78C4" stroke="#2C3A34" stroke-width="2.5" stroke-linejoin="round"/>
+  <rect x="158" y="106" width="84" height="48" rx="4" fill="#0C6E62"/>
+  <circle cx="200" cy="102" r="1.6" fill="#F4EFE6"/>
+  <polyline points="189,116 180,130 189,144" fill="none" stroke="#F4EFE6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="197" y1="146" x2="206" y2="114" stroke="#E6A23C" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="213,116 222,130 213,144" fill="none" stroke="#F4EFE6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="152,159 248,159 262,172 138,172" fill="#6E78C4" stroke="#2C3A34" stroke-width="2.5" stroke-linejoin="round"/>
+  <rect x="190" y="158.5" width="20" height="3" rx="1.5" fill="#0C6E62"/>
+  <polygon points="185,71 215,71 210,90 190,90" fill="#2C3A34"/>
+  <polygon points="156,72 200,54 244,72 200,90" fill="#2C3A34" stroke="#2C3A34" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M200,71 L244,72 L244,104" fill="none" stroke="#E6A23C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="239" y="104" width="10" height="9" rx="3" fill="#E6A23C"/>
+  <rect x="241" y="112" width="6" height="5" rx="2" fill="#C6832A"/>
+  <circle cx="200" cy="71" r="4" fill="#E6A23C" stroke="#2C3A34" stroke-width="2"/>
+</svg></div>
+        <div class="ch-body">
+          <span class="ch-num">1.6</span>
+          <h3>שאלות מסכמות במתכונת מלאה</h3>
+          <p>שלוש שאלות שלמות, חמישה סעיפים בכל אחת, עם פתרון מלא לכל סעיף.</p>
+          <span class="ch-enter">לחצו כאן לכניסה לסיכום המלא ←</span>
+        </div>
+      </a>
+    </div>
 
     <div class="relevance" style="margin-top:1.6rem">
       <h3>בקרוב בחלק א׳</h3>
-      <p>פרק 2: התפלגויות הסתברות, תוחלת ושונות. פרק 3: עצי החלטה וערך המידע. העמודים יתווספו כאן עם פרסומם.</p>
+      <p>פרק 2: התפלגויות הסתברות, תוחלת ושונות. פרק 3: עצי החלטה וערך המידע. הכרטיסים יתווספו כאן עם פרסומם.</p>
     </div>
   </div>
 </section>
@@ -760,7 +868,7 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
     </div>
     <div class="relevance">
       <h3>בקרוב</h3>
-      <p>הקצאת משאבים מוגבלים, ניסוח פורמלי של אילוצים ופונקציית מטרה, והשיטה הגרפית. העמודים יתווספו כאן עם פרסומם.</p>
+      <p>הקצאת משאבים מוגבלים, ניסוח פורמלי של אילוצים ופונקציית מטרה, והשיטה הגרפית. הכרטיסים יתווספו כאן עם פרסומם.</p>
     </div>
   </div>
 </section>
