@@ -681,7 +681,9 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
   background:var(--paper-sunken);border:1.5px solid var(--border);border-radius:10px;
   padding:.75rem .5rem;text-align:center;transition:opacity .3s ease, background .3s ease, border-color .3s ease;
 }
+.rg-cell .rc-sym{display:block;font-family:var(--font-mono);direction:ltr;unicode-bidi:isolate;font-size:.7rem;color:var(--ink-faint);margin-bottom:.22rem;}
 .rg-cell .rc-num{display:block;font-family:var(--font-mono);direction:ltr;unicode-bidi:isolate;font-size:1.1rem;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;}
+.rg-cell.on .rc-sym{color:var(--accent-strong);}
 .rg-cell .rc-lbl{display:block;font-size:.72rem;color:var(--ink-faint);margin-top:.2rem;}
 .rg-cell.on{background:rgba(var(--accent-rgb),0.2);border-color:var(--accent);}
 .rg-cell.on .rc-num{color:var(--accent-strong);}
@@ -771,6 +773,7 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
     <a href="#direction">למה הכיוון חשוב</a>
     <a href="#solution">הפתרון</a>
     <a href="#practice">תרגול</a>
+    <a href="#summary">סיכום</a>
   </div>
 </nav>
 
@@ -883,10 +886,28 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
         <p class="sym-val">נחשב אותו בהמשך.</p>
       </div>
       <div class="sym-card">
+        <div class="sym-top"><span class="formula-inline">P(A&#773;∩B)</span><span class="sym-read">נקרא: "לא איי וגם בי"</span></div>
+        <p>הסיכוי שחבר א׳ לא הצליח <strong>וגם</strong> חבר ב׳ כן הצליח. כלומר, בדיוק אחד מהם הצליח, והוא השני.</p>
+        <p class="sym-val">נחשב אותו בהמשך.</p>
+      </div>
+      <div class="sym-card">
+        <div class="sym-top"><span class="formula-inline">P(A&#773;∩B&#773;)</span><span class="sym-read">נקרא: "לא איי וגם לא בי"</span></div>
+        <p>הסיכוי ששניהם לא הצליחו: לא חבר א׳, ולא חבר ב׳.</p>
+        <p class="sym-val">נחשב אותו בהמשך.</p>
+      </div>
+      <div class="sym-card">
         <div class="sym-top"><span class="formula-inline">P(A|B&#773;)</span><span class="sym-read">נקרא: "איי, בהינתן לא בי"</span></div>
         <p>הסיכוי שחבר א׳ הצליח, בעולם שבו כבר ידוע שחבר ב׳ <strong>לא</strong> הצליח.</p>
         <p class="sym-val">זו בדיוק השאלה של תת-הפרק הזה.</p>
       </div>
+    </div>
+
+    <div class="data-recall" style="margin-top:1.2rem">
+      <div class="dr-head">💡 שני כללי קריאה שיחזרו לאורך כל השיעור</div>
+      <ul>
+        <li><span class="dr-tag"><span class="formula-inline">∩</span></span><span>פירושו <strong>"וגם"</strong>. שני הדברים קרו יחד.</span></li>
+        <li><span class="dr-tag"><span class="formula-inline">|</span></span><span>פירושו <strong>"בהינתן ש"</strong>. מה שכתוב אחריו כבר ידוע לנו בוודאות. זה איננו סימן חילוק.</span></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -1147,7 +1168,7 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
         <ul class="tstep-lines">
           <li>אותו רעיון בענף שבו חבר א׳ לא הצליח.</li>
           <li>רק חבר ב׳ הצליח: <span class="formula-inline">0.75 − 0.72 = 0.03</span>.</li>
-          <li>אף אחד לא הצליח: הנותר, 0.17.</li>
+          <li>אף אחד לא הצליח: <span class="formula-inline">1 − 0.72 − 0.08 − 0.03 = 0.17</span>.</li>
           <li class="key">ארבעת המסלולים הושלמו.</li>
         </ul>
       </div>
@@ -1191,11 +1212,11 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
         <div class="rg-h">חבר ב׳ הצליח</div>
         <div class="rg-h">חבר ב׳ לא</div>
         <div class="rg-h side">חבר א׳ הצליח</div>
-        <div class="rg-cell"><span class="rc-num">0.72</span><span class="rc-lbl">שניהם</span></div>
-        <div class="rg-cell"><span class="rc-num">0.08</span><span class="rc-lbl">רק הראשון</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A∩B)</span><span class="rc-num">0.72</span><span class="rc-lbl">שניהם</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A∩B&#773;)</span><span class="rc-num">0.08</span><span class="rc-lbl">רק הראשון</span></div>
         <div class="rg-h side">חבר א׳ לא</div>
-        <div class="rg-cell"><span class="rc-num">0.03</span><span class="rc-lbl">רק השני</span></div>
-        <div class="rg-cell"><span class="rc-num">0.17</span><span class="rc-lbl">אף אחד</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A&#773;∩B)</span><span class="rc-num">0.03</span><span class="rc-lbl">רק השני</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A&#773;∩B&#773;)</span><span class="rc-num">0.17</span><span class="rc-lbl">אף אחד</span></div>
       </div>
       <div class="rg-foot">בדיקה: כל ארבעת האזורים יחד = <span class="formula-inline">0.72</span> + <span class="formula-inline">0.08</span> + <span class="formula-inline">0.03</span> + <span class="formula-inline">0.17</span> = <span class="formula-inline">1</span></div>
     </div>
@@ -1364,11 +1385,11 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
         <div class="rg-h">חבר ב׳ הצליח</div>
         <div class="rg-h">חבר ב׳ לא</div>
         <div class="rg-h side">חבר א׳ הצליח</div>
-        <div class="rg-cell dim"><span class="rc-num">0.72</span><span class="rc-lbl">שניהם</span></div>
-        <div class="rg-cell on"><span class="rc-num">0.08</span><span class="rc-lbl">רק הראשון</span></div>
+        <div class="rg-cell dim"><span class="rc-sym">P(A∩B)</span><span class="rc-num">0.72</span><span class="rc-lbl">שניהם</span></div>
+        <div class="rg-cell on"><span class="rc-sym">P(A∩B&#773;)</span><span class="rc-num">0.08</span><span class="rc-lbl">רק הראשון</span></div>
         <div class="rg-h side">חבר א׳ לא</div>
-        <div class="rg-cell dim"><span class="rc-num">0.03</span><span class="rc-lbl">רק השני</span></div>
-        <div class="rg-cell on"><span class="rc-num">0.17</span><span class="rc-lbl">אף אחד</span></div>
+        <div class="rg-cell dim"><span class="rc-sym">P(A&#773;∩B)</span><span class="rc-num">0.03</span><span class="rc-lbl">רק השני</span></div>
+        <div class="rg-cell on"><span class="rc-sym">P(A&#773;∩B&#773;)</span><span class="rc-num">0.17</span><span class="rc-lbl">אף אחד</span></div>
       </div>
       <div class="rg-foot">העמודה המודגשת היא כל מה שנשאר אפשרי: <span class="formula-inline">0.08</span> + <span class="formula-inline">0.17</span> = <span class="formula-inline">0.25</span></div>
     </div>
@@ -1383,11 +1404,11 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
               <div class="rg-h">חבר ב׳ הצליח</div>
               <div class="rg-h">חבר ב׳ לא</div>
               <div class="rg-h side">חבר א׳ הצליח</div>
-              <div class="rg-cell on"><span class="rc-num">0.72</span><span class="rc-lbl">שניהם</span></div>
-              <div class="rg-cell on"><span class="rc-num">0.08</span><span class="rc-lbl">רק הראשון</span></div>
+              <div class="rg-cell on"><span class="rc-sym">P(A∩B)</span><span class="rc-num">0.72</span><span class="rc-lbl">שניהם</span></div>
+              <div class="rg-cell on"><span class="rc-sym">P(A∩B&#773;)</span><span class="rc-num">0.08</span><span class="rc-lbl">רק הראשון</span></div>
               <div class="rg-h side">חבר א׳ לא</div>
-              <div class="rg-cell dim"><span class="rc-num">0.03</span><span class="rc-lbl">רק השני</span></div>
-              <div class="rg-cell dim"><span class="rc-num">0.17</span><span class="rc-lbl">אף אחד</span></div>
+              <div class="rg-cell dim"><span class="rc-sym">P(A&#773;∩B)</span><span class="rc-num">0.03</span><span class="rc-lbl">רק השני</span></div>
+              <div class="rg-cell dim"><span class="rc-sym">P(A&#773;∩B&#773;)</span><span class="rc-num">0.17</span><span class="rc-lbl">אף אחד</span></div>
             </div>
             <div class="rg-foot">השורה המודגשת היא כל מה שנשאר אפשרי: <span class="formula-inline">0.72</span> + <span class="formula-inline">0.08</span> = <span class="formula-inline">0.8</span></div>
           </div>
@@ -1556,18 +1577,27 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
 
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">6</span>מסתכלים על התמונה המלאה</div>
-              <p>נשלים גם את שני האזורים הנותרים, כדי לראות את כל ארבעת המקרים האפשריים ולוודא שהכל מסתדר:</p>
+              <p>לפני שמחלקים, נשלים גם את שני האזורים הנותרים. זה לא הכרחי לפתרון, אבל הוא מאפשר לבדוק את עצמנו.</p>
+              <p><strong>רק השני:</strong> כל המקרים שבהם B קרה שוקלים <span class="formula-inline">0.6</span>, ומתוכם <span class="formula-inline">0.3</span> הם מקרים ששניהם קרו. ההפרש הוא המקרים שבהם רק השני קרה:</p>
+              <div class="eq-chain">
+                <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B)</span><span class="eq-rhs">= 0.6 − 0.3 = 0.3</span></div>
+              </div>
+              <p><strong>אף אחד:</strong> ארבעת האזורים מסתכמים ל-1, ולכן מה שנשאר הוא:</p>
+              <div class="eq-chain">
+                <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B&#773;)</span><span class="eq-rhs">= 1 − 0.3 − 0.2 − 0.3 = 0.2</span></div>
+              </div>
+              <p>ועכשיו כל ארבעת המקרים לפנינו:</p>
               <div class="rgrid-wrap">
       <div class="rgrid">
         <div class="rg-corner"></div>
         <div class="rg-h">רכש</div>
         <div class="rg-h">לא רכש</div>
         <div class="rg-h side">מדד</div>
-        <div class="rg-cell"><span class="rc-num">0.3</span><span class="rc-lbl">שניהם</span></div>
-        <div class="rg-cell"><span class="rc-num">0.2</span><span class="rc-lbl">רק הראשון</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A∩B)</span><span class="rc-num">0.3</span><span class="rc-lbl">שניהם</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A∩B&#773;)</span><span class="rc-num">0.2</span><span class="rc-lbl">רק הראשון</span></div>
         <div class="rg-h side">לא מדד</div>
-        <div class="rg-cell"><span class="rc-num">0.3</span><span class="rc-lbl">רק השני</span></div>
-        <div class="rg-cell"><span class="rc-num">0.2</span><span class="rc-lbl">אף אחד</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A&#773;∩B)</span><span class="rc-num">0.3</span><span class="rc-lbl">רק השני</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A&#773;∩B&#773;)</span><span class="rc-num">0.2</span><span class="rc-lbl">אף אחד</span></div>
       </div>
       <div class="rg-foot">בדיקה: כל ארבעת האזורים יחד = <span class="formula-inline">0.3</span> + <span class="formula-inline">0.2</span> + <span class="formula-inline">0.3</span> + <span class="formula-inline">0.2</span> = <span class="formula-inline">1</span></div>
     </div>
@@ -1578,11 +1608,11 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
         <div class="rg-h">רכש</div>
         <div class="rg-h">לא רכש</div>
         <div class="rg-h side">מדד</div>
-        <div class="rg-cell dim"><span class="rc-num">0.3</span><span class="rc-lbl">שניהם</span></div>
-        <div class="rg-cell on"><span class="rc-num">0.2</span><span class="rc-lbl">רק הראשון</span></div>
+        <div class="rg-cell dim"><span class="rc-sym">P(A∩B)</span><span class="rc-num">0.3</span><span class="rc-lbl">שניהם</span></div>
+        <div class="rg-cell on"><span class="rc-sym">P(A∩B&#773;)</span><span class="rc-num">0.2</span><span class="rc-lbl">רק הראשון</span></div>
         <div class="rg-h side">לא מדד</div>
-        <div class="rg-cell dim"><span class="rc-num">0.3</span><span class="rc-lbl">רק השני</span></div>
-        <div class="rg-cell on"><span class="rc-num">0.2</span><span class="rc-lbl">אף אחד</span></div>
+        <div class="rg-cell dim"><span class="rc-sym">P(A&#773;∩B)</span><span class="rc-num">0.3</span><span class="rc-lbl">רק השני</span></div>
+        <div class="rg-cell on"><span class="rc-sym">P(A&#773;∩B&#773;)</span><span class="rc-num">0.2</span><span class="rc-lbl">אף אחד</span></div>
       </div>
       <div class="rg-foot">העמודה המודגשת היא כל מה שנשאר אפשרי: <span class="formula-inline">0.2</span> + <span class="formula-inline">0.2</span> = <span class="formula-inline">0.4</span></div>
     </div>
@@ -1672,18 +1702,27 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
 
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">6</span>מסתכלים על התמונה המלאה</div>
-              <p>נשלים גם את שני האזורים הנותרים, כדי לראות את כל ארבעת המקרים האפשריים ולוודא שהכל מסתדר:</p>
+              <p>לפני שמחלקים, נשלים גם את שני האזורים הנותרים. זה לא הכרחי לפתרון, אבל הוא מאפשר לבדוק את עצמנו.</p>
+              <p><strong>רק השני:</strong> כל המקרים שבהם B קרה שוקלים <span class="formula-inline">0.65</span>, ומתוכם <span class="formula-inline">0.56</span> הם מקרים ששניהם קרו. ההפרש הוא המקרים שבהם רק השני קרה:</p>
+              <div class="eq-chain">
+                <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B)</span><span class="eq-rhs">= 0.65 − 0.56 = 0.09</span></div>
+              </div>
+              <p><strong>אף אחד:</strong> ארבעת האזורים מסתכמים ל-1, ולכן מה שנשאר הוא:</p>
+              <div class="eq-chain">
+                <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B&#773;)</span><span class="eq-rhs">= 1 − 0.56 − 0.14 − 0.09 = 0.21</span></div>
+              </div>
+              <p>ועכשיו כל ארבעת המקרים לפנינו:</p>
               <div class="rgrid-wrap">
       <div class="rgrid">
         <div class="rg-corner"></div>
         <div class="rg-h">טופלה מהר</div>
         <div class="rg-h">התעכבה</div>
         <div class="rg-h side">שלמה</div>
-        <div class="rg-cell"><span class="rc-num">0.56</span><span class="rc-lbl">שניהם</span></div>
-        <div class="rg-cell"><span class="rc-num">0.14</span><span class="rc-lbl">רק הראשון</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A∩B)</span><span class="rc-num">0.56</span><span class="rc-lbl">שניהם</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A∩B&#773;)</span><span class="rc-num">0.14</span><span class="rc-lbl">רק הראשון</span></div>
         <div class="rg-h side">חסרה</div>
-        <div class="rg-cell"><span class="rc-num">0.09</span><span class="rc-lbl">רק השני</span></div>
-        <div class="rg-cell"><span class="rc-num">0.21</span><span class="rc-lbl">אף אחד</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A&#773;∩B)</span><span class="rc-num">0.09</span><span class="rc-lbl">רק השני</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A&#773;∩B&#773;)</span><span class="rc-num">0.21</span><span class="rc-lbl">אף אחד</span></div>
       </div>
       <div class="rg-foot">בדיקה: כל ארבעת האזורים יחד = <span class="formula-inline">0.56</span> + <span class="formula-inline">0.14</span> + <span class="formula-inline">0.09</span> + <span class="formula-inline">0.21</span> = <span class="formula-inline">1</span></div>
     </div>
@@ -1694,11 +1733,11 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
         <div class="rg-h">טופלה מהר</div>
         <div class="rg-h">התעכבה</div>
         <div class="rg-h side">שלמה</div>
-        <div class="rg-cell dim"><span class="rc-num">0.56</span><span class="rc-lbl">שניהם</span></div>
-        <div class="rg-cell on"><span class="rc-num">0.14</span><span class="rc-lbl">רק הראשון</span></div>
+        <div class="rg-cell dim"><span class="rc-sym">P(A∩B)</span><span class="rc-num">0.56</span><span class="rc-lbl">שניהם</span></div>
+        <div class="rg-cell on"><span class="rc-sym">P(A∩B&#773;)</span><span class="rc-num">0.14</span><span class="rc-lbl">רק הראשון</span></div>
         <div class="rg-h side">חסרה</div>
-        <div class="rg-cell dim"><span class="rc-num">0.09</span><span class="rc-lbl">רק השני</span></div>
-        <div class="rg-cell on"><span class="rc-num">0.21</span><span class="rc-lbl">אף אחד</span></div>
+        <div class="rg-cell dim"><span class="rc-sym">P(A&#773;∩B)</span><span class="rc-num">0.09</span><span class="rc-lbl">רק השני</span></div>
+        <div class="rg-cell on"><span class="rc-sym">P(A&#773;∩B&#773;)</span><span class="rc-num">0.21</span><span class="rc-lbl">אף אחד</span></div>
       </div>
       <div class="rg-foot">העמודה המודגשת היא כל מה שנשאר אפשרי: <span class="formula-inline">0.14</span> + <span class="formula-inline">0.21</span> = <span class="formula-inline">0.35</span></div>
     </div>
@@ -1788,18 +1827,27 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
 
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">6</span>מסתכלים על התמונה המלאה</div>
-              <p>נשלים גם את שני האזורים הנותרים, כדי לראות את כל ארבעת המקרים האפשריים ולוודא שהכל מסתדר:</p>
+              <p>לפני שמחלקים, נשלים גם את שני האזורים הנותרים. זה לא הכרחי לפתרון, אבל הוא מאפשר לבדוק את עצמנו.</p>
+              <p><strong>רק השני:</strong> כל המקרים שבהם B קרה שוקלים <span class="formula-inline">0.7</span>, ומתוכם <span class="formula-inline">0.45</span> הם מקרים ששניהם קרו. ההפרש הוא המקרים שבהם רק השני קרה:</p>
+              <div class="eq-chain">
+                <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B)</span><span class="eq-rhs">= 0.7 − 0.45 = 0.25</span></div>
+              </div>
+              <p><strong>אף אחד:</strong> ארבעת האזורים מסתכמים ל-1, ולכן מה שנשאר הוא:</p>
+              <div class="eq-chain">
+                <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B&#773;)</span><span class="eq-rhs">= 1 − 0.45 − 0.15 − 0.25 = 0.15</span></div>
+              </div>
+              <p>ועכשיו כל ארבעת המקרים לפנינו:</p>
               <div class="rgrid-wrap">
       <div class="rgrid">
         <div class="rg-corner"></div>
         <div class="rg-h">גייסה</div>
         <div class="rg-h">לא גייסה</div>
         <div class="rg-h side">התקבלה</div>
-        <div class="rg-cell"><span class="rc-num">0.45</span><span class="rc-lbl">שניהם</span></div>
-        <div class="rg-cell"><span class="rc-num">0.15</span><span class="rc-lbl">רק הראשון</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A∩B)</span><span class="rc-num">0.45</span><span class="rc-lbl">שניהם</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A∩B&#773;)</span><span class="rc-num">0.15</span><span class="rc-lbl">רק הראשון</span></div>
         <div class="rg-h side">נדחתה</div>
-        <div class="rg-cell"><span class="rc-num">0.25</span><span class="rc-lbl">רק השני</span></div>
-        <div class="rg-cell"><span class="rc-num">0.15</span><span class="rc-lbl">אף אחד</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A&#773;∩B)</span><span class="rc-num">0.25</span><span class="rc-lbl">רק השני</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A&#773;∩B&#773;)</span><span class="rc-num">0.15</span><span class="rc-lbl">אף אחד</span></div>
       </div>
       <div class="rg-foot">בדיקה: כל ארבעת האזורים יחד = <span class="formula-inline">0.45</span> + <span class="formula-inline">0.15</span> + <span class="formula-inline">0.25</span> + <span class="formula-inline">0.15</span> = <span class="formula-inline">1</span></div>
     </div>
@@ -1810,11 +1858,11 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
         <div class="rg-h">גייסה</div>
         <div class="rg-h">לא גייסה</div>
         <div class="rg-h side">התקבלה</div>
-        <div class="rg-cell dim"><span class="rc-num">0.45</span><span class="rc-lbl">שניהם</span></div>
-        <div class="rg-cell on"><span class="rc-num">0.15</span><span class="rc-lbl">רק הראשון</span></div>
+        <div class="rg-cell dim"><span class="rc-sym">P(A∩B)</span><span class="rc-num">0.45</span><span class="rc-lbl">שניהם</span></div>
+        <div class="rg-cell on"><span class="rc-sym">P(A∩B&#773;)</span><span class="rc-num">0.15</span><span class="rc-lbl">רק הראשון</span></div>
         <div class="rg-h side">נדחתה</div>
-        <div class="rg-cell dim"><span class="rc-num">0.25</span><span class="rc-lbl">רק השני</span></div>
-        <div class="rg-cell on"><span class="rc-num">0.15</span><span class="rc-lbl">אף אחד</span></div>
+        <div class="rg-cell dim"><span class="rc-sym">P(A&#773;∩B)</span><span class="rc-num">0.25</span><span class="rc-lbl">רק השני</span></div>
+        <div class="rg-cell on"><span class="rc-sym">P(A&#773;∩B&#773;)</span><span class="rc-num">0.15</span><span class="rc-lbl">אף אחד</span></div>
       </div>
       <div class="rg-foot">העמודה המודגשת היא כל מה שנשאר אפשרי: <span class="formula-inline">0.15</span> + <span class="formula-inline">0.15</span> = <span class="formula-inline">0.3</span></div>
     </div>
@@ -1904,18 +1952,27 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
 
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">6</span>מסתכלים על התמונה המלאה</div>
-              <p>נשלים גם את שני האזורים הנותרים, כדי לראות את כל ארבעת המקרים האפשריים ולוודא שהכל מסתדר:</p>
+              <p>לפני שמחלקים, נשלים גם את שני האזורים הנותרים. זה לא הכרחי לפתרון, אבל הוא מאפשר לבדוק את עצמנו.</p>
+              <p><strong>רק השני:</strong> כל המקרים שבהם B קרה שוקלים <span class="formula-inline">0.75</span>, ומתוכם <span class="formula-inline">0.6</span> הם מקרים ששניהם קרו. ההפרש הוא המקרים שבהם רק השני קרה:</p>
+              <div class="eq-chain">
+                <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B)</span><span class="eq-rhs">= 0.75 − 0.6 = 0.15</span></div>
+              </div>
+              <p><strong>אף אחד:</strong> ארבעת האזורים מסתכמים ל-1, ולכן מה שנשאר הוא:</p>
+              <div class="eq-chain">
+                <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B&#773;)</span><span class="eq-rhs">= 1 − 0.6 − 0.15 − 0.15 = 0.1</span></div>
+              </div>
+              <p>ועכשיו כל ארבעת המקרים לפנינו:</p>
               <div class="rgrid-wrap">
       <div class="rgrid">
         <div class="rg-corner"></div>
         <div class="rg-h">נקרא מהר</div>
         <div class="rg-h">המתין</div>
         <div class="rg-h side">הגיע בזמן</div>
-        <div class="rg-cell"><span class="rc-num">0.6</span><span class="rc-lbl">שניהם</span></div>
-        <div class="rg-cell"><span class="rc-num">0.15</span><span class="rc-lbl">רק הראשון</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A∩B)</span><span class="rc-num">0.6</span><span class="rc-lbl">שניהם</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A∩B&#773;)</span><span class="rc-num">0.15</span><span class="rc-lbl">רק הראשון</span></div>
         <div class="rg-h side">איחר</div>
-        <div class="rg-cell"><span class="rc-num">0.15</span><span class="rc-lbl">רק השני</span></div>
-        <div class="rg-cell"><span class="rc-num">0.1</span><span class="rc-lbl">אף אחד</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A&#773;∩B)</span><span class="rc-num">0.15</span><span class="rc-lbl">רק השני</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A&#773;∩B&#773;)</span><span class="rc-num">0.1</span><span class="rc-lbl">אף אחד</span></div>
       </div>
       <div class="rg-foot">בדיקה: כל ארבעת האזורים יחד = <span class="formula-inline">0.6</span> + <span class="formula-inline">0.15</span> + <span class="formula-inline">0.15</span> + <span class="formula-inline">0.1</span> = <span class="formula-inline">1</span></div>
     </div>
@@ -1926,11 +1983,11 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
         <div class="rg-h">נקרא מהר</div>
         <div class="rg-h">המתין</div>
         <div class="rg-h side">הגיע בזמן</div>
-        <div class="rg-cell dim"><span class="rc-num">0.6</span><span class="rc-lbl">שניהם</span></div>
-        <div class="rg-cell on"><span class="rc-num">0.15</span><span class="rc-lbl">רק הראשון</span></div>
+        <div class="rg-cell dim"><span class="rc-sym">P(A∩B)</span><span class="rc-num">0.6</span><span class="rc-lbl">שניהם</span></div>
+        <div class="rg-cell on"><span class="rc-sym">P(A∩B&#773;)</span><span class="rc-num">0.15</span><span class="rc-lbl">רק הראשון</span></div>
         <div class="rg-h side">איחר</div>
-        <div class="rg-cell dim"><span class="rc-num">0.15</span><span class="rc-lbl">רק השני</span></div>
-        <div class="rg-cell on"><span class="rc-num">0.1</span><span class="rc-lbl">אף אחד</span></div>
+        <div class="rg-cell dim"><span class="rc-sym">P(A&#773;∩B)</span><span class="rc-num">0.15</span><span class="rc-lbl">רק השני</span></div>
+        <div class="rg-cell on"><span class="rc-sym">P(A&#773;∩B&#773;)</span><span class="rc-num">0.1</span><span class="rc-lbl">אף אחד</span></div>
       </div>
       <div class="rg-foot">העמודה המודגשת היא כל מה שנשאר אפשרי: <span class="formula-inline">0.15</span> + <span class="formula-inline">0.1</span> = <span class="formula-inline">0.25</span></div>
     </div>
@@ -2020,18 +2077,27 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
 
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">6</span>מסתכלים על התמונה המלאה</div>
-              <p>נשלים גם את שני האזורים הנותרים, כדי לראות את כל ארבעת המקרים האפשריים ולוודא שהכל מסתדר:</p>
+              <p>לפני שמחלקים, נשלים גם את שני האזורים הנותרים. זה לא הכרחי לפתרון, אבל הוא מאפשר לבדוק את עצמנו.</p>
+              <p><strong>רק השני:</strong> כל המקרים שבהם B קרה שוקלים <span class="formula-inline">0.8</span>, ומתוכם <span class="formula-inline">0.72</span> הם מקרים ששניהם קרו. ההפרש הוא המקרים שבהם רק השני קרה:</p>
+              <div class="eq-chain">
+                <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B)</span><span class="eq-rhs">= 0.8 − 0.72 = 0.08</span></div>
+              </div>
+              <p><strong>אף אחד:</strong> ארבעת האזורים מסתכמים ל-1, ולכן מה שנשאר הוא:</p>
+              <div class="eq-chain">
+                <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B&#773;)</span><span class="eq-rhs">= 1 − 0.72 − 0.08 − 0.08 = 0.12</span></div>
+              </div>
+              <p>ועכשיו כל ארבעת המקרים לפנינו:</p>
               <div class="rgrid-wrap">
       <div class="rgrid">
         <div class="rg-corner"></div>
         <div class="rg-h">הגיע שלם</div>
         <div class="rg-h">הגיע פגום</div>
         <div class="rg-h side">יצא בזמן</div>
-        <div class="rg-cell"><span class="rc-num">0.72</span><span class="rc-lbl">שניהם</span></div>
-        <div class="rg-cell"><span class="rc-num">0.08</span><span class="rc-lbl">רק הראשון</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A∩B)</span><span class="rc-num">0.72</span><span class="rc-lbl">שניהם</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A∩B&#773;)</span><span class="rc-num">0.08</span><span class="rc-lbl">רק הראשון</span></div>
         <div class="rg-h side">יצא באיחור</div>
-        <div class="rg-cell"><span class="rc-num">0.08</span><span class="rc-lbl">רק השני</span></div>
-        <div class="rg-cell"><span class="rc-num">0.12</span><span class="rc-lbl">אף אחד</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A&#773;∩B)</span><span class="rc-num">0.08</span><span class="rc-lbl">רק השני</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A&#773;∩B&#773;)</span><span class="rc-num">0.12</span><span class="rc-lbl">אף אחד</span></div>
       </div>
       <div class="rg-foot">בדיקה: כל ארבעת האזורים יחד = <span class="formula-inline">0.72</span> + <span class="formula-inline">0.08</span> + <span class="formula-inline">0.08</span> + <span class="formula-inline">0.12</span> = <span class="formula-inline">1</span></div>
     </div>
@@ -2042,11 +2108,11 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
         <div class="rg-h">הגיע שלם</div>
         <div class="rg-h">הגיע פגום</div>
         <div class="rg-h side">יצא בזמן</div>
-        <div class="rg-cell dim"><span class="rc-num">0.72</span><span class="rc-lbl">שניהם</span></div>
-        <div class="rg-cell on"><span class="rc-num">0.08</span><span class="rc-lbl">רק הראשון</span></div>
+        <div class="rg-cell dim"><span class="rc-sym">P(A∩B)</span><span class="rc-num">0.72</span><span class="rc-lbl">שניהם</span></div>
+        <div class="rg-cell on"><span class="rc-sym">P(A∩B&#773;)</span><span class="rc-num">0.08</span><span class="rc-lbl">רק הראשון</span></div>
         <div class="rg-h side">יצא באיחור</div>
-        <div class="rg-cell dim"><span class="rc-num">0.08</span><span class="rc-lbl">רק השני</span></div>
-        <div class="rg-cell on"><span class="rc-num">0.12</span><span class="rc-lbl">אף אחד</span></div>
+        <div class="rg-cell dim"><span class="rc-sym">P(A&#773;∩B)</span><span class="rc-num">0.08</span><span class="rc-lbl">רק השני</span></div>
+        <div class="rg-cell on"><span class="rc-sym">P(A&#773;∩B&#773;)</span><span class="rc-num">0.12</span><span class="rc-lbl">אף אחד</span></div>
       </div>
       <div class="rg-foot">העמודה המודגשת היא כל מה שנשאר אפשרי: <span class="formula-inline">0.08</span> + <span class="formula-inline">0.12</span> = <span class="formula-inline">0.2</span></div>
     </div>
@@ -2157,18 +2223,27 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
 
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">6</span>מסתכלים על התמונה המלאה</div>
-              <p>נשלים גם את שני האזורים הנותרים, כדי לראות את כל ארבעת המקרים האפשריים ולוודא שהכל מסתדר:</p>
+              <p>לפני שמחלקים, נשלים גם את שני האזורים הנותרים. זה לא הכרחי לפתרון, אבל הוא מאפשר לבדוק את עצמנו.</p>
+              <p><strong>רק השני:</strong> כל המקרים שבהם B קרה שוקלים <span class="formula-inline">0.65</span>, ומתוכם <span class="formula-inline">0.595</span> הם מקרים ששניהם קרו. ההפרש הוא המקרים שבהם רק השני קרה:</p>
+              <div class="eq-chain">
+                <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B)</span><span class="eq-rhs">= 0.65 − 0.595 = 0.055</span></div>
+              </div>
+              <p><strong>אף אחד:</strong> ארבעת האזורים מסתכמים ל-1, ולכן מה שנשאר הוא:</p>
+              <div class="eq-chain">
+                <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B&#773;)</span><span class="eq-rhs">= 1 − 0.595 − 0.105 − 0.055 = 0.245</span></div>
+              </div>
+              <p>ועכשיו כל ארבעת המקרים לפנינו:</p>
               <div class="rgrid-wrap">
       <div class="rgrid">
         <div class="rg-corner"></div>
         <div class="rg-h">עבר</div>
         <div class="rg-h">נכשל</div>
         <div class="rg-h side">השלים</div>
-        <div class="rg-cell"><span class="rc-num">0.595</span><span class="rc-lbl">שניהם</span></div>
-        <div class="rg-cell"><span class="rc-num">0.105</span><span class="rc-lbl">רק הראשון</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A∩B)</span><span class="rc-num">0.595</span><span class="rc-lbl">שניהם</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A∩B&#773;)</span><span class="rc-num">0.105</span><span class="rc-lbl">רק הראשון</span></div>
         <div class="rg-h side">לא השלים</div>
-        <div class="rg-cell"><span class="rc-num">0.055</span><span class="rc-lbl">רק השני</span></div>
-        <div class="rg-cell"><span class="rc-num">0.245</span><span class="rc-lbl">אף אחד</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A&#773;∩B)</span><span class="rc-num">0.055</span><span class="rc-lbl">רק השני</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A&#773;∩B&#773;)</span><span class="rc-num">0.245</span><span class="rc-lbl">אף אחד</span></div>
       </div>
       <div class="rg-foot">בדיקה: כל ארבעת האזורים יחד = <span class="formula-inline">0.595</span> + <span class="formula-inline">0.105</span> + <span class="formula-inline">0.055</span> + <span class="formula-inline">0.245</span> = <span class="formula-inline">1</span></div>
     </div>
@@ -2179,11 +2254,11 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
         <div class="rg-h">עבר</div>
         <div class="rg-h">נכשל</div>
         <div class="rg-h side">השלים</div>
-        <div class="rg-cell dim"><span class="rc-num">0.595</span><span class="rc-lbl">שניהם</span></div>
-        <div class="rg-cell on"><span class="rc-num">0.105</span><span class="rc-lbl">רק הראשון</span></div>
+        <div class="rg-cell dim"><span class="rc-sym">P(A∩B)</span><span class="rc-num">0.595</span><span class="rc-lbl">שניהם</span></div>
+        <div class="rg-cell on"><span class="rc-sym">P(A∩B&#773;)</span><span class="rc-num">0.105</span><span class="rc-lbl">רק הראשון</span></div>
         <div class="rg-h side">לא השלים</div>
-        <div class="rg-cell dim"><span class="rc-num">0.055</span><span class="rc-lbl">רק השני</span></div>
-        <div class="rg-cell on"><span class="rc-num">0.245</span><span class="rc-lbl">אף אחד</span></div>
+        <div class="rg-cell dim"><span class="rc-sym">P(A&#773;∩B)</span><span class="rc-num">0.055</span><span class="rc-lbl">רק השני</span></div>
+        <div class="rg-cell on"><span class="rc-sym">P(A&#773;∩B&#773;)</span><span class="rc-num">0.245</span><span class="rc-lbl">אף אחד</span></div>
       </div>
       <div class="rg-foot">העמודה המודגשת היא כל מה שנשאר אפשרי: <span class="formula-inline">0.105</span> + <span class="formula-inline">0.245</span> = <span class="formula-inline">0.35</span></div>
     </div>
@@ -2272,18 +2347,27 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
 
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">6</span>מסתכלים על התמונה המלאה</div>
-              <p>נשלים גם את שני האזורים הנותרים, כדי לראות את כל ארבעת המקרים האפשריים ולוודא שהכל מסתדר:</p>
+              <p>לפני שמחלקים, נשלים גם את שני האזורים הנותרים. זה לא הכרחי לפתרון, אבל הוא מאפשר לבדוק את עצמנו.</p>
+              <p><strong>רק השני:</strong> כל המקרים שבהם B קרה שוקלים <span class="formula-inline">0.5</span>, ומתוכם <span class="formula-inline">0.2</span> הם מקרים ששניהם קרו. ההפרש הוא המקרים שבהם רק השני קרה:</p>
+              <div class="eq-chain">
+                <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B)</span><span class="eq-rhs">= 0.5 − 0.2 = 0.3</span></div>
+              </div>
+              <p><strong>אף אחד:</strong> ארבעת האזורים מסתכמים ל-1, ולכן מה שנשאר הוא:</p>
+              <div class="eq-chain">
+                <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B&#773;)</span><span class="eq-rhs">= 1 − 0.2 − 0.2 − 0.3 = 0.3</span></div>
+              </div>
+              <p>ועכשיו כל ארבעת המקרים לפנינו:</p>
               <div class="rgrid-wrap">
       <div class="rgrid">
         <div class="rg-corner"></div>
         <div class="rg-h">נרשם</div>
         <div class="rg-h">לא נרשם</div>
         <div class="rg-h side">לחץ</div>
-        <div class="rg-cell"><span class="rc-num">0.2</span><span class="rc-lbl">שניהם</span></div>
-        <div class="rg-cell"><span class="rc-num">0.2</span><span class="rc-lbl">רק הראשון</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A∩B)</span><span class="rc-num">0.2</span><span class="rc-lbl">שניהם</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A∩B&#773;)</span><span class="rc-num">0.2</span><span class="rc-lbl">רק הראשון</span></div>
         <div class="rg-h side">לא לחץ</div>
-        <div class="rg-cell"><span class="rc-num">0.3</span><span class="rc-lbl">רק השני</span></div>
-        <div class="rg-cell"><span class="rc-num">0.3</span><span class="rc-lbl">אף אחד</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A&#773;∩B)</span><span class="rc-num">0.3</span><span class="rc-lbl">רק השני</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A&#773;∩B&#773;)</span><span class="rc-num">0.3</span><span class="rc-lbl">אף אחד</span></div>
       </div>
       <div class="rg-foot">בדיקה: כל ארבעת האזורים יחד = <span class="formula-inline">0.2</span> + <span class="formula-inline">0.2</span> + <span class="formula-inline">0.3</span> + <span class="formula-inline">0.3</span> = <span class="formula-inline">1</span></div>
     </div>
@@ -2294,11 +2378,11 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
         <div class="rg-h">נרשם</div>
         <div class="rg-h">לא נרשם</div>
         <div class="rg-h side">לחץ</div>
-        <div class="rg-cell dim"><span class="rc-num">0.2</span><span class="rc-lbl">שניהם</span></div>
-        <div class="rg-cell on"><span class="rc-num">0.2</span><span class="rc-lbl">רק הראשון</span></div>
+        <div class="rg-cell dim"><span class="rc-sym">P(A∩B)</span><span class="rc-num">0.2</span><span class="rc-lbl">שניהם</span></div>
+        <div class="rg-cell on"><span class="rc-sym">P(A∩B&#773;)</span><span class="rc-num">0.2</span><span class="rc-lbl">רק הראשון</span></div>
         <div class="rg-h side">לא לחץ</div>
-        <div class="rg-cell dim"><span class="rc-num">0.3</span><span class="rc-lbl">רק השני</span></div>
-        <div class="rg-cell on"><span class="rc-num">0.3</span><span class="rc-lbl">אף אחד</span></div>
+        <div class="rg-cell dim"><span class="rc-sym">P(A&#773;∩B)</span><span class="rc-num">0.3</span><span class="rc-lbl">רק השני</span></div>
+        <div class="rg-cell on"><span class="rc-sym">P(A&#773;∩B&#773;)</span><span class="rc-num">0.3</span><span class="rc-lbl">אף אחד</span></div>
       </div>
       <div class="rg-foot">העמודה המודגשת היא כל מה שנשאר אפשרי: <span class="formula-inline">0.2</span> + <span class="formula-inline">0.3</span> = <span class="formula-inline">0.5</span></div>
     </div>
@@ -2387,18 +2471,27 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
 
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">6</span>מסתכלים על התמונה המלאה</div>
-              <p>נשלים גם את שני האזורים הנותרים, כדי לראות את כל ארבעת המקרים האפשריים ולוודא שהכל מסתדר:</p>
+              <p>לפני שמחלקים, נשלים גם את שני האזורים הנותרים. זה לא הכרחי לפתרון, אבל הוא מאפשר לבדוק את עצמנו.</p>
+              <p><strong>רק השני:</strong> כל המקרים שבהם B קרה שוקלים <span class="formula-inline">0.3</span>, ומתוכם <span class="formula-inline">0.21</span> הם מקרים ששניהם קרו. ההפרש הוא המקרים שבהם רק השני קרה:</p>
+              <div class="eq-chain">
+                <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B)</span><span class="eq-rhs">= 0.3 − 0.21 = 0.09</span></div>
+              </div>
+              <p><strong>אף אחד:</strong> ארבעת האזורים מסתכמים ל-1, ולכן מה שנשאר הוא:</p>
+              <div class="eq-chain">
+                <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B&#773;)</span><span class="eq-rhs">= 1 − 0.21 − 0.49 − 0.09 = 0.21</span></div>
+              </div>
+              <p>ועכשיו כל ארבעת המקרים לפנינו:</p>
               <div class="rgrid-wrap">
       <div class="rgrid">
         <div class="rg-corner"></div>
         <div class="rg-h">הגיש הצעה</div>
         <div class="rg-h">לא הגיש</div>
         <div class="rg-h side">סייר</div>
-        <div class="rg-cell"><span class="rc-num">0.21</span><span class="rc-lbl">שניהם</span></div>
-        <div class="rg-cell"><span class="rc-num">0.49</span><span class="rc-lbl">רק הראשון</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A∩B)</span><span class="rc-num">0.21</span><span class="rc-lbl">שניהם</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A∩B&#773;)</span><span class="rc-num">0.49</span><span class="rc-lbl">רק הראשון</span></div>
         <div class="rg-h side">לא סייר</div>
-        <div class="rg-cell"><span class="rc-num">0.09</span><span class="rc-lbl">רק השני</span></div>
-        <div class="rg-cell"><span class="rc-num">0.21</span><span class="rc-lbl">אף אחד</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A&#773;∩B)</span><span class="rc-num">0.09</span><span class="rc-lbl">רק השני</span></div>
+        <div class="rg-cell"><span class="rc-sym">P(A&#773;∩B&#773;)</span><span class="rc-num">0.21</span><span class="rc-lbl">אף אחד</span></div>
       </div>
       <div class="rg-foot">בדיקה: כל ארבעת האזורים יחד = <span class="formula-inline">0.21</span> + <span class="formula-inline">0.49</span> + <span class="formula-inline">0.09</span> + <span class="formula-inline">0.21</span> = <span class="formula-inline">1</span></div>
     </div>
@@ -2409,11 +2502,11 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
         <div class="rg-h">הגיש הצעה</div>
         <div class="rg-h">לא הגיש</div>
         <div class="rg-h side">סייר</div>
-        <div class="rg-cell dim"><span class="rc-num">0.21</span><span class="rc-lbl">שניהם</span></div>
-        <div class="rg-cell on"><span class="rc-num">0.49</span><span class="rc-lbl">רק הראשון</span></div>
+        <div class="rg-cell dim"><span class="rc-sym">P(A∩B)</span><span class="rc-num">0.21</span><span class="rc-lbl">שניהם</span></div>
+        <div class="rg-cell on"><span class="rc-sym">P(A∩B&#773;)</span><span class="rc-num">0.49</span><span class="rc-lbl">רק הראשון</span></div>
         <div class="rg-h side">לא סייר</div>
-        <div class="rg-cell dim"><span class="rc-num">0.09</span><span class="rc-lbl">רק השני</span></div>
-        <div class="rg-cell on"><span class="rc-num">0.21</span><span class="rc-lbl">אף אחד</span></div>
+        <div class="rg-cell dim"><span class="rc-sym">P(A&#773;∩B)</span><span class="rc-num">0.09</span><span class="rc-lbl">רק השני</span></div>
+        <div class="rg-cell on"><span class="rc-sym">P(A&#773;∩B&#773;)</span><span class="rc-num">0.21</span><span class="rc-lbl">אף אחד</span></div>
       </div>
       <div class="rg-foot">העמודה המודגשת היא כל מה שנשאר אפשרי: <span class="formula-inline">0.49</span> + <span class="formula-inline">0.21</span> = <span class="formula-inline">0.7</span></div>
     </div>
@@ -2438,6 +2531,63 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
         </details>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<section id="summary">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">סיכום</span>
+      <h2>כל תת-הפרק, על עמוד אחד</h2>
+      <p class="sub">אם תזכרו רק דבר אחד מהשיעור הזה, שיהיה הדף הזה. הוא מספיק כדי לפתור כל שאלה מהסוג שראינו.</p>
+    </div>
+
+    <div class="story-card">
+      <div class="tstep" style="border-inline-start-color:var(--accent);margin-bottom:.7rem">
+        <div class="tstep-head"><span class="tstep-num">1</span>מזהים ומסמנים</div>
+        <ul class="tstep-lines">
+          <li>נותנים שם לשני המאורעות: <span class="formula-inline">A</span> ו-<span class="formula-inline">B</span>.</li>
+          <li>קו עליון פירושו "לא קרה": <span class="formula-inline">A&#773;</span>, <span class="formula-inline">B&#773;</span>.</li>
+          <li>רושמים את שלושת הנתונים בסימונים.</li>
+        </ul>
+      </div>
+
+      <div class="tstep" style="margin-bottom:.7rem">
+        <div class="tstep-head"><span class="tstep-num">2</span>מבינים מה ידוע ומה מחפשים</div>
+        <ul class="tstep-lines">
+          <li class="key">מה שכתוב אחרי הקו <span class="formula-inline">|</span> הוא הידוע, והוא תמיד יושב במכנה.</li>
+          <li>אם ידוע שהשני לא קרה, מחפשים <span class="formula-inline">P(A|B&#773;)</span>.</li>
+          <li>הכיוון חשוב: <span class="formula-inline">P(A|B)</span> ו-<span class="formula-inline">P(B|A)</span> הם מספרים שונים.</li>
+        </ul>
+      </div>
+
+      <div class="tstep" style="margin-bottom:.7rem">
+        <div class="tstep-head"><span class="tstep-num">3</span>בונים את ארבעת האזורים</div>
+        <ul class="tstep-lines">
+          <li>קודם החיתוך, בכלל הכפל: <span class="formula-inline">P(A∩B) = P(A) × P(B|A)</span>.</li>
+          <li>רק הראשון: <span class="formula-inline">P(A∩B&#773;) = P(A) − P(A∩B)</span>.</li>
+          <li>רק השני: <span class="formula-inline">P(A&#773;∩B) = P(B) − P(A∩B)</span>.</li>
+          <li>אף אחד: מה שנשאר עד 1.</li>
+          <li class="key">בדיקה: ארבעת האזורים מסתכמים ל-1.</li>
+        </ul>
+      </div>
+
+      <div class="tstep">
+        <div class="tstep-head"><span class="tstep-num">4</span>מחלקים</div>
+        <ul class="tstep-lines">
+          <li>המכנה: ההסתברות של התנאי הידוע.</li>
+          <li>המונה: האזור שמקיים גם את התנאי וגם את השאלה.</li>
+          <li class="key">התשובה: מונה חלקי מכנה.</li>
+        </ul>
+      </div>
+
+      <div class="formula-box" style="margin-top:1.2rem">
+        <div class="big">P(A|B&#773;) = P(A∩B&#773;) ÷ P(B&#773;)</div>
+        <div class="cap">המונה הוא הסיכוי שהראשון קרה והשני לא. המכנה הוא הסיכוי שהשני לא קרה.</div>
+      </div>
+
+      <p style="margin-top:1rem"><strong>והרעיון במשפט אחד:</strong> מידע חדש מצמצם את העולם. במקום להסתכל על כל המקרים, מסתכלים רק על אלה שמתאימים למידע, ובודקים איזה חלק מהם מעניין אותנו.</p>
     </div>
   </div>
 </section>
