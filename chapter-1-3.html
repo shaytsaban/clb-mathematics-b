@@ -690,6 +690,27 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
 @media (prefers-reduced-motion: reduce){.rg-cell{transition:none;}}
 .tree-cap-step{transition:opacity .35s ease;}
 .tree-cap-step.tree-hidden{display:none;}
+.tsteps{margin-top:1rem;display:flex;flex-direction:column;gap:.55rem;}
+.tstep{
+  background:var(--paper-sunken);border:1px solid var(--border);
+  border-inline-start:3px solid var(--accent);
+  border-radius:0 10px 10px 0;padding:.85rem 1.05rem;text-align:start;
+}
+.tstep-head{display:flex;align-items:center;gap:.55rem;font-weight:700;font-size:.93rem;color:var(--ink);margin-bottom:.5rem;}
+.tstep-num{
+  flex:0 0 auto;width:1.5rem;height:1.5rem;border-radius:50%;
+  background:var(--accent);color:var(--paper-raised);
+  font-family:var(--font-mono);font-size:.78rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+.tstep-lines{list-style:none;display:flex;flex-direction:column;gap:.32rem;}
+.tstep-lines li{
+  font-size:.87rem;color:var(--ink-soft);line-height:1.55;
+  padding-inline-start:.95rem;position:relative;
+}
+.tstep-lines li::before{content:"▪";position:absolute;inset-inline-start:0;color:var(--accent);font-size:.7em;top:.32em;}
+.tstep-lines li strong{color:var(--ink);}
+.tstep-lines li.key{color:var(--ink);font-weight:600;}
 .sol-step{border-top:1px solid var(--border);padding-top:.9rem;margin-top:.2rem;}
 .sol-step:first-child{border-top:none;padding-top:0;}
 .ss-head{display:flex;align-items:center;gap:.55rem;font-weight:700;font-size:.93rem;color:var(--ink);margin-bottom:.5rem;}
@@ -1065,16 +1086,82 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
       </svg>
     </div>
 
-    <div class="venn-captions">
-      <p class="venn-cap tree-cap-step" data-step="1"><strong>צעד 1.</strong> מתחילים מנקודה אחת בראש העץ. הנקודה הזו מייצגת את <strong>כל</strong> הריצות האפשריות של שני החברים, כלומר 100% מהמקרים. עוד לא קרה כלום, ואנחנו לא יודעים שום דבר.</p>
-      <p class="venn-cap tree-cap-step" data-step="2"><strong>צעד 2.</strong> הדבר הראשון שקורה ביום המירוץ: חבר א׳ או מצליח, או לא. לכן העץ מתפצל לשני ענפים. שימו לב שאין אפשרות שלישית, ולכן שני ענפים בדיוק מכסים את כל המקרים.</p>
-      <p class="venn-cap tree-cap-step" data-step="3"><strong>צעד 3.</strong> עכשיו כותבים על כל ענף כמה סביר לרדת בו. נתון לנו ש-<span class="formula-inline">P(A) = 0.8</span>, ולכן על הענף הימני כתוב 0.8. מה שנשאר, <span class="formula-inline">1 − 0.8 = 0.2</span>, הולך לענף השמאלי. שני המספרים על אותה התפצלות תמיד מסתכמים ל-1.</p>
-      <p class="venn-cap tree-cap-step" data-step="4"><strong>צעד 4.</strong> נרד עכשיו בענף הימני, זה שבו חבר א׳ הצליח, ונשאל: מה קורה לחבר ב׳? גם כאן שתי אפשרויות בלבד, ולכן העץ מתפצל שוב.</p>
-      <p class="venn-cap tree-cap-step" data-step="5"><strong>צעד 5.</strong> וכאן הנקודה החשובה ביותר בעץ כולו. המספר 0.9 שכתוב על הענף הוא <span class="formula-inline">P(B|A)</span>, כלומר הסיכוי של חבר ב׳ <strong>בעולם המצומצם שבו כבר ידוע שחבר א׳ הצליח</strong>. זו לא ההסתברות הרגילה שלו (שהיא 0.75), אלא הסתברות מעודכנת. המשלים, 0.1, הוא הסיכוי שחבר ב׳ לא יצליח באותו עולם מצומצם.</p>
-      <p class="venn-cap tree-cap-step" data-step="6"><strong>צעד 6.</strong> כדי לדעת כמה שוקל כל מסלול שלם, מכפילים את המספרים לאורך הדרך מהשורש ועד הסוף. זהו בדיוק כלל הכפל: <span class="formula-inline">0.8 × 0.9 = 0.72</span> לשני שהצליחו, ו-<span class="formula-inline">0.8 × 0.1 = 0.08</span> למקרה שרק חבר א׳ הצליח.</p>
-      <p class="venn-cap tree-cap-step" data-step="7"><strong>צעד 7.</strong> אותו דבר בענף השמאלי, זה שבו חבר א׳ לא הצליח. שם מתקבלים שני המסלולים הנותרים: 0.03 למקרה שרק חבר ב׳ הצליח, ו-0.17 למקרה שאף אחד מהם לא הצליח.</p>
-      <p class="venn-cap tree-cap-step" data-step="8"><strong>צעד 8.</strong> וזהו, העץ שלם. יש בסך הכל ארבעה מסלולים, והם מכסים את כל מה שיכול לקרות. לכן ארבעת המספרים חייבים להסתכם בדיוק ל-1, וזו בדיקה מצוינת שכדאי לעשות תמיד.</p>
+    <div class="tsteps">
+      <div class="tstep tree-cap-step" data-step="1">
+        <div class="tstep-head"><span class="tstep-num">1</span>נקודת ההתחלה</div>
+        <ul class="tstep-lines">
+          <li>נקודה אחת בראש העץ.</li>
+          <li>היא מייצגת את כל הריצות האפשריות.</li>
+          <li class="key">משקלה: 100% מהמקרים.</li>
+          <li>עדיין לא ידוע לנו דבר.</li>
+        </ul>
+      </div>
+      <div class="tstep tree-cap-step" data-step="2">
+        <div class="tstep-head"><span class="tstep-num">2</span>ההתפצלות הראשונה</div>
+        <ul class="tstep-lines">
+          <li>הדבר הראשון שקורה: חבר א׳ מצליח, או לא.</li>
+          <li>שתי אפשרויות בלבד, ולכן שני ענפים.</li>
+          <li>אין אפשרות שלישית.</li>
+          <li class="key">שני הענפים יחד מכסים את כל המקרים.</li>
+        </ul>
+      </div>
+      <div class="tstep tree-cap-step" data-step="3">
+        <div class="tstep-head"><span class="tstep-num">3</span>המספרים על הענפים</div>
+        <ul class="tstep-lines">
+          <li>נתון: <span class="formula-inline">P(A) = 0.8</span>.</li>
+          <li>לכן על הענף הימני נכתוב 0.8.</li>
+          <li>הנותר: <span class="formula-inline">1 − 0.8 = 0.2</span>, לענף השמאלי.</li>
+          <li class="key">בכל התפצלות, סכום הענפים הוא 1.</li>
+        </ul>
+      </div>
+      <div class="tstep tree-cap-step" data-step="4">
+        <div class="tstep-head"><span class="tstep-num">4</span>ההתפצלות השנייה</div>
+        <ul class="tstep-lines">
+          <li>ממשיכים בענף שבו חבר א׳ הצליח.</li>
+          <li>שם שואלים: מה קורה לחבר ב׳?</li>
+          <li>שוב שתי אפשרויות בלבד.</li>
+          <li>לכן העץ מתפצל פעם נוספת.</li>
+        </ul>
+      </div>
+      <div class="tstep tree-cap-step" data-step="5">
+        <div class="tstep-head"><span class="tstep-num">5</span>ההסתברות המותנית</div>
+        <ul class="tstep-lines">
+          <li class="key">זו הנקודה החשובה בעץ כולו.</li>
+          <li>המספר 0.9 שעל הענף הוא <span class="formula-inline">P(B|A)</span>.</li>
+          <li>כלומר: הסיכוי של ב׳, בתוך העולם שבו א׳ כבר הצליח.</li>
+          <li class="key">זו איננה ההסתברות הרגילה שלו, שהיא <span class="formula-inline">P(B) = 0.75</span>.</li>
+          <li>המשלים: <span class="formula-inline">1 − 0.9 = 0.1</span>.</li>
+        </ul>
+      </div>
+      <div class="tstep tree-cap-step" data-step="6">
+        <div class="tstep-head"><span class="tstep-num">6</span>כלל הכפל בפעולה</div>
+        <ul class="tstep-lines">
+          <li class="key">משקל מסלול שלם = מכפלת המספרים לאורכו.</li>
+          <li>שניהם הצליחו: <span class="formula-inline">0.8 × 0.9 = 0.72</span>.</li>
+          <li>רק חבר א׳ הצליח: <span class="formula-inline">0.8 × 0.1 = 0.08</span>.</li>
+          <li>זהו בדיוק כלל הכפל שראינו קודם.</li>
+        </ul>
+      </div>
+      <div class="tstep tree-cap-step" data-step="7">
+        <div class="tstep-head"><span class="tstep-num">7</span>הענף השני</div>
+        <ul class="tstep-lines">
+          <li>אותו רעיון בענף שבו חבר א׳ לא הצליח.</li>
+          <li>רק חבר ב׳ הצליח: <span class="formula-inline">0.75 − 0.72 = 0.03</span>.</li>
+          <li>אף אחד לא הצליח: הנותר, 0.17.</li>
+          <li class="key">ארבעת המסלולים הושלמו.</li>
+        </ul>
+      </div>
+      <div class="tstep tree-cap-step" data-step="8">
+        <div class="tstep-head"><span class="tstep-num">8</span>בדיקת הסכום</div>
+        <ul class="tstep-lines">
+          <li>יש ארבעה מסלולים, ולא יותר.</li>
+          <li>הם מכסים את כל מה שיכול לקרות.</li>
+          <li class="key">לכן: <span class="formula-inline">0.72 + 0.08 + 0.03 + 0.17 = 1</span>.</li>
+          <li>בדיקה זו כדאית תמיד, בסוף כל חישוב.</li>
+        </ul>
+      </div>
     </div>
+
 
   </div>
 </section>
