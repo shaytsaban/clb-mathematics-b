@@ -743,7 +743,7 @@ table.jt{border-collapse:collapse;margin-inline:auto;min-width:min(100%,420px);}
   <div class="wrap">
     <span class="eyebrow">פרק 1 · תת-פרק 1.6</span>
     <h1>שאלות מסכמות: כל חמשת הכלים ברצף אחד</h1>
-    <p class="lede">חמשת תת-הפרקים נתנו לנו חמישה כלים, וכל אחד תורגל בנפרד. עכשיו הרמה האמיתית: שאלה אחת מלאה, חמישה סעיפים ברצף, בדיוק במתכונת ובניסוח שתפגשו בהמשך. שלוש שאלות כאלה, עם פתרון מלא לכל סעיף.</p>
+    <p class="lede">חמשת תת-הפרקים נתנו לנו חמישה כלים, וכל אחד תורגל בנפרד. עכשיו הרמה האמיתית: שאלה אחת מלאה, חמישה סעיפים ברצף, בדיוק במתכונת ובניסוח שתפגשו בהמשך. שמונה שאלות כאלה, עם פתרון מלא לכל סעיף.</p>
 
     <div class="meet-tsaban">
       <svg viewBox="0 0 100 100" role="img" aria-label="ד״ר צבאן"><use href="#tsabanFace"/></svg>
@@ -832,9 +832,9 @@ table.jt{border-collapse:collapse;margin-inline:auto;min-width:min(100%,420px);}
 <section id="questions">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num">שלוש שאלות מסכמות</span>
+      <span class="sec-num">שמונה שאלות מסכמות</span>
       <h2>מתכונת מלאה: חמישה סעיפים בכל שאלה</h2>
-      <p class="sub">שימו לב לשאלה 2: היא מסתירה הפתעה שמתגלה רק בסעיף ה׳.</p>
+      <p class="sub">שימו לב לשאלות 2 ו-4: הן מסתירות הפתעה שמתגלה רק בסעיף ה׳. ובשאלה 7 מחכה הפתעה מסוג אחר לגמרי.</p>
     </div>
 
     <div class="story-card" style="margin-bottom:2rem">
@@ -1531,6 +1531,1091 @@ table.jt{border-collapse:collapse;margin-inline:auto;min-width:min(100%,420px);}
       </details>
     </div>
 
+    <div class="story-card" style="margin-bottom:2rem">
+      <div class="def-term"><span class="n">4</span><h4>ספק הקמח והתנור הוותיק</h4></div>
+      <p>מאפייה שכונתית מתחילה כל בוקר בשתי אי-ודאויות נפרדות. משלוח הקמח תלוי בעומס אצל הספק, ואילו התנור הוותיק תלוי במערכת החשמל הישנה של הבניין. ההסתברות שמשלוח הקמח יגיע עד שש בבוקר הינה 0.6, וההסתברות שהתנור יידלק בהצתה הראשונה הינה 0.5. כמו כן ידוע, שבהינתן שהמשלוח הגיע עד שש, התנור יידלק בהצתה הראשונה בהסתברות 0.5.</p>
+      <p style="margin-top:.6rem"><strong>ענו על הסעיפים הבאים תוך הצגת דרך הפתרון על ידי שימוש בנוסחאות המתאימות:</strong></p>
+      <p><strong>סעיף א׳:</strong> מה ההסתברות ששני המאורעות יתרחשו יחד?</p>
+      <p><strong>סעיף ב׳:</strong> מה ההסתברות שבדיוק מאורע אחד מהשניים יתרחש?</p>
+      <p><strong>סעיף ג׳:</strong> ידוע שהמאורע השני לא התרחש. מה ההסתברות שהראשון בכל זאת התרחש?</p>
+      <p><strong>סעיף ד׳:</strong> ידוע שהמאורע הראשון לא התרחש. מה ההסתברות שגם השני לא התרחש?</p>
+      <p><strong>סעיף ה׳:</strong> בדקו האם יש תלות או חוסר תלות בין הגעת המשלוח לבין הצתת התנור. הציגו דרך.</p>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">🌳 שלב מקדים מומלץ: בונים את העץ והמפה, פעם אחת</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="identify">מזהים: <span class="formula-inline">A</span> = משלוח הקמח מגיע עד שש, <span class="formula-inline">B</span> = התנור נדלק בהצתה הראשונה. נתון: <span class="formula-inline">P(A) = 0.6</span>, <span class="formula-inline">P(B) = 0.5</span>, <span class="formula-inline">P(B|A) = 0.5</span>.</div>
+          <div class="mini-tree" style="width:min(100%,560px);align-self:center;margin-bottom:.7rem">
+              <svg viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="העץ המלא של השאלה, ארבעה עלים">
+                <text x="280" y="16" text-anchor="middle" font-family="var(--font-body)" font-size="12.5" font-weight="700" fill="var(--ink)">בוקר במאפייה</text>
+                <circle cx="280" cy="30" r="5" fill="var(--ink-soft)"/>
+                <line x1="280" y1="30" x2="420" y2="95" stroke="var(--accent)" stroke-width="2.2"/>
+                <rect x="335" y="48" width="46" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="358.0" y="60" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" font-weight="700" fill="var(--accent-strong)">60%</text>
+                <circle cx="420" cy="99" r="5" fill="var(--accent)"/>
+                <text x="420" y="86" text-anchor="middle" font-family="var(--font-body)" font-size="11" font-weight="700" fill="var(--ink)">המשלוח הגיע</text>
+                <line x1="280" y1="30" x2="140" y2="95" stroke="var(--accent)" stroke-width="2.2"/>
+                <rect x="179" y="48" width="46" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="202.0" y="60" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" font-weight="700" fill="var(--accent-strong)">40%</text>
+                <circle cx="140" cy="99" r="5" fill="var(--accent)"/>
+                <text x="140" y="86" text-anchor="middle" font-family="var(--font-body)" font-size="11" font-weight="700" fill="var(--ink)">המשלוח התעכב</text>
+                <line x1="420" y1="99" x2="490" y2="170" stroke="var(--accent)" stroke-width="2"/>
+                <rect x="452" y="118" width="44" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="474.0" y="130" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" font-weight="700" fill="var(--accent-strong)">50%</text>
+                <circle cx="490" cy="174" r="4.5" fill="var(--accent)"/><text x="490" y="194" text-anchor="middle" font-family="var(--font-body)" font-size="10" fill="var(--ink-soft)">התנור נדלק</text><text x="490" y="208" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.3</text>
+                <line x1="420" y1="99" x2="360" y2="170" stroke="rgba(var(--muted-rgb),0.55)" stroke-width="1.5"/>
+                <rect x="366" y="118" width="44" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="388.0" y="130" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-faint)">50%</text>
+                <circle cx="360" cy="174" r="4" fill="rgba(var(--muted-rgb),0.75)"/><text x="360" y="194" text-anchor="middle" font-family="var(--font-body)" font-size="10" fill="var(--ink-faint)">התנור לא נדלק</text><text x="360" y="208" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.3</text>
+                <line x1="140" y1="99" x2="200" y2="170" stroke="rgba(var(--muted-rgb),0.55)" stroke-width="1.5"/>
+                <rect x="152" y="118" width="46" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="175.0" y="130" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-faint)">50%</text>
+                <circle cx="200" cy="174" r="4" fill="rgba(var(--muted-rgb),0.75)"/><text x="200" y="194" text-anchor="middle" font-family="var(--font-body)" font-size="10" fill="var(--ink-faint)">התנור נדלק</text><text x="200" y="208" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.2</text>
+                <line x1="140" y1="99" x2="70" y2="170" stroke="var(--accent)" stroke-width="2"/>
+                <rect x="62" y="118" width="46" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="85.0" y="130" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" font-weight="700" fill="var(--accent-strong)">50%</text>
+                <circle cx="70" cy="174" r="4.5" fill="var(--accent)"/><text x="70" y="194" text-anchor="middle" font-family="var(--font-body)" font-size="10" fill="var(--ink-soft)">התנור לא נדלק</text><text x="70" y="208" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.2</text>
+                <text x="280" y="238" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.3 + 0.3 + 0.2 + 0.2 = 1</text>
+              </svg>
+              <div class="mini-tree-cap">
+                <span class="k">על הענפים: הסתברויות מותנות · מתחת לעלים: משקלים משותפים</span>
+              </div>
+            </div>
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">כלל הכפל מ-1.1: שני המאורעות קרו יחד</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B) = P(A) × P(B|A)</div>
+      <div class="d-num">= 0.6 × 0.5 = <mark class="vv vv-ab">0.3</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">"רק A": מכל A מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B&#773;) = P(A) − P(A∩B)</div>
+      <div class="d-num">= 0.6 − <mark class="vv vv-ab">0.3</mark> = <mark class="vv vv-anb">0.3</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">"רק B": מכל B מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B) = P(B) − P(A∩B)</div>
+      <div class="d-num">= 0.5 − <mark class="vv vv-ab">0.3</mark> = <mark class="vv vv-nab">0.2</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">אף אחד מהשניים: ארבעת האזורים מסתכמים ל-1</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B&#773;) = 1 − P(A∩B) − P(A∩B&#773;) − P(A&#773;∩B)</div>
+      <div class="d-num">= 1 − <mark class="vv vv-ab">0.3</mark> − <mark class="vv vv-anb">0.3</mark> − <mark class="vv vv-nab">0.2</mark> = <mark class="vv vv-nanb">0.2</mark></div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">מכאן והלאה, כל סעיף הוא שליפה מהמפה הזו.</div>
+
+    <div class="jt-wrap">
+      <div class="jt-title">🗺️ אותה מפה, בטבלה אחת</div>
+      <p class="jt-lead">ארבעת התאים הפנימיים הם ארבעת האזורים, באותם צבעים כמו בשורות החישוב. כל שורה וכל עמודה מסתכמות לשוליים שלהן, והכל יחד מסתכם ל-1.</p>
+      <div class="jt-scroll"><table class="jt">
+        <tr><th></th><th><span class="jt-sym">A</span> קרה</th><th><span class="jt-sym">A&#773;</span> לא קרה</th><th>סה״כ</th></tr>
+        <tr><th><span class="jt-sym">B</span> קרה</th><td class="c-ab">0.3</td><td class="c-nab">0.2</td><td class="mrg">0.5</td></tr>
+        <tr><th><span class="jt-sym">B&#773;</span> לא קרה</th><td class="c-anb">0.3</td><td class="c-nanb">0.2</td><td class="mrg">0.5</td></tr>
+        <tr><th>סה״כ</th><td class="mrg">0.6</td><td class="mrg">0.4</td><td>1</td></tr>
+      </table></div>
+      <div class="jt-note">כל אחד מהסעיפים הבאים הוא שליפה של תא אחד או שניים מהטבלה הזו.</div>
+    </div>
+        </div>
+      </details>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">פתרון סעיף א׳: שני המאורעות יחד</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="deriv">
+<div class="d-guide">התא הצבוע כאן הוא בדיוק התא המשותף מהמפה שבסעיף הקודם.</div>
+    <div class="d-row result">
+      <div class="d-name">כלל הכפל מ-1.1: שני המאורעות קרו יחד</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B) = P(A) × P(B|A)</div>
+      <div class="d-num">= 0.6 × 0.5 = <mark class="vv vv-ab">0.3</mark></div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">כלל הכפל מ-1.1. הסיכוי ששני המאורעות יתרחשו יחד: 30%.</div>
+        </div>
+      </details>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">פתרון סעיף ב׳: בדיוק אחד מהשניים</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">"רק A": מכל A מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B&#773;) = P(A) − P(A∩B)</div>
+      <div class="d-num">= 0.6 − <mark class="vv vv-ab">0.3</mark> = <mark class="vv vv-anb">0.3</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">"רק B": מכל B מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B) = P(B) − P(A∩B)</div>
+      <div class="d-num">= 0.5 − <mark class="vv vv-ab">0.3</mark> = <mark class="vv vv-nab">0.2</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">בדיוק אחד מהשניים: מחברים את שני אזורי ה"רק", כמו ב-1.2</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B&#773;) + P(A&#773;∩B)</div>
+      <div class="d-num">= <mark class="vv vv-anb">0.3</mark> + <mark class="vv vv-nab">0.2</mark> = 0.5</div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">שני אזורי ה"רק" מ-1.2, ומחברים. הסיכוי שבדיוק אחד יתרחש: 50%.</div>
+        </div>
+      </details>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">פתרון סעיף ג׳: הראשון, בהינתן שהשני לא</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">המשלים מ-1.2: הסיכוי ש-B לא קרה</div>
+      <div class="d-math">
+      <div class="d-sym">P(B&#773;) = 1 − P(B)</div>
+      <div class="d-num">= 1 − 0.5 = <mark class="vv vv-nb">0.5</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">ההגדרה מ-1.3: החלק המבוקש חלקי התנאי הידוע. המונה, "רק A", מגיע מהמפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A|B&#773;) = P(A∩B&#773;) ÷ P(B&#773;)</div>
+      <div class="d-num">= <mark class="vv vv-anb">0.3</mark> ÷ <mark class="vv vv-nb">0.5</mark> = 0.6</div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">היפוך ההתניה מ-1.3: התנאי במכנה, החיתוך איתו במונה. התשובה: 60%.</div>
+        </div>
+      </details>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">פתרון סעיף ד׳: גם השני לא, בהינתן שהראשון לא</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">המשלים מ-1.2: הסיכוי ש-A לא קרה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;) = 1 − P(A)</div>
+      <div class="d-num">= 1 − 0.6 = <mark class="vv vv-na">0.4</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">ההגדרה מ-1.3. המונה, "אף אחד מהשניים", מגיע מהמפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(B&#773;|A&#773;) = P(A&#773;∩B&#773;) ÷ P(A&#773;)</div>
+      <div class="d-num">= <mark class="vv vv-nanb">0.2</mark> ÷ <mark class="vv vv-na">0.4</mark> = 0.5</div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">ענף הכישלון מ-1.4: אזור "אף אחד" חלקי המשלים של הראשון. התשובה: 50%.</div>
+        </div>
+      </details>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">פתרון סעיף ה׳: בדיקת תלות</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים:</strong> שני המספרים מגיעים ישירות מהנתונים, בלי שום חישוב. כל הבדיקה היא ההשוואה ביניהם בשורה השלישית.</div>
+    <div class="d-row">
+      <div class="d-name">הנתון המותנה: הסיכוי של B כשידוע ש-A קרה</div>
+      <div class="d-math">
+      <div class="d-num">P(B|A) = 0.5</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">הנתון הכללי: הסיכוי של B בלי שום מידע על A</div>
+      <div class="d-math">
+      <div class="d-num">P(B) = 0.5</div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">הבדיקה של 1.5: משווים בין השניים. המספרים שווים, ולכן המאורעות בלתי תלויים</div>
+      <div class="d-math">
+      <div class="d-sym">P(B|A) ↔ P(B)</div>
+      <div class="d-num">0.5 = 0.5</div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">ההשוואה מ-1.5. המסקנה: המאורעות <strong>בלתי תלויים</strong>. וזה מסתדר עם הסיפור: הספק ומערכת החשמל הם שני עולמות נפרדים. שימו לב שגם כאן, כמו בשאלה 2, התשובות של סעיפים ג׳ ו-ד׳ "מתיישרות": <span class="formula-inline">P(A|B&#773;) = 0.6 = P(A)</span> וגם <span class="formula-inline">P(B&#773;|A&#773;) = 0.5 = P(B&#773;)</span>.</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="story-card" style="margin-bottom:2rem">
+      <div class="def-term"><span class="n">5</span><h4>ההמראה והמסוע</h4></div>
+      <p>חברת תעופה עוקבת אחרי שני מדדי שירות בטיסת הבוקר: המראה בזמן והגעת הכבודה. שני המדדים תלויים באותו צוות קרקע, ולכן בוקר מסודר עוזר לשניהם. ההסתברות שהטיסה תמריא בזמן הינה 0.8, וההסתברות שהכבודה תגיע למסוע תוך עשרים דקות הינה 0.6. כמו כן ידוע, שבהינתן שהטיסה המריאה בזמן, הכבודה תגיע למסוע תוך עשרים דקות בהסתברות 0.7.</p>
+      <p style="margin-top:.6rem"><strong>ענו על הסעיפים הבאים תוך הצגת דרך הפתרון על ידי שימוש בנוסחאות המתאימות:</strong></p>
+      <p><strong>סעיף א׳:</strong> מה ההסתברות ששני המאורעות יתרחשו יחד?</p>
+      <p><strong>סעיף ב׳:</strong> מה ההסתברות שבדיוק מאורע אחד מהשניים יתרחש?</p>
+      <p><strong>סעיף ג׳:</strong> ידוע שהמאורע השני לא התרחש. מה ההסתברות שהראשון בכל זאת התרחש?</p>
+      <p><strong>סעיף ד׳:</strong> ידוע שהמאורע הראשון לא התרחש. מה ההסתברות שגם השני לא התרחש?</p>
+      <p><strong>סעיף ה׳:</strong> בדקו האם יש תלות או חוסר תלות בין מועד ההמראה לבין הגעת הכבודה. הציגו דרך.</p>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">🌳 שלב מקדים מומלץ: בונים את העץ והמפה, פעם אחת</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="identify">מזהים: <span class="formula-inline">A</span> = הטיסה ממריאה בזמן, <span class="formula-inline">B</span> = הכבודה מגיעה למסוע תוך עשרים דקות. נתון: <span class="formula-inline">P(A) = 0.8</span>, <span class="formula-inline">P(B) = 0.6</span>, <span class="formula-inline">P(B|A) = 0.7</span>.</div>
+          <div class="mini-tree" style="width:min(100%,560px);align-self:center;margin-bottom:.7rem">
+              <svg viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="העץ המלא של השאלה, ארבעה עלים">
+                <text x="280" y="16" text-anchor="middle" font-family="var(--font-body)" font-size="12.5" font-weight="700" fill="var(--ink)">בוקר בשדה התעופה</text>
+                <circle cx="280" cy="30" r="5" fill="var(--ink-soft)"/>
+                <line x1="280" y1="30" x2="420" y2="95" stroke="var(--accent)" stroke-width="2.2"/>
+                <rect x="335" y="48" width="46" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="358.0" y="60" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" font-weight="700" fill="var(--accent-strong)">80%</text>
+                <circle cx="420" cy="99" r="5" fill="var(--accent)"/>
+                <text x="420" y="86" text-anchor="middle" font-family="var(--font-body)" font-size="11" font-weight="700" fill="var(--ink)">ההמראה בזמן</text>
+                <line x1="280" y1="30" x2="140" y2="95" stroke="var(--accent)" stroke-width="2.2"/>
+                <rect x="179" y="48" width="46" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="202.0" y="60" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" font-weight="700" fill="var(--accent-strong)">20%</text>
+                <circle cx="140" cy="99" r="5" fill="var(--accent)"/>
+                <text x="140" y="86" text-anchor="middle" font-family="var(--font-body)" font-size="11" font-weight="700" fill="var(--ink)">ההמראה מתעכבת</text>
+                <line x1="420" y1="99" x2="490" y2="170" stroke="var(--accent)" stroke-width="2"/>
+                <rect x="452" y="118" width="44" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="474.0" y="130" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" font-weight="700" fill="var(--accent-strong)">70%</text>
+                <circle cx="490" cy="174" r="4.5" fill="var(--accent)"/><text x="490" y="194" text-anchor="middle" font-family="var(--font-body)" font-size="10" fill="var(--ink-soft)">הכבודה בזמן</text><text x="490" y="208" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.56</text>
+                <line x1="420" y1="99" x2="360" y2="170" stroke="rgba(var(--muted-rgb),0.55)" stroke-width="1.5"/>
+                <rect x="366" y="118" width="44" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="388.0" y="130" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-faint)">30%</text>
+                <circle cx="360" cy="174" r="4" fill="rgba(var(--muted-rgb),0.75)"/><text x="360" y="194" text-anchor="middle" font-family="var(--font-body)" font-size="10" fill="var(--ink-faint)">הכבודה מאחרת</text><text x="360" y="208" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.24</text>
+                <line x1="140" y1="99" x2="200" y2="170" stroke="rgba(var(--muted-rgb),0.55)" stroke-width="1.5"/>
+                <rect x="152" y="118" width="46" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="175.0" y="130" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-faint)">20%</text>
+                <circle cx="200" cy="174" r="4" fill="rgba(var(--muted-rgb),0.75)"/><text x="200" y="194" text-anchor="middle" font-family="var(--font-body)" font-size="10" fill="var(--ink-faint)">הכבודה בזמן</text><text x="200" y="208" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.04</text>
+                <line x1="140" y1="99" x2="70" y2="170" stroke="var(--accent)" stroke-width="2"/>
+                <rect x="62" y="118" width="46" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="85.0" y="130" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" font-weight="700" fill="var(--accent-strong)">80%</text>
+                <circle cx="70" cy="174" r="4.5" fill="var(--accent)"/><text x="70" y="194" text-anchor="middle" font-family="var(--font-body)" font-size="10" fill="var(--ink-soft)">הכבודה מאחרת</text><text x="70" y="208" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.16</text>
+                <text x="280" y="238" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.56 + 0.24 + 0.04 + 0.16 = 1</text>
+              </svg>
+              <div class="mini-tree-cap">
+                <span class="k">על הענפים: הסתברויות מותנות · מתחת לעלים: משקלים משותפים</span>
+              </div>
+            </div>
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">כלל הכפל מ-1.1: שני המאורעות קרו יחד</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B) = P(A) × P(B|A)</div>
+      <div class="d-num">= 0.8 × 0.7 = <mark class="vv vv-ab">0.56</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">"רק A": מכל A מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B&#773;) = P(A) − P(A∩B)</div>
+      <div class="d-num">= 0.8 − <mark class="vv vv-ab">0.56</mark> = <mark class="vv vv-anb">0.24</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">"רק B": מכל B מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B) = P(B) − P(A∩B)</div>
+      <div class="d-num">= 0.6 − <mark class="vv vv-ab">0.56</mark> = <mark class="vv vv-nab">0.04</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">אף אחד מהשניים: ארבעת האזורים מסתכמים ל-1</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B&#773;) = 1 − P(A∩B) − P(A∩B&#773;) − P(A&#773;∩B)</div>
+      <div class="d-num">= 1 − <mark class="vv vv-ab">0.56</mark> − <mark class="vv vv-anb">0.24</mark> − <mark class="vv vv-nab">0.04</mark> = <mark class="vv vv-nanb">0.16</mark></div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">מכאן והלאה, כל סעיף הוא שליפה מהמפה הזו.</div>
+
+    <div class="jt-wrap">
+      <div class="jt-title">🗺️ אותה מפה, בטבלה אחת</div>
+      <p class="jt-lead">ארבעת התאים הפנימיים הם ארבעת האזורים, באותם צבעים כמו בשורות החישוב. כל שורה וכל עמודה מסתכמות לשוליים שלהן, והכל יחד מסתכם ל-1.</p>
+      <div class="jt-scroll"><table class="jt">
+        <tr><th></th><th><span class="jt-sym">A</span> קרה</th><th><span class="jt-sym">A&#773;</span> לא קרה</th><th>סה״כ</th></tr>
+        <tr><th><span class="jt-sym">B</span> קרה</th><td class="c-ab">0.56</td><td class="c-nab">0.04</td><td class="mrg">0.6</td></tr>
+        <tr><th><span class="jt-sym">B&#773;</span> לא קרה</th><td class="c-anb">0.24</td><td class="c-nanb">0.16</td><td class="mrg">0.4</td></tr>
+        <tr><th>סה״כ</th><td class="mrg">0.8</td><td class="mrg">0.2</td><td>1</td></tr>
+      </table></div>
+      <div class="jt-note">כל אחד מהסעיפים הבאים הוא שליפה של תא אחד או שניים מהטבלה הזו.</div>
+    </div>
+        </div>
+      </details>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">פתרון סעיף א׳: שני המאורעות יחד</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="deriv">
+<div class="d-guide">התא הצבוע כאן הוא בדיוק התא המשותף מהמפה שבסעיף הקודם.</div>
+    <div class="d-row result">
+      <div class="d-name">כלל הכפל מ-1.1: שני המאורעות קרו יחד</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B) = P(A) × P(B|A)</div>
+      <div class="d-num">= 0.8 × 0.7 = <mark class="vv vv-ab">0.56</mark></div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">כלל הכפל מ-1.1. הסיכוי ששני המאורעות יתרחשו יחד: 56%.</div>
+        </div>
+      </details>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">פתרון סעיף ב׳: בדיוק אחד מהשניים</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">"רק A": מכל A מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B&#773;) = P(A) − P(A∩B)</div>
+      <div class="d-num">= 0.8 − <mark class="vv vv-ab">0.56</mark> = <mark class="vv vv-anb">0.24</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">"רק B": מכל B מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B) = P(B) − P(A∩B)</div>
+      <div class="d-num">= 0.6 − <mark class="vv vv-ab">0.56</mark> = <mark class="vv vv-nab">0.04</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">בדיוק אחד מהשניים: מחברים את שני אזורי ה"רק", כמו ב-1.2</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B&#773;) + P(A&#773;∩B)</div>
+      <div class="d-num">= <mark class="vv vv-anb">0.24</mark> + <mark class="vv vv-nab">0.04</mark> = 0.28</div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">שני אזורי ה"רק" מ-1.2, ומחברים. הסיכוי שבדיוק אחד יתרחש: 28%.</div>
+        </div>
+      </details>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">פתרון סעיף ג׳: הראשון, בהינתן שהשני לא</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">המשלים מ-1.2: הסיכוי ש-B לא קרה</div>
+      <div class="d-math">
+      <div class="d-sym">P(B&#773;) = 1 − P(B)</div>
+      <div class="d-num">= 1 − 0.6 = <mark class="vv vv-nb">0.4</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">ההגדרה מ-1.3: החלק המבוקש חלקי התנאי הידוע. המונה, "רק A", מגיע מהמפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A|B&#773;) = P(A∩B&#773;) ÷ P(B&#773;)</div>
+      <div class="d-num">= <mark class="vv vv-anb">0.24</mark> ÷ <mark class="vv vv-nb">0.4</mark> = 0.6</div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">היפוך ההתניה מ-1.3: התנאי במכנה, החיתוך איתו במונה. התשובה: 60%.</div>
+        </div>
+      </details>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">פתרון סעיף ד׳: גם השני לא, בהינתן שהראשון לא</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">המשלים מ-1.2: הסיכוי ש-A לא קרה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;) = 1 − P(A)</div>
+      <div class="d-num">= 1 − 0.8 = <mark class="vv vv-na">0.2</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">ההגדרה מ-1.3. המונה, "אף אחד מהשניים", מגיע מהמפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(B&#773;|A&#773;) = P(A&#773;∩B&#773;) ÷ P(A&#773;)</div>
+      <div class="d-num">= <mark class="vv vv-nanb">0.16</mark> ÷ <mark class="vv vv-na">0.2</mark> = 0.8</div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">ענף הכישלון מ-1.4: אזור "אף אחד" חלקי המשלים של הראשון. התשובה: 80%.</div>
+        </div>
+      </details>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">פתרון סעיף ה׳: בדיקת תלות</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים:</strong> שני המספרים מגיעים ישירות מהנתונים, בלי שום חישוב. כל הבדיקה היא ההשוואה ביניהם בשורה השלישית.</div>
+    <div class="d-row">
+      <div class="d-name">הנתון המותנה: הסיכוי של B כשידוע ש-A קרה</div>
+      <div class="d-math">
+      <div class="d-num">P(B|A) = 0.7</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">הנתון הכללי: הסיכוי של B בלי שום מידע על A</div>
+      <div class="d-math">
+      <div class="d-num">P(B) = 0.6</div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">הבדיקה של 1.5: משווים בין השניים. המספרים שונים, ולכן המאורעות תלויים</div>
+      <div class="d-math">
+      <div class="d-sym">P(B|A) ↔ P(B)</div>
+      <div class="d-num">0.7 ≠ 0.6</div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">ההשוואה מ-1.5. המסקנה: המאורעות <strong>תלויים</strong>. ההמראה בזמן מעידה על בוקר מסודר, וזה מעלה גם את סיכויי הכבודה.</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="story-card" style="margin-bottom:2rem">
+      <div class="def-term"><span class="n">6</span><h4>האדריכלית והקבלן</h4></div>
+      <p>משפחה משפצת דירה, ושני שלבים קובעים את הקצב: אישור התוכנית בפגישה הראשונה עם האדריכלית, ועמידת הקבלן בלוח הזמנים. כשהתוכנית מאושרת מיד, הקבלן מקבל הנחיות ברורות ומתקדם מהר. ההסתברות שהתוכנית תאושר בפגישה הראשונה הינה 0.5, וההסתברות שהקבלן יעמוד בלוח הזמנים הינה 0.8. כמו כן ידוע, שבהינתן שהתוכנית אושרה בפגישה הראשונה, הקבלן יעמוד בלוח הזמנים בהסתברות 0.9.</p>
+      <p style="margin-top:.6rem"><strong>ענו על הסעיפים הבאים תוך הצגת דרך הפתרון על ידי שימוש בנוסחאות המתאימות:</strong></p>
+      <p><strong>סעיף א׳:</strong> מה ההסתברות ששני המאורעות יתרחשו יחד?</p>
+      <p><strong>סעיף ב׳:</strong> מה ההסתברות שבדיוק מאורע אחד מהשניים יתרחש?</p>
+      <p><strong>סעיף ג׳:</strong> ידוע שהמאורע השני לא התרחש. מה ההסתברות שהראשון בכל זאת התרחש?</p>
+      <p><strong>סעיף ד׳:</strong> ידוע שהמאורע הראשון לא התרחש. מה ההסתברות שגם השני לא התרחש?</p>
+      <p><strong>סעיף ה׳:</strong> בדקו האם יש תלות או חוסר תלות בין אישור התוכנית לבין עמידת הקבלן בלוח הזמנים. הציגו דרך.</p>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">🌳 שלב מקדים מומלץ: בונים את העץ והמפה, פעם אחת</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="identify">מזהים: <span class="formula-inline">A</span> = התוכנית מאושרת בפגישה הראשונה, <span class="formula-inline">B</span> = הקבלן עומד בלוח הזמנים. נתון: <span class="formula-inline">P(A) = 0.5</span>, <span class="formula-inline">P(B) = 0.8</span>, <span class="formula-inline">P(B|A) = 0.9</span>.</div>
+          <div class="mini-tree" style="width:min(100%,560px);align-self:center;margin-bottom:.7rem">
+              <svg viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="העץ המלא של השאלה, ארבעה עלים">
+                <text x="280" y="16" text-anchor="middle" font-family="var(--font-body)" font-size="12.5" font-weight="700" fill="var(--ink)">השיפוץ יוצא לדרך</text>
+                <circle cx="280" cy="30" r="5" fill="var(--ink-soft)"/>
+                <line x1="280" y1="30" x2="420" y2="95" stroke="var(--accent)" stroke-width="2.2"/>
+                <rect x="335" y="48" width="46" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="358.0" y="60" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" font-weight="700" fill="var(--accent-strong)">50%</text>
+                <circle cx="420" cy="99" r="5" fill="var(--accent)"/>
+                <text x="420" y="86" text-anchor="middle" font-family="var(--font-body)" font-size="11" font-weight="700" fill="var(--ink)">התוכנית אושרה</text>
+                <line x1="280" y1="30" x2="140" y2="95" stroke="var(--accent)" stroke-width="2.2"/>
+                <rect x="179" y="48" width="46" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="202.0" y="60" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" font-weight="700" fill="var(--accent-strong)">50%</text>
+                <circle cx="140" cy="99" r="5" fill="var(--accent)"/>
+                <text x="140" y="86" text-anchor="middle" font-family="var(--font-body)" font-size="11" font-weight="700" fill="var(--ink)">התוכנית נדחתה</text>
+                <line x1="420" y1="99" x2="490" y2="170" stroke="var(--accent)" stroke-width="2"/>
+                <rect x="452" y="118" width="44" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="474.0" y="130" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" font-weight="700" fill="var(--accent-strong)">90%</text>
+                <circle cx="490" cy="174" r="4.5" fill="var(--accent)"/><text x="490" y="194" text-anchor="middle" font-family="var(--font-body)" font-size="10" fill="var(--ink-soft)">הקבלן בזמן</text><text x="490" y="208" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.45</text>
+                <line x1="420" y1="99" x2="360" y2="170" stroke="rgba(var(--muted-rgb),0.55)" stroke-width="1.5"/>
+                <rect x="366" y="118" width="44" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="388.0" y="130" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-faint)">10%</text>
+                <circle cx="360" cy="174" r="4" fill="rgba(var(--muted-rgb),0.75)"/><text x="360" y="194" text-anchor="middle" font-family="var(--font-body)" font-size="10" fill="var(--ink-faint)">הקבלן מאחר</text><text x="360" y="208" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.05</text>
+                <line x1="140" y1="99" x2="200" y2="170" stroke="rgba(var(--muted-rgb),0.55)" stroke-width="1.5"/>
+                <rect x="152" y="118" width="46" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="175.0" y="130" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-faint)">70%</text>
+                <circle cx="200" cy="174" r="4" fill="rgba(var(--muted-rgb),0.75)"/><text x="200" y="194" text-anchor="middle" font-family="var(--font-body)" font-size="10" fill="var(--ink-faint)">הקבלן בזמן</text><text x="200" y="208" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.35</text>
+                <line x1="140" y1="99" x2="70" y2="170" stroke="var(--accent)" stroke-width="2"/>
+                <rect x="62" y="118" width="46" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="85.0" y="130" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" font-weight="700" fill="var(--accent-strong)">30%</text>
+                <circle cx="70" cy="174" r="4.5" fill="var(--accent)"/><text x="70" y="194" text-anchor="middle" font-family="var(--font-body)" font-size="10" fill="var(--ink-soft)">הקבלן מאחר</text><text x="70" y="208" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.15</text>
+                <text x="280" y="238" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.45 + 0.05 + 0.35 + 0.15 = 1</text>
+              </svg>
+              <div class="mini-tree-cap">
+                <span class="k">על הענפים: הסתברויות מותנות · מתחת לעלים: משקלים משותפים</span>
+              </div>
+            </div>
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">כלל הכפל מ-1.1: שני המאורעות קרו יחד</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B) = P(A) × P(B|A)</div>
+      <div class="d-num">= 0.5 × 0.9 = <mark class="vv vv-ab">0.45</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">"רק A": מכל A מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B&#773;) = P(A) − P(A∩B)</div>
+      <div class="d-num">= 0.5 − <mark class="vv vv-ab">0.45</mark> = <mark class="vv vv-anb">0.05</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">"רק B": מכל B מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B) = P(B) − P(A∩B)</div>
+      <div class="d-num">= 0.8 − <mark class="vv vv-ab">0.45</mark> = <mark class="vv vv-nab">0.35</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">אף אחד מהשניים: ארבעת האזורים מסתכמים ל-1</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B&#773;) = 1 − P(A∩B) − P(A∩B&#773;) − P(A&#773;∩B)</div>
+      <div class="d-num">= 1 − <mark class="vv vv-ab">0.45</mark> − <mark class="vv vv-anb">0.05</mark> − <mark class="vv vv-nab">0.35</mark> = <mark class="vv vv-nanb">0.15</mark></div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">מכאן והלאה, כל סעיף הוא שליפה מהמפה הזו.</div>
+
+    <div class="jt-wrap">
+      <div class="jt-title">🗺️ אותה מפה, בטבלה אחת</div>
+      <p class="jt-lead">ארבעת התאים הפנימיים הם ארבעת האזורים, באותם צבעים כמו בשורות החישוב. כל שורה וכל עמודה מסתכמות לשוליים שלהן, והכל יחד מסתכם ל-1.</p>
+      <div class="jt-scroll"><table class="jt">
+        <tr><th></th><th><span class="jt-sym">A</span> קרה</th><th><span class="jt-sym">A&#773;</span> לא קרה</th><th>סה״כ</th></tr>
+        <tr><th><span class="jt-sym">B</span> קרה</th><td class="c-ab">0.45</td><td class="c-nab">0.35</td><td class="mrg">0.8</td></tr>
+        <tr><th><span class="jt-sym">B&#773;</span> לא קרה</th><td class="c-anb">0.05</td><td class="c-nanb">0.15</td><td class="mrg">0.2</td></tr>
+        <tr><th>סה״כ</th><td class="mrg">0.5</td><td class="mrg">0.5</td><td>1</td></tr>
+      </table></div>
+      <div class="jt-note">כל אחד מהסעיפים הבאים הוא שליפה של תא אחד או שניים מהטבלה הזו.</div>
+    </div>
+        </div>
+      </details>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">פתרון סעיף א׳: שני המאורעות יחד</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="deriv">
+<div class="d-guide">התא הצבוע כאן הוא בדיוק התא המשותף מהמפה שבסעיף הקודם.</div>
+    <div class="d-row result">
+      <div class="d-name">כלל הכפל מ-1.1: שני המאורעות קרו יחד</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B) = P(A) × P(B|A)</div>
+      <div class="d-num">= 0.5 × 0.9 = <mark class="vv vv-ab">0.45</mark></div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">כלל הכפל מ-1.1. הסיכוי ששני המאורעות יתרחשו יחד: 45%.</div>
+        </div>
+      </details>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">פתרון סעיף ב׳: בדיוק אחד מהשניים</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">"רק A": מכל A מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B&#773;) = P(A) − P(A∩B)</div>
+      <div class="d-num">= 0.5 − <mark class="vv vv-ab">0.45</mark> = <mark class="vv vv-anb">0.05</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">"רק B": מכל B מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B) = P(B) − P(A∩B)</div>
+      <div class="d-num">= 0.8 − <mark class="vv vv-ab">0.45</mark> = <mark class="vv vv-nab">0.35</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">בדיוק אחד מהשניים: מחברים את שני אזורי ה"רק", כמו ב-1.2</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B&#773;) + P(A&#773;∩B)</div>
+      <div class="d-num">= <mark class="vv vv-anb">0.05</mark> + <mark class="vv vv-nab">0.35</mark> = 0.4</div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">שני אזורי ה"רק" מ-1.2, ומחברים. הסיכוי שבדיוק אחד יתרחש: 40%.</div>
+        </div>
+      </details>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">פתרון סעיף ג׳: הראשון, בהינתן שהשני לא</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">המשלים מ-1.2: הסיכוי ש-B לא קרה</div>
+      <div class="d-math">
+      <div class="d-sym">P(B&#773;) = 1 − P(B)</div>
+      <div class="d-num">= 1 − 0.8 = <mark class="vv vv-nb">0.2</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">ההגדרה מ-1.3: החלק המבוקש חלקי התנאי הידוע. המונה, "רק A", מגיע מהמפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A|B&#773;) = P(A∩B&#773;) ÷ P(B&#773;)</div>
+      <div class="d-num">= <mark class="vv vv-anb">0.05</mark> ÷ <mark class="vv vv-nb">0.2</mark> = 0.25</div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">היפוך ההתניה מ-1.3: התנאי במכנה, החיתוך איתו במונה. התשובה: 25%.</div>
+        </div>
+      </details>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">פתרון סעיף ד׳: גם השני לא, בהינתן שהראשון לא</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">המשלים מ-1.2: הסיכוי ש-A לא קרה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;) = 1 − P(A)</div>
+      <div class="d-num">= 1 − 0.5 = <mark class="vv vv-na">0.5</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">ההגדרה מ-1.3. המונה, "אף אחד מהשניים", מגיע מהמפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(B&#773;|A&#773;) = P(A&#773;∩B&#773;) ÷ P(A&#773;)</div>
+      <div class="d-num">= <mark class="vv vv-nanb">0.15</mark> ÷ <mark class="vv vv-na">0.5</mark> = 0.3</div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">ענף הכישלון מ-1.4: אזור "אף אחד" חלקי המשלים של הראשון. התשובה: 30%.</div>
+        </div>
+      </details>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">פתרון סעיף ה׳: בדיקת תלות</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים:</strong> שני המספרים מגיעים ישירות מהנתונים, בלי שום חישוב. כל הבדיקה היא ההשוואה ביניהם בשורה השלישית.</div>
+    <div class="d-row">
+      <div class="d-name">הנתון המותנה: הסיכוי של B כשידוע ש-A קרה</div>
+      <div class="d-math">
+      <div class="d-num">P(B|A) = 0.9</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">הנתון הכללי: הסיכוי של B בלי שום מידע על A</div>
+      <div class="d-math">
+      <div class="d-num">P(B) = 0.8</div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">הבדיקה של 1.5: משווים בין השניים. המספרים שונים, ולכן המאורעות תלויים</div>
+      <div class="d-math">
+      <div class="d-sym">P(B|A) ↔ P(B)</div>
+      <div class="d-num">0.9 ≠ 0.8</div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">ההשוואה מ-1.5. המסקנה: המאורעות <strong>תלויים</strong>. אישור מהיר של התוכנית משפר את סיכויי העמידה בלוח הזמנים.</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="story-card" style="margin-bottom:2rem">
+      <div class="def-term"><span class="n">7</span><h4>שתי מחלקות ותקציב אחד</h4></div>
+      <p>בחברה בינונית, מחלקת השיווק ומחלקת הפיתוח מגישות בקשה לתוספת תקציב מאותה עתודה כספית. הכסף מוגבל, ולכן אישור לאחת מקטין את הסיכוי של השנייה. ההסתברות שמחלקת השיווק תקבל תוספת הינה 0.4, וההסתברות שמחלקת הפיתוח תקבל תוספת הינה 0.5. כמו כן ידוע, שבהינתן שמחלקת השיווק קיבלה תוספת, מחלקת הפיתוח תקבל תוספת בהסתברות 0.35 בלבד.</p>
+      <p style="margin-top:.6rem"><strong>ענו על הסעיפים הבאים תוך הצגת דרך הפתרון על ידי שימוש בנוסחאות המתאימות:</strong></p>
+      <p><strong>סעיף א׳:</strong> מה ההסתברות ששני המאורעות יתרחשו יחד?</p>
+      <p><strong>סעיף ב׳:</strong> מה ההסתברות שבדיוק מאורע אחד מהשניים יתרחש?</p>
+      <p><strong>סעיף ג׳:</strong> ידוע שהמאורע השני לא התרחש. מה ההסתברות שהראשון בכל זאת התרחש?</p>
+      <p><strong>סעיף ד׳:</strong> ידוע שהמאורע הראשון לא התרחש. מה ההסתברות שגם השני לא התרחש?</p>
+      <p><strong>סעיף ה׳:</strong> בדקו האם יש תלות או חוסר תלות בין שתי ההחלטות התקציביות. הציגו דרך.</p>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">🌳 שלב מקדים מומלץ: בונים את העץ והמפה, פעם אחת</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="identify">מזהים: <span class="formula-inline">A</span> = השיווק מקבל תוספת תקציב, <span class="formula-inline">B</span> = הפיתוח מקבל תוספת תקציב. נתון: <span class="formula-inline">P(A) = 0.4</span>, <span class="formula-inline">P(B) = 0.5</span>, <span class="formula-inline">P(B|A) = 0.35</span>.</div>
+          <div class="mini-tree" style="width:min(100%,560px);align-self:center;margin-bottom:.7rem">
+              <svg viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="העץ המלא של השאלה, ארבעה עלים">
+                <text x="280" y="16" text-anchor="middle" font-family="var(--font-body)" font-size="12.5" font-weight="700" fill="var(--ink)">דיון התקציב השנתי</text>
+                <circle cx="280" cy="30" r="5" fill="var(--ink-soft)"/>
+                <line x1="280" y1="30" x2="420" y2="95" stroke="var(--accent)" stroke-width="2.2"/>
+                <rect x="335" y="48" width="46" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="358.0" y="60" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" font-weight="700" fill="var(--accent-strong)">40%</text>
+                <circle cx="420" cy="99" r="5" fill="var(--accent)"/>
+                <text x="420" y="86" text-anchor="middle" font-family="var(--font-body)" font-size="11" font-weight="700" fill="var(--ink)">השיווק קיבל</text>
+                <line x1="280" y1="30" x2="140" y2="95" stroke="var(--accent)" stroke-width="2.2"/>
+                <rect x="179" y="48" width="46" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="202.0" y="60" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" font-weight="700" fill="var(--accent-strong)">60%</text>
+                <circle cx="140" cy="99" r="5" fill="var(--accent)"/>
+                <text x="140" y="86" text-anchor="middle" font-family="var(--font-body)" font-size="11" font-weight="700" fill="var(--ink)">השיווק לא קיבל</text>
+                <line x1="420" y1="99" x2="490" y2="170" stroke="var(--accent)" stroke-width="2"/>
+                <rect x="452" y="118" width="44" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="474.0" y="130" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" font-weight="700" fill="var(--accent-strong)">35%</text>
+                <circle cx="490" cy="174" r="4.5" fill="var(--accent)"/><text x="490" y="194" text-anchor="middle" font-family="var(--font-body)" font-size="10" fill="var(--ink-soft)">הפיתוח קיבל</text><text x="490" y="208" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.14</text>
+                <line x1="420" y1="99" x2="360" y2="170" stroke="rgba(var(--muted-rgb),0.55)" stroke-width="1.5"/>
+                <rect x="366" y="118" width="44" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="388.0" y="130" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-faint)">65%</text>
+                <circle cx="360" cy="174" r="4" fill="rgba(var(--muted-rgb),0.75)"/><text x="360" y="194" text-anchor="middle" font-family="var(--font-body)" font-size="10" fill="var(--ink-faint)">הפיתוח לא קיבל</text><text x="360" y="208" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.26</text>
+                <line x1="140" y1="99" x2="200" y2="170" stroke="rgba(var(--muted-rgb),0.55)" stroke-width="1.5"/>
+                <rect x="152" y="118" width="46" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="175.0" y="130" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-faint)">60%</text>
+                <circle cx="200" cy="174" r="4" fill="rgba(var(--muted-rgb),0.75)"/><text x="200" y="194" text-anchor="middle" font-family="var(--font-body)" font-size="10" fill="var(--ink-faint)">הפיתוח קיבל</text><text x="200" y="208" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.36</text>
+                <line x1="140" y1="99" x2="70" y2="170" stroke="var(--accent)" stroke-width="2"/>
+                <rect x="62" y="118" width="46" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="85.0" y="130" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" font-weight="700" fill="var(--accent-strong)">40%</text>
+                <circle cx="70" cy="174" r="4.5" fill="var(--accent)"/><text x="70" y="194" text-anchor="middle" font-family="var(--font-body)" font-size="10" fill="var(--ink-soft)">הפיתוח לא קיבל</text><text x="70" y="208" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.24</text>
+                <text x="280" y="238" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.14 + 0.26 + 0.36 + 0.24 = 1</text>
+              </svg>
+              <div class="mini-tree-cap">
+                <span class="k">על הענפים: הסתברויות מותנות · מתחת לעלים: משקלים משותפים</span>
+              </div>
+            </div>
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">כלל הכפל מ-1.1: שני המאורעות קרו יחד</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B) = P(A) × P(B|A)</div>
+      <div class="d-num">= 0.4 × 0.35 = <mark class="vv vv-ab">0.14</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">"רק A": מכל A מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B&#773;) = P(A) − P(A∩B)</div>
+      <div class="d-num">= 0.4 − <mark class="vv vv-ab">0.14</mark> = <mark class="vv vv-anb">0.26</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">"רק B": מכל B מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B) = P(B) − P(A∩B)</div>
+      <div class="d-num">= 0.5 − <mark class="vv vv-ab">0.14</mark> = <mark class="vv vv-nab">0.36</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">אף אחד מהשניים: ארבעת האזורים מסתכמים ל-1</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B&#773;) = 1 − P(A∩B) − P(A∩B&#773;) − P(A&#773;∩B)</div>
+      <div class="d-num">= 1 − <mark class="vv vv-ab">0.14</mark> − <mark class="vv vv-anb">0.26</mark> − <mark class="vv vv-nab">0.36</mark> = <mark class="vv vv-nanb">0.24</mark></div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">מכאן והלאה, כל סעיף הוא שליפה מהמפה הזו.</div>
+
+    <div class="jt-wrap">
+      <div class="jt-title">🗺️ אותה מפה, בטבלה אחת</div>
+      <p class="jt-lead">ארבעת התאים הפנימיים הם ארבעת האזורים, באותם צבעים כמו בשורות החישוב. כל שורה וכל עמודה מסתכמות לשוליים שלהן, והכל יחד מסתכם ל-1.</p>
+      <div class="jt-scroll"><table class="jt">
+        <tr><th></th><th><span class="jt-sym">A</span> קרה</th><th><span class="jt-sym">A&#773;</span> לא קרה</th><th>סה״כ</th></tr>
+        <tr><th><span class="jt-sym">B</span> קרה</th><td class="c-ab">0.14</td><td class="c-nab">0.36</td><td class="mrg">0.5</td></tr>
+        <tr><th><span class="jt-sym">B&#773;</span> לא קרה</th><td class="c-anb">0.26</td><td class="c-nanb">0.24</td><td class="mrg">0.5</td></tr>
+        <tr><th>סה״כ</th><td class="mrg">0.4</td><td class="mrg">0.6</td><td>1</td></tr>
+      </table></div>
+      <div class="jt-note">כל אחד מהסעיפים הבאים הוא שליפה של תא אחד או שניים מהטבלה הזו.</div>
+    </div>
+        </div>
+      </details>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">פתרון סעיף א׳: שני המאורעות יחד</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="deriv">
+<div class="d-guide">התא הצבוע כאן הוא בדיוק התא המשותף מהמפה שבסעיף הקודם.</div>
+    <div class="d-row result">
+      <div class="d-name">כלל הכפל מ-1.1: שני המאורעות קרו יחד</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B) = P(A) × P(B|A)</div>
+      <div class="d-num">= 0.4 × 0.35 = <mark class="vv vv-ab">0.14</mark></div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">כלל הכפל מ-1.1. הסיכוי ששני המאורעות יתרחשו יחד: 14%.</div>
+        </div>
+      </details>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">פתרון סעיף ב׳: בדיוק אחד מהשניים</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">"רק A": מכל A מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B&#773;) = P(A) − P(A∩B)</div>
+      <div class="d-num">= 0.4 − <mark class="vv vv-ab">0.14</mark> = <mark class="vv vv-anb">0.26</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">"רק B": מכל B מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B) = P(B) − P(A∩B)</div>
+      <div class="d-num">= 0.5 − <mark class="vv vv-ab">0.14</mark> = <mark class="vv vv-nab">0.36</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">בדיוק אחד מהשניים: מחברים את שני אזורי ה"רק", כמו ב-1.2</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B&#773;) + P(A&#773;∩B)</div>
+      <div class="d-num">= <mark class="vv vv-anb">0.26</mark> + <mark class="vv vv-nab">0.36</mark> = 0.62</div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">שני אזורי ה"רק" מ-1.2, ומחברים. הסיכוי שבדיוק אחד יתרחש: 62%.</div>
+        </div>
+      </details>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">פתרון סעיף ג׳: הראשון, בהינתן שהשני לא</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">המשלים מ-1.2: הסיכוי ש-B לא קרה</div>
+      <div class="d-math">
+      <div class="d-sym">P(B&#773;) = 1 − P(B)</div>
+      <div class="d-num">= 1 − 0.5 = <mark class="vv vv-nb">0.5</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">ההגדרה מ-1.3: החלק המבוקש חלקי התנאי הידוע. המונה, "רק A", מגיע מהמפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A|B&#773;) = P(A∩B&#773;) ÷ P(B&#773;)</div>
+      <div class="d-num">= <mark class="vv vv-anb">0.26</mark> ÷ <mark class="vv vv-nb">0.5</mark> = 0.52</div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">היפוך ההתניה מ-1.3: התנאי במכנה, החיתוך איתו במונה. התשובה: 52%.</div>
+        </div>
+      </details>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">פתרון סעיף ד׳: גם השני לא, בהינתן שהראשון לא</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">המשלים מ-1.2: הסיכוי ש-A לא קרה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;) = 1 − P(A)</div>
+      <div class="d-num">= 1 − 0.4 = <mark class="vv vv-na">0.6</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">ההגדרה מ-1.3. המונה, "אף אחד מהשניים", מגיע מהמפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(B&#773;|A&#773;) = P(A&#773;∩B&#773;) ÷ P(A&#773;)</div>
+      <div class="d-num">= <mark class="vv vv-nanb">0.24</mark> ÷ <mark class="vv vv-na">0.6</mark> = 0.4</div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">ענף הכישלון מ-1.4: אזור "אף אחד" חלקי המשלים של הראשון. התשובה: 40%.</div>
+        </div>
+      </details>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">פתרון סעיף ה׳: בדיקת תלות</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים:</strong> שני המספרים מגיעים ישירות מהנתונים, בלי שום חישוב. כל הבדיקה היא ההשוואה ביניהם בשורה השלישית.</div>
+    <div class="d-row">
+      <div class="d-name">הנתון המותנה: הסיכוי של B כשידוע ש-A קרה</div>
+      <div class="d-math">
+      <div class="d-num">P(B|A) = 0.35</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">הנתון הכללי: הסיכוי של B בלי שום מידע על A</div>
+      <div class="d-math">
+      <div class="d-num">P(B) = 0.5</div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">הבדיקה של 1.5: משווים בין השניים. המספרים שונים, ולכן המאורעות תלויים</div>
+      <div class="d-math">
+      <div class="d-sym">P(B|A) ↔ P(B)</div>
+      <div class="d-num">0.35 ≠ 0.5</div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">ההשוואה מ-1.5. המסקנה: המאורעות <strong>תלויים</strong>. ושימו לב לכיוון, שהוא חדש: כאן <span class="formula-inline">P(B|A) &lt; P(B)</span>, כלומר התלות <strong>שלילית</strong>. הצלחת מחלקה אחת מקטינה את סיכויי השנייה, בדיוק כמו שמצפים משתי מחלקות שמתחרות על אותו כסף. בשאלות הקודמות התלות תמיד הגדילה את הסיכוי, וכאן היא מקטינה.</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="story-card" style="margin-bottom:2rem">
+      <div class="def-term"><span class="n">8</span><h4>שני דוכנים בפסטיבל</h4></div>
+      <p>בפסטיבל אוכל עירוני, זוג חברים מפעיל שני דוכנים סמוכים: דוכן קפה ודוכן מאפים. כשהרחבה מתמלאת, שני הדוכנים נהנים מאותו קהל. ההסתברות שדוכן הקפה יעמוד ביעד המכירות היומי הינה 0.5, וההסתברות שדוכן המאפים יעמוד ביעד הינה 0.6. כמו כן ידוע, שבהינתן שדוכן הקפה עמד ביעד, דוכן המאפים יעמוד ביעד בהסתברות 0.8.</p>
+      <p style="margin-top:.6rem"><strong>ענו על הסעיפים הבאים תוך הצגת דרך הפתרון על ידי שימוש בנוסחאות המתאימות:</strong></p>
+      <p><strong>סעיף א׳:</strong> מה ההסתברות ששני המאורעות יתרחשו יחד?</p>
+      <p><strong>סעיף ב׳:</strong> מה ההסתברות שבדיוק מאורע אחד מהשניים יתרחש?</p>
+      <p><strong>סעיף ג׳:</strong> ידוע שהמאורע השני לא התרחש. מה ההסתברות שהראשון בכל זאת התרחש?</p>
+      <p><strong>סעיף ד׳:</strong> ידוע שהמאורע הראשון לא התרחש. מה ההסתברות שגם השני לא התרחש?</p>
+      <p><strong>סעיף ה׳:</strong> בדקו האם יש תלות או חוסר תלות בין יעדי שני הדוכנים. הציגו דרך.</p>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">🌳 שלב מקדים מומלץ: בונים את העץ והמפה, פעם אחת</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="identify">מזהים: <span class="formula-inline">A</span> = דוכן הקפה עומד ביעד, <span class="formula-inline">B</span> = דוכן המאפים עומד ביעד. נתון: <span class="formula-inline">P(A) = 0.5</span>, <span class="formula-inline">P(B) = 0.6</span>, <span class="formula-inline">P(B|A) = 0.8</span>.</div>
+          <div class="mini-tree" style="width:min(100%,560px);align-self:center;margin-bottom:.7rem">
+              <svg viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="העץ המלא של השאלה, ארבעה עלים">
+                <text x="280" y="16" text-anchor="middle" font-family="var(--font-body)" font-size="12.5" font-weight="700" fill="var(--ink)">יום הפסטיבל נפתח</text>
+                <circle cx="280" cy="30" r="5" fill="var(--ink-soft)"/>
+                <line x1="280" y1="30" x2="420" y2="95" stroke="var(--accent)" stroke-width="2.2"/>
+                <rect x="335" y="48" width="46" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="358.0" y="60" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" font-weight="700" fill="var(--accent-strong)">50%</text>
+                <circle cx="420" cy="99" r="5" fill="var(--accent)"/>
+                <text x="420" y="86" text-anchor="middle" font-family="var(--font-body)" font-size="11" font-weight="700" fill="var(--ink)">הקפה ביעד</text>
+                <line x1="280" y1="30" x2="140" y2="95" stroke="var(--accent)" stroke-width="2.2"/>
+                <rect x="179" y="48" width="46" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="202.0" y="60" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" font-weight="700" fill="var(--accent-strong)">50%</text>
+                <circle cx="140" cy="99" r="5" fill="var(--accent)"/>
+                <text x="140" y="86" text-anchor="middle" font-family="var(--font-body)" font-size="11" font-weight="700" fill="var(--ink)">הקפה מתחת ליעד</text>
+                <line x1="420" y1="99" x2="490" y2="170" stroke="var(--accent)" stroke-width="2"/>
+                <rect x="452" y="118" width="44" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="474.0" y="130" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" font-weight="700" fill="var(--accent-strong)">80%</text>
+                <circle cx="490" cy="174" r="4.5" fill="var(--accent)"/><text x="490" y="194" text-anchor="middle" font-family="var(--font-body)" font-size="10" fill="var(--ink-soft)">המאפים ביעד</text><text x="490" y="208" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.4</text>
+                <line x1="420" y1="99" x2="360" y2="170" stroke="rgba(var(--muted-rgb),0.55)" stroke-width="1.5"/>
+                <rect x="366" y="118" width="44" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="388.0" y="130" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-faint)">20%</text>
+                <circle cx="360" cy="174" r="4" fill="rgba(var(--muted-rgb),0.75)"/><text x="360" y="194" text-anchor="middle" font-family="var(--font-body)" font-size="10" fill="var(--ink-faint)">המאפים מתחת ליעד</text><text x="360" y="208" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.1</text>
+                <line x1="140" y1="99" x2="200" y2="170" stroke="rgba(var(--muted-rgb),0.55)" stroke-width="1.5"/>
+                <rect x="152" y="118" width="46" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="175.0" y="130" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-faint)">40%</text>
+                <circle cx="200" cy="174" r="4" fill="rgba(var(--muted-rgb),0.75)"/><text x="200" y="194" text-anchor="middle" font-family="var(--font-body)" font-size="10" fill="var(--ink-faint)">המאפים ביעד</text><text x="200" y="208" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.2</text>
+                <line x1="140" y1="99" x2="70" y2="170" stroke="var(--accent)" stroke-width="2"/>
+                <rect x="62" y="118" width="46" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="85.0" y="130" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" font-weight="700" fill="var(--accent-strong)">60%</text>
+                <circle cx="70" cy="174" r="4.5" fill="var(--accent)"/><text x="70" y="194" text-anchor="middle" font-family="var(--font-body)" font-size="10" fill="var(--ink-soft)">המאפים מתחת ליעד</text><text x="70" y="208" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.3</text>
+                <text x="280" y="238" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.4 + 0.1 + 0.2 + 0.3 = 1</text>
+              </svg>
+              <div class="mini-tree-cap">
+                <span class="k">על הענפים: הסתברויות מותנות · מתחת לעלים: משקלים משותפים</span>
+              </div>
+            </div>
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">כלל הכפל מ-1.1: שני המאורעות קרו יחד</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B) = P(A) × P(B|A)</div>
+      <div class="d-num">= 0.5 × 0.8 = <mark class="vv vv-ab">0.4</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">"רק A": מכל A מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B&#773;) = P(A) − P(A∩B)</div>
+      <div class="d-num">= 0.5 − <mark class="vv vv-ab">0.4</mark> = <mark class="vv vv-anb">0.1</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">"רק B": מכל B מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B) = P(B) − P(A∩B)</div>
+      <div class="d-num">= 0.6 − <mark class="vv vv-ab">0.4</mark> = <mark class="vv vv-nab">0.2</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">אף אחד מהשניים: ארבעת האזורים מסתכמים ל-1</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B&#773;) = 1 − P(A∩B) − P(A∩B&#773;) − P(A&#773;∩B)</div>
+      <div class="d-num">= 1 − <mark class="vv vv-ab">0.4</mark> − <mark class="vv vv-anb">0.1</mark> − <mark class="vv vv-nab">0.2</mark> = <mark class="vv vv-nanb">0.3</mark></div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">מכאן והלאה, כל סעיף הוא שליפה מהמפה הזו.</div>
+
+    <div class="jt-wrap">
+      <div class="jt-title">🗺️ אותה מפה, בטבלה אחת</div>
+      <p class="jt-lead">ארבעת התאים הפנימיים הם ארבעת האזורים, באותם צבעים כמו בשורות החישוב. כל שורה וכל עמודה מסתכמות לשוליים שלהן, והכל יחד מסתכם ל-1.</p>
+      <div class="jt-scroll"><table class="jt">
+        <tr><th></th><th><span class="jt-sym">A</span> קרה</th><th><span class="jt-sym">A&#773;</span> לא קרה</th><th>סה״כ</th></tr>
+        <tr><th><span class="jt-sym">B</span> קרה</th><td class="c-ab">0.4</td><td class="c-nab">0.2</td><td class="mrg">0.6</td></tr>
+        <tr><th><span class="jt-sym">B&#773;</span> לא קרה</th><td class="c-anb">0.1</td><td class="c-nanb">0.3</td><td class="mrg">0.4</td></tr>
+        <tr><th>סה״כ</th><td class="mrg">0.5</td><td class="mrg">0.5</td><td>1</td></tr>
+      </table></div>
+      <div class="jt-note">כל אחד מהסעיפים הבאים הוא שליפה של תא אחד או שניים מהטבלה הזו.</div>
+    </div>
+        </div>
+      </details>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">פתרון סעיף א׳: שני המאורעות יחד</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="deriv">
+<div class="d-guide">התא הצבוע כאן הוא בדיוק התא המשותף מהמפה שבסעיף הקודם.</div>
+    <div class="d-row result">
+      <div class="d-name">כלל הכפל מ-1.1: שני המאורעות קרו יחד</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B) = P(A) × P(B|A)</div>
+      <div class="d-num">= 0.5 × 0.8 = <mark class="vv vv-ab">0.4</mark></div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">כלל הכפל מ-1.1. הסיכוי ששני המאורעות יתרחשו יחד: 40%.</div>
+        </div>
+      </details>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">פתרון סעיף ב׳: בדיוק אחד מהשניים</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">"רק A": מכל A מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B&#773;) = P(A) − P(A∩B)</div>
+      <div class="d-num">= 0.5 − <mark class="vv vv-ab">0.4</mark> = <mark class="vv vv-anb">0.1</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">"רק B": מכל B מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B) = P(B) − P(A∩B)</div>
+      <div class="d-num">= 0.6 − <mark class="vv vv-ab">0.4</mark> = <mark class="vv vv-nab">0.2</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">בדיוק אחד מהשניים: מחברים את שני אזורי ה"רק", כמו ב-1.2</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B&#773;) + P(A&#773;∩B)</div>
+      <div class="d-num">= <mark class="vv vv-anb">0.1</mark> + <mark class="vv vv-nab">0.2</mark> = 0.3</div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">שני אזורי ה"רק" מ-1.2, ומחברים. הסיכוי שבדיוק אחד יתרחש: 30%.</div>
+        </div>
+      </details>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">פתרון סעיף ג׳: הראשון, בהינתן שהשני לא</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">המשלים מ-1.2: הסיכוי ש-B לא קרה</div>
+      <div class="d-math">
+      <div class="d-sym">P(B&#773;) = 1 − P(B)</div>
+      <div class="d-num">= 1 − 0.6 = <mark class="vv vv-nb">0.4</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">ההגדרה מ-1.3: החלק המבוקש חלקי התנאי הידוע. המונה, "רק A", מגיע מהמפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A|B&#773;) = P(A∩B&#773;) ÷ P(B&#773;)</div>
+      <div class="d-num">= <mark class="vv vv-anb">0.1</mark> ÷ <mark class="vv vv-nb">0.4</mark> = 0.25</div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">היפוך ההתניה מ-1.3: התנאי במכנה, החיתוך איתו במונה. התשובה: 25%.</div>
+        </div>
+      </details>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">פתרון סעיף ד׳: גם השני לא, בהינתן שהראשון לא</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">המשלים מ-1.2: הסיכוי ש-A לא קרה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;) = 1 − P(A)</div>
+      <div class="d-num">= 1 − 0.5 = <mark class="vv vv-na">0.5</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">ההגדרה מ-1.3. המונה, "אף אחד מהשניים", מגיע מהמפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(B&#773;|A&#773;) = P(A&#773;∩B&#773;) ÷ P(A&#773;)</div>
+      <div class="d-num">= <mark class="vv vv-nanb">0.3</mark> ÷ <mark class="vv vv-na">0.5</mark> = 0.6</div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">ענף הכישלון מ-1.4: אזור "אף אחד" חלקי המשלים של הראשון. התשובה: 60%.</div>
+        </div>
+      </details>
+
+      <details style="margin-top:.6rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--accent-strong)">פתרון סעיף ה׳: בדיקת תלות</summary>
+        <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים:</strong> שני המספרים מגיעים ישירות מהנתונים, בלי שום חישוב. כל הבדיקה היא ההשוואה ביניהם בשורה השלישית.</div>
+    <div class="d-row">
+      <div class="d-name">הנתון המותנה: הסיכוי של B כשידוע ש-A קרה</div>
+      <div class="d-math">
+      <div class="d-num">P(B|A) = 0.8</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">הנתון הכללי: הסיכוי של B בלי שום מידע על A</div>
+      <div class="d-math">
+      <div class="d-num">P(B) = 0.6</div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">הבדיקה של 1.5: משווים בין השניים. המספרים שונים, ולכן המאורעות תלויים</div>
+      <div class="d-math">
+      <div class="d-sym">P(B|A) ↔ P(B)</div>
+      <div class="d-num">0.8 ≠ 0.6</div>
+      </div>
+    </div>
+    </div>
+          <div class="interp">ההשוואה מ-1.5. המסקנה: המאורעות <strong>תלויים</strong>. קהל גדול ברחבה מרים את שני הדוכנים יחד.</div>
+        </div>
+      </details>
+    </div>
+
   </div>
 </section>
 
@@ -1538,7 +2623,7 @@ table.jt{border-collapse:collapse;margin-inline:auto;min-width:min(100%,420px);}
   <div class="wrap">
     <div class="next-box">
       <h3>סוף פרק 1</h3>
-      <p>חמישה כלים, שישה תת-פרקים, ושלוש שאלות מלאות. מי שפתר את שלושתן ברצף, שולט בפרק.</p>
+      <p>חמישה כלים, שישה תת-פרקים, ושמונה שאלות מלאות. מי שפתר אותן ברצף, שולט בפרק.</p>
       <p>בפרק 2 עולים קומה: במקום שני מאורעות, נעקוב אחרי משתנה שלם, נבנה את התפלגות ההסתברות שלו, ונלמד לחשב תוחלת ושונות.</p>
       <p style="margin-top:.8rem"><a href="chapter-2-1.html"><strong>המשך לתת-פרק 2.1: משתנה מקרי ופונקציית הסתברות ←</strong></a></p>
       <p style="margin-top:.4rem"><a href="index.html"><strong>← חזרה לעמוד הראשי של הקורס</strong></a></p>
