@@ -632,6 +632,74 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
 }
 </style>
 
+<style>
+/* labelled derivations: formula in symbols above the same formula in numbers */
+.deriv{display:flex;flex-direction:column;gap:.55rem;margin-top:.5rem;}
+.d-guide{
+  font-size:.8rem;color:var(--ink-faint);line-height:1.55;
+  background:var(--paper-sunken);border-radius:8px;padding:.55rem .85rem;
+}
+.d-row{
+  display:flex;align-items:center;justify-content:space-between;gap:.5rem 1.1rem;flex-wrap:wrap;
+  background:var(--paper-sunken);border-radius:10px;padding:.6rem .95rem;
+}
+.d-row.result{background:rgba(var(--accent-rgb),0.1);border:1px solid rgba(var(--accent-rgb),0.3);}
+.d-name{font-size:.86rem;font-weight:600;color:var(--ink);max-width:24ch;line-height:1.45;}
+.d-math{
+  direction:ltr;unicode-bidi:isolate;text-align:left;
+  font-family:var(--font-mono);font-variant-numeric:tabular-nums;
+  display:flex;flex-direction:column;gap:.12rem;overflow-x:auto;max-width:100%;
+}
+.d-sym{font-size:.84rem;color:var(--ink-faint);white-space:nowrap;}
+.d-num{font-size:1.02rem;font-weight:700;color:var(--ink);white-space:nowrap;}
+.d-row.result .d-num{color:var(--accent-strong);font-size:1.1rem;}
+/* role colours: a value keeps its colour wherever it travels.
+   Defined as variables so the dark theme can swap them. */
+:root{
+  --vv-ab-bg:rgba(14,124,123,0.16);--vv-ab-ink:#095857;
+  --vv-anb-bg:rgba(184,134,11,0.18);--vv-anb-ink:#7A5408;
+  --vv-nab-bg:rgba(59,102,180,0.15);--vv-nab-ink:#2A4A8F;
+  --vv-nanb-bg:rgba(178,68,104,0.14);--vv-nanb-ink:#8F2F52;
+  --vv-na-bg:rgba(76,140,74,0.16);--vv-na-ink:#33622F;
+  --vv-nb-bg:rgba(90,99,120,0.16);--vv-nb-ink:#3E4657;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --vv-ab-bg:rgba(62,211,201,0.18);--vv-ab-ink:#7CE7DD;
+    --vv-anb-bg:rgba(232,190,110,0.18);--vv-anb-ink:#E8BE6E;
+    --vv-nab-bg:rgba(138,168,240,0.18);--vv-nab-ink:#A8C0F0;
+    --vv-nanb-bg:rgba(240,140,170,0.16);--vv-nanb-ink:#F0A8C0;
+    --vv-na-bg:rgba(140,220,140,0.16);--vv-na-ink:#A8E0A8;
+    --vv-nb-bg:rgba(170,180,200,0.18);--vv-nb-ink:#C0CBD8;
+  }
+}
+.vv{display:inline-block;padding:0 .3em;border-radius:6px;font-weight:700;}
+.vv-ab{background:var(--vv-ab-bg);color:var(--vv-ab-ink);}
+.vv-anb{background:var(--vv-anb-bg);color:var(--vv-anb-ink);}
+.vv-nab{background:var(--vv-nab-bg);color:var(--vv-nab-ink);}
+.vv-nanb{background:var(--vv-nanb-bg);color:var(--vv-nanb-ink);}
+.vv-na{background:var(--vv-na-bg);color:var(--vv-na-ink);}
+.vv-nb{background:var(--vv-nb-bg);color:var(--vv-nb-ink);}
+/* the 2x2 joint table, matching chapter 1.3's region map */
+.jt-wrap{margin-top:1.1rem;}
+.jt-title{font-weight:800;font-size:.95rem;color:var(--ink);margin-bottom:.35rem;}
+.jt-lead{font-size:.85rem;color:var(--ink-soft);line-height:1.6;margin-bottom:.7rem;}
+.jt-scroll{overflow-x:auto;}
+table.jt{border-collapse:collapse;margin-inline:auto;min-width:min(100%,420px);}
+.jt th,.jt td{border:1.5px solid var(--border);padding:.5rem .9rem;text-align:center;font-size:.9rem;}
+.jt th{background:var(--paper-sunken);font-weight:700;color:var(--ink);font-size:.83rem;}
+.jt td{direction:ltr;unicode-bidi:isolate;font-family:var(--font-mono);font-weight:700;font-variant-numeric:tabular-nums;color:var(--ink);}
+.jt .jt-sym{direction:ltr;unicode-bidi:isolate;font-family:var(--font-mono);font-weight:700;}
+.jt td.c-ab{background:var(--vv-ab-bg);color:var(--vv-ab-ink);}
+.jt td.c-anb{background:var(--vv-anb-bg);color:var(--vv-anb-ink);}
+.jt td.c-nab{background:var(--vv-nab-bg);color:var(--vv-nab-ink);}
+.jt td.c-nanb{background:var(--vv-nanb-bg);color:var(--vv-nanb-ink);}
+.jt td.mrg{background:var(--paper-sunken);color:var(--ink-soft);}
+.jt td.used{outline:2.5px solid var(--accent);outline-offset:-2.5px;}
+.jt-note{font-size:.85rem;color:var(--ink-soft);line-height:1.65;margin-top:.7rem;}
+</style>
+
+
 <div class="page" dir="rtl" lang="he">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -930,28 +998,72 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
         </li>
         <li>
           <div class="label">שלב 3: המכנה, הסתברות התנאי</div>
-          <div class="eq-chain">
-            <div class="eq-line result"><span class="eq-lhs">P(A&#773;)</span><span class="eq-rhs">= 1 − 0.8 = 0.2</span></div>
-          </div>
+          <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">המשלים מ-1.2: הסיכוי ש-A לא קרה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;) = 1 − P(A)</div>
+      <div class="d-num">= 1 − 0.8 = <mark class="vv vv-na">0.2</mark></div>
+      </div>
+    </div>
+    </div>
         </li>
         <li>
           <div class="label">שלב 4: המונה, דרך השרשרת המוכרת</div>
-          <div class="eq-chain">
-            <div class="eq-line"><span class="eq-lhs">P(A∩B)</span><span class="eq-rhs">= 0.8 × 0.9 = 0.72</span></div>
-            <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B)</span><span class="eq-rhs">= 0.75 − 0.72 = 0.03</span></div>
-            <div class="eq-line result"><span class="eq-lhs">P(A&#773;∩B&#773;)</span><span class="eq-rhs">= 0.2 − 0.03 = 0.17</span></div>
-          </div>
+          <div class="deriv">
+<div class="d-guide">שימו לב: המספר הירוק שחושב בשלב 3 ממשיך איתנו, באותו צבע.</div>
+    <div class="d-row">
+      <div class="d-name">כלל הכפל מ-1.1: שני המאורעות קרו יחד</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B) = P(A) × P(B|A)</div>
+      <div class="d-num">= 0.8 × 0.9 = <mark class="vv vv-ab">0.72</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">"רק B": מכל B מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B) = P(B) − P(A∩B)</div>
+      <div class="d-num">= 0.75 − <mark class="vv vv-ab">0.72</mark> = <mark class="vv vv-nab">0.03</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">אף אחד מהשניים: מה שנשאר בעמודת "A לא קרה"</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B&#773;) = P(A&#773;) − P(A&#773;∩B)</div>
+      <div class="d-num">= <mark class="vv vv-na">0.2</mark> − <mark class="vv vv-nab">0.03</mark> = <mark class="vv vv-nanb">0.17</mark></div>
+      </div>
+    </div>
+    </div>
         </li>
         <li>
           <div class="label">שלב 5: מחלקים</div>
-          <div class="eq-chain">
-            <div class="eq-line"><span class="eq-lhs">P(B&#773;|A&#773;)</span><span class="eq-rhs">= 0.17 ÷ 0.2</span></div>
-            <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 0.85</span></div>
-          </div>
+          <div class="deriv">
+<div class="d-guide">שני המספרים בשבר כבר חושבו למעלה, וכל אחד שומר על הצבע שלו.</div>
+    <div class="d-row result">
+      <div class="d-name">ההגדרה מ-1.3: החלק המבוקש חלקי התנאי הידוע</div>
+      <div class="d-math">
+      <div class="d-sym">P(B&#773;|A&#773;) = P(A&#773;∩B&#773;) ÷ P(A&#773;)</div>
+      <div class="d-num">= <mark class="vv vv-nanb">0.17</mark> ÷ <mark class="vv vv-na">0.2</mark> = 0.85</div>
+      </div>
+    </div>
+    </div>
         </li>
       </ol>
 
-      <div class="result-banner">
+      
+    <div class="jt-wrap">
+      <div class="jt-title">🗺️ אותה מפה, בטבלה אחת</div>
+      <p class="jt-lead">ארבעת התאים הפנימיים הם ארבעת האזורים, באותם צבעים כמו בשורות החישוב. כל שורה וכל עמודה מסתכמות לשוליים שלהן, והכל יחד מסתכם ל-1.</p>
+      <div class="jt-scroll"><table class="jt">
+        <tr><th></th><th><span class="jt-sym">A</span> קרה</th><th><span class="jt-sym">A&#773;</span> לא קרה</th><th>סה״כ</th></tr>
+        <tr><th><span class="jt-sym">B</span> קרה</th><td class="c-ab">0.72</td><td class="c-nab">0.03</td><td class="mrg">0.75</td></tr>
+        <tr><th><span class="jt-sym">B&#773;</span> לא קרה</th><td class="c-anb">0.08</td><td class="c-nanb used">0.17</td><td class="mrg">0.25</td></tr>
+        <tr><th>סה״כ</th><td class="mrg">0.8</td><td class="mrg used">0.2</td><td>1</td></tr>
+      </table></div>
+      <div class="jt-note">שני התאים המסומנים בקו הם בדיוק השבר של התשובה: <span class="formula-inline">P(B&#773;|A&#773;) = 0.17 ÷ 0.2 = 0.85</span>. המונה הוא התא "אף אחד מהשניים", והמכנה הוא סך העמודה של "A לא קרה".</div>
+    </div>
+    <div class="result-banner">
         <span class="val">0.85</span>
         <span class="interp">כלומר, בהינתן שחבר א׳ לא הצליח, יש 85 אחוז סיכוי שגם חבר ב׳ לא הצליח.</span>
       </div>
@@ -1077,14 +1189,57 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
               </div>
             </div>
             <div class="identify">מזהים: <span class="formula-inline">A</span> = הלקוח ניגש למדוד, <span class="formula-inline">B</span> = הלקוח רוכש בגד. מבקשים את <span class="formula-inline">P(B&#773;|A&#773;)</span>: הסיכוי ש-B לא יקרה, בהינתן ש-A לא קרה. נתון: <span class="formula-inline">P(A) = 0.5</span>, <span class="formula-inline">P(B) = 0.4</span>, <span class="formula-inline">P(B|A) = 0.6</span>.</div>
-            <div class="eq-chain">
-              <div class="eq-line"><span class="eq-lhs">P(A∩B)</span><span class="eq-rhs">= 0.5 × 0.6 = 0.3</span></div>
-              <div class="eq-line"><span class="eq-lhs">P(A&#773;)</span><span class="eq-rhs">= 1 − 0.5 = 0.5</span></div>
-              <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B)</span><span class="eq-rhs">= 0.4 − 0.3 = 0.1</span></div>
-              <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B&#773;)</span><span class="eq-rhs">= 0.5 − 0.1 = 0.4</span></div>
-              <div class="eq-line result"><span class="eq-lhs">P(B&#773;|A&#773;)</span><span class="eq-rhs">= 0.4 ÷ 0.5 = 0.8</span></div>
-            </div>
+            <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">כלל הכפל מ-1.1: הסיכוי ששני המאורעות קרו יחד</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B) = P(A) × P(B|A)</div>
+      <div class="d-num">= 0.5 × 0.6 = <mark class="vv vv-ab">0.3</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">המשלים מ-1.2: הסיכוי ש-A לא קרה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;) = 1 − P(A)</div>
+      <div class="d-num">= 1 − 0.5 = <mark class="vv vv-na">0.5</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">"רק B": מכל B מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B) = P(B) − P(A∩B)</div>
+      <div class="d-num">= 0.4 − <mark class="vv vv-ab">0.3</mark> = <mark class="vv vv-nab">0.1</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">אף אחד מהשניים: מה שנשאר בעמודת "A לא קרה"</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B&#773;) = P(A&#773;) − P(A&#773;∩B)</div>
+      <div class="d-num">= <mark class="vv vv-na">0.5</mark> − <mark class="vv vv-nab">0.1</mark> = <mark class="vv vv-nanb">0.4</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">ההגדרה מ-1.3: החלק המבוקש חלקי התנאי הידוע</div>
+      <div class="d-math">
+      <div class="d-sym">P(B&#773;|A&#773;) = P(A&#773;∩B&#773;) ÷ P(A&#773;)</div>
+      <div class="d-num">= <mark class="vv vv-nanb">0.4</mark> ÷ <mark class="vv vv-na">0.5</mark> = 0.8</div>
+      </div>
+    </div>
+    </div>
             <div class="interp">מתוך הלקוחות שלא מדדו, 80 אחוז גם לא רוכשים. בלי מדידה, הרכישה נעשית נדירה בהרבה.</div>
+
+    <div class="jt-wrap">
+      <div class="jt-title">🗺️ אותה מפה, בטבלה אחת</div>
+      <p class="jt-lead">ארבעת התאים הפנימיים הם ארבעת האזורים, באותם צבעים כמו בשורות החישוב. כל שורה וכל עמודה מסתכמות לשוליים שלהן, והכל יחד מסתכם ל-1.</p>
+      <div class="jt-scroll"><table class="jt">
+        <tr><th></th><th><span class="jt-sym">A</span> קרה</th><th><span class="jt-sym">A&#773;</span> לא קרה</th><th>סה״כ</th></tr>
+        <tr><th><span class="jt-sym">B</span> קרה</th><td class="c-ab">0.3</td><td class="c-nab">0.1</td><td class="mrg">0.4</td></tr>
+        <tr><th><span class="jt-sym">B&#773;</span> לא קרה</th><td class="c-anb">0.2</td><td class="c-nanb used">0.4</td><td class="mrg">0.6</td></tr>
+        <tr><th>סה״כ</th><td class="mrg">0.5</td><td class="mrg used">0.5</td><td>1</td></tr>
+      </table></div>
+      <div class="jt-note">שני התאים המסומנים בקו הם השבר של התשובה: <span class="formula-inline">P(B&#773;|A&#773;) = 0.4 ÷ 0.5 = 0.8</span>.</div>
+    </div>
           </div>
         </details>
       </div>
@@ -1133,14 +1288,57 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
               </div>
             </div>
             <div class="identify">מזהים: <span class="formula-inline">A</span> = התביעה מוגשת שלמה, <span class="formula-inline">B</span> = מטופלת תוך שבוע. מבקשים את <span class="formula-inline">P(B&#773;|A&#773;)</span>: הסיכוי ש-B לא יקרה, בהינתן ש-A לא קרה. נתון: <span class="formula-inline">P(A) = 0.6</span>, <span class="formula-inline">P(B) = 0.6</span>, <span class="formula-inline">P(B|A) = 0.8</span>.</div>
-            <div class="eq-chain">
-              <div class="eq-line"><span class="eq-lhs">P(A∩B)</span><span class="eq-rhs">= 0.6 × 0.8 = 0.48</span></div>
-              <div class="eq-line"><span class="eq-lhs">P(A&#773;)</span><span class="eq-rhs">= 1 − 0.6 = 0.4</span></div>
-              <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B)</span><span class="eq-rhs">= 0.6 − 0.48 = 0.12</span></div>
-              <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B&#773;)</span><span class="eq-rhs">= 0.4 − 0.12 = 0.28</span></div>
-              <div class="eq-line result"><span class="eq-lhs">P(B&#773;|A&#773;)</span><span class="eq-rhs">= 0.28 ÷ 0.4 = 0.7</span></div>
-            </div>
+            <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">כלל הכפל מ-1.1: הסיכוי ששני המאורעות קרו יחד</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B) = P(A) × P(B|A)</div>
+      <div class="d-num">= 0.6 × 0.8 = <mark class="vv vv-ab">0.48</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">המשלים מ-1.2: הסיכוי ש-A לא קרה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;) = 1 − P(A)</div>
+      <div class="d-num">= 1 − 0.6 = <mark class="vv vv-na">0.4</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">"רק B": מכל B מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B) = P(B) − P(A∩B)</div>
+      <div class="d-num">= 0.6 − <mark class="vv vv-ab">0.48</mark> = <mark class="vv vv-nab">0.12</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">אף אחד מהשניים: מה שנשאר בעמודת "A לא קרה"</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B&#773;) = P(A&#773;) − P(A&#773;∩B)</div>
+      <div class="d-num">= <mark class="vv vv-na">0.4</mark> − <mark class="vv vv-nab">0.12</mark> = <mark class="vv vv-nanb">0.28</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">ההגדרה מ-1.3: החלק המבוקש חלקי התנאי הידוע</div>
+      <div class="d-math">
+      <div class="d-sym">P(B&#773;|A&#773;) = P(A&#773;∩B&#773;) ÷ P(A&#773;)</div>
+      <div class="d-num">= <mark class="vv vv-nanb">0.28</mark> ÷ <mark class="vv vv-na">0.4</mark> = 0.7</div>
+      </div>
+    </div>
+    </div>
             <div class="interp">מתוך התביעות החסרות, 70 אחוז גם מתעכבות. המסמכים החסרים גוררים כמעט תמיד עיכוב.</div>
+
+    <div class="jt-wrap">
+      <div class="jt-title">🗺️ אותה מפה, בטבלה אחת</div>
+      <p class="jt-lead">ארבעת התאים הפנימיים הם ארבעת האזורים, באותם צבעים כמו בשורות החישוב. כל שורה וכל עמודה מסתכמות לשוליים שלהן, והכל יחד מסתכם ל-1.</p>
+      <div class="jt-scroll"><table class="jt">
+        <tr><th></th><th><span class="jt-sym">A</span> קרה</th><th><span class="jt-sym">A&#773;</span> לא קרה</th><th>סה״כ</th></tr>
+        <tr><th><span class="jt-sym">B</span> קרה</th><td class="c-ab">0.48</td><td class="c-nab">0.12</td><td class="mrg">0.6</td></tr>
+        <tr><th><span class="jt-sym">B&#773;</span> לא קרה</th><td class="c-anb">0.12</td><td class="c-nanb used">0.28</td><td class="mrg">0.4</td></tr>
+        <tr><th>סה״כ</th><td class="mrg">0.6</td><td class="mrg used">0.4</td><td>1</td></tr>
+      </table></div>
+      <div class="jt-note">שני התאים המסומנים בקו הם השבר של התשובה: <span class="formula-inline">P(B&#773;|A&#773;) = 0.28 ÷ 0.4 = 0.7</span>.</div>
+    </div>
           </div>
         </details>
       </div>
@@ -1189,14 +1387,57 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
               </div>
             </div>
             <div class="identify">מזהים: <span class="formula-inline">A</span> = מתקבל לתוכנית ההאצה, <span class="formula-inline">B</span> = מגייס משקיע נוסף. מבקשים את <span class="formula-inline">P(B&#773;|A&#773;)</span>: הסיכוי ש-B לא יקרה, בהינתן ש-A לא קרה. נתון: <span class="formula-inline">P(A) = 0.6</span>, <span class="formula-inline">P(B) = 0.65</span>, <span class="formula-inline">P(B|A) = 0.75</span>.</div>
-            <div class="eq-chain">
-              <div class="eq-line"><span class="eq-lhs">P(A∩B)</span><span class="eq-rhs">= 0.6 × 0.75 = 0.45</span></div>
-              <div class="eq-line"><span class="eq-lhs">P(A&#773;)</span><span class="eq-rhs">= 1 − 0.6 = 0.4</span></div>
-              <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B)</span><span class="eq-rhs">= 0.65 − 0.45 = 0.2</span></div>
-              <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B&#773;)</span><span class="eq-rhs">= 0.4 − 0.2 = 0.2</span></div>
-              <div class="eq-line result"><span class="eq-lhs">P(B&#773;|A&#773;)</span><span class="eq-rhs">= 0.2 ÷ 0.4 = 0.5</span></div>
-            </div>
+            <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">כלל הכפל מ-1.1: הסיכוי ששני המאורעות קרו יחד</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B) = P(A) × P(B|A)</div>
+      <div class="d-num">= 0.6 × 0.75 = <mark class="vv vv-ab">0.45</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">המשלים מ-1.2: הסיכוי ש-A לא קרה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;) = 1 − P(A)</div>
+      <div class="d-num">= 1 − 0.6 = <mark class="vv vv-na">0.4</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">"רק B": מכל B מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B) = P(B) − P(A∩B)</div>
+      <div class="d-num">= 0.65 − <mark class="vv vv-ab">0.45</mark> = <mark class="vv vv-nab">0.2</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">אף אחד מהשניים: מה שנשאר בעמודת "A לא קרה"</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B&#773;) = P(A&#773;) − P(A&#773;∩B)</div>
+      <div class="d-num">= <mark class="vv vv-na">0.4</mark> − <mark class="vv vv-nab">0.2</mark> = <mark class="vv vv-nanb">0.2</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">ההגדרה מ-1.3: החלק המבוקש חלקי התנאי הידוע</div>
+      <div class="d-math">
+      <div class="d-sym">P(B&#773;|A&#773;) = P(A&#773;∩B&#773;) ÷ P(A&#773;)</div>
+      <div class="d-num">= <mark class="vv vv-nanb">0.2</mark> ÷ <mark class="vv vv-na">0.4</mark> = 0.5</div>
+      </div>
+    </div>
+    </div>
             <div class="interp">מתוך הנדחות, בדיוק מחצית לא מגייסות. הדחייה מכבידה, אבל לא סוגרת את הדלת.</div>
+
+    <div class="jt-wrap">
+      <div class="jt-title">🗺️ אותה מפה, בטבלה אחת</div>
+      <p class="jt-lead">ארבעת התאים הפנימיים הם ארבעת האזורים, באותם צבעים כמו בשורות החישוב. כל שורה וכל עמודה מסתכמות לשוליים שלהן, והכל יחד מסתכם ל-1.</p>
+      <div class="jt-scroll"><table class="jt">
+        <tr><th></th><th><span class="jt-sym">A</span> קרה</th><th><span class="jt-sym">A&#773;</span> לא קרה</th><th>סה״כ</th></tr>
+        <tr><th><span class="jt-sym">B</span> קרה</th><td class="c-ab">0.45</td><td class="c-nab">0.2</td><td class="mrg">0.65</td></tr>
+        <tr><th><span class="jt-sym">B&#773;</span> לא קרה</th><td class="c-anb">0.15</td><td class="c-nanb used">0.2</td><td class="mrg">0.35</td></tr>
+        <tr><th>סה״כ</th><td class="mrg">0.6</td><td class="mrg used">0.4</td><td>1</td></tr>
+      </table></div>
+      <div class="jt-note">שני התאים המסומנים בקו הם השבר של התשובה: <span class="formula-inline">P(B&#773;|A&#773;) = 0.2 ÷ 0.4 = 0.5</span>.</div>
+    </div>
           </div>
         </details>
       </div>
@@ -1245,14 +1486,57 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
               </div>
             </div>
             <div class="identify">מזהים: <span class="formula-inline">A</span> = מגיע בדיוק בזמן, <span class="formula-inline">B</span> = נקרא תוך 10 דקות. מבקשים את <span class="formula-inline">P(B&#773;|A&#773;)</span>: הסיכוי ש-B לא יקרה, בהינתן ש-A לא קרה. נתון: <span class="formula-inline">P(A) = 0.75</span>, <span class="formula-inline">P(B) = 0.75</span>, <span class="formula-inline">P(B|A) = 0.8</span>.</div>
-            <div class="eq-chain">
-              <div class="eq-line"><span class="eq-lhs">P(A∩B)</span><span class="eq-rhs">= 0.75 × 0.8 = 0.6</span></div>
-              <div class="eq-line"><span class="eq-lhs">P(A&#773;)</span><span class="eq-rhs">= 1 − 0.75 = 0.25</span></div>
-              <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B)</span><span class="eq-rhs">= 0.75 − 0.6 = 0.15</span></div>
-              <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B&#773;)</span><span class="eq-rhs">= 0.25 − 0.15 = 0.1</span></div>
-              <div class="eq-line result"><span class="eq-lhs">P(B&#773;|A&#773;)</span><span class="eq-rhs">= 0.1 ÷ 0.25 = 0.4</span></div>
-            </div>
+            <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">כלל הכפל מ-1.1: הסיכוי ששני המאורעות קרו יחד</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B) = P(A) × P(B|A)</div>
+      <div class="d-num">= 0.75 × 0.8 = <mark class="vv vv-ab">0.6</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">המשלים מ-1.2: הסיכוי ש-A לא קרה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;) = 1 − P(A)</div>
+      <div class="d-num">= 1 − 0.75 = <mark class="vv vv-na">0.25</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">"רק B": מכל B מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B) = P(B) − P(A∩B)</div>
+      <div class="d-num">= 0.75 − <mark class="vv vv-ab">0.6</mark> = <mark class="vv vv-nab">0.15</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">אף אחד מהשניים: מה שנשאר בעמודת "A לא קרה"</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B&#773;) = P(A&#773;) − P(A&#773;∩B)</div>
+      <div class="d-num">= <mark class="vv vv-na">0.25</mark> − <mark class="vv vv-nab">0.15</mark> = <mark class="vv vv-nanb">0.1</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">ההגדרה מ-1.3: החלק המבוקש חלקי התנאי הידוע</div>
+      <div class="d-math">
+      <div class="d-sym">P(B&#773;|A&#773;) = P(A&#773;∩B&#773;) ÷ P(A&#773;)</div>
+      <div class="d-num">= <mark class="vv vv-nanb">0.1</mark> ÷ <mark class="vv vv-na">0.25</mark> = 0.4</div>
+      </div>
+    </div>
+    </div>
             <div class="interp">מתוך המאחרים, 40 אחוז ימתינו הרבה. מפתיע? רוב המאחרים דווקא נקראים מהר, כי התור התפנה.</div>
+
+    <div class="jt-wrap">
+      <div class="jt-title">🗺️ אותה מפה, בטבלה אחת</div>
+      <p class="jt-lead">ארבעת התאים הפנימיים הם ארבעת האזורים, באותם צבעים כמו בשורות החישוב. כל שורה וכל עמודה מסתכמות לשוליים שלהן, והכל יחד מסתכם ל-1.</p>
+      <div class="jt-scroll"><table class="jt">
+        <tr><th></th><th><span class="jt-sym">A</span> קרה</th><th><span class="jt-sym">A&#773;</span> לא קרה</th><th>סה״כ</th></tr>
+        <tr><th><span class="jt-sym">B</span> קרה</th><td class="c-ab">0.6</td><td class="c-nab">0.15</td><td class="mrg">0.75</td></tr>
+        <tr><th><span class="jt-sym">B&#773;</span> לא קרה</th><td class="c-anb">0.15</td><td class="c-nanb used">0.1</td><td class="mrg">0.25</td></tr>
+        <tr><th>סה״כ</th><td class="mrg">0.75</td><td class="mrg used">0.25</td><td>1</td></tr>
+      </table></div>
+      <div class="jt-note">שני התאים המסומנים בקו הם השבר של התשובה: <span class="formula-inline">P(B&#773;|A&#773;) = 0.1 ÷ 0.25 = 0.4</span>.</div>
+    </div>
           </div>
         </details>
       </div>
@@ -1301,14 +1585,57 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
               </div>
             </div>
             <div class="identify">מזהים: <span class="formula-inline">A</span> = המשלוח יוצא בזמן, <span class="formula-inline">B</span> = המשלוח מגיע שלם. מבקשים את <span class="formula-inline">P(B&#773;|A&#773;)</span>: הסיכוי ש-B לא יקרה, בהינתן ש-A לא קרה. נתון: <span class="formula-inline">P(A) = 0.8</span>, <span class="formula-inline">P(B) = 0.8</span>, <span class="formula-inline">P(B|A) = 0.9</span>.</div>
-            <div class="eq-chain">
-              <div class="eq-line"><span class="eq-lhs">P(A∩B)</span><span class="eq-rhs">= 0.8 × 0.9 = 0.72</span></div>
-              <div class="eq-line"><span class="eq-lhs">P(A&#773;)</span><span class="eq-rhs">= 1 − 0.8 = 0.2</span></div>
-              <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B)</span><span class="eq-rhs">= 0.8 − 0.72 = 0.08</span></div>
-              <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B&#773;)</span><span class="eq-rhs">= 0.2 − 0.08 = 0.12</span></div>
-              <div class="eq-line result"><span class="eq-lhs">P(B&#773;|A&#773;)</span><span class="eq-rhs">= 0.12 ÷ 0.2 = 0.6</span></div>
-            </div>
+            <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">כלל הכפל מ-1.1: הסיכוי ששני המאורעות קרו יחד</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B) = P(A) × P(B|A)</div>
+      <div class="d-num">= 0.8 × 0.9 = <mark class="vv vv-ab">0.72</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">המשלים מ-1.2: הסיכוי ש-A לא קרה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;) = 1 − P(A)</div>
+      <div class="d-num">= 1 − 0.8 = <mark class="vv vv-na">0.2</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">"רק B": מכל B מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B) = P(B) − P(A∩B)</div>
+      <div class="d-num">= 0.8 − <mark class="vv vv-ab">0.72</mark> = <mark class="vv vv-nab">0.08</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">אף אחד מהשניים: מה שנשאר בעמודת "A לא קרה"</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B&#773;) = P(A&#773;) − P(A&#773;∩B)</div>
+      <div class="d-num">= <mark class="vv vv-na">0.2</mark> − <mark class="vv vv-nab">0.08</mark> = <mark class="vv vv-nanb">0.12</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">ההגדרה מ-1.3: החלק המבוקש חלקי התנאי הידוע</div>
+      <div class="d-math">
+      <div class="d-sym">P(B&#773;|A&#773;) = P(A&#773;∩B&#773;) ÷ P(A&#773;)</div>
+      <div class="d-num">= <mark class="vv vv-nanb">0.12</mark> ÷ <mark class="vv vv-na">0.2</mark> = 0.6</div>
+      </div>
+    </div>
+    </div>
             <div class="interp">מתוך המשלוחים המאחרים, 60 אחוז גם נפגמים בדרך. האיחור והנזק הולכים יחד לעיתים קרובות.</div>
+
+    <div class="jt-wrap">
+      <div class="jt-title">🗺️ אותה מפה, בטבלה אחת</div>
+      <p class="jt-lead">ארבעת התאים הפנימיים הם ארבעת האזורים, באותם צבעים כמו בשורות החישוב. כל שורה וכל עמודה מסתכמות לשוליים שלהן, והכל יחד מסתכם ל-1.</p>
+      <div class="jt-scroll"><table class="jt">
+        <tr><th></th><th><span class="jt-sym">A</span> קרה</th><th><span class="jt-sym">A&#773;</span> לא קרה</th><th>סה״כ</th></tr>
+        <tr><th><span class="jt-sym">B</span> קרה</th><td class="c-ab">0.72</td><td class="c-nab">0.08</td><td class="mrg">0.8</td></tr>
+        <tr><th><span class="jt-sym">B&#773;</span> לא קרה</th><td class="c-anb">0.08</td><td class="c-nanb used">0.12</td><td class="mrg">0.2</td></tr>
+        <tr><th>סה״כ</th><td class="mrg">0.8</td><td class="mrg used">0.2</td><td>1</td></tr>
+      </table></div>
+      <div class="jt-note">שני התאים המסומנים בקו הם השבר של התשובה: <span class="formula-inline">P(B&#773;|A&#773;) = 0.12 ÷ 0.2 = 0.6</span>.</div>
+    </div>
           </div>
         </details>
       </div>
@@ -1378,14 +1705,57 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
               </div>
             </div>
             <div class="identify">מזהים: <span class="formula-inline">A</span> = משלים שיעורי בית, <span class="formula-inline">B</span> = עובר את המבחן. מבקשים את <span class="formula-inline">P(B&#773;|A&#773;)</span>: הסיכוי ש-B לא יקרה, בהינתן ש-A לא קרה. נתון: <span class="formula-inline">P(A) = 0.7</span>, <span class="formula-inline">P(B) = 0.65</span>, <span class="formula-inline">P(B|A) = 0.8</span>.</div>
-            <div class="eq-chain">
-              <div class="eq-line"><span class="eq-lhs">P(A∩B)</span><span class="eq-rhs">= 0.7 × 0.8 = 0.56</span></div>
-              <div class="eq-line"><span class="eq-lhs">P(A&#773;)</span><span class="eq-rhs">= 1 − 0.7 = 0.3</span></div>
-              <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B)</span><span class="eq-rhs">= 0.65 − 0.56 = 0.09</span></div>
-              <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B&#773;)</span><span class="eq-rhs">= 0.3 − 0.09 = 0.21</span></div>
-              <div class="eq-line result"><span class="eq-lhs">P(B&#773;|A&#773;)</span><span class="eq-rhs">= 0.21 ÷ 0.3 = 0.7</span></div>
-            </div>
+            <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">כלל הכפל מ-1.1: הסיכוי ששני המאורעות קרו יחד</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B) = P(A) × P(B|A)</div>
+      <div class="d-num">= 0.7 × 0.8 = <mark class="vv vv-ab">0.56</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">המשלים מ-1.2: הסיכוי ש-A לא קרה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;) = 1 − P(A)</div>
+      <div class="d-num">= 1 − 0.7 = <mark class="vv vv-na">0.3</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">"רק B": מכל B מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B) = P(B) − P(A∩B)</div>
+      <div class="d-num">= 0.65 − <mark class="vv vv-ab">0.56</mark> = <mark class="vv vv-nab">0.09</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">אף אחד מהשניים: מה שנשאר בעמודת "A לא קרה"</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B&#773;) = P(A&#773;) − P(A&#773;∩B)</div>
+      <div class="d-num">= <mark class="vv vv-na">0.3</mark> − <mark class="vv vv-nab">0.09</mark> = <mark class="vv vv-nanb">0.21</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">ההגדרה מ-1.3: החלק המבוקש חלקי התנאי הידוע</div>
+      <div class="d-math">
+      <div class="d-sym">P(B&#773;|A&#773;) = P(A&#773;∩B&#773;) ÷ P(A&#773;)</div>
+      <div class="d-num">= <mark class="vv vv-nanb">0.21</mark> ÷ <mark class="vv vv-na">0.3</mark> = 0.7</div>
+      </div>
+    </div>
+    </div>
             <div class="interp">מתוך מי שלא השלים, 70 אחוז גם נכשלים. שיעורי הבית הם כנראה ההכנה האמיתית למבחן.</div>
+
+    <div class="jt-wrap">
+      <div class="jt-title">🗺️ אותה מפה, בטבלה אחת</div>
+      <p class="jt-lead">ארבעת התאים הפנימיים הם ארבעת האזורים, באותם צבעים כמו בשורות החישוב. כל שורה וכל עמודה מסתכמות לשוליים שלהן, והכל יחד מסתכם ל-1.</p>
+      <div class="jt-scroll"><table class="jt">
+        <tr><th></th><th><span class="jt-sym">A</span> קרה</th><th><span class="jt-sym">A&#773;</span> לא קרה</th><th>סה״כ</th></tr>
+        <tr><th><span class="jt-sym">B</span> קרה</th><td class="c-ab">0.56</td><td class="c-nab">0.09</td><td class="mrg">0.65</td></tr>
+        <tr><th><span class="jt-sym">B&#773;</span> לא קרה</th><td class="c-anb">0.14</td><td class="c-nanb used">0.21</td><td class="mrg">0.35</td></tr>
+        <tr><th>סה״כ</th><td class="mrg">0.7</td><td class="mrg used">0.3</td><td>1</td></tr>
+      </table></div>
+      <div class="jt-note">שני התאים המסומנים בקו הם השבר של התשובה: <span class="formula-inline">P(B&#773;|A&#773;) = 0.21 ÷ 0.3 = 0.7</span>.</div>
+    </div>
           </div>
         </details>
       </div>
@@ -1433,14 +1803,57 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
               </div>
             </div>
             <div class="identify">מזהים: <span class="formula-inline">A</span> = לוחץ על הבאנר, <span class="formula-inline">B</span> = נרשם לרשימת התפוצה. מבקשים את <span class="formula-inline">P(B&#773;|A&#773;)</span>: הסיכוי ש-B לא יקרה, בהינתן ש-A לא קרה. נתון: <span class="formula-inline">P(A) = 0.4</span>, <span class="formula-inline">P(B) = 0.35</span>, <span class="formula-inline">P(B|A) = 0.5</span>.</div>
-            <div class="eq-chain">
-              <div class="eq-line"><span class="eq-lhs">P(A∩B)</span><span class="eq-rhs">= 0.4 × 0.5 = 0.2</span></div>
-              <div class="eq-line"><span class="eq-lhs">P(A&#773;)</span><span class="eq-rhs">= 1 − 0.4 = 0.6</span></div>
-              <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B)</span><span class="eq-rhs">= 0.35 − 0.2 = 0.15</span></div>
-              <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B&#773;)</span><span class="eq-rhs">= 0.6 − 0.15 = 0.45</span></div>
-              <div class="eq-line result"><span class="eq-lhs">P(B&#773;|A&#773;)</span><span class="eq-rhs">= 0.45 ÷ 0.6 = 0.75</span></div>
-            </div>
+            <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">כלל הכפל מ-1.1: הסיכוי ששני המאורעות קרו יחד</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B) = P(A) × P(B|A)</div>
+      <div class="d-num">= 0.4 × 0.5 = <mark class="vv vv-ab">0.2</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">המשלים מ-1.2: הסיכוי ש-A לא קרה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;) = 1 − P(A)</div>
+      <div class="d-num">= 1 − 0.4 = <mark class="vv vv-na">0.6</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">"רק B": מכל B מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B) = P(B) − P(A∩B)</div>
+      <div class="d-num">= 0.35 − <mark class="vv vv-ab">0.2</mark> = <mark class="vv vv-nab">0.15</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">אף אחד מהשניים: מה שנשאר בעמודת "A לא קרה"</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B&#773;) = P(A&#773;) − P(A&#773;∩B)</div>
+      <div class="d-num">= <mark class="vv vv-na">0.6</mark> − <mark class="vv vv-nab">0.15</mark> = <mark class="vv vv-nanb">0.45</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">ההגדרה מ-1.3: החלק המבוקש חלקי התנאי הידוע</div>
+      <div class="d-math">
+      <div class="d-sym">P(B&#773;|A&#773;) = P(A&#773;∩B&#773;) ÷ P(A&#773;)</div>
+      <div class="d-num">= <mark class="vv vv-nanb">0.45</mark> ÷ <mark class="vv vv-na">0.6</mark> = 0.75</div>
+      </div>
+    </div>
+    </div>
             <div class="interp">מתוך מי שלא לחץ, 75 אחוז גם לא נרשמים. ההרשמה בלי לחיצה קיימת, אבל היא המיעוט.</div>
+
+    <div class="jt-wrap">
+      <div class="jt-title">🗺️ אותה מפה, בטבלה אחת</div>
+      <p class="jt-lead">ארבעת התאים הפנימיים הם ארבעת האזורים, באותם צבעים כמו בשורות החישוב. כל שורה וכל עמודה מסתכמות לשוליים שלהן, והכל יחד מסתכם ל-1.</p>
+      <div class="jt-scroll"><table class="jt">
+        <tr><th></th><th><span class="jt-sym">A</span> קרה</th><th><span class="jt-sym">A&#773;</span> לא קרה</th><th>סה״כ</th></tr>
+        <tr><th><span class="jt-sym">B</span> קרה</th><td class="c-ab">0.2</td><td class="c-nab">0.15</td><td class="mrg">0.35</td></tr>
+        <tr><th><span class="jt-sym">B&#773;</span> לא קרה</th><td class="c-anb">0.2</td><td class="c-nanb used">0.45</td><td class="mrg">0.65</td></tr>
+        <tr><th>סה״כ</th><td class="mrg">0.4</td><td class="mrg used">0.6</td><td>1</td></tr>
+      </table></div>
+      <div class="jt-note">שני התאים המסומנים בקו הם השבר של התשובה: <span class="formula-inline">P(B&#773;|A&#773;) = 0.45 ÷ 0.6 = 0.75</span>.</div>
+    </div>
           </div>
         </details>
       </div>
@@ -1488,14 +1901,57 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
               </div>
             </div>
             <div class="identify">מזהים: <span class="formula-inline">A</span> = מתאם סיור בדירה, <span class="formula-inline">B</span> = מגיש הצעת מחיר. מבקשים את <span class="formula-inline">P(B&#773;|A&#773;)</span>: הסיכוי ש-B לא יקרה, בהינתן ש-A לא קרה. נתון: <span class="formula-inline">P(A) = 0.6</span>, <span class="formula-inline">P(B) = 0.4</span>, <span class="formula-inline">P(B|A) = 0.6</span>.</div>
-            <div class="eq-chain">
-              <div class="eq-line"><span class="eq-lhs">P(A∩B)</span><span class="eq-rhs">= 0.6 × 0.6 = 0.36</span></div>
-              <div class="eq-line"><span class="eq-lhs">P(A&#773;)</span><span class="eq-rhs">= 1 − 0.6 = 0.4</span></div>
-              <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B)</span><span class="eq-rhs">= 0.4 − 0.36 = 0.04</span></div>
-              <div class="eq-line"><span class="eq-lhs">P(A&#773;∩B&#773;)</span><span class="eq-rhs">= 0.4 − 0.04 = 0.36</span></div>
-              <div class="eq-line result"><span class="eq-lhs">P(B&#773;|A&#773;)</span><span class="eq-rhs">= 0.36 ÷ 0.4 = 0.9</span></div>
-            </div>
+            <div class="deriv">
+<div class="d-guide"><strong>איך קוראים כל שורה:</strong> מימין, במילים, מה מחשבים ובאיזה כלל. משמאל למעלה אותה נוסחה בסמלים, ומתחתיה אותה נוסחה עם המספרים. מספר על רקע צבוע הוא תוצאה שחושבה בשורה קודמת, והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">כלל הכפל מ-1.1: הסיכוי ששני המאורעות קרו יחד</div>
+      <div class="d-math">
+      <div class="d-sym">P(A∩B) = P(A) × P(B|A)</div>
+      <div class="d-num">= 0.6 × 0.6 = <mark class="vv vv-ab">0.36</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">המשלים מ-1.2: הסיכוי ש-A לא קרה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;) = 1 − P(A)</div>
+      <div class="d-num">= 1 − 0.6 = <mark class="vv vv-na">0.4</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">"רק B": מכל B מחסירים את החפיפה</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B) = P(B) − P(A∩B)</div>
+      <div class="d-num">= 0.4 − <mark class="vv vv-ab">0.36</mark> = <mark class="vv vv-nab">0.04</mark></div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">אף אחד מהשניים: מה שנשאר בעמודת "A לא קרה"</div>
+      <div class="d-math">
+      <div class="d-sym">P(A&#773;∩B&#773;) = P(A&#773;) − P(A&#773;∩B)</div>
+      <div class="d-num">= <mark class="vv vv-na">0.4</mark> − <mark class="vv vv-nab">0.04</mark> = <mark class="vv vv-nanb">0.36</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">ההגדרה מ-1.3: החלק המבוקש חלקי התנאי הידוע</div>
+      <div class="d-math">
+      <div class="d-sym">P(B&#773;|A&#773;) = P(A&#773;∩B&#773;) ÷ P(A&#773;)</div>
+      <div class="d-num">= <mark class="vv vv-nanb">0.36</mark> ÷ <mark class="vv vv-na">0.4</mark> = 0.9</div>
+      </div>
+    </div>
+    </div>
             <div class="interp">מתוך מי שלא סייר, 90 אחוז גם לא מגישים הצעה. כמעט אף אחד לא קונה דירה בלי לראות אותה.</div>
+
+    <div class="jt-wrap">
+      <div class="jt-title">🗺️ אותה מפה, בטבלה אחת</div>
+      <p class="jt-lead">ארבעת התאים הפנימיים הם ארבעת האזורים, באותם צבעים כמו בשורות החישוב. כל שורה וכל עמודה מסתכמות לשוליים שלהן, והכל יחד מסתכם ל-1.</p>
+      <div class="jt-scroll"><table class="jt">
+        <tr><th></th><th><span class="jt-sym">A</span> קרה</th><th><span class="jt-sym">A&#773;</span> לא קרה</th><th>סה״כ</th></tr>
+        <tr><th><span class="jt-sym">B</span> קרה</th><td class="c-ab">0.36</td><td class="c-nab">0.04</td><td class="mrg">0.4</td></tr>
+        <tr><th><span class="jt-sym">B&#773;</span> לא קרה</th><td class="c-anb">0.24</td><td class="c-nanb used">0.36</td><td class="mrg">0.6</td></tr>
+        <tr><th>סה״כ</th><td class="mrg">0.6</td><td class="mrg used">0.4</td><td>1</td></tr>
+      </table></div>
+      <div class="jt-note">שני התאים המסומנים בקו הם השבר של התשובה: <span class="formula-inline">P(B&#773;|A&#773;) = 0.36 ÷ 0.4 = 0.9</span>.</div>
+    </div>
           </div>
         </details>
       </div>
