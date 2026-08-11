@@ -632,6 +632,54 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
 }
 </style>
 
+<style>
+/* labelled derivations: formula in symbols above the same formula in numbers */
+.deriv{display:flex;flex-direction:column;gap:.55rem;margin-top:.5rem;}
+.d-guide{
+  font-size:.8rem;color:var(--ink-faint);line-height:1.55;
+  background:var(--paper-sunken);border-radius:8px;padding:.55rem .85rem;
+}
+.d-row{
+  display:flex;align-items:center;justify-content:space-between;gap:.5rem 1.1rem;flex-wrap:wrap;
+  background:var(--paper-sunken);border-radius:10px;padding:.6rem .95rem;
+}
+.d-row.result{background:rgba(var(--accent-rgb),0.1);border:1px solid rgba(var(--accent-rgb),0.3);}
+.d-name{font-size:.86rem;font-weight:600;color:var(--ink);max-width:26ch;line-height:1.45;}
+.d-math{
+  direction:ltr;unicode-bidi:isolate;text-align:left;
+  font-family:var(--font-mono);font-variant-numeric:tabular-nums;
+  display:flex;flex-direction:column;gap:.12rem;overflow-x:auto;max-width:100%;
+}
+.d-sym{font-size:.84rem;color:var(--ink-faint);white-space:nowrap;}
+.d-num{font-size:1.02rem;font-weight:700;color:var(--ink);white-space:nowrap;}
+.d-row.result .d-num{color:var(--accent-strong);font-size:1.08rem;}
+/* role colours: a value keeps its colour wherever it travels */
+:root{
+  --vv-ab-bg:rgba(14,124,123,0.16);--vv-ab-ink:#095857;
+  --vv-anb-bg:rgba(184,134,11,0.18);--vv-anb-ink:#7A5408;
+  --vv-nab-bg:rgba(59,102,180,0.15);--vv-nab-ink:#2A4A8F;
+  --vv-nanb-bg:rgba(178,68,104,0.14);--vv-nanb-ink:#8F2F52;
+  --vv-nb-bg:rgba(90,99,120,0.16);--vv-nb-ink:#3E4657;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --vv-ab-bg:rgba(62,211,201,0.18);--vv-ab-ink:#7CE7DD;
+    --vv-anb-bg:rgba(232,190,110,0.18);--vv-anb-ink:#E8BE6E;
+    --vv-nab-bg:rgba(138,168,240,0.18);--vv-nab-ink:#A8C0F0;
+    --vv-nanb-bg:rgba(240,140,170,0.16);--vv-nanb-ink:#F0A8C0;
+    --vv-nb-bg:rgba(170,180,200,0.18);--vv-nb-ink:#C0CBD8;
+  }
+}
+.vv{display:inline-block;padding:0 .3em;border-radius:6px;font-weight:700;}
+/* chapter-2 roles: expectation pipeline */
+.vv-e{background:var(--vv-ab-bg);color:var(--vv-ab-ink);}      /* E(X) */
+.vv-e2{background:var(--vv-anb-bg);color:var(--vv-anb-ink);}   /* E(X²) */
+.vv-esq{background:var(--vv-nab-bg);color:var(--vv-nab-ink);}  /* E²(X) */
+.vv-var{background:var(--vv-nanb-bg);color:var(--vv-nanb-ink);}/* Var(X) */
+.vv-sd{background:var(--vv-nb-bg);color:var(--vv-nb-ink);}     /* σ(X) */
+</style>
+
+
 <div class="page" dir="rtl" lang="he">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -860,26 +908,51 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
       </div>
       <div class="sol-step">
         <div class="ss-head"><span class="ss-num">2</span>מחברים את העמודה האחרונה: זו <span class="formula-inline">E(X²)</span></div>
-        <div class="eq-chain">
-          <div class="eq-line"><span class="eq-lhs">E(X²)</span><span class="eq-rhs">= 0×0.006 + 1×0.092 + 4×0.398 + 9×0.504</span></div>
-          <div class="eq-line"><span class="eq-lhs"></span><span class="eq-rhs">= 0 + 0.092 + 1.592 + 4.536</span></div>
-          <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 6.22</span></div>
-        </div>
+        <div class="deriv">
+<div class="d-guide">קוראים כל שורה כך: למעלה הנוסחה בסמלים, מתחתיה אותה נוסחה עם המספרים. ההסתברויות מגיעות מהטבלה שמעל, והתוצאה הצבועה תמשיך איתנו באותו צבע.</div>
+    <div class="d-row result">
+      <div class="d-name">תוחלת הריבועים: מרבעים כל ערך, מכפילים בהסתברות שלו, ומחברים</div>
+      <div class="d-math">
+      <div class="d-sym">E(X²) = Σ x² · P(X=x)</div>
+      <div class="d-num">= 0×0.006 + 1×0.092 + 4×0.398 + 9×0.504</div>
+      <div class="d-num">= 0 + 0.092 + 1.592 + 4.536</div>
+      <div class="d-num">= <mark class="vv vv-e2">6.22</mark></div>
+      </div>
+    </div>
+    </div>
       </div>
       <div class="sol-step">
         <div class="ss-head"><span class="ss-num">3</span>מציבים בנוסחת הקיצור</div>
         <p>התוחלת ידועה מ-2.2: <span class="formula-inline">E(X) = 2.4</span>, ולכן <span class="formula-inline">E²(X) = 2.4 × 2.4 = 5.76</span>.</p>
-        <div class="eq-chain">
-          <div class="eq-line"><span class="eq-lhs">Var(X)</span><span class="eq-rhs">= E(X²) − E²(X)</span></div>
-          <div class="eq-line"><span class="eq-lhs"></span><span class="eq-rhs">= 6.22 − 5.76</span></div>
-          <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 0.46</span></div>
-        </div>
+        <div class="deriv">
+<div class="d-guide">מספר על רקע צבוע חושב בשורה קודמת (או בסעיף קודם), והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">ריבוע התוחלת: התוחלת שמצאנו ב-2.2, כפול עצמה</div>
+      <div class="d-math">
+      <div class="d-sym">E²(X) = E(X) × E(X)</div>
+      <div class="d-num">= <mark class="vv vv-e">2.4</mark> × <mark class="vv vv-e">2.4</mark> = <mark class="vv vv-esq">5.76</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">נוסחת הקיצור: תוחלת הריבועים פחות ריבוע התוחלת</div>
+      <div class="d-math">
+      <div class="d-sym">Var(X) = E(X²) − E²(X)</div>
+      <div class="d-num">= <mark class="vv vv-e2">6.22</mark> − <mark class="vv vv-esq">5.76</mark> = <mark class="vv vv-var">0.46</mark></div>
+      </div>
+    </div>
+    </div>
       </div>
       <div class="sol-step">
         <div class="ss-head"><span class="ss-num">4</span>מוציאים שורש: סטיית התקן</div>
-        <div class="eq-chain">
-          <div class="eq-line result"><span class="eq-lhs">σ(X)</span><span class="eq-rhs">= √0.46 ≈ 0.678</span></div>
-        </div>
+        <div class="deriv">
+    <div class="d-row result">
+      <div class="d-name">סטיית התקן: שורש השונות, חזרה ליחידות המקוריות</div>
+      <div class="d-math">
+      <div class="d-sym">σ(X) = √Var(X)</div>
+      <div class="d-num">= √<mark class="vv vv-var">0.46</mark> ≈ <mark class="vv vv-sd">0.678</mark></div>
+      </div>
+    </div>
+    </div>
         <p><strong>המשמעות במשפט:</strong> מספר הרכיבים התקינים במקרר בודד נוטה ליפול במרחק של כ-0.68 רכיב מהממוצע 2.4. כלומר, רוב המקררים יציגו 2 או 3 רכיבים תקינים.</p>
       </div>
       <div class="result-banner">
@@ -924,24 +997,50 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">1</span>מחשבים את <span class="formula-inline">E(X²)</span></div>
               <p>מרבעים כל ערך (כופלים אותו בעצמו), מכפילים בהסתברות שלו, ומחברים:</p>
-              <div class="eq-chain">
-                <div class="eq-line"><span class="eq-lhs">E(X²)</span><span class="eq-rhs">= 0²×0.1 + 1²×0.5 + 2²×0.4</span></div>
-                <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 0 + 0.5 + 1.6 = 2.1</span></div>
-              </div>
+              <div class="dist-wrap"><table class="dist-table"><tr><th>הערך <span class="formula-inline">x</span></th><th><span class="formula-inline">P(X=x)</span></th><th><span class="formula-inline">x² · P(X=x)</span></th></tr><tr><td class="num">0</td><td class="num">0.1</td><td class="num">0</td></tr><tr><td class="num">1</td><td class="num">0.5</td><td class="num">1 × 0.5 = 0.5</td></tr><tr><td class="num">2</td><td class="num">0.4</td><td class="num">4 × 0.4 = 1.6</td></tr><tr class="sumrow"><td>סה״כ</td><td class="num">1</td><td class="num hl">2.1</td></tr></table></div>
+              <div class="deriv">
+<div class="d-guide">קוראים כל שורה כך: למעלה הנוסחה בסמלים, מתחתיה אותה נוסחה עם המספרים. ההסתברויות מגיעות מהטבלה שמעל, והתוצאה הצבועה תמשיך איתנו באותו צבע.</div>
+    <div class="d-row result">
+      <div class="d-name">תוחלת הריבועים: מרבעים כל ערך, מכפילים בהסתברות שלו, ומחברים</div>
+      <div class="d-math">
+      <div class="d-sym">E(X²) = Σ x² · P(X=x)</div>
+      <div class="d-num">= 0²×0.1 + 1²×0.5 + 2²×0.4</div>
+      <div class="d-num">= 0 + 0.5 + 1.6 = <mark class="vv vv-e2">2.1</mark></div>
+      </div>
+    </div>
+    </div>
             </div>
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">2</span>מציבים בנוסחת הקיצור</div>
-              <div class="eq-chain">
-                <div class="eq-line"><span class="eq-lhs">Var(X)</span><span class="eq-rhs">= E(X²) − E²(X)</span></div>
-                <div class="eq-line"><span class="eq-lhs"></span><span class="eq-rhs">= 2.1 − 1.3² = 2.1 − 1.69</span></div>
-                <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 0.41</span></div>
-              </div>
+              <div class="deriv">
+<div class="d-guide">מספר על רקע צבוע חושב בשורה קודמת (או בסעיף קודם), והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">ריבוע התוחלת: התוחלת שניתנה בשאלה, כפול עצמה</div>
+      <div class="d-math">
+      <div class="d-sym">E²(X) = E(X) × E(X)</div>
+      <div class="d-num">= <mark class="vv vv-e">1.3</mark> × <mark class="vv vv-e">1.3</mark> = <mark class="vv vv-esq">1.69</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">נוסחת הקיצור: תוחלת הריבועים פחות ריבוע התוחלת</div>
+      <div class="d-math">
+      <div class="d-sym">Var(X) = E(X²) − E²(X)</div>
+      <div class="d-num">= <mark class="vv vv-e2">2.1</mark> − <mark class="vv vv-esq">1.69</mark> = <mark class="vv vv-var">0.41</mark></div>
+      </div>
+    </div>
+    </div>
             </div>
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">3</span>סטיית התקן ומשמעות</div>
-              <div class="eq-chain">
-                <div class="eq-line result"><span class="eq-lhs">σ(X)</span><span class="eq-rhs">= √0.41 ≈ 0.64</span></div>
-              </div>
+              <div class="deriv">
+    <div class="d-row result">
+      <div class="d-name">סטיית התקן: שורש השונות, חזרה ליחידות המקוריות</div>
+      <div class="d-math">
+      <div class="d-sym">σ(X) = √Var(X)</div>
+      <div class="d-num">= √<mark class="vv vv-var">0.41</mark> ≈ <mark class="vv vv-sd">0.64</mark></div>
+      </div>
+    </div>
+    </div>
               <p><strong>המשמעות:</strong> ביום טיפוסי, מספר המכונות התקינות נופל כ-0.64 מכונות סביב הממוצע 1.3. פיזור גדול יחסית לסקאלה של 0 עד 2: החודשים שונים מאוד זה מזה.</p>
             </div>
             <div class="result-banner"><span class="val">Var = 0.41</span><span class="interp">סטיית התקן: בערך 0.64 מכונות סביב הממוצע.</span></div>
@@ -961,24 +1060,50 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">1</span>מחשבים את <span class="formula-inline">E(X²)</span></div>
               <p>מרבעים כל ערך (כופלים אותו בעצמו), מכפילים בהסתברות שלו, ומחברים:</p>
-              <div class="eq-chain">
-                <div class="eq-line"><span class="eq-lhs">E(X²)</span><span class="eq-rhs">= 0²×0.04 + 1²×0.42 + 2²×0.54</span></div>
-                <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 0 + 0.42 + 2.16 = 2.58</span></div>
-              </div>
+              <div class="dist-wrap"><table class="dist-table"><tr><th>הערך <span class="formula-inline">x</span></th><th><span class="formula-inline">P(X=x)</span></th><th><span class="formula-inline">x² · P(X=x)</span></th></tr><tr><td class="num">0</td><td class="num">0.04</td><td class="num">0</td></tr><tr><td class="num">1</td><td class="num">0.42</td><td class="num">1 × 0.42 = 0.42</td></tr><tr><td class="num">2</td><td class="num">0.54</td><td class="num">4 × 0.54 = 2.16</td></tr><tr class="sumrow"><td>סה״כ</td><td class="num">1</td><td class="num hl">2.58</td></tr></table></div>
+              <div class="deriv">
+<div class="d-guide">קוראים כל שורה כך: למעלה הנוסחה בסמלים, מתחתיה אותה נוסחה עם המספרים. ההסתברויות מגיעות מהטבלה שמעל, והתוצאה הצבועה תמשיך איתנו באותו צבע.</div>
+    <div class="d-row result">
+      <div class="d-name">תוחלת הריבועים: מרבעים כל ערך, מכפילים בהסתברות שלו, ומחברים</div>
+      <div class="d-math">
+      <div class="d-sym">E(X²) = Σ x² · P(X=x)</div>
+      <div class="d-num">= 0²×0.04 + 1²×0.42 + 2²×0.54</div>
+      <div class="d-num">= 0 + 0.42 + 2.16 = <mark class="vv vv-e2">2.58</mark></div>
+      </div>
+    </div>
+    </div>
             </div>
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">2</span>מציבים בנוסחת הקיצור</div>
-              <div class="eq-chain">
-                <div class="eq-line"><span class="eq-lhs">Var(X)</span><span class="eq-rhs">= E(X²) − E²(X)</span></div>
-                <div class="eq-line"><span class="eq-lhs"></span><span class="eq-rhs">= 2.58 − 1.5² = 2.58 − 2.25</span></div>
-                <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 0.33</span></div>
-              </div>
+              <div class="deriv">
+<div class="d-guide">מספר על רקע צבוע חושב בשורה קודמת (או בסעיף קודם), והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">ריבוע התוחלת: התוחלת שניתנה בשאלה, כפול עצמה</div>
+      <div class="d-math">
+      <div class="d-sym">E²(X) = E(X) × E(X)</div>
+      <div class="d-num">= <mark class="vv vv-e">1.5</mark> × <mark class="vv vv-e">1.5</mark> = <mark class="vv vv-esq">2.25</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">נוסחת הקיצור: תוחלת הריבועים פחות ריבוע התוחלת</div>
+      <div class="d-math">
+      <div class="d-sym">Var(X) = E(X²) − E²(X)</div>
+      <div class="d-num">= <mark class="vv vv-e2">2.58</mark> − <mark class="vv vv-esq">2.25</mark> = <mark class="vv vv-var">0.33</mark></div>
+      </div>
+    </div>
+    </div>
             </div>
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">3</span>סטיית התקן ומשמעות</div>
-              <div class="eq-chain">
-                <div class="eq-line result"><span class="eq-lhs">σ(X)</span><span class="eq-rhs">= √0.33 ≈ 0.574</span></div>
-              </div>
+              <div class="deriv">
+    <div class="d-row result">
+      <div class="d-name">סטיית התקן: שורש השונות, חזרה ליחידות המקוריות</div>
+      <div class="d-math">
+      <div class="d-sym">σ(X) = √Var(X)</div>
+      <div class="d-num">= √<mark class="vv vv-var">0.33</mark> ≈ <mark class="vv vv-sd">0.574</mark></div>
+      </div>
+    </div>
+    </div>
               <p><strong>המשמעות:</strong> בבוקר טיפוסי, מספר המכשירים העובדים נופל כ-0.57 מכשירים סביב הממוצע 1.5. יציב יותר מבית הקפה, בעיקר בזכות המדפסת האמינה.</p>
             </div>
             <div class="result-banner"><span class="val">Var = 0.33</span><span class="interp">סטיית התקן: בערך 0.574 מכשירים סביב הממוצע.</span></div>
@@ -998,24 +1123,50 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">1</span>מחשבים את <span class="formula-inline">E(X²)</span></div>
               <p>מרבעים כל ערך (כופלים אותו בעצמו), מכפילים בהסתברות שלו, ומחברים:</p>
-              <div class="eq-chain">
-                <div class="eq-line"><span class="eq-lhs">E(X²)</span><span class="eq-rhs">= 0²×0.05 + 1²×0.3 + 2²×0.45 + 3²×0.2</span></div>
-                <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 0 + 0.3 + 1.8 + 1.8 = 3.9</span></div>
-              </div>
+              <div class="dist-wrap"><table class="dist-table"><tr><th>הערך <span class="formula-inline">x</span></th><th><span class="formula-inline">P(X=x)</span></th><th><span class="formula-inline">x² · P(X=x)</span></th></tr><tr><td class="num">0</td><td class="num">0.05</td><td class="num">0</td></tr><tr><td class="num">1</td><td class="num">0.3</td><td class="num">1 × 0.3 = 0.3</td></tr><tr><td class="num">2</td><td class="num">0.45</td><td class="num">4 × 0.45 = 1.8</td></tr><tr><td class="num">3</td><td class="num">0.2</td><td class="num">9 × 0.2 = 1.8</td></tr><tr class="sumrow"><td>סה״כ</td><td class="num">1</td><td class="num hl">3.9</td></tr></table></div>
+              <div class="deriv">
+<div class="d-guide">קוראים כל שורה כך: למעלה הנוסחה בסמלים, מתחתיה אותה נוסחה עם המספרים. ההסתברויות מגיעות מהטבלה שמעל, והתוצאה הצבועה תמשיך איתנו באותו צבע.</div>
+    <div class="d-row result">
+      <div class="d-name">תוחלת הריבועים: מרבעים כל ערך, מכפילים בהסתברות שלו, ומחברים</div>
+      <div class="d-math">
+      <div class="d-sym">E(X²) = Σ x² · P(X=x)</div>
+      <div class="d-num">= 0²×0.05 + 1²×0.3 + 2²×0.45 + 3²×0.2</div>
+      <div class="d-num">= 0 + 0.3 + 1.8 + 1.8 = <mark class="vv vv-e2">3.9</mark></div>
+      </div>
+    </div>
+    </div>
             </div>
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">2</span>מציבים בנוסחת הקיצור</div>
-              <div class="eq-chain">
-                <div class="eq-line"><span class="eq-lhs">Var(X)</span><span class="eq-rhs">= E(X²) − E²(X)</span></div>
-                <div class="eq-line"><span class="eq-lhs"></span><span class="eq-rhs">= 3.9 − 1.8² = 3.9 − 3.24</span></div>
-                <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 0.66</span></div>
-              </div>
+              <div class="deriv">
+<div class="d-guide">מספר על רקע צבוע חושב בשורה קודמת (או בסעיף קודם), והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">ריבוע התוחלת: התוחלת שניתנה בשאלה, כפול עצמה</div>
+      <div class="d-math">
+      <div class="d-sym">E²(X) = E(X) × E(X)</div>
+      <div class="d-num">= <mark class="vv vv-e">1.8</mark> × <mark class="vv vv-e">1.8</mark> = <mark class="vv vv-esq">3.24</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">נוסחת הקיצור: תוחלת הריבועים פחות ריבוע התוחלת</div>
+      <div class="d-math">
+      <div class="d-sym">Var(X) = E(X²) − E²(X)</div>
+      <div class="d-num">= <mark class="vv vv-e2">3.9</mark> − <mark class="vv vv-esq">3.24</mark> = <mark class="vv vv-var">0.66</mark></div>
+      </div>
+    </div>
+    </div>
             </div>
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">3</span>סטיית התקן ומשמעות</div>
-              <div class="eq-chain">
-                <div class="eq-line result"><span class="eq-lhs">σ(X)</span><span class="eq-rhs">= √0.66 ≈ 0.812</span></div>
-              </div>
+              <div class="deriv">
+    <div class="d-row result">
+      <div class="d-name">סטיית התקן: שורש השונות, חזרה ליחידות המקוריות</div>
+      <div class="d-math">
+      <div class="d-sym">σ(X) = √Var(X)</div>
+      <div class="d-num">= √<mark class="vv vv-var">0.66</mark> ≈ <mark class="vv vv-sd">0.812</mark></div>
+      </div>
+    </div>
+    </div>
               <p><strong>המשמעות:</strong> בהזמנה טיפוסית, מספר המשלוחים שבזמן נופל כ-0.81 משלוחים סביב הממוצע 1.8. הפיזור הגדול מבין השלושה: שני ספקי ה-50% מוסיפים הרבה אי-ודאות.</p>
             </div>
             <div class="result-banner"><span class="val">Var = 0.66</span><span class="interp">סטיית התקן: בערך 0.812 משלוחים סביב הממוצע.</span></div>

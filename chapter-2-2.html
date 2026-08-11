@@ -632,6 +632,54 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
 }
 </style>
 
+<style>
+/* labelled derivations: formula in symbols above the same formula in numbers */
+.deriv{display:flex;flex-direction:column;gap:.55rem;margin-top:.5rem;}
+.d-guide{
+  font-size:.8rem;color:var(--ink-faint);line-height:1.55;
+  background:var(--paper-sunken);border-radius:8px;padding:.55rem .85rem;
+}
+.d-row{
+  display:flex;align-items:center;justify-content:space-between;gap:.5rem 1.1rem;flex-wrap:wrap;
+  background:var(--paper-sunken);border-radius:10px;padding:.6rem .95rem;
+}
+.d-row.result{background:rgba(var(--accent-rgb),0.1);border:1px solid rgba(var(--accent-rgb),0.3);}
+.d-name{font-size:.86rem;font-weight:600;color:var(--ink);max-width:26ch;line-height:1.45;}
+.d-math{
+  direction:ltr;unicode-bidi:isolate;text-align:left;
+  font-family:var(--font-mono);font-variant-numeric:tabular-nums;
+  display:flex;flex-direction:column;gap:.12rem;overflow-x:auto;max-width:100%;
+}
+.d-sym{font-size:.84rem;color:var(--ink-faint);white-space:nowrap;}
+.d-num{font-size:1.02rem;font-weight:700;color:var(--ink);white-space:nowrap;}
+.d-row.result .d-num{color:var(--accent-strong);font-size:1.08rem;}
+/* role colours: a value keeps its colour wherever it travels */
+:root{
+  --vv-ab-bg:rgba(14,124,123,0.16);--vv-ab-ink:#095857;
+  --vv-anb-bg:rgba(184,134,11,0.18);--vv-anb-ink:#7A5408;
+  --vv-nab-bg:rgba(59,102,180,0.15);--vv-nab-ink:#2A4A8F;
+  --vv-nanb-bg:rgba(178,68,104,0.14);--vv-nanb-ink:#8F2F52;
+  --vv-nb-bg:rgba(90,99,120,0.16);--vv-nb-ink:#3E4657;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --vv-ab-bg:rgba(62,211,201,0.18);--vv-ab-ink:#7CE7DD;
+    --vv-anb-bg:rgba(232,190,110,0.18);--vv-anb-ink:#E8BE6E;
+    --vv-nab-bg:rgba(138,168,240,0.18);--vv-nab-ink:#A8C0F0;
+    --vv-nanb-bg:rgba(240,140,170,0.16);--vv-nanb-ink:#F0A8C0;
+    --vv-nb-bg:rgba(170,180,200,0.18);--vv-nb-ink:#C0CBD8;
+  }
+}
+.vv{display:inline-block;padding:0 .3em;border-radius:6px;font-weight:700;}
+/* chapter-2 roles: expectation pipeline */
+.vv-e{background:var(--vv-ab-bg);color:var(--vv-ab-ink);}      /* E(X) */
+.vv-e2{background:var(--vv-anb-bg);color:var(--vv-anb-ink);}   /* E(X²) */
+.vv-esq{background:var(--vv-nab-bg);color:var(--vv-nab-ink);}  /* E²(X) */
+.vv-var{background:var(--vv-nanb-bg);color:var(--vv-nanb-ink);}/* Var(X) */
+.vv-sd{background:var(--vv-nb-bg);color:var(--vv-nb-ink);}     /* σ(X) */
+</style>
+
+
 <div class="page" dir="rtl" lang="he">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -781,11 +829,17 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
         <li><span class="tag">504</span><span>מקררים עם שלושה רכיבים תקינים.</span></li>
       </ul>
       <p style="margin-top:.9rem"><strong>שאלה:</strong> כמה רכיבים תקינים יש בסך הכל, בכל אלף המקררים יחד?</p>
-      <div class="eq-chain">
-        <div class="eq-line"><span class="eq-lhs"></span><span class="eq-rhs">0×6 + 1×92 + 2×398 + 3×504</span></div>
-        <div class="eq-line"><span class="eq-lhs"></span><span class="eq-rhs">= 0 + 92 + 796 + 1512</span></div>
-        <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 2400</span></div>
+      <div class="deriv">
+<div class="d-guide">עוד אין כאן נוסחה, רק ספירה: כל ערך כפול מספר המקררים שקיבלו אותו.</div>
+    <div class="d-row result">
+      <div class="d-name">סופרים על כל אלף המקררים יחד: כמה רכיבים תקינים בסך הכל</div>
+      <div class="d-math">
+      <div class="d-num">0×6 + 1×92 + 2×398 + 3×504</div>
+      <div class="d-num">= 0 + 92 + 796 + 1512</div>
+      <div class="d-num">= 2400</div>
       </div>
+    </div>
+    </div>
       <p>אלפיים וארבע מאות רכיבים תקינים, מחולקים בין 1,000 מקררים. כלומר, <strong>בממוצע <span class="formula-inline">2400 ÷ 1000 = 2.4</span> רכיבים תקינים למקרר</strong>.</p>
       <p>המספר 2.4 הזה הוא בדיוק התוחלת. שימו לב מה עשינו: הכפלנו כל ערך בשכיחות שלו, חיברנו, וחילקנו בכמות. ומכיוון שהשכיחויות באו מההסתברויות, אפשר לדלג על האלף ולעבוד עם ההסתברויות ישירות.</p>
       <details class="tsaban-note">
@@ -864,11 +918,18 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
       </div>
       <div class="sol-step">
         <div class="ss-head"><span class="ss-num">2</span>מחברים את עמודת העזר</div>
-        <div class="eq-chain">
-          <div class="eq-line"><span class="eq-lhs">E(X)</span><span class="eq-rhs">= 0×0.006 + 1×0.092 + 2×0.398 + 3×0.504</span></div>
-          <div class="eq-line"><span class="eq-lhs"></span><span class="eq-rhs">= 0 + 0.092 + 0.796 + 1.512</span></div>
-          <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 2.4</span></div>
-        </div>
+        <div class="deriv">
+<div class="d-guide">קוראים כל שורה כך: למעלה הנוסחה בסמלים, מתחתיה אותה נוסחה עם המספרים. ההסתברויות מגיעות מהטבלה שמעל, והתוצאה הצבועה תמשיך איתנו באותו צבע.</div>
+    <div class="d-row result">
+      <div class="d-name">הנוסחה של התוחלת: כל ערך כפול ההסתברות שלו, והכל מתחבר</div>
+      <div class="d-math">
+      <div class="d-sym">E(X) = Σ x · P(X=x)</div>
+      <div class="d-num">= 0×0.006 + 1×0.092 + 2×0.398 + 3×0.504</div>
+      <div class="d-num">= 0 + 0.092 + 0.796 + 1.512</div>
+      <div class="d-num">= <mark class="vv vv-e">2.4</mark></div>
+      </div>
+    </div>
+    </div>
       </div>
       <div class="sol-step">
         <div class="ss-head"><span class="ss-num">3</span>כותבים את המשמעות במשפט</div>
@@ -916,10 +977,17 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">1</span>עמודת עזר וחיבור</div>
               <div class="dist-wrap"><table class="dist-table"><tr><th>הערך <span class="formula-inline">x</span></th><th><span class="formula-inline">P(X=x)</span></th><th>x · P(X=x)</th></tr><tr><td class="num">0</td><td class="num">0.1</td><td class="num">0</td></tr><tr><td class="num">1</td><td class="num">0.5</td><td class="num">0.5</td></tr><tr><td class="num">2</td><td class="num">0.4</td><td class="num">0.8</td></tr><tr class="sumrow"><td>סה״כ</td><td class="num">1</td><td class="num hl">1.3</td></tr></table></div>
-              <div class="eq-chain">
-                <div class="eq-line"><span class="eq-lhs">E(X)</span><span class="eq-rhs">= 0×0.1 + 1×0.5 + 2×0.4</span></div>
-                <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 0 + 0.5 + 0.8 = 1.3</span></div>
-              </div>
+              <div class="deriv">
+<div class="d-guide">קוראים כל שורה כך: למעלה הנוסחה בסמלים, מתחתיה אותה נוסחה עם המספרים. ההסתברויות מגיעות מהטבלה שמעל, והתוצאה הצבועה תמשיך איתנו באותו צבע.</div>
+    <div class="d-row result">
+      <div class="d-name">הנוסחה של התוחלת: כל ערך כפול ההסתברות שלו, והכל מתחבר</div>
+      <div class="d-math">
+      <div class="d-sym">E(X) = Σ x · P(X=x)</div>
+      <div class="d-num">= 0×0.1 + 1×0.5 + 2×0.4</div>
+      <div class="d-num">= 0 + 0.5 + 0.8 = <mark class="vv vv-e">1.3</mark></div>
+      </div>
+    </div>
+    </div>
             </div>
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">2</span>בדיקה ומשמעות</div>
@@ -942,10 +1010,17 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">1</span>עמודת עזר וחיבור</div>
               <div class="dist-wrap"><table class="dist-table"><tr><th>הערך <span class="formula-inline">x</span></th><th><span class="formula-inline">P(X=x)</span></th><th>x · P(X=x)</th></tr><tr><td class="num">0</td><td class="num">0.04</td><td class="num">0</td></tr><tr><td class="num">1</td><td class="num">0.42</td><td class="num">0.42</td></tr><tr><td class="num">2</td><td class="num">0.54</td><td class="num">1.08</td></tr><tr class="sumrow"><td>סה״כ</td><td class="num">1</td><td class="num hl">1.5</td></tr></table></div>
-              <div class="eq-chain">
-                <div class="eq-line"><span class="eq-lhs">E(X)</span><span class="eq-rhs">= 0×0.04 + 1×0.42 + 2×0.54</span></div>
-                <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 0 + 0.42 + 1.08 = 1.5</span></div>
-              </div>
+              <div class="deriv">
+<div class="d-guide">קוראים כל שורה כך: למעלה הנוסחה בסמלים, מתחתיה אותה נוסחה עם המספרים. ההסתברויות מגיעות מהטבלה שמעל, והתוצאה הצבועה תמשיך איתנו באותו צבע.</div>
+    <div class="d-row result">
+      <div class="d-name">הנוסחה של התוחלת: כל ערך כפול ההסתברות שלו, והכל מתחבר</div>
+      <div class="d-math">
+      <div class="d-sym">E(X) = Σ x · P(X=x)</div>
+      <div class="d-num">= 0×0.04 + 1×0.42 + 2×0.54</div>
+      <div class="d-num">= 0 + 0.42 + 1.08 = <mark class="vv vv-e">1.5</mark></div>
+      </div>
+    </div>
+    </div>
             </div>
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">2</span>בדיקה ומשמעות</div>
@@ -968,10 +1043,17 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">1</span>עמודת עזר וחיבור</div>
               <div class="dist-wrap"><table class="dist-table"><tr><th>הערך <span class="formula-inline">x</span></th><th><span class="formula-inline">P(X=x)</span></th><th>x · P(X=x)</th></tr><tr><td class="num">0</td><td class="num">0.05</td><td class="num">0</td></tr><tr><td class="num">1</td><td class="num">0.3</td><td class="num">0.3</td></tr><tr><td class="num">2</td><td class="num">0.45</td><td class="num">0.9</td></tr><tr><td class="num">3</td><td class="num">0.2</td><td class="num">0.6</td></tr><tr class="sumrow"><td>סה״כ</td><td class="num">1</td><td class="num hl">1.8</td></tr></table></div>
-              <div class="eq-chain">
-                <div class="eq-line"><span class="eq-lhs">E(X)</span><span class="eq-rhs">= 0×0.05 + 1×0.3 + 2×0.45 + 3×0.2</span></div>
-                <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 0 + 0.3 + 0.9 + 0.6 = 1.8</span></div>
-              </div>
+              <div class="deriv">
+<div class="d-guide">קוראים כל שורה כך: למעלה הנוסחה בסמלים, מתחתיה אותה נוסחה עם המספרים. ההסתברויות מגיעות מהטבלה שמעל, והתוצאה הצבועה תמשיך איתנו באותו צבע.</div>
+    <div class="d-row result">
+      <div class="d-name">הנוסחה של התוחלת: כל ערך כפול ההסתברות שלו, והכל מתחבר</div>
+      <div class="d-math">
+      <div class="d-sym">E(X) = Σ x · P(X=x)</div>
+      <div class="d-num">= 0×0.05 + 1×0.3 + 2×0.45 + 3×0.2</div>
+      <div class="d-num">= 0 + 0.3 + 0.9 + 0.6 = <mark class="vv vv-e">1.8</mark></div>
+      </div>
+    </div>
+    </div>
             </div>
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">2</span>בדיקה ומשמעות</div>
@@ -994,10 +1076,17 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">1</span>אותה נוסחה בדיוק</div>
               <p>התוחלת לא יודעת ולא מתעניינת אם X סופר רכיבים או שקלים. מכפילים ומחברים:</p>
-              <div class="eq-chain">
-                <div class="eq-line"><span class="eq-lhs">E(X)</span><span class="eq-rhs">= 0×0.9 + 50×0.09 + 500×0.01</span></div>
-                <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 0 + 4.5 + 5 = 9.5</span></div>
-              </div>
+              <div class="deriv">
+<div class="d-guide">קוראים כל שורה כך: למעלה הנוסחה בסמלים, מתחתיה אותה נוסחה עם המספרים. ההסתברויות מגיעות מהטבלה שמעל, והתוצאה הצבועה תמשיך איתנו באותו צבע.</div>
+    <div class="d-row result">
+      <div class="d-name">אותה נוסחה בדיוק, הפעם הערכים הם שקלים</div>
+      <div class="d-math">
+      <div class="d-sym">E(X) = Σ x · P(X=x)</div>
+      <div class="d-num">= 0×0.9 + 50×0.09 + 500×0.01</div>
+      <div class="d-num">= 0 + 4.5 + 5 = <mark class="vv vv-e">9.5</mark></div>
+      </div>
+    </div>
+    </div>
             </div>
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">2</span>משמעות והחלטה</div>

@@ -632,6 +632,54 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
 }
 </style>
 
+<style>
+/* labelled derivations: formula in symbols above the same formula in numbers */
+.deriv{display:flex;flex-direction:column;gap:.55rem;margin-top:.5rem;}
+.d-guide{
+  font-size:.8rem;color:var(--ink-faint);line-height:1.55;
+  background:var(--paper-sunken);border-radius:8px;padding:.55rem .85rem;
+}
+.d-row{
+  display:flex;align-items:center;justify-content:space-between;gap:.5rem 1.1rem;flex-wrap:wrap;
+  background:var(--paper-sunken);border-radius:10px;padding:.6rem .95rem;
+}
+.d-row.result{background:rgba(var(--accent-rgb),0.1);border:1px solid rgba(var(--accent-rgb),0.3);}
+.d-name{font-size:.86rem;font-weight:600;color:var(--ink);max-width:26ch;line-height:1.45;}
+.d-math{
+  direction:ltr;unicode-bidi:isolate;text-align:left;
+  font-family:var(--font-mono);font-variant-numeric:tabular-nums;
+  display:flex;flex-direction:column;gap:.12rem;overflow-x:auto;max-width:100%;
+}
+.d-sym{font-size:.84rem;color:var(--ink-faint);white-space:nowrap;}
+.d-num{font-size:1.02rem;font-weight:700;color:var(--ink);white-space:nowrap;}
+.d-row.result .d-num{color:var(--accent-strong);font-size:1.08rem;}
+/* role colours: a value keeps its colour wherever it travels */
+:root{
+  --vv-ab-bg:rgba(14,124,123,0.16);--vv-ab-ink:#095857;
+  --vv-anb-bg:rgba(184,134,11,0.18);--vv-anb-ink:#7A5408;
+  --vv-nab-bg:rgba(59,102,180,0.15);--vv-nab-ink:#2A4A8F;
+  --vv-nanb-bg:rgba(178,68,104,0.14);--vv-nanb-ink:#8F2F52;
+  --vv-nb-bg:rgba(90,99,120,0.16);--vv-nb-ink:#3E4657;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --vv-ab-bg:rgba(62,211,201,0.18);--vv-ab-ink:#7CE7DD;
+    --vv-anb-bg:rgba(232,190,110,0.18);--vv-anb-ink:#E8BE6E;
+    --vv-nab-bg:rgba(138,168,240,0.18);--vv-nab-ink:#A8C0F0;
+    --vv-nanb-bg:rgba(240,140,170,0.16);--vv-nanb-ink:#F0A8C0;
+    --vv-nb-bg:rgba(170,180,200,0.18);--vv-nb-ink:#C0CBD8;
+  }
+}
+.vv{display:inline-block;padding:0 .3em;border-radius:6px;font-weight:700;}
+/* chapter-2 roles: expectation pipeline */
+.vv-e{background:var(--vv-ab-bg);color:var(--vv-ab-ink);}      /* E(X) */
+.vv-e2{background:var(--vv-anb-bg);color:var(--vv-anb-ink);}   /* E(X²) */
+.vv-esq{background:var(--vv-nab-bg);color:var(--vv-nab-ink);}  /* E²(X) */
+.vv-var{background:var(--vv-nanb-bg);color:var(--vv-nanb-ink);}/* Var(X) */
+.vv-sd{background:var(--vv-nb-bg);color:var(--vv-nb-ink);}     /* σ(X) */
+</style>
+
+
 <div class="page" dir="rtl" lang="he">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -830,11 +878,42 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
           <div class="sol-step">
             <div class="ss-head"><span class="ss-num">1</span>כל התרחישים והמשקלים</div>
             <p>הרכיבים בלתי תלויים, ולכן משקל כל תרחיש הוא מכפלת ההסתברויות לאורכו. עבור כישלון: המשלים.</p>
+            <div class="mini-tree" style="margin:0 0 .7rem"><svg viewBox="0 0 680 452" style="min-width:560px" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="עץ כל המסלולים של השאלה, שמונה עלים"><text x="340" y="18" text-anchor="middle" font-family="var(--font-body)" font-size="13" font-weight="700" fill="var(--ink)">בוקר בחניון: בודקים את שלוש העמדות</text><circle cx="340" cy="34" r="6" fill="var(--ink-soft)"/><line x1="340" y1="34" x2="500" y2="118" stroke="var(--accent)" stroke-width="2.2"/><rect x="399.0" y="66.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="420.0" y="79.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--accent-strong)" font-weight="700">0.5</text><circle cx="500" cy="118" r="4.5" fill="var(--accent)"/><line x1="340" y1="34" x2="180" y2="118" stroke="rgba(var(--muted-rgb),0.65)" stroke-width="1.6"/><rect x="239.0" y="66.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="260.0" y="79.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.5</text><circle cx="180" cy="118" r="4.5" fill="rgba(var(--muted-rgb),0.8)"/><text x="500" y="104" text-anchor="middle" font-family="var(--font-body)" font-size="11" font-weight="700" fill="var(--ink)">עמדה א׳ תקינה</text><text x="180" y="104" text-anchor="middle" font-family="var(--font-body)" font-size="11" fill="var(--ink-faint)">עמדה א׳ תקולה</text><line x1="500" y1="118" x2="590" y2="208" stroke="var(--accent)" stroke-width="2.2"/><rect x="524.0" y="153.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="545.0" y="166.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--accent-strong)" font-weight="700">0.6</text><circle cx="590" cy="208" r="4.5" fill="var(--accent)"/><line x1="500" y1="118" x2="410" y2="208" stroke="rgba(var(--muted-rgb),0.65)" stroke-width="1.6"/><rect x="434.0" y="153.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="455.0" y="166.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.4</text><circle cx="410" cy="208" r="4.5" fill="rgba(var(--muted-rgb),0.8)"/><line x1="180" y1="118" x2="270" y2="208" stroke="var(--accent)" stroke-width="2.2"/><rect x="204.0" y="153.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="225.0" y="166.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--accent-strong)" font-weight="700">0.6</text><circle cx="270" cy="208" r="4.5" fill="var(--accent)"/><line x1="180" y1="118" x2="90" y2="208" stroke="rgba(var(--muted-rgb),0.65)" stroke-width="1.6"/><rect x="114.0" y="153.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="135.0" y="166.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.4</text><circle cx="90" cy="208" r="4.5" fill="rgba(var(--muted-rgb),0.8)"/><text x="668" y="212" text-anchor="end" font-family="var(--font-body)" font-size="10" fill="var(--ink-faint)">עמדה ב׳</text><line x1="590" y1="208" x2="656" y2="300" stroke="var(--accent)" stroke-width="2.2"/><rect x="602.0" y="244.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="623.0" y="257.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--accent-strong)" font-weight="700">0.9</text><circle cx="656" cy="300" r="4.5" fill="var(--accent)"/><text x="656" y="322" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-soft)">✓✓✓</text><text x="656" y="338" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.27</text><circle cx="656" cy="358" r="10" fill="rgba(var(--accent-rgb),0.16)" stroke="var(--accent)" stroke-width="1.2"/><text x="656" y="362" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">3</text><line x1="590" y1="208" x2="568" y2="300" stroke="rgba(var(--muted-rgb),0.65)" stroke-width="1.6"/><rect x="558.0" y="244.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="579.0" y="257.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.1</text><circle cx="568" cy="300" r="4.5" fill="rgba(var(--muted-rgb),0.8)"/><text x="568" y="322" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-soft)">✓✓✗</text><text x="568" y="338" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.03</text><circle cx="568" cy="358" r="10" fill="rgba(var(--accent-rgb),0.16)" stroke="var(--accent)" stroke-width="1.2"/><text x="568" y="362" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">2</text><line x1="410" y1="208" x2="480" y2="300" stroke="var(--accent)" stroke-width="2.2"/><rect x="424.0" y="244.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="445.0" y="257.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--accent-strong)" font-weight="700">0.9</text><circle cx="480" cy="300" r="4.5" fill="var(--accent)"/><text x="480" y="322" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-soft)">✓✗✓</text><text x="480" y="338" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.18</text><circle cx="480" cy="358" r="10" fill="rgba(var(--accent-rgb),0.16)" stroke="var(--accent)" stroke-width="1.2"/><text x="480" y="362" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">2</text><line x1="410" y1="208" x2="392" y2="300" stroke="rgba(var(--muted-rgb),0.65)" stroke-width="1.6"/><rect x="380.0" y="244.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="401.0" y="257.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.1</text><circle cx="392" cy="300" r="4.5" fill="rgba(var(--muted-rgb),0.8)"/><text x="392" y="322" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-soft)">✓✗✗</text><text x="392" y="338" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.02</text><circle cx="392" cy="358" r="10" fill="rgba(var(--accent-rgb),0.16)" stroke="var(--accent)" stroke-width="1.2"/><text x="392" y="362" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">1</text><line x1="270" y1="208" x2="304" y2="300" stroke="var(--accent)" stroke-width="2.2"/><rect x="266.0" y="244.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="287.0" y="257.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--accent-strong)" font-weight="700">0.9</text><circle cx="304" cy="300" r="4.5" fill="var(--accent)"/><text x="304" y="322" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-soft)">✗✓✓</text><text x="304" y="338" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.27</text><circle cx="304" cy="358" r="10" fill="rgba(var(--accent-rgb),0.16)" stroke="var(--accent)" stroke-width="1.2"/><text x="304" y="362" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">2</text><line x1="270" y1="208" x2="216" y2="300" stroke="rgba(var(--muted-rgb),0.65)" stroke-width="1.6"/><rect x="222.0" y="244.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="243.0" y="257.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.1</text><circle cx="216" cy="300" r="4.5" fill="rgba(var(--muted-rgb),0.8)"/><text x="216" y="322" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-soft)">✗✓✗</text><text x="216" y="338" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.03</text><circle cx="216" cy="358" r="10" fill="rgba(var(--accent-rgb),0.16)" stroke="var(--accent)" stroke-width="1.2"/><text x="216" y="362" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">1</text><line x1="90" y1="208" x2="128" y2="300" stroke="var(--accent)" stroke-width="2.2"/><rect x="88.0" y="244.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="109.0" y="257.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--accent-strong)" font-weight="700">0.9</text><circle cx="128" cy="300" r="4.5" fill="var(--accent)"/><text x="128" y="322" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-soft)">✗✗✓</text><text x="128" y="338" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.18</text><circle cx="128" cy="358" r="10" fill="rgba(var(--accent-rgb),0.16)" stroke="var(--accent)" stroke-width="1.2"/><text x="128" y="362" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">1</text><line x1="90" y1="208" x2="40" y2="300" stroke="rgba(var(--muted-rgb),0.65)" stroke-width="1.6"/><rect x="44.0" y="244.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="65.0" y="257.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.1</text><circle cx="40" cy="300" r="4.5" fill="rgba(var(--muted-rgb),0.8)"/><text x="40" y="322" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-soft)">✗✗✗</text><text x="40" y="338" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.02</text><circle cx="40" cy="358" r="10" fill="rgba(var(--accent-rgb),0.16)" stroke="var(--accent)" stroke-width="1.2"/><text x="40" y="362" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0</text><text x="668" y="304" text-anchor="end" font-family="var(--font-body)" font-size="10" fill="var(--ink-faint)">עמדה ג׳</text><rect x="130" y="380" width="420" height="30" rx="9" fill="rgba(var(--accent-rgb),0.12)" stroke="var(--accent)" stroke-width="1.3"/><text x="340" y="400" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.27 + 0.03 + 0.18 + 0.02 + 0.27 + 0.03 + 0.18 + 0.02 = 1</text></svg><div class="mini-tree-cap"><span class="k">על הענפים: ההסתברות של כל רכיב · מתחת לעלים: משקל המסלול, ובעיגול מספר ההצלחות X</span></div></div>
             <div class="dist-wrap"><table class="dist-table"><tr><th>התרחיש (✓ הצלחה, ✗ לא)</th><th>המשקל</th><th><span class="formula-inline">X</span></th></tr><tr><td class="num">✓✓✓</td><td class="num">0.5 × 0.6 × 0.9 = 0.27</td><td class="num">3</td></tr><tr><td class="num">✓✓✗</td><td class="num">0.5 × 0.6 × 0.1 = 0.03</td><td class="num">2</td></tr><tr><td class="num">✓✗✓</td><td class="num">0.5 × 0.4 × 0.9 = 0.18</td><td class="num">2</td></tr><tr><td class="num">✓✗✗</td><td class="num">0.5 × 0.4 × 0.1 = 0.02</td><td class="num">1</td></tr><tr><td class="num">✗✓✓</td><td class="num">0.5 × 0.6 × 0.9 = 0.27</td><td class="num">2</td></tr><tr><td class="num">✗✓✗</td><td class="num">0.5 × 0.6 × 0.1 = 0.03</td><td class="num">1</td></tr><tr><td class="num">✗✗✓</td><td class="num">0.5 × 0.4 × 0.9 = 0.18</td><td class="num">1</td></tr><tr><td class="num">✗✗✗</td><td class="num">0.5 × 0.4 × 0.1 = 0.02</td><td class="num">0</td></tr><tr class="sumrow"><td>סה״כ</td><td class="num hl">1</td><td></td></tr></table></div>
           </div>
           <div class="sol-step">
             <div class="ss-head"><span class="ss-num">2</span>מקבצים לפי X ובודקים</div>
-            <div class="eq-chain"><div class="eq-line"><span class="eq-lhs">P(X=0)</span><span class="eq-rhs">= 0.02</span></div><div class="eq-line"><span class="eq-lhs">P(X=1)</span><span class="eq-rhs">= 0.02 + 0.03 + 0.18 = 0.23</span></div><div class="eq-line"><span class="eq-lhs">P(X=2)</span><span class="eq-rhs">= 0.03 + 0.18 + 0.27 = 0.48</span></div><div class="eq-line"><span class="eq-lhs">P(X=3)</span><span class="eq-rhs">= 0.27</span></div></div>
+            <div class="deriv">
+<div class="d-guide">המשקלים בשורות מגיעים ישירות מהטבלה שלמעלה: כפל בתוך מסלול, חיבור בין מסלולים. הסימנים משמאל אומרים אילו מסלולים בדיוק נכנסו לכל שורה.</div>
+    <div class="d-row">
+      <div class="d-name">מסלול יחיד: כולם נכשלו</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=0) = ✗✗✗</div>
+      <div class="d-num">= 0.02</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">שלושה מסלולים עם אותו מספר הצלחות, והמשקלים מתחברים</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=1) = ✓✗✗ + ✗✓✗ + ✗✗✓</div>
+      <div class="d-num">= 0.02 + 0.03 + 0.18 = 0.23</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">שלושה מסלולים עם אותו מספר הצלחות, והמשקלים מתחברים</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=2) = ✓✓✗ + ✓✗✓ + ✗✓✓</div>
+      <div class="d-num">= 0.03 + 0.18 + 0.27 = 0.48</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">מסלול יחיד בטבלה, המשקל עובר כמו שהוא</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=3) = ✓✓✓</div>
+      <div class="d-num">= 0.27</div>
+      </div>
+    </div>
+    </div>
             <div class="dist-wrap"><table class="dist-table"><tr><th>הערך <span class="formula-inline">x</span></th><th><span class="formula-inline">P(X=x)</span></th></tr><tr><td class="num">0</td><td class="num">0.02</td></tr><tr><td class="num">1</td><td class="num">0.23</td></tr><tr><td class="num">2</td><td class="num">0.48</td></tr><tr><td class="num">3</td><td class="num">0.27</td></tr><tr class="sumrow"><td>סה״כ</td><td class="num">1</td></tr></table></div>
             <p>בדיקה: <span class="formula-inline">0.02 + 0.23 + 0.48 + 0.27 = 1</span>. ✓</p>
           </div>
@@ -846,10 +925,19 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
         <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
           <div class="sol-step">
             <div class="ss-head"><span class="ss-num">1</span>מכפילים ומחברים</div>
-            <div class="eq-chain">
-              <div class="eq-line"><span class="eq-lhs">E(X)</span><span class="eq-rhs">= 0×0.02 + 1×0.23 + 2×0.48 + 3×0.27</span></div>
-              <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 0 + 0.23 + 0.96 + 0.81 = 2</span></div>
-            </div>
+            <p>בונים עמודת עזר מהטבלה של סעיף א׳: כל ערך כפול ההסתברות שלו.</p>
+            <div class="dist-wrap"><table class="dist-table"><tr><th>הערך <span class="formula-inline">x</span></th><th><span class="formula-inline">P(X=x)</span></th><th><span class="formula-inline">x · P(X=x)</span></th></tr><tr><td class="num">0</td><td class="num">0.02</td><td class="num">0</td></tr><tr><td class="num">1</td><td class="num">0.23</td><td class="num">1 × 0.23 = 0.23</td></tr><tr><td class="num">2</td><td class="num">0.48</td><td class="num">2 × 0.48 = 0.96</td></tr><tr><td class="num">3</td><td class="num">0.27</td><td class="num">3 × 0.27 = 0.81</td></tr><tr class="sumrow"><td>סה״כ</td><td class="num">1</td><td class="num hl">2</td></tr></table></div>
+            <div class="deriv">
+<div class="d-guide">קוראים כל שורה כך: למעלה הנוסחה בסמלים, מתחתיה אותה נוסחה עם המספרים. ההסתברויות מגיעות מהטבלה שמעל, והתוצאה הצבועה תמשיך איתנו באותו צבע.</div>
+    <div class="d-row result">
+      <div class="d-name">הנוסחה של התוחלת: כל ערך כפול ההסתברות שלו, והכל מתחבר. זו בדיוק העמודה האחרונה בטבלת העזר</div>
+      <div class="d-math">
+      <div class="d-sym">E(X) = Σ x · P(X=x)</div>
+      <div class="d-num">= 0×0.02 + 1×0.23 + 2×0.48 + 3×0.27</div>
+      <div class="d-num">= 0 + 0.23 + 0.96 + 0.81 = <mark class="vv vv-e">2</mark></div>
+      </div>
+    </div>
+    </div>
             <p>בדיקה: סכום ההסתברויות הבודדות: <span class="formula-inline">0.5 + 0.6 + 0.9 = 2</span>. ✓</p>
           </div>
           <div class="sol-step">
@@ -869,19 +957,44 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
           </div>
           <div class="sol-step">
             <div class="ss-head"><span class="ss-num">2</span>תוחלת הריבועים</div>
-            <div class="eq-chain">
-              <div class="eq-line"><span class="eq-lhs">E(X²)</span><span class="eq-rhs">= 1²×0.23 + 2²×0.48 + 3²×0.27</span></div>
-              <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 0.23 + 1.92 + 2.43 = 4.58</span></div>
-            </div>
+            <div class="deriv">
+<div class="d-guide">קוראים כל שורה כך: למעלה הנוסחה בסמלים, מתחתיה אותה נוסחה עם המספרים. ההסתברויות מגיעות מהטבלה שמעל, והתוצאה הצבועה תמשיך איתנו באותו צבע.</div>
+    <div class="d-row result">
+      <div class="d-name">תוחלת הריבועים: מרבעים כל ערך, מכפילים בהסתברות שלו, ומחברים. הערך 0 תורם אפס, ולכן אפשר לדלג עליו</div>
+      <div class="d-math">
+      <div class="d-sym">E(X²) = Σ x² · P(X=x)</div>
+      <div class="d-num">= 1²×0.23 + 2²×0.48 + 3²×0.27</div>
+      <div class="d-num">= 0.23 + 1.92 + 2.43 = <mark class="vv vv-e2">4.58</mark></div>
+      </div>
+    </div>
+    </div>
           </div>
           <div class="sol-step">
             <div class="ss-head"><span class="ss-num">3</span>נוסחת הקיצור, וסטיית התקן</div>
-            <div class="eq-chain">
-              <div class="eq-line"><span class="eq-lhs">Var(X)</span><span class="eq-rhs">= E(X²) − E²(X)</span></div>
-              <div class="eq-line"><span class="eq-lhs"></span><span class="eq-rhs">= 4.58 − 4</span></div>
-              <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 0.58</span></div>
-              <div class="eq-line result"><span class="eq-lhs">σ(X)</span><span class="eq-rhs">= √0.58 ≈ 0.762</span></div>
-            </div>
+            <div class="deriv">
+<div class="d-guide">מספר על רקע צבוע חושב בשורה קודמת (או בסעיף קודם), והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">ריבוע התוחלת: התוחלת מסעיף ב׳, כפול עצמה</div>
+      <div class="d-math">
+      <div class="d-sym">E²(X) = E(X) × E(X)</div>
+      <div class="d-num">= <mark class="vv vv-e">2</mark> × <mark class="vv vv-e">2</mark> = <mark class="vv vv-esq">4</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">נוסחת הקיצור: תוחלת הריבועים פחות ריבוע התוחלת</div>
+      <div class="d-math">
+      <div class="d-sym">Var(X) = E(X²) − E²(X)</div>
+      <div class="d-num">= <mark class="vv vv-e2">4.58</mark> − <mark class="vv vv-esq">4</mark> = <mark class="vv vv-var">0.58</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">סטיית התקן: שורש השונות, חזרה ליחידות המקוריות</div>
+      <div class="d-math">
+      <div class="d-sym">σ(X) = √Var(X)</div>
+      <div class="d-num">= √<mark class="vv vv-var">0.58</mark> ≈ <mark class="vv vv-sd">0.762</mark></div>
+      </div>
+    </div>
+    </div>
             <p><strong>המשמעות:</strong> מספר העמדות התקינות נופל בדרך כלל כ-0.76 עמדות סביב הממוצע 2.</p>
           </div>
           <div class="result-banner"><span class="val">Var = 0.58</span><span class="interp">מספר העמדות התקינות נופל בדרך כלל כ-0.76 עמדות סביב הממוצע 2.</span></div>
@@ -904,11 +1017,35 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
           <div class="sol-step">
             <div class="ss-head"><span class="ss-num">1</span>כל התרחישים והמשקלים</div>
             <p>הרכיבים בלתי תלויים, ולכן משקל כל תרחיש הוא מכפלת ההסתברויות לאורכו. עבור כישלון: המשלים.</p>
+            <div class="mini-tree" style="margin:0 0 .7rem"><svg viewBox="0 0 560 310" style="min-width:480px" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="עץ כל המסלולים של השאלה, ארבעה עלים"><text x="280" y="16" text-anchor="middle" font-family="var(--font-body)" font-size="12.5" font-weight="700" fill="var(--ink)">יום עבודה במאפייה</text><circle cx="280" cy="30" r="5.5" fill="var(--ink-soft)"/><line x1="280" y1="30" x2="420" y2="106" stroke="var(--accent)" stroke-width="2.2"/><rect x="329.0" y="58.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="350.0" y="71.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--accent-strong)" font-weight="700">0.8</text><circle cx="420" cy="106" r="4.5" fill="var(--accent)"/><line x1="280" y1="30" x2="140" y2="106" stroke="rgba(var(--muted-rgb),0.65)" stroke-width="1.6"/><rect x="189.0" y="58.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="210.0" y="71.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.2</text><circle cx="140" cy="106" r="4.5" fill="rgba(var(--muted-rgb),0.8)"/><text x="420" y="92" text-anchor="middle" font-family="var(--font-body)" font-size="11" font-weight="700" fill="var(--ink)">קו הלחם עובד</text><text x="140" y="92" text-anchor="middle" font-family="var(--font-body)" font-size="11" fill="var(--ink-faint)">קו הלחם מושבת</text><line x1="420" y1="106" x2="500" y2="190" stroke="var(--accent)" stroke-width="2.2"/><rect x="439.0" y="138.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="460.0" y="151.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--accent-strong)" font-weight="700">0.6</text><circle cx="500" cy="190" r="4.5" fill="var(--accent)"/><text x="500" y="212" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-soft)">✓✓</text><text x="500" y="228" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.48</text><circle cx="500" cy="248" r="10" fill="rgba(var(--accent-rgb),0.16)" stroke="var(--accent)" stroke-width="1.2"/><text x="500" y="252" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">2</text><line x1="420" y1="106" x2="340" y2="190" stroke="rgba(var(--muted-rgb),0.65)" stroke-width="1.6"/><rect x="359.0" y="138.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="380.0" y="151.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.4</text><circle cx="340" cy="190" r="4.5" fill="rgba(var(--muted-rgb),0.8)"/><text x="340" y="212" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-soft)">✓✗</text><text x="340" y="228" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.32</text><circle cx="340" cy="248" r="10" fill="rgba(var(--accent-rgb),0.16)" stroke="var(--accent)" stroke-width="1.2"/><text x="340" y="252" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">1</text><line x1="140" y1="106" x2="220" y2="190" stroke="var(--accent)" stroke-width="2.2"/><rect x="159.0" y="138.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="180.0" y="151.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--accent-strong)" font-weight="700">0.6</text><circle cx="220" cy="190" r="4.5" fill="var(--accent)"/><text x="220" y="212" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-soft)">✗✓</text><text x="220" y="228" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.12</text><circle cx="220" cy="248" r="10" fill="rgba(var(--accent-rgb),0.16)" stroke="var(--accent)" stroke-width="1.2"/><text x="220" y="252" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">1</text><line x1="140" y1="106" x2="60" y2="190" stroke="rgba(var(--muted-rgb),0.65)" stroke-width="1.6"/><rect x="79.0" y="138.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="100.0" y="151.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.4</text><circle cx="60" cy="190" r="4.5" fill="rgba(var(--muted-rgb),0.8)"/><text x="60" y="212" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-soft)">✗✗</text><text x="60" y="228" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.08</text><circle cx="60" cy="248" r="10" fill="rgba(var(--accent-rgb),0.16)" stroke="var(--accent)" stroke-width="1.2"/><text x="60" y="252" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0</text><text x="548" y="158" text-anchor="end" font-family="var(--font-body)" font-size="10" fill="var(--ink-faint)">קו המאפים</text><rect x="70" y="270" width="420" height="30" rx="9" fill="rgba(var(--accent-rgb),0.12)" stroke="var(--accent)" stroke-width="1.3"/><text x="280" y="290" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.48 + 0.32 + 0.12 + 0.08 = 1</text></svg><div class="mini-tree-cap"><span class="k">על הענפים: ההסתברות של כל רכיב · מתחת לעלים: משקל המסלול, ובעיגול מספר ההצלחות X</span></div></div>
             <div class="dist-wrap"><table class="dist-table"><tr><th>התרחיש (✓ הצלחה, ✗ לא)</th><th>המשקל</th><th><span class="formula-inline">X</span></th></tr><tr><td class="num">✓✓</td><td class="num">0.8 × 0.6 = 0.48</td><td class="num">2</td></tr><tr><td class="num">✓✗</td><td class="num">0.8 × 0.4 = 0.32</td><td class="num">1</td></tr><tr><td class="num">✗✓</td><td class="num">0.2 × 0.6 = 0.12</td><td class="num">1</td></tr><tr><td class="num">✗✗</td><td class="num">0.2 × 0.4 = 0.08</td><td class="num">0</td></tr><tr class="sumrow"><td>סה״כ</td><td class="num hl">1</td><td></td></tr></table></div>
           </div>
           <div class="sol-step">
             <div class="ss-head"><span class="ss-num">2</span>מקבצים לפי X ובודקים</div>
-            <div class="eq-chain"><div class="eq-line"><span class="eq-lhs">P(X=0)</span><span class="eq-rhs">= 0.08</span></div><div class="eq-line"><span class="eq-lhs">P(X=1)</span><span class="eq-rhs">= 0.32 + 0.12 = 0.44</span></div><div class="eq-line"><span class="eq-lhs">P(X=2)</span><span class="eq-rhs">= 0.48</span></div></div>
+            <div class="deriv">
+<div class="d-guide">המשקלים בשורות מגיעים ישירות מהטבלה שלמעלה: כפל בתוך מסלול, חיבור בין מסלולים. הסימנים משמאל אומרים אילו מסלולים בדיוק נכנסו לכל שורה.</div>
+    <div class="d-row">
+      <div class="d-name">מסלול יחיד: כולם נכשלו</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=0) = ✗✗</div>
+      <div class="d-num">= 0.08</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">שני מסלולים עם אותו מספר הצלחות, והמשקלים מתחברים</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=1) = ✓✗ + ✗✓</div>
+      <div class="d-num">= 0.32 + 0.12 = 0.44</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">מסלול יחיד בטבלה, המשקל עובר כמו שהוא</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=2) = ✓✓</div>
+      <div class="d-num">= 0.48</div>
+      </div>
+    </div>
+    </div>
             <div class="dist-wrap"><table class="dist-table"><tr><th>הערך <span class="formula-inline">x</span></th><th><span class="formula-inline">P(X=x)</span></th></tr><tr><td class="num">0</td><td class="num">0.08</td></tr><tr><td class="num">1</td><td class="num">0.44</td></tr><tr><td class="num">2</td><td class="num">0.48</td></tr><tr class="sumrow"><td>סה״כ</td><td class="num">1</td></tr></table></div>
             <p>בדיקה: <span class="formula-inline">0.08 + 0.44 + 0.48 = 1</span>. ✓</p>
           </div>
@@ -920,10 +1057,19 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
         <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
           <div class="sol-step">
             <div class="ss-head"><span class="ss-num">1</span>מכפילים ומחברים</div>
-            <div class="eq-chain">
-              <div class="eq-line"><span class="eq-lhs">E(X)</span><span class="eq-rhs">= 0×0.08 + 1×0.44 + 2×0.48</span></div>
-              <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 0 + 0.44 + 0.96 = 1.4</span></div>
-            </div>
+            <p>בונים עמודת עזר מהטבלה של סעיף א׳: כל ערך כפול ההסתברות שלו.</p>
+            <div class="dist-wrap"><table class="dist-table"><tr><th>הערך <span class="formula-inline">x</span></th><th><span class="formula-inline">P(X=x)</span></th><th><span class="formula-inline">x · P(X=x)</span></th></tr><tr><td class="num">0</td><td class="num">0.08</td><td class="num">0</td></tr><tr><td class="num">1</td><td class="num">0.44</td><td class="num">1 × 0.44 = 0.44</td></tr><tr><td class="num">2</td><td class="num">0.48</td><td class="num">2 × 0.48 = 0.96</td></tr><tr class="sumrow"><td>סה״כ</td><td class="num">1</td><td class="num hl">1.4</td></tr></table></div>
+            <div class="deriv">
+<div class="d-guide">קוראים כל שורה כך: למעלה הנוסחה בסמלים, מתחתיה אותה נוסחה עם המספרים. ההסתברויות מגיעות מהטבלה שמעל, והתוצאה הצבועה תמשיך איתנו באותו צבע.</div>
+    <div class="d-row result">
+      <div class="d-name">הנוסחה של התוחלת: כל ערך כפול ההסתברות שלו, והכל מתחבר. זו בדיוק העמודה האחרונה בטבלת העזר</div>
+      <div class="d-math">
+      <div class="d-sym">E(X) = Σ x · P(X=x)</div>
+      <div class="d-num">= 0×0.08 + 1×0.44 + 2×0.48</div>
+      <div class="d-num">= 0 + 0.44 + 0.96 = <mark class="vv vv-e">1.4</mark></div>
+      </div>
+    </div>
+    </div>
             <p>בדיקה: סכום ההסתברויות הבודדות: <span class="formula-inline">0.8 + 0.6 = 1.4</span>. ✓</p>
           </div>
           <div class="sol-step">
@@ -943,19 +1089,44 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
           </div>
           <div class="sol-step">
             <div class="ss-head"><span class="ss-num">2</span>תוחלת הריבועים</div>
-            <div class="eq-chain">
-              <div class="eq-line"><span class="eq-lhs">E(X²)</span><span class="eq-rhs">= 1²×0.44 + 2²×0.48</span></div>
-              <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 0.44 + 1.92 = 2.36</span></div>
-            </div>
+            <div class="deriv">
+<div class="d-guide">קוראים כל שורה כך: למעלה הנוסחה בסמלים, מתחתיה אותה נוסחה עם המספרים. ההסתברויות מגיעות מהטבלה שמעל, והתוצאה הצבועה תמשיך איתנו באותו צבע.</div>
+    <div class="d-row result">
+      <div class="d-name">תוחלת הריבועים: מרבעים כל ערך, מכפילים בהסתברות שלו, ומחברים. הערך 0 תורם אפס, ולכן אפשר לדלג עליו</div>
+      <div class="d-math">
+      <div class="d-sym">E(X²) = Σ x² · P(X=x)</div>
+      <div class="d-num">= 1²×0.44 + 2²×0.48</div>
+      <div class="d-num">= 0.44 + 1.92 = <mark class="vv vv-e2">2.36</mark></div>
+      </div>
+    </div>
+    </div>
           </div>
           <div class="sol-step">
             <div class="ss-head"><span class="ss-num">3</span>נוסחת הקיצור, וסטיית התקן</div>
-            <div class="eq-chain">
-              <div class="eq-line"><span class="eq-lhs">Var(X)</span><span class="eq-rhs">= E(X²) − E²(X)</span></div>
-              <div class="eq-line"><span class="eq-lhs"></span><span class="eq-rhs">= 2.36 − 1.96</span></div>
-              <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 0.4</span></div>
-              <div class="eq-line result"><span class="eq-lhs">σ(X)</span><span class="eq-rhs">= √0.4 ≈ 0.632</span></div>
-            </div>
+            <div class="deriv">
+<div class="d-guide">מספר על רקע צבוע חושב בשורה קודמת (או בסעיף קודם), והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">ריבוע התוחלת: התוחלת מסעיף ב׳, כפול עצמה</div>
+      <div class="d-math">
+      <div class="d-sym">E²(X) = E(X) × E(X)</div>
+      <div class="d-num">= <mark class="vv vv-e">1.4</mark> × <mark class="vv vv-e">1.4</mark> = <mark class="vv vv-esq">1.96</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">נוסחת הקיצור: תוחלת הריבועים פחות ריבוע התוחלת</div>
+      <div class="d-math">
+      <div class="d-sym">Var(X) = E(X²) − E²(X)</div>
+      <div class="d-num">= <mark class="vv vv-e2">2.36</mark> − <mark class="vv vv-esq">1.96</mark> = <mark class="vv vv-var">0.4</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">סטיית התקן: שורש השונות, חזרה ליחידות המקוריות</div>
+      <div class="d-math">
+      <div class="d-sym">σ(X) = √Var(X)</div>
+      <div class="d-num">= √<mark class="vv vv-var">0.4</mark> ≈ <mark class="vv vv-sd">0.632</mark></div>
+      </div>
+    </div>
+    </div>
             <p><strong>המשמעות:</strong> מספר הקווים התקינים נופל בדרך כלל כ-0.63 קווים סביב הממוצע 1.4.</p>
           </div>
           <div class="result-banner"><span class="val">Var = 0.4</span><span class="interp">מספר הקווים התקינים נופל בדרך כלל כ-0.63 קווים סביב הממוצע 1.4.</span></div>
@@ -978,11 +1149,42 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
           <div class="sol-step">
             <div class="ss-head"><span class="ss-num">1</span>כל התרחישים והמשקלים</div>
             <p>הרכיבים בלתי תלויים, ולכן משקל כל תרחיש הוא מכפלת ההסתברויות לאורכו. עבור כישלון: המשלים.</p>
+            <div class="mini-tree" style="margin:0 0 .7rem"><svg viewBox="0 0 680 452" style="min-width:560px" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="עץ כל המסלולים של השאלה, שמונה עלים"><text x="340" y="18" text-anchor="middle" font-family="var(--font-body)" font-size="13" font-weight="700" fill="var(--ink)">תחילת משמרת הערב: מי הגיע?</text><circle cx="340" cy="34" r="6" fill="var(--ink-soft)"/><line x1="340" y1="34" x2="500" y2="118" stroke="var(--accent)" stroke-width="2.2"/><rect x="399.0" y="66.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="420.0" y="79.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--accent-strong)" font-weight="700">0.9</text><circle cx="500" cy="118" r="4.5" fill="var(--accent)"/><line x1="340" y1="34" x2="180" y2="118" stroke="rgba(var(--muted-rgb),0.65)" stroke-width="1.6"/><rect x="239.0" y="66.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="260.0" y="79.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.1</text><circle cx="180" cy="118" r="4.5" fill="rgba(var(--muted-rgb),0.8)"/><text x="500" y="104" text-anchor="middle" font-family="var(--font-body)" font-size="11" font-weight="700" fill="var(--ink)">ותיק א׳ הגיע</text><text x="180" y="104" text-anchor="middle" font-family="var(--font-body)" font-size="11" fill="var(--ink-faint)">ותיק א׳ לא הגיע</text><line x1="500" y1="118" x2="590" y2="208" stroke="var(--accent)" stroke-width="2.2"/><rect x="524.0" y="153.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="545.0" y="166.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--accent-strong)" font-weight="700">0.9</text><circle cx="590" cy="208" r="4.5" fill="var(--accent)"/><line x1="500" y1="118" x2="410" y2="208" stroke="rgba(var(--muted-rgb),0.65)" stroke-width="1.6"/><rect x="434.0" y="153.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="455.0" y="166.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.1</text><circle cx="410" cy="208" r="4.5" fill="rgba(var(--muted-rgb),0.8)"/><line x1="180" y1="118" x2="270" y2="208" stroke="var(--accent)" stroke-width="2.2"/><rect x="204.0" y="153.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="225.0" y="166.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--accent-strong)" font-weight="700">0.9</text><circle cx="270" cy="208" r="4.5" fill="var(--accent)"/><line x1="180" y1="118" x2="90" y2="208" stroke="rgba(var(--muted-rgb),0.65)" stroke-width="1.6"/><rect x="114.0" y="153.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="135.0" y="166.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.1</text><circle cx="90" cy="208" r="4.5" fill="rgba(var(--muted-rgb),0.8)"/><text x="668" y="212" text-anchor="end" font-family="var(--font-body)" font-size="10" fill="var(--ink-faint)">ותיק ב׳</text><line x1="590" y1="208" x2="656" y2="300" stroke="var(--accent)" stroke-width="2.2"/><rect x="602.0" y="244.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="623.0" y="257.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--accent-strong)" font-weight="700">0.5</text><circle cx="656" cy="300" r="4.5" fill="var(--accent)"/><text x="656" y="322" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-soft)">✓✓✓</text><text x="656" y="338" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.405</text><circle cx="656" cy="358" r="10" fill="rgba(var(--accent-rgb),0.16)" stroke="var(--accent)" stroke-width="1.2"/><text x="656" y="362" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">3</text><line x1="590" y1="208" x2="568" y2="300" stroke="rgba(var(--muted-rgb),0.65)" stroke-width="1.6"/><rect x="558.0" y="244.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="579.0" y="257.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.5</text><circle cx="568" cy="300" r="4.5" fill="rgba(var(--muted-rgb),0.8)"/><text x="568" y="322" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-soft)">✓✓✗</text><text x="568" y="338" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.405</text><circle cx="568" cy="358" r="10" fill="rgba(var(--accent-rgb),0.16)" stroke="var(--accent)" stroke-width="1.2"/><text x="568" y="362" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">2</text><line x1="410" y1="208" x2="480" y2="300" stroke="var(--accent)" stroke-width="2.2"/><rect x="424.0" y="244.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="445.0" y="257.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--accent-strong)" font-weight="700">0.5</text><circle cx="480" cy="300" r="4.5" fill="var(--accent)"/><text x="480" y="322" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-soft)">✓✗✓</text><text x="480" y="338" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.045</text><circle cx="480" cy="358" r="10" fill="rgba(var(--accent-rgb),0.16)" stroke="var(--accent)" stroke-width="1.2"/><text x="480" y="362" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">2</text><line x1="410" y1="208" x2="392" y2="300" stroke="rgba(var(--muted-rgb),0.65)" stroke-width="1.6"/><rect x="380.0" y="244.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="401.0" y="257.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.5</text><circle cx="392" cy="300" r="4.5" fill="rgba(var(--muted-rgb),0.8)"/><text x="392" y="322" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-soft)">✓✗✗</text><text x="392" y="338" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.045</text><circle cx="392" cy="358" r="10" fill="rgba(var(--accent-rgb),0.16)" stroke="var(--accent)" stroke-width="1.2"/><text x="392" y="362" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">1</text><line x1="270" y1="208" x2="304" y2="300" stroke="var(--accent)" stroke-width="2.2"/><rect x="266.0" y="244.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="287.0" y="257.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--accent-strong)" font-weight="700">0.5</text><circle cx="304" cy="300" r="4.5" fill="var(--accent)"/><text x="304" y="322" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-soft)">✗✓✓</text><text x="304" y="338" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.045</text><circle cx="304" cy="358" r="10" fill="rgba(var(--accent-rgb),0.16)" stroke="var(--accent)" stroke-width="1.2"/><text x="304" y="362" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">2</text><line x1="270" y1="208" x2="216" y2="300" stroke="rgba(var(--muted-rgb),0.65)" stroke-width="1.6"/><rect x="222.0" y="244.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="243.0" y="257.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.5</text><circle cx="216" cy="300" r="4.5" fill="rgba(var(--muted-rgb),0.8)"/><text x="216" y="322" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-soft)">✗✓✗</text><text x="216" y="338" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.045</text><circle cx="216" cy="358" r="10" fill="rgba(var(--accent-rgb),0.16)" stroke="var(--accent)" stroke-width="1.2"/><text x="216" y="362" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">1</text><line x1="90" y1="208" x2="128" y2="300" stroke="var(--accent)" stroke-width="2.2"/><rect x="88.0" y="244.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="var(--accent)"/><text x="109.0" y="257.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--accent-strong)" font-weight="700">0.5</text><circle cx="128" cy="300" r="4.5" fill="var(--accent)"/><text x="128" y="322" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-soft)">✗✗✓</text><text x="128" y="338" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.005</text><circle cx="128" cy="358" r="10" fill="rgba(var(--accent-rgb),0.16)" stroke="var(--accent)" stroke-width="1.2"/><text x="128" y="362" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">1</text><line x1="90" y1="208" x2="40" y2="300" stroke="rgba(var(--muted-rgb),0.65)" stroke-width="1.6"/><rect x="44.0" y="244.0" width="42" height="17" rx="4" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="65.0" y="257.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.5</text><circle cx="40" cy="300" r="4.5" fill="rgba(var(--muted-rgb),0.8)"/><text x="40" y="322" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10" fill="var(--ink-soft)">✗✗✗</text><text x="40" y="338" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.005</text><circle cx="40" cy="358" r="10" fill="rgba(var(--accent-rgb),0.16)" stroke="var(--accent)" stroke-width="1.2"/><text x="40" y="362" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0</text><text x="668" y="304" text-anchor="end" font-family="var(--font-body)" font-size="10" fill="var(--ink-faint)">השליח החדש</text><rect x="130" y="380" width="420" height="30" rx="9" fill="rgba(var(--accent-rgb),0.12)" stroke="var(--accent)" stroke-width="1.3"/><text x="340" y="400" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)">0.405 + 0.405 + 0.045 + 0.045 + 0.045 + 0.045 + 0.005 + 0.005 = 1</text></svg><div class="mini-tree-cap"><span class="k">על הענפים: ההסתברות של כל רכיב · מתחת לעלים: משקל המסלול, ובעיגול מספר ההצלחות X</span></div></div>
             <div class="dist-wrap"><table class="dist-table"><tr><th>התרחיש (✓ הצלחה, ✗ לא)</th><th>המשקל</th><th><span class="formula-inline">X</span></th></tr><tr><td class="num">✓✓✓</td><td class="num">0.9 × 0.9 × 0.5 = 0.405</td><td class="num">3</td></tr><tr><td class="num">✓✓✗</td><td class="num">0.9 × 0.9 × 0.5 = 0.405</td><td class="num">2</td></tr><tr><td class="num">✓✗✓</td><td class="num">0.9 × 0.1 × 0.5 = 0.045</td><td class="num">2</td></tr><tr><td class="num">✓✗✗</td><td class="num">0.9 × 0.1 × 0.5 = 0.045</td><td class="num">1</td></tr><tr><td class="num">✗✓✓</td><td class="num">0.1 × 0.9 × 0.5 = 0.045</td><td class="num">2</td></tr><tr><td class="num">✗✓✗</td><td class="num">0.1 × 0.9 × 0.5 = 0.045</td><td class="num">1</td></tr><tr><td class="num">✗✗✓</td><td class="num">0.1 × 0.1 × 0.5 = 0.005</td><td class="num">1</td></tr><tr><td class="num">✗✗✗</td><td class="num">0.1 × 0.1 × 0.5 = 0.005</td><td class="num">0</td></tr><tr class="sumrow"><td>סה״כ</td><td class="num hl">1</td><td></td></tr></table></div>
           </div>
           <div class="sol-step">
             <div class="ss-head"><span class="ss-num">2</span>מקבצים לפי X ובודקים</div>
-            <div class="eq-chain"><div class="eq-line"><span class="eq-lhs">P(X=0)</span><span class="eq-rhs">= 0.005</span></div><div class="eq-line"><span class="eq-lhs">P(X=1)</span><span class="eq-rhs">= 0.045 + 0.045 + 0.005 = 0.095</span></div><div class="eq-line"><span class="eq-lhs">P(X=2)</span><span class="eq-rhs">= 0.405 + 0.045 + 0.045 = 0.495</span></div><div class="eq-line"><span class="eq-lhs">P(X=3)</span><span class="eq-rhs">= 0.405</span></div></div>
+            <div class="deriv">
+<div class="d-guide">המשקלים בשורות מגיעים ישירות מהטבלה שלמעלה: כפל בתוך מסלול, חיבור בין מסלולים. הסימנים משמאל אומרים אילו מסלולים בדיוק נכנסו לכל שורה.</div>
+    <div class="d-row">
+      <div class="d-name">מסלול יחיד: כולם נכשלו</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=0) = ✗✗✗</div>
+      <div class="d-num">= 0.005</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">שלושה מסלולים עם אותו מספר הצלחות, והמשקלים מתחברים</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=1) = ✓✗✗ + ✗✓✗ + ✗✗✓</div>
+      <div class="d-num">= 0.045 + 0.045 + 0.005 = 0.095</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">שלושה מסלולים עם אותו מספר הצלחות, והמשקלים מתחברים</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=2) = ✓✓✗ + ✓✗✓ + ✗✓✓</div>
+      <div class="d-num">= 0.405 + 0.045 + 0.045 = 0.495</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">מסלול יחיד בטבלה, המשקל עובר כמו שהוא</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=3) = ✓✓✓</div>
+      <div class="d-num">= 0.405</div>
+      </div>
+    </div>
+    </div>
             <div class="dist-wrap"><table class="dist-table"><tr><th>הערך <span class="formula-inline">x</span></th><th><span class="formula-inline">P(X=x)</span></th></tr><tr><td class="num">0</td><td class="num">0.005</td></tr><tr><td class="num">1</td><td class="num">0.095</td></tr><tr><td class="num">2</td><td class="num">0.495</td></tr><tr><td class="num">3</td><td class="num">0.405</td></tr><tr class="sumrow"><td>סה״כ</td><td class="num">1</td></tr></table></div>
             <p>בדיקה: <span class="formula-inline">0.005 + 0.095 + 0.495 + 0.405 = 1</span>. ✓</p>
           </div>
@@ -994,10 +1196,19 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
         <div class="sol" style="margin-top:.8rem;display:flex;flex-direction:column;gap:.5rem">
           <div class="sol-step">
             <div class="ss-head"><span class="ss-num">1</span>מכפילים ומחברים</div>
-            <div class="eq-chain">
-              <div class="eq-line"><span class="eq-lhs">E(X)</span><span class="eq-rhs">= 0×0.005 + 1×0.095 + 2×0.495 + 3×0.405</span></div>
-              <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 0 + 0.095 + 0.99 + 1.215 = 2.3</span></div>
-            </div>
+            <p>בונים עמודת עזר מהטבלה של סעיף א׳: כל ערך כפול ההסתברות שלו.</p>
+            <div class="dist-wrap"><table class="dist-table"><tr><th>הערך <span class="formula-inline">x</span></th><th><span class="formula-inline">P(X=x)</span></th><th><span class="formula-inline">x · P(X=x)</span></th></tr><tr><td class="num">0</td><td class="num">0.005</td><td class="num">0</td></tr><tr><td class="num">1</td><td class="num">0.095</td><td class="num">1 × 0.095 = 0.095</td></tr><tr><td class="num">2</td><td class="num">0.495</td><td class="num">2 × 0.495 = 0.99</td></tr><tr><td class="num">3</td><td class="num">0.405</td><td class="num">3 × 0.405 = 1.215</td></tr><tr class="sumrow"><td>סה״כ</td><td class="num">1</td><td class="num hl">2.3</td></tr></table></div>
+            <div class="deriv">
+<div class="d-guide">קוראים כל שורה כך: למעלה הנוסחה בסמלים, מתחתיה אותה נוסחה עם המספרים. ההסתברויות מגיעות מהטבלה שמעל, והתוצאה הצבועה תמשיך איתנו באותו צבע.</div>
+    <div class="d-row result">
+      <div class="d-name">הנוסחה של התוחלת: כל ערך כפול ההסתברות שלו, והכל מתחבר. זו בדיוק העמודה האחרונה בטבלת העזר</div>
+      <div class="d-math">
+      <div class="d-sym">E(X) = Σ x · P(X=x)</div>
+      <div class="d-num">= 0×0.005 + 1×0.095 + 2×0.495 + 3×0.405</div>
+      <div class="d-num">= 0 + 0.095 + 0.99 + 1.215 = <mark class="vv vv-e">2.3</mark></div>
+      </div>
+    </div>
+    </div>
             <p>בדיקה: סכום ההסתברויות הבודדות: <span class="formula-inline">0.9 + 0.9 + 0.5 = 2.3</span>. ✓</p>
           </div>
           <div class="sol-step">
@@ -1017,19 +1228,44 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
           </div>
           <div class="sol-step">
             <div class="ss-head"><span class="ss-num">2</span>תוחלת הריבועים</div>
-            <div class="eq-chain">
-              <div class="eq-line"><span class="eq-lhs">E(X²)</span><span class="eq-rhs">= 1²×0.095 + 2²×0.495 + 3²×0.405</span></div>
-              <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 0.095 + 1.98 + 3.645 = 5.72</span></div>
-            </div>
+            <div class="deriv">
+<div class="d-guide">קוראים כל שורה כך: למעלה הנוסחה בסמלים, מתחתיה אותה נוסחה עם המספרים. ההסתברויות מגיעות מהטבלה שמעל, והתוצאה הצבועה תמשיך איתנו באותו צבע.</div>
+    <div class="d-row result">
+      <div class="d-name">תוחלת הריבועים: מרבעים כל ערך, מכפילים בהסתברות שלו, ומחברים. הערך 0 תורם אפס, ולכן אפשר לדלג עליו</div>
+      <div class="d-math">
+      <div class="d-sym">E(X²) = Σ x² · P(X=x)</div>
+      <div class="d-num">= 1²×0.095 + 2²×0.495 + 3²×0.405</div>
+      <div class="d-num">= 0.095 + 1.98 + 3.645 = <mark class="vv vv-e2">5.72</mark></div>
+      </div>
+    </div>
+    </div>
           </div>
           <div class="sol-step">
             <div class="ss-head"><span class="ss-num">3</span>נוסחת הקיצור, וסטיית התקן</div>
-            <div class="eq-chain">
-              <div class="eq-line"><span class="eq-lhs">Var(X)</span><span class="eq-rhs">= E(X²) − E²(X)</span></div>
-              <div class="eq-line"><span class="eq-lhs"></span><span class="eq-rhs">= 5.72 − 5.29</span></div>
-              <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 0.43</span></div>
-              <div class="eq-line result"><span class="eq-lhs">σ(X)</span><span class="eq-rhs">= √0.43 ≈ 0.656</span></div>
-            </div>
+            <div class="deriv">
+<div class="d-guide">מספר על רקע צבוע חושב בשורה קודמת (או בסעיף קודם), והוא שומר על אותו צבע בכל מקום שבו הוא חוזר.</div>
+    <div class="d-row">
+      <div class="d-name">ריבוע התוחלת: התוחלת מסעיף ב׳, כפול עצמה</div>
+      <div class="d-math">
+      <div class="d-sym">E²(X) = E(X) × E(X)</div>
+      <div class="d-num">= <mark class="vv vv-e">2.3</mark> × <mark class="vv vv-e">2.3</mark> = <mark class="vv vv-esq">5.29</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">נוסחת הקיצור: תוחלת הריבועים פחות ריבוע התוחלת</div>
+      <div class="d-math">
+      <div class="d-sym">Var(X) = E(X²) − E²(X)</div>
+      <div class="d-num">= <mark class="vv vv-e2">5.72</mark> − <mark class="vv vv-esq">5.29</mark> = <mark class="vv vv-var">0.43</mark></div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">סטיית התקן: שורש השונות, חזרה ליחידות המקוריות</div>
+      <div class="d-math">
+      <div class="d-sym">σ(X) = √Var(X)</div>
+      <div class="d-num">= √<mark class="vv vv-var">0.43</mark> ≈ <mark class="vv vv-sd">0.656</mark></div>
+      </div>
+    </div>
+    </div>
             <p><strong>המשמעות:</strong> מספר השליחים שמגיעים נופל בדרך כלל כ-0.66 שליחים סביב הממוצע 2.3.</p>
           </div>
           <div class="result-banner"><span class="val">Var = 0.43</span><span class="interp">מספר השליחים שמגיעים נופל בדרך כלל כ-0.66 שליחים סביב הממוצע 2.3.</span></div>

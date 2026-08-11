@@ -632,6 +632,54 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
 }
 </style>
 
+<style>
+/* labelled derivations: formula in symbols above the same formula in numbers */
+.deriv{display:flex;flex-direction:column;gap:.55rem;margin-top:.5rem;}
+.d-guide{
+  font-size:.8rem;color:var(--ink-faint);line-height:1.55;
+  background:var(--paper-sunken);border-radius:8px;padding:.55rem .85rem;
+}
+.d-row{
+  display:flex;align-items:center;justify-content:space-between;gap:.5rem 1.1rem;flex-wrap:wrap;
+  background:var(--paper-sunken);border-radius:10px;padding:.6rem .95rem;
+}
+.d-row.result{background:rgba(var(--accent-rgb),0.1);border:1px solid rgba(var(--accent-rgb),0.3);}
+.d-name{font-size:.86rem;font-weight:600;color:var(--ink);max-width:26ch;line-height:1.45;}
+.d-math{
+  direction:ltr;unicode-bidi:isolate;text-align:left;
+  font-family:var(--font-mono);font-variant-numeric:tabular-nums;
+  display:flex;flex-direction:column;gap:.12rem;overflow-x:auto;max-width:100%;
+}
+.d-sym{font-size:.84rem;color:var(--ink-faint);white-space:nowrap;}
+.d-num{font-size:1.02rem;font-weight:700;color:var(--ink);white-space:nowrap;}
+.d-row.result .d-num{color:var(--accent-strong);font-size:1.08rem;}
+/* role colours: a value keeps its colour wherever it travels */
+:root{
+  --vv-ab-bg:rgba(14,124,123,0.16);--vv-ab-ink:#095857;
+  --vv-anb-bg:rgba(184,134,11,0.18);--vv-anb-ink:#7A5408;
+  --vv-nab-bg:rgba(59,102,180,0.15);--vv-nab-ink:#2A4A8F;
+  --vv-nanb-bg:rgba(178,68,104,0.14);--vv-nanb-ink:#8F2F52;
+  --vv-nb-bg:rgba(90,99,120,0.16);--vv-nb-ink:#3E4657;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --vv-ab-bg:rgba(62,211,201,0.18);--vv-ab-ink:#7CE7DD;
+    --vv-anb-bg:rgba(232,190,110,0.18);--vv-anb-ink:#E8BE6E;
+    --vv-nab-bg:rgba(138,168,240,0.18);--vv-nab-ink:#A8C0F0;
+    --vv-nanb-bg:rgba(240,140,170,0.16);--vv-nanb-ink:#F0A8C0;
+    --vv-nb-bg:rgba(170,180,200,0.18);--vv-nb-ink:#C0CBD8;
+  }
+}
+.vv{display:inline-block;padding:0 .3em;border-radius:6px;font-weight:700;}
+/* chapter-2 roles: expectation pipeline */
+.vv-e{background:var(--vv-ab-bg);color:var(--vv-ab-ink);}      /* E(X) */
+.vv-e2{background:var(--vv-anb-bg);color:var(--vv-anb-ink);}   /* E(X²) */
+.vv-esq{background:var(--vv-nab-bg);color:var(--vv-nab-ink);}  /* E²(X) */
+.vv-var{background:var(--vv-nanb-bg);color:var(--vv-nanb-ink);}/* Var(X) */
+.vv-sd{background:var(--vv-nb-bg);color:var(--vv-nb-ink);}     /* σ(X) */
+</style>
+
+
 <div class="page" dir="rtl" lang="he">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -947,12 +995,37 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
     </div>
     <div class="story-card">
       <p><strong>הרעיון:</strong> כמה עלים נותנים X = 2? שלושה: ✓✓✗ (חיישן תקול), ✓✗✓ (בקר תקול), ✗✓✓ (מנוע תקול). התרחישים שונים, אבל המספר זהה. לכן מחברים את שלושת המשקלים:</p>
-      <div class="eq-chain">
-        <div class="eq-line"><span class="eq-lhs">P(X=3)</span><span class="eq-rhs">= 0.504</span></div>
-        <div class="eq-line"><span class="eq-lhs">P(X=2)</span><span class="eq-rhs">= 0.056 + 0.126 + 0.216 = 0.398</span></div>
-        <div class="eq-line"><span class="eq-lhs">P(X=1)</span><span class="eq-rhs">= 0.014 + 0.024 + 0.054 = 0.092</span></div>
-        <div class="eq-line"><span class="eq-lhs">P(X=0)</span><span class="eq-rhs">= 0.3 × 0.2 × 0.1 = 0.006</span></div>
+      <div class="deriv">
+<div class="d-guide">המשקלים בשורות מגיעים ישירות מהטבלה שלמעלה: כפל בתוך מסלול, חיבור בין מסלולים. הסימנים משמאל אומרים אילו מסלולים בדיוק נכנסו לכל שורה.</div>
+    <div class="d-row">
+      <div class="d-name">מסלול יחיד בטבלה, המשקל עובר כמו שהוא</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=3) = ✓✓✓</div>
+      <div class="d-num">= 0.504</div>
       </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">שלושה מסלולים עם אותו מספר הצלחות, והמשקלים מתחברים</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=2) = ✓✓✗ + ✓✗✓ + ✗✓✓</div>
+      <div class="d-num">= 0.056 + 0.126 + 0.216 = 0.398</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">שלושה מסלולים עם אותו מספר הצלחות, והמשקלים מתחברים</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=1) = ✓✗✗ + ✗✓✗ + ✗✗✓</div>
+      <div class="d-num">= 0.014 + 0.024 + 0.054 = 0.092</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">מסלול יחיד: כולם נכשלו</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=0) = ✗✗✗</div>
+      <div class="d-num">= 0.3 × 0.2 × 0.1 = 0.006</div>
+      </div>
+    </div>
+    </div>
       <p style="margin-top:.9rem"><strong>והטבלה המוגמרת, פונקציית ההסתברות של X:</strong></p>
       <div class="dist-wrap"><table class="dist-table"><tr><th>הערך <span class="formula-inline">x</span></th><th><span class="formula-inline">P(X=x)</span></th></tr><tr><td class="num">0</td><td class="num">0.006</td></tr><tr><td class="num">1</td><td class="num">0.092</td></tr><tr><td class="num">2</td><td class="num">0.398</td></tr><tr><td class="num">3</td><td class="num">0.504</td></tr><tr class="sumrow"><td>סה״כ</td><td class="num">1</td></tr></table></div>
       <p>בדיקה: <span class="formula-inline">0.006 + 0.092 + 0.398 + 0.504 = 1</span>. עמדנו בשני הכללים: כל המספרים בין 0 ל-1, והסכום בדיוק 1.</p>
@@ -995,17 +1068,43 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
       <div class="sol-step">
         <div class="ss-head"><span class="ss-num">2</span>מחשבים כל ערך, מהקל אל הכבד</div>
         <p>שני הקצוות הם מסלול יחיד כל אחד:</p>
-        <div class="eq-chain">
-          <div class="eq-line"><span class="eq-lhs">P(X=3)</span><span class="eq-rhs">= 0.7 × 0.8 × 0.9 = 0.504</span></div>
-          <div class="eq-line"><span class="eq-lhs">P(X=0)</span><span class="eq-rhs">= 0.3 × 0.2 × 0.1 = 0.006</span></div>
-        </div>
+        <div class="deriv">
+<div class="d-guide">המשקלים בשורות מגיעים ישירות מהטבלה שלמעלה: כפל בתוך מסלול, חיבור בין מסלולים. הסימנים משמאל אומרים אילו מסלולים בדיוק נכנסו לכל שורה.</div>
+    <div class="d-row">
+      <div class="d-name">שלושת הרכיבים תקינים: מסלול ✓✓✓ יחיד, מכפלה אחת</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=3) = p₁ × p₂ × p₃</div>
+      <div class="d-num">= 0.7 × 0.8 × 0.9 = 0.504</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">אף רכיב לא תקין: מסלול ✗✗✗. עבור תקול לוקחים את המשלים</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=0) = q₁ × q₂ × q₃</div>
+      <div class="d-num">= 0.3 × 0.2 × 0.1 = 0.006</div>
+      </div>
+    </div>
+    </div>
         <p>הערכים האמצעיים הם כמה מסלולים, ומחברים:</p>
-        <div class="eq-chain">
-          <div class="eq-line"><span class="eq-lhs">P(X=2)</span><span class="eq-rhs">= 0.7×0.8×0.1 + 0.7×0.2×0.9 + 0.3×0.8×0.9</span></div>
-          <div class="eq-line"><span class="eq-lhs"></span><span class="eq-rhs">= 0.056 + 0.126 + 0.216 = 0.398</span></div>
-          <div class="eq-line"><span class="eq-lhs">P(X=1)</span><span class="eq-rhs">= 0.7×0.2×0.1 + 0.3×0.8×0.1 + 0.3×0.2×0.9</span></div>
-          <div class="eq-line"><span class="eq-lhs"></span><span class="eq-rhs">= 0.014 + 0.024 + 0.054 = 0.092</span></div>
-        </div>
+        <div class="deriv">
+<div class="d-guide">כל שורה: קודם אילו מסלולים (בסמלים), ואז המכפלות והחיבור.</div>
+    <div class="d-row">
+      <div class="d-name">בדיוק שניים תקינים: שלושה מסלולים, כל אחד מכפלה, ואז מחברים</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=2) = ✓✓✗ + ✓✗✓ + ✗✓✓</div>
+      <div class="d-num">= 0.7×0.8×0.1 + 0.7×0.2×0.9 + 0.3×0.8×0.9</div>
+      <div class="d-num">= 0.056 + 0.126 + 0.216 = 0.398</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">בדיוק אחד תקין: שוב שלושה מסלולים</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=1) = ✓✗✗ + ✗✓✗ + ✗✗✓</div>
+      <div class="d-num">= 0.7×0.2×0.1 + 0.3×0.8×0.1 + 0.3×0.2×0.9</div>
+      <div class="d-num">= 0.014 + 0.024 + 0.054 = 0.092</div>
+      </div>
+    </div>
+    </div>
       </div>
       <div class="sol-step">
         <div class="ss-head"><span class="ss-num">3</span>מסכמים בטבלה ובודקים</div>
@@ -1051,7 +1150,30 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">3</span>מקבצים לפי הערך של X</div>
               <p>תרחישים עם אותו מספר תקינים שייכים לאותו ערך של X, ולכן מחברים את המשקלים שלהם:</p>
-              <div class="eq-chain"><div class="eq-line"><span class="eq-lhs">P(X=0)</span><span class="eq-rhs">= 0.1</span></div><div class="eq-line"><span class="eq-lhs">P(X=1)</span><span class="eq-rhs">= 0.4 + 0.1 = 0.5</span></div><div class="eq-line"><span class="eq-lhs">P(X=2)</span><span class="eq-rhs">= 0.4</span></div></div>
+              <div class="deriv">
+<div class="d-guide">המשקלים בשורות מגיעים ישירות מהטבלה שלמעלה: כפל בתוך מסלול, חיבור בין מסלולים. הסימנים משמאל אומרים אילו מסלולים בדיוק נכנסו לכל שורה.</div>
+    <div class="d-row">
+      <div class="d-name">מסלול יחיד: כולם נכשלו</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=0) = ✗✗</div>
+      <div class="d-num">= 0.1</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">שני מסלולים עם אותו מספר הצלחות, והמשקלים מתחברים</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=1) = ✓✗ + ✗✓</div>
+      <div class="d-num">= 0.4 + 0.1 = 0.5</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">מסלול יחיד בטבלה, המשקל עובר כמו שהוא</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=2) = ✓✓</div>
+      <div class="d-num">= 0.4</div>
+      </div>
+    </div>
+    </div>
             </div>
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">4</span>כותבים את פונקציית ההסתברות, ובודקים</div>
@@ -1087,7 +1209,30 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">3</span>מקבצים לפי הערך של X</div>
               <p>תרחישים עם אותו מספר תקינים שייכים לאותו ערך של X, ולכן מחברים את המשקלים שלהם:</p>
-              <div class="eq-chain"><div class="eq-line"><span class="eq-lhs">P(X=0)</span><span class="eq-rhs">= 0.04</span></div><div class="eq-line"><span class="eq-lhs">P(X=1)</span><span class="eq-rhs">= 0.36 + 0.06 = 0.42</span></div><div class="eq-line"><span class="eq-lhs">P(X=2)</span><span class="eq-rhs">= 0.54</span></div></div>
+              <div class="deriv">
+<div class="d-guide">המשקלים בשורות מגיעים ישירות מהטבלה שלמעלה: כפל בתוך מסלול, חיבור בין מסלולים. הסימנים משמאל אומרים אילו מסלולים בדיוק נכנסו לכל שורה.</div>
+    <div class="d-row">
+      <div class="d-name">מסלול יחיד: כולם נכשלו</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=0) = ✗✗</div>
+      <div class="d-num">= 0.04</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">שני מסלולים עם אותו מספר הצלחות, והמשקלים מתחברים</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=1) = ✓✗ + ✗✓</div>
+      <div class="d-num">= 0.36 + 0.06 = 0.42</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">מסלול יחיד בטבלה, המשקל עובר כמו שהוא</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=2) = ✓✓</div>
+      <div class="d-num">= 0.54</div>
+      </div>
+    </div>
+    </div>
             </div>
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">4</span>כותבים את פונקציית ההסתברות, ובודקים</div>
@@ -1123,7 +1268,37 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">3</span>מקבצים לפי הערך של X</div>
               <p>תרחישים עם אותו מספר תקינים שייכים לאותו ערך של X, ולכן מחברים את המשקלים שלהם:</p>
-              <div class="eq-chain"><div class="eq-line"><span class="eq-lhs">P(X=0)</span><span class="eq-rhs">= 0.05</span></div><div class="eq-line"><span class="eq-lhs">P(X=1)</span><span class="eq-rhs">= 0.05 + 0.05 + 0.2 = 0.3</span></div><div class="eq-line"><span class="eq-lhs">P(X=2)</span><span class="eq-rhs">= 0.05 + 0.2 + 0.2 = 0.45</span></div><div class="eq-line"><span class="eq-lhs">P(X=3)</span><span class="eq-rhs">= 0.2</span></div></div>
+              <div class="deriv">
+<div class="d-guide">המשקלים בשורות מגיעים ישירות מהטבלה שלמעלה: כפל בתוך מסלול, חיבור בין מסלולים. הסימנים משמאל אומרים אילו מסלולים בדיוק נכנסו לכל שורה.</div>
+    <div class="d-row">
+      <div class="d-name">מסלול יחיד: כולם נכשלו</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=0) = ✗✗✗</div>
+      <div class="d-num">= 0.05</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">שלושה מסלולים עם אותו מספר הצלחות, והמשקלים מתחברים</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=1) = ✓✗✗ + ✗✓✗ + ✗✗✓</div>
+      <div class="d-num">= 0.05 + 0.05 + 0.2 = 0.3</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">שלושה מסלולים עם אותו מספר הצלחות, והמשקלים מתחברים</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=2) = ✓✓✗ + ✓✗✓ + ✗✓✓</div>
+      <div class="d-num">= 0.05 + 0.2 + 0.2 = 0.45</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">מסלול יחיד בטבלה, המשקל עובר כמו שהוא</div>
+      <div class="d-math">
+      <div class="d-sym">P(X=3) = ✓✓✓</div>
+      <div class="d-num">= 0.2</div>
+      </div>
+    </div>
+    </div>
             </div>
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">4</span>כותבים את פונקציית ההסתברות, ובודקים</div>
