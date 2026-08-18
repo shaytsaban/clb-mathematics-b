@@ -892,8 +892,10 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
         <div class="lbl-eq"><span class="le-name">אם החווה פועלת במלוא התפוקה</span><span class="le-math">10 − 4 = 6</span></div>
         <div class="lbl-eq mute"><span class="le-name">אם החווה לא פועלת כמתוכנן</span><span class="le-math">0 − 4 = −4</span></div>
         <div class="lbl-eq mute"><span class="le-name">אם לא מבצעים</span><span class="le-math">0</span></div>
+        <div class="lbl-eq"><span class="le-name">בצד הבדיקה, מחסירים מכל עלה גם את עלותה</span><span class="le-math">6 − 0.3 = 5.7</span></div>
+        <div class="lbl-eq mute"><span class="le-name">וכך גם בכישלון ובפרישה</span><span class="le-math">−4.3, −0.3</span></div>
       </div>
-            <p>הרווחים האלה זהים בכל מסלולי העץ. ההמלצה משנה הסתברויות בלבד, לא סכומים.</p>
+            <p>שימו לב: בצד הבדיקה כל עלה משלם גם את עלות הבדיקה, ולכן העלים שם נמוכים בדיוק בעלות הזו. הרווח הסופי בעלה כולל את כל הניכויים.</p>
           </div>
           <div class="sol-step">
             <div class="ss-head"><span class="ss-num">2</span>מבנה העץ</div>
@@ -929,20 +931,20 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
             <div class="ss-head"><span class="ss-num">2</span>שני הריבועים שאחרי ההמלצה</div>
             <p>אותם רווחים בדיוק, ורק ההסתברויות מתחלפות: <span class="formula-inline">0.8</span> אחרי המלצה חיובית, <span class="formula-inline">0.3</span> אחרי המלצה שלילית.</p>
             <div class="lbl-eqs">
-        <div class="lbl-eq pick"><span class="le-name">לבצע, אחרי המלצה חיובית</span><span class="le-math">0.8 × 6 + 0.2 × (−4) = 4</span></div>
-        <div class="lbl-eq"><span class="le-name">לא לבצע, אחרי המלצה חיובית</span><span class="le-math">0</span></div>
-        <div class="lbl-eq mute"><span class="le-name">לבצע, אחרי המלצה שלילית</span><span class="le-math">0.3 × 6 + 0.7 × (−4) = −1</span></div>
-        <div class="lbl-eq pick"><span class="le-name">לא לבצע, אחרי המלצה שלילית</span><span class="le-math">0</span></div>
+        <div class="lbl-eq pick"><span class="le-name">לבצע, אחרי המלצה חיובית</span><span class="le-math">0.8 × 5.7 + 0.2 × (−4.3) = 3.7</span></div>
+        <div class="lbl-eq"><span class="le-name">לא לבצע, אחרי המלצה חיובית: העלות כבר שולמה</span><span class="le-math">−0.3</span></div>
+        <div class="lbl-eq mute"><span class="le-name">לבצע, אחרי המלצה שלילית</span><span class="le-math">0.3 × 5.7 + 0.7 × (−4.3) = −1.3</span></div>
+        <div class="lbl-eq pick"><span class="le-name">לא לבצע, אחרי המלצה שלילית: העלות כבר שולמה</span><span class="le-math">−0.3</span></div>
       </div>
-            <p>ולכן ערך הריבוע אחרי המלצה חיובית הוא <span class="formula-inline">4</span>, וערך הריבוע אחרי המלצה שלילית הוא <span class="formula-inline">0</span>.</p>
+            <p>ולכן ערך הריבוע אחרי המלצה חיובית הוא <span class="formula-inline">3.7</span>, וערך הריבוע אחרי המלצה שלילית הוא <span class="formula-inline">−0.3</span>.</p>
           </div>
           <div class="sol-step">
             <div class="ss-head"><span class="ss-num">3</span>העיגול של ההמלצה, ואז המחיר</div>
             <div class="lbl-eqs">
-        <div class="lbl-eq"><span class="le-name">ערך הבדיקה לפני התשלום</span><span class="le-math">0.5 × 4 + 0.5 × 0 = 2</span></div>
-        <div class="lbl-eq"><span class="le-name">פחות עלות הבדיקה</span><span class="le-math">2 − 0.3 = 1.7</span></div>
+        <div class="lbl-eq"><span class="le-name">ממצעים בין שני הריבועים, שכבר נטו</span><span class="le-math">0.5 × 3.7 + 0.5 × (−0.3) = 1.7</span></div>
+        
       </div>
-            <p>את העלות מחסירים פעם אחת בלבד, כי משלמים אותה בין אם ההמלצה תהיה חיובית ובין אם שלילית.</p>
+            <p>אין שורת חיסור נוספת: עלות הבדיקה כבר שולמה בתוך העלים, בכל מסלול בצד הבדיקה, ולכן הממוצע כבר נטו.</p>
           </div>
           <div class="sol-step">
             <div class="ss-head"><span class="ss-num">4</span>ההשוואה בריבוע הראשון</div>
@@ -965,7 +967,7 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
             <div class="ss-head"><span class="ss-num">1</span>משווים את אותו מצב, עם המידע ובלעדיו</div>
             <p>השאלה איננה תלויה במחיר שנדרש בפועל, ולכן מתעלמים ממנו לרגע. משווים כמה שווה המצב עם הבדיקה, <strong>לפני</strong> ששילמנו עליה, לעומת כמה הוא שווה בלעדיה.</p>
             <div class="lbl-eqs">
-        <div class="lbl-eq"><span class="le-name">עם הבדיקה, לפני התשלום</span><span class="le-math">2</span></div>
+        <div class="lbl-eq"><span class="le-name">עם הבדיקה, בתוספת העלות ששולמה</span><span class="le-math">1.7 + 0.3 = 2</span></div>
         <div class="lbl-eq mute"><span class="le-name">בלי הבדיקה בכלל</span><span class="le-math">1.5</span></div>
         <div class="lbl-eq pick"><span class="le-name">ערך המידע</span><span class="le-math">2 − 1.5 = 0.5</span></div>
       </div>
@@ -998,8 +1000,10 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
         <div class="lbl-eq"><span class="le-name">אם הדגם נקלט בשוק</span><span class="le-math">5 − 2 = 3</span></div>
         <div class="lbl-eq mute"><span class="le-name">אם הדגם לא נקלט</span><span class="le-math">0 − 2 = −2</span></div>
         <div class="lbl-eq mute"><span class="le-name">אם לא מבצעים</span><span class="le-math">0</span></div>
+        <div class="lbl-eq"><span class="le-name">בצד הבדיקה, מחסירים מכל עלה גם את עלותה</span><span class="le-math">3 − 0.6 = 2.4</span></div>
+        <div class="lbl-eq mute"><span class="le-name">וכך גם בכישלון ובפרישה</span><span class="le-math">−2.6, −0.6</span></div>
       </div>
-            <p>הרווחים האלה זהים בכל מסלולי העץ. ההמלצה משנה הסתברויות בלבד, לא סכומים.</p>
+            <p>שימו לב: בצד הבדיקה כל עלה משלם גם את עלות הבדיקה, ולכן העלים שם נמוכים בדיוק בעלות הזו. הרווח הסופי בעלה כולל את כל הניכויים.</p>
           </div>
           <div class="sol-step">
             <div class="ss-head"><span class="ss-num">2</span>מבנה העץ</div>
@@ -1035,20 +1039,20 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
             <div class="ss-head"><span class="ss-num">2</span>שני הריבועים שאחרי ההמלצה</div>
             <p>אותם רווחים בדיוק, ורק ההסתברויות מתחלפות: <span class="formula-inline">0.8</span> אחרי המלצה חיובית, <span class="formula-inline">0.3</span> אחרי המלצה שלילית.</p>
             <div class="lbl-eqs">
-        <div class="lbl-eq pick"><span class="le-name">לבצע, אחרי המלצה חיובית</span><span class="le-math">0.8 × 3 + 0.2 × (−2) = 2</span></div>
-        <div class="lbl-eq"><span class="le-name">לא לבצע, אחרי המלצה חיובית</span><span class="le-math">0</span></div>
-        <div class="lbl-eq mute"><span class="le-name">לבצע, אחרי המלצה שלילית</span><span class="le-math">0.3 × 3 + 0.7 × (−2) = −0.5</span></div>
-        <div class="lbl-eq pick"><span class="le-name">לא לבצע, אחרי המלצה שלילית</span><span class="le-math">0</span></div>
+        <div class="lbl-eq pick"><span class="le-name">לבצע, אחרי המלצה חיובית</span><span class="le-math">0.8 × 2.4 + 0.2 × (−2.6) = 1.4</span></div>
+        <div class="lbl-eq"><span class="le-name">לא לבצע, אחרי המלצה חיובית: העלות כבר שולמה</span><span class="le-math">−0.6</span></div>
+        <div class="lbl-eq mute"><span class="le-name">לבצע, אחרי המלצה שלילית</span><span class="le-math">0.3 × 2.4 + 0.7 × (−2.6) = −1.1</span></div>
+        <div class="lbl-eq pick"><span class="le-name">לא לבצע, אחרי המלצה שלילית: העלות כבר שולמה</span><span class="le-math">−0.6</span></div>
       </div>
-            <p>ולכן ערך הריבוע אחרי המלצה חיובית הוא <span class="formula-inline">2</span>, וערך הריבוע אחרי המלצה שלילית הוא <span class="formula-inline">0</span>.</p>
+            <p>ולכן ערך הריבוע אחרי המלצה חיובית הוא <span class="formula-inline">1.4</span>, וערך הריבוע אחרי המלצה שלילית הוא <span class="formula-inline">−0.6</span>.</p>
           </div>
           <div class="sol-step">
             <div class="ss-head"><span class="ss-num">3</span>העיגול של ההמלצה, ואז המחיר</div>
             <div class="lbl-eqs">
-        <div class="lbl-eq"><span class="le-name">ערך הבדיקה לפני התשלום</span><span class="le-math">0.8 × 2 + 0.2 × 0 = 1.6</span></div>
-        <div class="lbl-eq"><span class="le-name">פחות עלות הבדיקה</span><span class="le-math">1.6 − 0.6 = 1</span></div>
+        <div class="lbl-eq"><span class="le-name">ממצעים בין שני הריבועים, שכבר נטו</span><span class="le-math">0.8 × 1.4 + 0.2 × (−0.6) = 1</span></div>
+        
       </div>
-            <p>את העלות מחסירים פעם אחת בלבד, כי משלמים אותה בין אם ההמלצה תהיה חיובית ובין אם שלילית.</p>
+            <p>אין שורת חיסור נוספת: עלות הבדיקה כבר שולמה בתוך העלים, בכל מסלול בצד הבדיקה, ולכן הממוצע כבר נטו.</p>
           </div>
           <div class="sol-step">
             <div class="ss-head"><span class="ss-num">4</span>ההשוואה בריבוע הראשון</div>
@@ -1071,7 +1075,7 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
             <div class="ss-head"><span class="ss-num">1</span>משווים את אותו מצב, עם המידע ובלעדיו</div>
             <p>השאלה איננה תלויה במחיר שנדרש בפועל, ולכן מתעלמים ממנו לרגע. משווים כמה שווה המצב עם הבדיקה, <strong>לפני</strong> ששילמנו עליה, לעומת כמה הוא שווה בלעדיה.</p>
             <div class="lbl-eqs">
-        <div class="lbl-eq"><span class="le-name">עם הבדיקה, לפני התשלום</span><span class="le-math">1.6</span></div>
+        <div class="lbl-eq"><span class="le-name">עם הבדיקה, בתוספת העלות ששולמה</span><span class="le-math">1 + 0.6 = 1.6</span></div>
         <div class="lbl-eq mute"><span class="le-name">בלי הבדיקה בכלל</span><span class="le-math">1.5</span></div>
         <div class="lbl-eq pick"><span class="le-name">ערך המידע</span><span class="le-math">1.6 − 1.5 = 0.1</span></div>
       </div>
@@ -1104,8 +1108,10 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
         <div class="lbl-eq"><span class="le-name">אם האפליקציה מצליחה</span><span class="le-math">7 − 3 = 4</span></div>
         <div class="lbl-eq mute"><span class="le-name">אם האפליקציה נכשלת</span><span class="le-math">0 − 3 = −3</span></div>
         <div class="lbl-eq mute"><span class="le-name">אם לא מבצעים</span><span class="le-math">0</span></div>
+        <div class="lbl-eq"><span class="le-name">בצד הבדיקה, מחסירים מכל עלה גם את עלותה</span><span class="le-math">4 − 0.25 = 3.75</span></div>
+        <div class="lbl-eq mute"><span class="le-name">וכך גם בכישלון ובפרישה</span><span class="le-math">−3.25, −0.25</span></div>
       </div>
-            <p>הרווחים האלה זהים בכל מסלולי העץ. ההמלצה משנה הסתברויות בלבד, לא סכומים.</p>
+            <p>שימו לב: בצד הבדיקה כל עלה משלם גם את עלות הבדיקה, ולכן העלים שם נמוכים בדיוק בעלות הזו. הרווח הסופי בעלה כולל את כל הניכויים.</p>
           </div>
           <div class="sol-step">
             <div class="ss-head"><span class="ss-num">2</span>מבנה העץ</div>
@@ -1141,20 +1147,20 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
             <div class="ss-head"><span class="ss-num">2</span>שני הריבועים שאחרי ההמלצה</div>
             <p>אותם רווחים בדיוק, ורק ההסתברויות מתחלפות: <span class="formula-inline">0.85</span> אחרי המלצה חיובית, <span class="formula-inline">0.1</span> אחרי המלצה שלילית.</p>
             <div class="lbl-eqs">
-        <div class="lbl-eq pick"><span class="le-name">לבצע, אחרי המלצה חיובית</span><span class="le-math">0.85 × 4 + 0.15 × (−3) = 2.95</span></div>
-        <div class="lbl-eq"><span class="le-name">לא לבצע, אחרי המלצה חיובית</span><span class="le-math">0</span></div>
-        <div class="lbl-eq mute"><span class="le-name">לבצע, אחרי המלצה שלילית</span><span class="le-math">0.1 × 4 + 0.9 × (−3) = −2.3</span></div>
-        <div class="lbl-eq pick"><span class="le-name">לא לבצע, אחרי המלצה שלילית</span><span class="le-math">0</span></div>
+        <div class="lbl-eq pick"><span class="le-name">לבצע, אחרי המלצה חיובית</span><span class="le-math">0.85 × 3.75 + 0.15 × (−3.25) = 2.7</span></div>
+        <div class="lbl-eq"><span class="le-name">לא לבצע, אחרי המלצה חיובית: העלות כבר שולמה</span><span class="le-math">−0.25</span></div>
+        <div class="lbl-eq mute"><span class="le-name">לבצע, אחרי המלצה שלילית</span><span class="le-math">0.1 × 3.75 + 0.9 × (−3.25) = −2.55</span></div>
+        <div class="lbl-eq pick"><span class="le-name">לא לבצע, אחרי המלצה שלילית: העלות כבר שולמה</span><span class="le-math">−0.25</span></div>
       </div>
-            <p>ולכן ערך הריבוע אחרי המלצה חיובית הוא <span class="formula-inline">2.95</span>, וערך הריבוע אחרי המלצה שלילית הוא <span class="formula-inline">0</span>.</p>
+            <p>ולכן ערך הריבוע אחרי המלצה חיובית הוא <span class="formula-inline">2.7</span>, וערך הריבוע אחרי המלצה שלילית הוא <span class="formula-inline">−0.25</span>.</p>
           </div>
           <div class="sol-step">
             <div class="ss-head"><span class="ss-num">3</span>העיגול של ההמלצה, ואז המחיר</div>
             <div class="lbl-eqs">
-        <div class="lbl-eq"><span class="le-name">ערך הבדיקה לפני התשלום</span><span class="le-math">0.4 × 2.95 + 0.6 × 0 = 1.18</span></div>
-        <div class="lbl-eq"><span class="le-name">פחות עלות הבדיקה</span><span class="le-math">1.18 − 0.25 = 0.93</span></div>
+        <div class="lbl-eq"><span class="le-name">ממצעים בין שני הריבועים, שכבר נטו</span><span class="le-math">0.4 × 2.7 + 0.6 × (−0.25) = 0.93</span></div>
+        
       </div>
-            <p>את העלות מחסירים פעם אחת בלבד, כי משלמים אותה בין אם ההמלצה תהיה חיובית ובין אם שלילית.</p>
+            <p>אין שורת חיסור נוספת: עלות הבדיקה כבר שולמה בתוך העלים, בכל מסלול בצד הבדיקה, ולכן הממוצע כבר נטו.</p>
           </div>
           <div class="sol-step">
             <div class="ss-head"><span class="ss-num">4</span>ההשוואה בריבוע הראשון</div>
@@ -1177,7 +1183,7 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
             <div class="ss-head"><span class="ss-num">1</span>משווים את אותו מצב, עם המידע ובלעדיו</div>
             <p>השאלה איננה תלויה במחיר שנדרש בפועל, ולכן מתעלמים ממנו לרגע. משווים כמה שווה המצב עם הבדיקה, <strong>לפני</strong> ששילמנו עליה, לעומת כמה הוא שווה בלעדיה.</p>
             <div class="lbl-eqs">
-        <div class="lbl-eq"><span class="le-name">עם הבדיקה, לפני התשלום</span><span class="le-math">1.18</span></div>
+        <div class="lbl-eq"><span class="le-name">עם הבדיקה, בתוספת העלות ששולמה</span><span class="le-math">0.93 + 0.25 = 1.18</span></div>
         <div class="lbl-eq mute"><span class="le-name">בלי הבדיקה בכלל</span><span class="le-math">0</span></div>
         <div class="lbl-eq pick"><span class="le-name">ערך המידע</span><span class="le-math">1.18 − 0 = 1.18</span></div>
       </div>
