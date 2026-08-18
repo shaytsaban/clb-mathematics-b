@@ -632,6 +632,32 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
 }
 </style>
 
+<style>
+.dl-box{
+  margin-top:1.6rem;display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;
+  background:var(--paper-raised);border:1px solid rgba(var(--accent-rgb),0.32);
+  border-radius:var(--r-md);padding:1.2rem 1.4rem;box-shadow:var(--shadow);
+}
+.dl-icon{flex:0 0 auto;width:54px;height:54px;}
+.dl-text{flex:1 1 260px;min-width:0;}
+.dl-text h3{font-size:1.02rem;color:var(--ink);margin-bottom:.3rem;}
+.dl-text p{font-size:.89rem;color:var(--ink-soft);line-height:1.6;}
+.dl-meta{font-size:.79rem;color:var(--ink-faint);margin-top:.45rem;}
+/* .page a{color:var(--accent-strong)} outranks a lone .dl-btn, so the button
+   colour is set at matching specificity, and pinned for hover/focus too. */
+.dl-box a.dl-btn,
+.dl-box a.dl-btn:hover,
+.dl-box a.dl-btn:focus{
+  flex:0 0 auto;display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--accent);color:var(--paper-raised);text-decoration:none;
+  font-weight:700;font-size:.92rem;padding:.7rem 1.15rem;border-radius:99px;
+  border:1px solid var(--accent);border-bottom-color:var(--accent);
+  transition:filter .15s ease;
+}
+.dl-box a.dl-btn:hover{filter:brightness(1.08);}
+</style>
+
+
 <div class="page" dir="rtl" lang="he">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -941,6 +967,17 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
           <span class="ch-enter">לחצו כאן לכניסה לסיכום המלא ←</span>
         </div>
       </a>
+    </div>
+
+
+    <div class="dl-box">
+      <svg class="dl-icon" viewBox="0 0 48 48" role="img" aria-label="סמל קובץ גיליון אלקטרוני"><rect x="7" y="4" width="27" height="40" rx="4" fill="rgba(var(--accent-rgb),0.12)" stroke="var(--accent)" stroke-width="2"/><path d="M13 14h15M13 21h15M13 28h9" stroke="var(--accent-strong)" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="34" cy="33" r="11" fill="var(--accent)"/><path d="M34 27v11M29.5 33.5 34 38l4.5-4.5" stroke="var(--paper-raised)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      <div class="dl-text">
+        <h3>📎 פתרונות לוח להורדה</h3>
+        <p>קובץ Excel עם <strong>פתרונות הלוח לחלק מהתרגילים בתת-פרקים 3.1 ו-3.2</strong>, כפי שנפתרו בשיעור. גיליון אחד לכל תת-פרק, כולל שרטוטי העצים וחישובי התוחלת שלב אחר שלב.</p>
+        <div class="dl-meta">קובץ xlsx, כ-143KB · שני גיליונות · נפתח ב-Excel, ב-Numbers או ב-Google Sheets</div>
+      </div>
+      <a class="dl-btn" href="files/decision-trees-board-solutions.xlsx" download="פתרונות לוח - עצי החלטה 3.1 3.2.xlsx">⬇ הורדת הקובץ</a>
     </div>
 
     <div class="relevance" style="margin-top:1.6rem">
