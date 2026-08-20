@@ -1043,8 +1043,8 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
   <div class="wrap">
     <div class="sec-head">
       <span class="sec-num">תרגול</span>
-      <h2>שלוש בעיות החלטה, עם פתרון מלא</h2>
-      <p class="sub">אותה שיטה בדיוק, סיפורים אחרים. מומלץ לצייר את העץ על דף לפני שפותחים את הפתרון. שימו לב שבתרגיל האחרון התשובה הפוכה.</p>
+      <h2>שבע בעיות החלטה, עם פתרון מלא</h2>
+      <p class="sub">אותה שיטה בדיוק, סיפורים אחרים. מומלץ לצייר את העץ על דף לפני שפותחים את הפתרון. שימו לב לגיוון בתשובות: יש תרגילים שבהם כדאי לפעול, יש שבהם עדיף לוותר, ויש אחד שבו התוחלת יוצאת בדיוק אפס.</p>
     </div>
     <div class="practice-grid">
       <div class="pcard">
@@ -1213,6 +1213,234 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
             <div class="result-banner" style="margin-top:.2rem">
               <span class="val" style="font-size:1.05rem">0</span>
               <span class="interp">כאן התוחלת שלילית, ולכן ההחלטה הנכונה היא דווקא לא להרחיב. תוצאה שלילית איננה טעות בחישוב, היא תשובה לגיטימית: היא אומרת שהסיכון גדול מהסיכוי.</span>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="pcard">
+        <span class="chip">פסטיבל מוזיקה</span>
+        <p class="story">מפיקה שוקלת להעלות פסטיבל מוזיקה בסוף השבוע. את הבמה, ההגברה והאמנים משלמים מראש, וההכנסה מגיעה ממכירת הכרטיסים בפועל.</p>
+        <p class="story">ההכנסה תלויה בעיקר במזג האוויר בסוף השבוע. אם יירד גשם, חלק מהקהל לא יגיע, אבל מי שקנה כרטיס מראש כבר שילם.</p>
+        <p class="story"><strong>הנתונים:</strong> ההשקעה הנדרשת היא 0.9 מיליון ש״ח. אם מזג אוויר נוח, ההכנסה תהיה 2.4 מיליון ש״ח. אם יורד גשם, ההכנסה תהיה 0.4 מיליון ש״ח. ההסתברות שמזג אוויר נוח היא 70%.</p>
+        <p class="q">בנו את עץ ההחלטה, וקבעו מה ההחלטה הנכונה ומה התוחלת שלה.</p>
+        <details>
+          <summary>הצג פתרון מלא, שלב אחר שלב</summary>
+          <div class="sol">
+            <div class="sol-step">
+              <div class="ss-head"><span class="ss-num">1</span>מחשבים את הרווח בכל עלה</div>
+              <p>רווח פירושו הכנסה פחות עלות. את העלות של 0.9 מיליון ש״ח משלמים בשני המקרים, כי היא יוצאת לפני שיודעים מה יקרה.</p>
+              <div class="lbl-eqs">
+        <div class="lbl-eq"><span class="le-name">אם מזג אוויר נוח</span><span class="le-math">2.4 − 0.9 = 1.5</span></div>
+        <div class="lbl-eq mute"><span class="le-name">אם יורד גשם</span><span class="le-math">0.4 − 0.9 = −0.5</span></div>
+        <div class="lbl-eq mute"><span class="le-name">אם לא פועלים</span><span class="le-math">0</span></div>
+      </div>
+            </div>
+            <div class="sol-step">
+              <div class="ss-head"><span class="ss-num">2</span>מציירים את העץ</div>
+              <p>ריבוע אחד להחלטה, ומתוך הענף שבו פועלים יוצא עיגול אחד למקרה. הסתברויות רק על הענפים שיוצאים מהעיגול.</p>
+              <div class="diagram-frame">
+      <svg id="exTree4" viewBox="0 0 680 440" style="min-width:520px" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="עץ ההחלטה של התרגיל, עם ריבוע החלטה ועיגול מקרה">
+        <g><text x="340" y="22" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="12.5" font-weight="700" fill="var(--ink)">ההחלטה שעל הפרק</text><rect x="327" y="39" width="26" height="26" rx="3" fill="var(--paper)" stroke="var(--accent)" stroke-width="2.4"/><rect x="460" y="404" width="13" height="13" rx="2.5" fill="var(--paper)" stroke="var(--accent)" stroke-width="2"/><text x="398" y="415" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10.5" font-weight="400" fill="var(--ink-soft)">ריבוע: אנחנו מחליטים</text><circle cx="286.5" cy="410.5" r="6.5" fill="var(--paper)" stroke="var(--accent)" stroke-width="2"/><text x="218" y="415" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10.5" font-weight="400" fill="var(--ink-soft)">עיגול: המקרה מחליט</text></g>
+        <g><line x1="340" y1="52" x2="520" y2="168" stroke="var(--accent)" stroke-width="2.2"/><line x1="340" y1="52" x2="160" y2="168" stroke="var(--accent)" stroke-width="2.2"/><rect x="368.0" y="100.0" width="124" height="19" rx="5" fill="var(--paper)" stroke="var(--accent)"/><text x="430.0" y="114.0" text-anchor="middle" direction="ltr" font-family="var(--font-body)" font-size="11" font-weight="700" fill="var(--accent-strong)">להעלות את הפסטיבל</text><rect x="188.0" y="100.0" width="124" height="19" rx="5" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="250.0" y="114.0" text-anchor="middle" direction="ltr" font-family="var(--font-body)" font-size="11" font-weight="400" fill="var(--ink-faint)">לבטל מראש</text></g>
+        <g><rect x="128.0" y="156" width="64" height="24" rx="6" fill="rgba(var(--accent-rgb),0.13)" stroke="var(--accent)" stroke-width="1.4"/><text x="160" y="172" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="12" font-weight="700" fill="var(--accent-strong)">0</text><text x="160" y="202" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10.5" font-weight="400" fill="var(--ink-soft)">לא מוציאים ולא מרוויחים</text></g>
+        <g><circle cx="520" cy="168" r="12" fill="var(--paper)" stroke="var(--accent)" stroke-width="2.4"/><text x="560" y="142" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10.5" font-weight="400" fill="var(--ink-soft)">מה יקרה בפועל?</text><line x1="520" y1="168" x2="628" y2="292" stroke="var(--accent)" stroke-width="2.2"/><line x1="520" y1="168" x2="416" y2="292" stroke="var(--accent)" stroke-width="2.2"/><rect x="551.0" y="220.0" width="46" height="19" rx="5" fill="var(--paper)" stroke="var(--accent)"/><text x="574.0" y="234.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="11" font-weight="700" fill="var(--accent-strong)">0.7</text><rect x="445.0" y="220.0" width="46" height="19" rx="5" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="468.0" y="234.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="11" font-weight="400" fill="var(--ink-faint)">0.3</text></g>
+        <g><rect x="596.0" y="292" width="64" height="24" rx="6" fill="rgba(var(--accent-rgb),0.13)" stroke="var(--accent)" stroke-width="1.4"/><text x="628" y="308" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="12" font-weight="700" fill="var(--accent-strong)">1.5</text><rect x="384.0" y="292" width="64" height="24" rx="6" fill="rgba(var(--muted-rgb),0.16)" stroke="rgba(var(--muted-rgb),0.7)" stroke-width="1.4"/><text x="416" y="308" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="12" font-weight="700" fill="var(--ink-soft)">−0.5</text><text x="628" y="334" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="11" font-weight="700" fill="var(--ink)">מזג אוויר נוח</text><text x="416" y="334" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="11" font-weight="400" fill="var(--ink-faint)">יורד גשם</text><text x="628" y="352" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">2.4 − 0.9</text><text x="416" y="352" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.4 − 0.9</text></g>
+        <g><line x1="340" y1="52" x2="520" y2="168" stroke="var(--accent)" stroke-width="7" stroke-linecap="round" opacity="0.28"/><g stroke="rgba(var(--muted-rgb),0.7)" stroke-width="2.4" stroke-linecap="round"><line x1="199.8" y1="130.84" x2="213.8" y2="144.84"/><line x1="213.8" y1="130.84" x2="199.8" y2="144.84"/></g><rect x="569.0" y="157" width="62" height="22" rx="7" fill="var(--accent)" stroke="var(--accent)"/><text x="600" y="173" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="12" font-weight="700" fill="var(--paper-raised)">0.9</text><text x="600" y="194" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10" font-weight="400" fill="var(--ink-soft)">תוחלת הענף</text><rect x="193.0" y="41" width="62" height="22" rx="7" fill="var(--accent)" stroke="var(--accent)"/><text x="224" y="57" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="12" font-weight="700" fill="var(--paper-raised)">0.9</text><text x="224" y="78" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10" font-weight="400" fill="var(--ink-soft)">ערך ההחלטה</text><text x="340" y="432" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10.5" font-weight="400" fill="var(--ink-soft)">כל המספרים במיליון ש״ח</text></g>
+      </svg>
+    </div>
+            </div>
+            <div class="sol-step">
+              <div class="ss-head"><span class="ss-num">3</span>מגלגלים לאחור: תוחלת בעיגול</div>
+              <p>ההסתברות שמזג אוויר נוח היא 0.7, ולכן ההסתברות שיורד גשם היא <span class="formula-inline">1 − 0.7 = 0.3</span>. מכפילים כל רווח בהסתברות שלו ומחברים:</p>
+              <div class="eq-chain">
+                <div class="eq-line"><span class="eq-lhs">EMV</span><span class="eq-rhs">= 0.7 × 1.5 + 0.3 × (−0.5)</span></div>
+                <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 1.05 − 0.15 = 0.9</span></div>
+              </div>
+            </div>
+            <div class="sol-step">
+              <div class="ss-head"><span class="ss-num">4</span>בריבוע בוחרים את הגדול</div>
+              <p>שתי האפשרויות עומדות זו מול זו, וכל אחת כבר מיוצגת במספר אחד:</p>
+              <div class="lbl-eqs">
+        <div class="lbl-eq pick"><span class="le-name">להעלות את הפסטיבל</span><span class="le-math">0.9</span></div>
+        <div class="lbl-eq"><span class="le-name">לבטל מראש</span><span class="le-math">0</span></div>
+      </div>
+              <p><strong>המסקנה:</strong> כדאי לבצע. ההחלטה הנכונה היא <strong>להעלות את הפסטיבל</strong>, וערך התוחלת תחת ההחלטה הזו הוא <span class="formula-inline">0.9</span> מיליון ש״ח, כלומר 900,000 ש״ח.</p>
+            </div>
+            <div class="result-banner" style="margin-top:.2rem">
+              <span class="val" style="font-size:1.05rem">0.9</span>
+              <span class="interp">התוחלת חיובית ובפער נוח, ולכן כדאי להפיק. שימו לב שגם בגשם נכנסת הכנסה חלקית מהכרטיסים שנמכרו מראש, ולכן ההפסד מוגבל.</span>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="pcard">
+        <span class="chip">חנות פופ-אפ</span>
+        <p class="story">רשת אופנה שוקלת לפתוח חנות פופ-אפ זמנית בקניון לחודש אחד. שכירות החודש והציוד משולמים מראש.</p>
+        <p class="story">ההצלחה תלויה בתנועת הקונים בקניון באותו חודש, שקשה לחזות מראש.</p>
+        <p class="story"><strong>הנתונים:</strong> ההשקעה הנדרשת היא 0.25 מיליון ש״ח. אם תנועה גבוהה, ההכנסה תהיה 0.85 מיליון ש״ח. אם תנועה חלשה, ההכנסה תהיה 0.1 מיליון ש״ח. ההסתברות שתנועה גבוהה היא 40%.</p>
+        <p class="q">בנו את עץ ההחלטה, וקבעו מה ההחלטה הנכונה ומה התוחלת שלה.</p>
+        <details>
+          <summary>הצג פתרון מלא, שלב אחר שלב</summary>
+          <div class="sol">
+            <div class="sol-step">
+              <div class="ss-head"><span class="ss-num">1</span>מחשבים את הרווח בכל עלה</div>
+              <p>רווח פירושו הכנסה פחות עלות. את העלות של 0.25 מיליון ש״ח משלמים בשני המקרים, כי היא יוצאת לפני שיודעים מה יקרה.</p>
+              <div class="lbl-eqs">
+        <div class="lbl-eq"><span class="le-name">אם תנועה גבוהה</span><span class="le-math">0.85 − 0.25 = 0.6</span></div>
+        <div class="lbl-eq mute"><span class="le-name">אם תנועה חלשה</span><span class="le-math">0.1 − 0.25 = −0.15</span></div>
+        <div class="lbl-eq mute"><span class="le-name">אם לא פועלים</span><span class="le-math">0</span></div>
+      </div>
+            </div>
+            <div class="sol-step">
+              <div class="ss-head"><span class="ss-num">2</span>מציירים את העץ</div>
+              <p>ריבוע אחד להחלטה, ומתוך הענף שבו פועלים יוצא עיגול אחד למקרה. הסתברויות רק על הענפים שיוצאים מהעיגול.</p>
+              <div class="diagram-frame">
+      <svg id="exTree5" viewBox="0 0 680 440" style="min-width:520px" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="עץ ההחלטה של התרגיל, עם ריבוע החלטה ועיגול מקרה">
+        <g><text x="340" y="22" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="12.5" font-weight="700" fill="var(--ink)">ההחלטה שעל הפרק</text><rect x="327" y="39" width="26" height="26" rx="3" fill="var(--paper)" stroke="var(--accent)" stroke-width="2.4"/><rect x="460" y="404" width="13" height="13" rx="2.5" fill="var(--paper)" stroke="var(--accent)" stroke-width="2"/><text x="398" y="415" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10.5" font-weight="400" fill="var(--ink-soft)">ריבוע: אנחנו מחליטים</text><circle cx="286.5" cy="410.5" r="6.5" fill="var(--paper)" stroke="var(--accent)" stroke-width="2"/><text x="218" y="415" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10.5" font-weight="400" fill="var(--ink-soft)">עיגול: המקרה מחליט</text></g>
+        <g><line x1="340" y1="52" x2="520" y2="168" stroke="var(--accent)" stroke-width="2.2"/><line x1="340" y1="52" x2="160" y2="168" stroke="var(--accent)" stroke-width="2.2"/><rect x="368.0" y="100.0" width="124" height="19" rx="5" fill="var(--paper)" stroke="var(--accent)"/><text x="430.0" y="114.0" text-anchor="middle" direction="ltr" font-family="var(--font-body)" font-size="11" font-weight="700" fill="var(--accent-strong)">לפתוח את החנות</text><rect x="188.0" y="100.0" width="124" height="19" rx="5" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="250.0" y="114.0" text-anchor="middle" direction="ltr" font-family="var(--font-body)" font-size="11" font-weight="400" fill="var(--ink-faint)">לא לפתוח</text></g>
+        <g><rect x="128.0" y="156" width="64" height="24" rx="6" fill="rgba(var(--accent-rgb),0.13)" stroke="var(--accent)" stroke-width="1.4"/><text x="160" y="172" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="12" font-weight="700" fill="var(--accent-strong)">0</text><text x="160" y="202" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10.5" font-weight="400" fill="var(--ink-soft)">לא מוציאים ולא מרוויחים</text></g>
+        <g><circle cx="520" cy="168" r="12" fill="var(--paper)" stroke="var(--accent)" stroke-width="2.4"/><text x="560" y="142" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10.5" font-weight="400" fill="var(--ink-soft)">מה יקרה בפועל?</text><line x1="520" y1="168" x2="628" y2="292" stroke="var(--accent)" stroke-width="2.2"/><line x1="520" y1="168" x2="416" y2="292" stroke="var(--accent)" stroke-width="2.2"/><rect x="551.0" y="220.0" width="46" height="19" rx="5" fill="var(--paper)" stroke="var(--accent)"/><text x="574.0" y="234.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="11" font-weight="700" fill="var(--accent-strong)">0.4</text><rect x="445.0" y="220.0" width="46" height="19" rx="5" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="468.0" y="234.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="11" font-weight="400" fill="var(--ink-faint)">0.6</text></g>
+        <g><rect x="596.0" y="292" width="64" height="24" rx="6" fill="rgba(var(--accent-rgb),0.13)" stroke="var(--accent)" stroke-width="1.4"/><text x="628" y="308" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="12" font-weight="700" fill="var(--accent-strong)">0.6</text><rect x="384.0" y="292" width="64" height="24" rx="6" fill="rgba(var(--muted-rgb),0.16)" stroke="rgba(var(--muted-rgb),0.7)" stroke-width="1.4"/><text x="416" y="308" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="12" font-weight="700" fill="var(--ink-soft)">−0.15</text><text x="628" y="334" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="11" font-weight="700" fill="var(--ink)">תנועה גבוהה</text><text x="416" y="334" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="11" font-weight="400" fill="var(--ink-faint)">תנועה חלשה</text><text x="628" y="352" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.85 − 0.25</text><text x="416" y="352" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.1 − 0.25</text></g>
+        <g><line x1="340" y1="52" x2="520" y2="168" stroke="var(--accent)" stroke-width="7" stroke-linecap="round" opacity="0.28"/><g stroke="rgba(var(--muted-rgb),0.7)" stroke-width="2.4" stroke-linecap="round"><line x1="199.8" y1="130.84" x2="213.8" y2="144.84"/><line x1="213.8" y1="130.84" x2="199.8" y2="144.84"/></g><rect x="569.0" y="157" width="62" height="22" rx="7" fill="var(--accent)" stroke="var(--accent)"/><text x="600" y="173" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="12" font-weight="700" fill="var(--paper-raised)">0.15</text><text x="600" y="194" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10" font-weight="400" fill="var(--ink-soft)">תוחלת הענף</text><rect x="193.0" y="41" width="62" height="22" rx="7" fill="var(--accent)" stroke="var(--accent)"/><text x="224" y="57" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="12" font-weight="700" fill="var(--paper-raised)">0.15</text><text x="224" y="78" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10" font-weight="400" fill="var(--ink-soft)">ערך ההחלטה</text><text x="340" y="432" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10.5" font-weight="400" fill="var(--ink-soft)">כל המספרים במיליון ש״ח</text></g>
+      </svg>
+    </div>
+            </div>
+            <div class="sol-step">
+              <div class="ss-head"><span class="ss-num">3</span>מגלגלים לאחור: תוחלת בעיגול</div>
+              <p>ההסתברות שתנועה גבוהה היא 0.4, ולכן ההסתברות שתנועה חלשה היא <span class="formula-inline">1 − 0.4 = 0.6</span>. מכפילים כל רווח בהסתברות שלו ומחברים:</p>
+              <div class="eq-chain">
+                <div class="eq-line"><span class="eq-lhs">EMV</span><span class="eq-rhs">= 0.4 × 0.6 + 0.6 × (−0.15)</span></div>
+                <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 0.24 − 0.09 = 0.15</span></div>
+              </div>
+            </div>
+            <div class="sol-step">
+              <div class="ss-head"><span class="ss-num">4</span>בריבוע בוחרים את הגדול</div>
+              <p>שתי האפשרויות עומדות זו מול זו, וכל אחת כבר מיוצגת במספר אחד:</p>
+              <div class="lbl-eqs">
+        <div class="lbl-eq pick"><span class="le-name">לפתוח את החנות</span><span class="le-math">0.15</span></div>
+        <div class="lbl-eq"><span class="le-name">לא לפתוח</span><span class="le-math">0</span></div>
+      </div>
+              <p><strong>המסקנה:</strong> כדאי לבצע. ההחלטה הנכונה היא <strong>לפתוח את החנות</strong>, וערך התוחלת תחת ההחלטה הזו הוא <span class="formula-inline">0.15</span> מיליון ש״ח, כלומר 150,000 ש״ח.</p>
+            </div>
+            <div class="result-banner" style="margin-top:.2rem">
+              <span class="val" style="font-size:1.05rem">0.15</span>
+              <span class="interp">התוחלת חיובית, אבל קטנה: 150,000 ש״ח בלבד מול השקעה של 250,000. זה מקרה גבולי שבו כדאי לשקול גם כמה הפסד אפשר לספוג.</span>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="pcard">
+        <span class="chip">קורס דיגיטלי</span>
+        <p class="story">מרצה עצמאי שוקל להפיק קורס וידאו מוקלט. ההפקה, הצילום והעריכה עולים כסף מראש, וההכנסות תלויות במספר הנרשמים.</p>
+        <p class="story">רוב הקורסים מהסוג הזה נמכרים בינוני. רק מיעוט קטן הופך ללהיט.</p>
+        <p class="story"><strong>הנתונים:</strong> ההשקעה הנדרשת היא 0.5 מיליון ש״ח. אם הקורס הופך ללהיט, ההכנסה תהיה 1.7 מיליון ש״ח. אם מכירות בינוניות, ההכנסה תהיה 0.2 מיליון ש״ח. ההסתברות שהקורס הופך ללהיט היא 20%.</p>
+        <p class="q">בנו את עץ ההחלטה, וקבעו מה ההחלטה הנכונה ומה התוחלת שלה.</p>
+        <details>
+          <summary>הצג פתרון מלא, שלב אחר שלב</summary>
+          <div class="sol">
+            <div class="sol-step">
+              <div class="ss-head"><span class="ss-num">1</span>מחשבים את הרווח בכל עלה</div>
+              <p>רווח פירושו הכנסה פחות עלות. את העלות של 0.5 מיליון ש״ח משלמים בשני המקרים, כי היא יוצאת לפני שיודעים מה יקרה.</p>
+              <div class="lbl-eqs">
+        <div class="lbl-eq"><span class="le-name">אם הקורס הופך ללהיט</span><span class="le-math">1.7 − 0.5 = 1.2</span></div>
+        <div class="lbl-eq mute"><span class="le-name">אם מכירות בינוניות</span><span class="le-math">0.2 − 0.5 = −0.3</span></div>
+        <div class="lbl-eq mute"><span class="le-name">אם לא פועלים</span><span class="le-math">0</span></div>
+      </div>
+            </div>
+            <div class="sol-step">
+              <div class="ss-head"><span class="ss-num">2</span>מציירים את העץ</div>
+              <p>ריבוע אחד להחלטה, ומתוך הענף שבו פועלים יוצא עיגול אחד למקרה. הסתברויות רק על הענפים שיוצאים מהעיגול.</p>
+              <div class="diagram-frame">
+      <svg id="exTree6" viewBox="0 0 680 440" style="min-width:520px" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="עץ ההחלטה של התרגיל, עם ריבוע החלטה ועיגול מקרה">
+        <g><text x="340" y="22" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="12.5" font-weight="700" fill="var(--ink)">ההחלטה שעל הפרק</text><rect x="327" y="39" width="26" height="26" rx="3" fill="var(--paper)" stroke="var(--accent)" stroke-width="2.4"/><rect x="460" y="404" width="13" height="13" rx="2.5" fill="var(--paper)" stroke="var(--accent)" stroke-width="2"/><text x="398" y="415" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10.5" font-weight="400" fill="var(--ink-soft)">ריבוע: אנחנו מחליטים</text><circle cx="286.5" cy="410.5" r="6.5" fill="var(--paper)" stroke="var(--accent)" stroke-width="2"/><text x="218" y="415" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10.5" font-weight="400" fill="var(--ink-soft)">עיגול: המקרה מחליט</text></g>
+        <g><line x1="340" y1="52" x2="520" y2="168" stroke="var(--accent)" stroke-width="2.2"/><line x1="340" y1="52" x2="160" y2="168" stroke="var(--accent)" stroke-width="2.2"/><rect x="368.0" y="100.0" width="124" height="19" rx="5" fill="var(--paper)" stroke="var(--accent)"/><text x="430.0" y="114.0" text-anchor="middle" direction="ltr" font-family="var(--font-body)" font-size="11" font-weight="700" fill="var(--accent-strong)">להפיק את הקורס</text><rect x="188.0" y="100.0" width="124" height="19" rx="5" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="250.0" y="114.0" text-anchor="middle" direction="ltr" font-family="var(--font-body)" font-size="11" font-weight="400" fill="var(--ink-faint)">לא להפיק</text></g>
+        <g><rect x="128.0" y="156" width="64" height="24" rx="6" fill="rgba(var(--accent-rgb),0.13)" stroke="var(--accent)" stroke-width="1.4"/><text x="160" y="172" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="12" font-weight="700" fill="var(--accent-strong)">0</text><text x="160" y="202" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10.5" font-weight="400" fill="var(--ink-soft)">לא מוציאים ולא מרוויחים</text></g>
+        <g><circle cx="520" cy="168" r="12" fill="var(--paper)" stroke="var(--accent)" stroke-width="2.4"/><text x="560" y="142" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10.5" font-weight="400" fill="var(--ink-soft)">מה יקרה בפועל?</text><line x1="520" y1="168" x2="628" y2="292" stroke="var(--accent)" stroke-width="2.2"/><line x1="520" y1="168" x2="416" y2="292" stroke="var(--accent)" stroke-width="2.2"/><rect x="551.0" y="220.0" width="46" height="19" rx="5" fill="var(--paper)" stroke="var(--accent)"/><text x="574.0" y="234.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="11" font-weight="700" fill="var(--accent-strong)">0.2</text><rect x="445.0" y="220.0" width="46" height="19" rx="5" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="468.0" y="234.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="11" font-weight="400" fill="var(--ink-faint)">0.8</text></g>
+        <g><rect x="596.0" y="292" width="64" height="24" rx="6" fill="rgba(var(--accent-rgb),0.13)" stroke="var(--accent)" stroke-width="1.4"/><text x="628" y="308" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="12" font-weight="700" fill="var(--accent-strong)">1.2</text><rect x="384.0" y="292" width="64" height="24" rx="6" fill="rgba(var(--muted-rgb),0.16)" stroke="rgba(var(--muted-rgb),0.7)" stroke-width="1.4"/><text x="416" y="308" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="12" font-weight="700" fill="var(--ink-soft)">−0.3</text><text x="628" y="334" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="11" font-weight="700" fill="var(--ink)">הקורס הופך ללהיט</text><text x="416" y="334" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="11" font-weight="400" fill="var(--ink-faint)">מכירות בינוניות</text><text x="628" y="352" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">1.7 − 0.5</text><text x="416" y="352" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.2 − 0.5</text></g>
+        <g><line x1="340" y1="52" x2="160" y2="168" stroke="var(--accent)" stroke-width="7" stroke-linecap="round" opacity="0.28"/><g stroke="rgba(var(--muted-rgb),0.7)" stroke-width="2.4" stroke-linecap="round"><line x1="466.2" y1="130.84" x2="480.2" y2="144.84"/><line x1="480.2" y1="130.84" x2="466.2" y2="144.84"/></g><rect x="569.0" y="157" width="62" height="22" rx="7" fill="var(--accent)" stroke="var(--accent)"/><text x="600" y="173" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="12" font-weight="700" fill="var(--paper-raised)">0</text><text x="600" y="194" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10" font-weight="400" fill="var(--ink-soft)">תוחלת הענף</text><rect x="193.0" y="41" width="62" height="22" rx="7" fill="var(--accent)" stroke="var(--accent)"/><text x="224" y="57" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="12" font-weight="700" fill="var(--paper-raised)">0</text><text x="224" y="78" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10" font-weight="400" fill="var(--ink-soft)">ערך ההחלטה</text><text x="340" y="432" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10.5" font-weight="400" fill="var(--ink-soft)">כל המספרים במיליון ש״ח</text></g>
+      </svg>
+    </div>
+            </div>
+            <div class="sol-step">
+              <div class="ss-head"><span class="ss-num">3</span>מגלגלים לאחור: תוחלת בעיגול</div>
+              <p>ההסתברות שהקורס הופך ללהיט היא 0.2, ולכן ההסתברות שמכירות בינוניות היא <span class="formula-inline">1 − 0.2 = 0.8</span>. מכפילים כל רווח בהסתברות שלו ומחברים:</p>
+              <div class="eq-chain">
+                <div class="eq-line"><span class="eq-lhs">EMV</span><span class="eq-rhs">= 0.2 × 1.2 + 0.8 × (−0.3)</span></div>
+                <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 0.24 − 0.24 = 0</span></div>
+              </div>
+            </div>
+            <div class="sol-step">
+              <div class="ss-head"><span class="ss-num">4</span>בריבוע בוחרים את הגדול</div>
+              <p>שתי האפשרויות עומדות זו מול זו, וכל אחת כבר מיוצגת במספר אחד:</p>
+              <div class="lbl-eqs">
+        <div class="lbl-eq mute"><span class="le-name">להפיק את הקורס</span><span class="le-math">0</span></div>
+        <div class="lbl-eq pick"><span class="le-name">לא להפיק</span><span class="le-math">0</span></div>
+      </div>
+              <p><strong>המסקנה:</strong> התוחלות שוות בדיוק. שתי האפשרויות שקולות: <span class="formula-inline">0</span> מול <span class="formula-inline">0</span>. ערך התוחלת הוא <span class="formula-inline">0</span> כך או כך, וכלל התוחלת לבדו אינו מכריע כאן.</p>
+            </div>
+            <div class="result-banner" style="margin-top:.2rem">
+              <span class="val" style="font-size:1.05rem">0</span>
+              <span class="interp">מקרה מיוחד: התוחלת יוצאת <strong>בדיוק אפס</strong>. שתי האפשרויות שוות בדיוק מבחינת התוחלת, ולכן הכלל לבדו לא מכריע. במצב כזה ההחלטה נסמכת על שיקולים אחרים, למשל סיכון, תזרים או ערך שיווקי עתידי.</span>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="pcard">
+        <span class="chip">מכונת אריזה</span>
+        <p class="story">מפעל שוקל לרכוש מכונת אריזה אוטומטית שתחליף עבודה ידנית. המכונה נרכשת מראש, והחיסכון תלוי בהיקף ההזמנות בשנה הקרובה.</p>
+        <p class="story">גם אם ההזמנות יישארו נמוכות, המכונה תחסוך משהו, אבל הרבה פחות ממה שנדרש כדי להחזיר את ההשקעה.</p>
+        <p class="story"><strong>הנתונים:</strong> ההשקעה הנדרשת היא 2 מיליון ש״ח. אם היקף הזמנות גבוה, ההכנסה תהיה 4.5 מיליון ש״ח. אם היקף הזמנות נמוך, ההכנסה תהיה 0.5 מיליון ש״ח. ההסתברות שהיקף הזמנות גבוה היא 30%.</p>
+        <p class="q">בנו את עץ ההחלטה, וקבעו מה ההחלטה הנכונה ומה התוחלת שלה.</p>
+        <details>
+          <summary>הצג פתרון מלא, שלב אחר שלב</summary>
+          <div class="sol">
+            <div class="sol-step">
+              <div class="ss-head"><span class="ss-num">1</span>מחשבים את הרווח בכל עלה</div>
+              <p>רווח פירושו הכנסה פחות עלות. את העלות של 2 מיליון ש״ח משלמים בשני המקרים, כי היא יוצאת לפני שיודעים מה יקרה.</p>
+              <div class="lbl-eqs">
+        <div class="lbl-eq"><span class="le-name">אם היקף הזמנות גבוה</span><span class="le-math">4.5 − 2 = 2.5</span></div>
+        <div class="lbl-eq mute"><span class="le-name">אם היקף הזמנות נמוך</span><span class="le-math">0.5 − 2 = −1.5</span></div>
+        <div class="lbl-eq mute"><span class="le-name">אם לא פועלים</span><span class="le-math">0</span></div>
+      </div>
+            </div>
+            <div class="sol-step">
+              <div class="ss-head"><span class="ss-num">2</span>מציירים את העץ</div>
+              <p>ריבוע אחד להחלטה, ומתוך הענף שבו פועלים יוצא עיגול אחד למקרה. הסתברויות רק על הענפים שיוצאים מהעיגול.</p>
+              <div class="diagram-frame">
+      <svg id="exTree7" viewBox="0 0 680 440" style="min-width:520px" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="עץ ההחלטה של התרגיל, עם ריבוע החלטה ועיגול מקרה">
+        <g><text x="340" y="22" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="12.5" font-weight="700" fill="var(--ink)">ההחלטה שעל הפרק</text><rect x="327" y="39" width="26" height="26" rx="3" fill="var(--paper)" stroke="var(--accent)" stroke-width="2.4"/><rect x="460" y="404" width="13" height="13" rx="2.5" fill="var(--paper)" stroke="var(--accent)" stroke-width="2"/><text x="398" y="415" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10.5" font-weight="400" fill="var(--ink-soft)">ריבוע: אנחנו מחליטים</text><circle cx="286.5" cy="410.5" r="6.5" fill="var(--paper)" stroke="var(--accent)" stroke-width="2"/><text x="218" y="415" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10.5" font-weight="400" fill="var(--ink-soft)">עיגול: המקרה מחליט</text></g>
+        <g><line x1="340" y1="52" x2="520" y2="168" stroke="var(--accent)" stroke-width="2.2"/><line x1="340" y1="52" x2="160" y2="168" stroke="var(--accent)" stroke-width="2.2"/><rect x="368.0" y="100.0" width="124" height="19" rx="5" fill="var(--paper)" stroke="var(--accent)"/><text x="430.0" y="114.0" text-anchor="middle" direction="ltr" font-family="var(--font-body)" font-size="11" font-weight="700" fill="var(--accent-strong)">לרכוש את המכונה</text><rect x="188.0" y="100.0" width="124" height="19" rx="5" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="250.0" y="114.0" text-anchor="middle" direction="ltr" font-family="var(--font-body)" font-size="11" font-weight="400" fill="var(--ink-faint)">להישאר בעבודה ידנית</text></g>
+        <g><rect x="128.0" y="156" width="64" height="24" rx="6" fill="rgba(var(--accent-rgb),0.13)" stroke="var(--accent)" stroke-width="1.4"/><text x="160" y="172" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="12" font-weight="700" fill="var(--accent-strong)">0</text><text x="160" y="202" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10.5" font-weight="400" fill="var(--ink-soft)">לא מוציאים ולא מרוויחים</text></g>
+        <g><circle cx="520" cy="168" r="12" fill="var(--paper)" stroke="var(--accent)" stroke-width="2.4"/><text x="560" y="142" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10.5" font-weight="400" fill="var(--ink-soft)">מה יקרה בפועל?</text><line x1="520" y1="168" x2="628" y2="292" stroke="var(--accent)" stroke-width="2.2"/><line x1="520" y1="168" x2="416" y2="292" stroke="var(--accent)" stroke-width="2.2"/><rect x="551.0" y="220.0" width="46" height="19" rx="5" fill="var(--paper)" stroke="var(--accent)"/><text x="574.0" y="234.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="11" font-weight="700" fill="var(--accent-strong)">0.3</text><rect x="445.0" y="220.0" width="46" height="19" rx="5" fill="var(--paper)" stroke="rgba(var(--muted-rgb),0.7)"/><text x="468.0" y="234.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="11" font-weight="400" fill="var(--ink-faint)">0.7</text></g>
+        <g><rect x="596.0" y="292" width="64" height="24" rx="6" fill="rgba(var(--accent-rgb),0.13)" stroke="var(--accent)" stroke-width="1.4"/><text x="628" y="308" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="12" font-weight="700" fill="var(--accent-strong)">2.5</text><rect x="384.0" y="292" width="64" height="24" rx="6" fill="rgba(var(--muted-rgb),0.16)" stroke="rgba(var(--muted-rgb),0.7)" stroke-width="1.4"/><text x="416" y="308" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="12" font-weight="700" fill="var(--ink-soft)">−1.5</text><text x="628" y="334" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="11" font-weight="700" fill="var(--ink)">היקף הזמנות גבוה</text><text x="416" y="334" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="11" font-weight="400" fill="var(--ink-faint)">היקף הזמנות נמוך</text><text x="628" y="352" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">4.5 − 2</text><text x="416" y="352" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" fill="var(--ink-faint)">0.5 − 2</text></g>
+        <g><line x1="340" y1="52" x2="160" y2="168" stroke="var(--accent)" stroke-width="7" stroke-linecap="round" opacity="0.28"/><g stroke="rgba(var(--muted-rgb),0.7)" stroke-width="2.4" stroke-linecap="round"><line x1="466.2" y1="130.84" x2="480.2" y2="144.84"/><line x1="480.2" y1="130.84" x2="466.2" y2="144.84"/></g><rect x="569.0" y="157" width="62" height="22" rx="7" fill="var(--accent)" stroke="var(--accent)"/><text x="600" y="173" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="12" font-weight="700" fill="var(--paper-raised)">−0.3</text><text x="600" y="194" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10" font-weight="400" fill="var(--ink-soft)">תוחלת הענף</text><rect x="193.0" y="41" width="62" height="22" rx="7" fill="var(--accent)" stroke="var(--accent)"/><text x="224" y="57" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="12" font-weight="700" fill="var(--paper-raised)">0</text><text x="224" y="78" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10" font-weight="400" fill="var(--ink-soft)">ערך ההחלטה</text><text x="340" y="432" text-anchor="middle" direction="rtl" font-family="var(--font-body)" font-size="10.5" font-weight="400" fill="var(--ink-soft)">כל המספרים במיליון ש״ח</text></g>
+      </svg>
+    </div>
+            </div>
+            <div class="sol-step">
+              <div class="ss-head"><span class="ss-num">3</span>מגלגלים לאחור: תוחלת בעיגול</div>
+              <p>ההסתברות שהיקף הזמנות גבוה היא 0.3, ולכן ההסתברות שהיקף הזמנות נמוך היא <span class="formula-inline">1 − 0.3 = 0.7</span>. מכפילים כל רווח בהסתברות שלו ומחברים:</p>
+              <div class="eq-chain">
+                <div class="eq-line"><span class="eq-lhs">EMV</span><span class="eq-rhs">= 0.3 × 2.5 + 0.7 × (−1.5)</span></div>
+                <div class="eq-line result"><span class="eq-lhs"></span><span class="eq-rhs">= 0.75 − 1.05 = −0.3</span></div>
+              </div>
+            </div>
+            <div class="sol-step">
+              <div class="ss-head"><span class="ss-num">4</span>בריבוע בוחרים את הגדול</div>
+              <p>שתי האפשרויות עומדות זו מול זו, וכל אחת כבר מיוצגת במספר אחד:</p>
+              <div class="lbl-eqs">
+        <div class="lbl-eq mute"><span class="le-name">לרכוש את המכונה</span><span class="le-math">−0.3</span></div>
+        <div class="lbl-eq pick"><span class="le-name">להישאר בעבודה ידנית</span><span class="le-math">0</span></div>
+      </div>
+              <p><strong>המסקנה:</strong> לא כדאי לבצע. ההחלטה הנכונה היא <strong>להישאר בעבודה ידנית</strong>, וערך התוחלת תחת ההחלטה הזו הוא <span class="formula-inline">0</span> מיליון ש״ח, כלומר 0 ש״ח.</p>
+            </div>
+            <div class="result-banner" style="margin-top:.2rem">
+              <span class="val" style="font-size:1.05rem">0</span>
+              <span class="interp">התוחלת שלילית, ולכן ההחלטה הנכונה היא לא לרכוש. שימו לב שהחיסכון בתרחיש הטוב גדול, אבל הסיכוי אליו נמוך מדי מכדי לפצות על ההפסד בתרחיש הסביר.</span>
             </div>
           </div>
         </details>
