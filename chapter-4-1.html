@@ -898,8 +898,7 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
     <div class="d-row result">
       <div class="d-name">הרווח הכולל: רווח ליחידה כפול מספר היחידות, ומחברים את שני המוצרים</div>
       <div class="d-math">
-      <div class="d-sym">Max Z = 300x₁ + 200x₂</div>
-      <div class="d-num">Z = 300·x₁ + 200·x₂</div>
+      <div class="d-num">Max Z = 300x₁ + 200x₂</div>
       </div>
     </div>
     </div>
@@ -911,28 +910,24 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
     <div class="d-row">
       <div class="d-name">העץ: צריכה ליחידה כפול מספר היחידות, מול 16 המטרים שיש</div>
       <div class="d-math">
-      <div class="d-sym">2x₁ + 1x₂ ≤ 16</div>
       <div class="d-num">2x₁ + x₂ ≤ 16</div>
       </div>
     </div>
     <div class="d-row">
       <div class="d-name">השעות: שעה לכל יחידה משני הסוגים, מול 10 השעות שיש</div>
       <div class="d-math">
-      <div class="d-sym">1x₁ + 1x₂ ≤ 10</div>
       <div class="d-num">x₁ + x₂ ≤ 10</div>
       </div>
     </div>
     <div class="d-row">
       <div class="d-name">ההזמנה הקבועה: "לפחות 2 כיסאות", ולכן הסימן מתהפך</div>
       <div class="d-math">
-      <div class="d-sym">x₂ ≥ 2</div>
       <div class="d-num">x₂ ≥ 2</div>
       </div>
     </div>
     <div class="d-row result">
       <div class="d-name">אי-שליליות: אי אפשר לייצר מספר שלילי של רהיטים</div>
       <div class="d-math">
-      <div class="d-sym">x₁ ≥ 0, x₂ ≥ 0</div>
       <div class="d-num">x₁, x₂ ≥ 0</div>
       </div>
     </div>
@@ -1063,27 +1058,29 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
     <div class="story-card">
       <div class="sol-step">
         <div class="ss-head"><span class="ss-num">1</span>הצעה ראשונה: 5 שולחנות ו-4 כיסאות, הנקודה (5, 4)</div>
+        <p style="margin-bottom:.5rem"><strong>תזכורת מה מציבים:</strong> <span class="formula-inline">x₁</span> = מספר השולחנות, <span class="formula-inline">x₂</span> = מספר הכיסאות.</p>
         <div class="deriv">
-<div class="d-guide">תוכנית נחשבת אפשרית רק אם עברה את כל האילוצים. אחד נכשל, כולה נפסלת.</div>
+<div class="d-guide">בכל שורה: למעלה האילוץ עצמו עם המשתנים, ומתחתיו אותו אילוץ אחרי שהצבנו את הנקודה. תוכנית אפשרית רק אם עברה את כולם, ואחד שנכשל פוסל את כולה.</div>
     <div class="d-row">
-      <div class="d-name">אילוץ העץ: מציבים את הנקודה</div>
+      <div class="d-name">אילוץ העץ: שולחן צורך 2 מטרים, כיסא מטר אחד, ובמחסן יש 16</div>
       <div class="d-math">
-      <div class="d-sym">2×5 + 4 ≤ 16 ?</div>
-      <div class="d-num">10 + 4 = 14</div>
+      <div class="d-sym">2x₁ + x₂ ≤ 16</div>
+      <div class="d-num">2×5 + 4 = 14</div>
       <div class="d-num">14 ≤ 16 ✓</div>
       </div>
     </div>
     <div class="d-row">
-      <div class="d-name">אילוץ השעות: מציבים את אותה נקודה</div>
+      <div class="d-name">אילוץ השעות: שעה לכל יחידה, ובשבוע יש 10 שעות</div>
       <div class="d-math">
-      <div class="d-sym">5 + 4 ≤ 10 ?</div>
+      <div class="d-sym">x₁ + x₂ ≤ 10</div>
+      <div class="d-num">5 + 4 = 9</div>
       <div class="d-num">9 ≤ 10 ✓</div>
       </div>
     </div>
     <div class="d-row result">
-      <div class="d-name">ההזמנה הקבועה: לפחות שני כיסאות</div>
+      <div class="d-name">ההזמנה הקבועה: לפחות שני כיסאות לבית הקפה</div>
       <div class="d-math">
-      <div class="d-sym">4 ≥ 2 ?</div>
+      <div class="d-sym">x₂ ≥ 2</div>
       <div class="d-num">4 ≥ 2 ✓</div>
       </div>
     </div>
@@ -1092,18 +1089,28 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
       </div>
       <div class="sol-step">
         <div class="ss-head"><span class="ss-num">2</span>הצעה שנייה: 7 שולחנות ו-3 כיסאות, הנקודה (7, 3)</div>
+        <p style="margin-bottom:.5rem"><strong>תזכורת מה מציבים:</strong> <span class="formula-inline">x₁</span> = מספר השולחנות, <span class="formula-inline">x₂</span> = מספר הכיסאות.</p>
         <div class="deriv">
 <div class="d-guide">ברגע שאילוץ אחד נכשל, ההצעה בלתי אפשרית. לא ממשיכים לבדוק.</div>
     <div class="d-row result">
-      <div class="d-name">אילוץ העץ: מציבים x₁ = 7, x₂ = 3</div>
+      <div class="d-name">אילוץ העץ: אותו אילוץ בדיוק, נקודה אחרת</div>
       <div class="d-math">
-      <div class="d-sym">2×7 + 3 ≤ 16 ?</div>
-      <div class="d-num">14 + 3 = 17</div>
+      <div class="d-sym">2x₁ + x₂ ≤ 16</div>
+      <div class="d-num">2×7 + 3 = 17</div>
       <div class="d-num">17 &gt; 16 ✗</div>
       </div>
     </div>
     </div>
         <p><strong>המסקנה:</strong> (7, 3) דורשת 17 מטרים של עץ ויש רק 16. ההצעה נפסלת, למרות שהרווח שלה על הנייר, <span class="formula-inline">300×7 + 200×3 = 2100 + 600 = 2700</span> שקלים, גבוה יותר. רווח מפתה לא עוזר לתוכנית שאי אפשר לבצע.</p>
+      </div>
+      <div class="sol-step">
+        <div class="ss-head"><span class="ss-num">3</span>ואיך זה נראה על הגרף</div>
+        <p>אותן שתי הצעות, הפעם מול אילוץ העץ <span class="formula-inline">2x₁ + x₂ ≤ 16</span> שציירנו למעלה. הנקודה (5, 4) יושבת <strong>בתוך</strong> התחום הצבוע, והנקודה (7, 3) נופלת <strong>מחוצה לו</strong>. אותה מסקנה בדיוק שקיבלנו במספרים, רק שרואים אותה בעין.</p>
+        <div class="diagram-frame">
+      <svg viewBox="0 0 442 362" style="min-width:430px" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="מערכת צירים עם קו האילוץ של העץ, התחום הצבוע, ושתי נקודות: אחת בתוך התחום ואחת מחוצה לו">
+        <line x1="44.0" y1="318.0" x2="44.0" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="44.0" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">0</text><line x1="111.6" y1="318.0" x2="111.6" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="111.6" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">2</text><line x1="179.3" y1="318.0" x2="179.3" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="179.3" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">4</text><line x1="246.9" y1="318.0" x2="246.9" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="246.9" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">6</text><line x1="314.5" y1="318.0" x2="314.5" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="314.5" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">8</text><line x1="382.2" y1="318.0" x2="382.2" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="382.2" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">10</text><line x1="44.0" y1="318.0" x2="416.0" y2="318.0" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="322.0" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">0</text><line x1="44.0" y1="284.7" x2="416.0" y2="284.7" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="288.7" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">2</text><line x1="44.0" y1="251.3" x2="416.0" y2="251.3" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="255.3" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">4</text><line x1="44.0" y1="218.0" x2="416.0" y2="218.0" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="222.0" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">6</text><line x1="44.0" y1="184.7" x2="416.0" y2="184.7" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="188.7" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">8</text><line x1="44.0" y1="151.3" x2="416.0" y2="151.3" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="155.3" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">10</text><line x1="44.0" y1="118.0" x2="416.0" y2="118.0" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="122.0" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">12</text><line x1="44.0" y1="84.7" x2="416.0" y2="84.7" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="88.7" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">14</text><line x1="44.0" y1="51.3" x2="416.0" y2="51.3" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="55.3" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">16</text><line x1="44.0" y1="18.0" x2="416.0" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="22.0" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">18</text><polygon points="44.0,318.0 314.5,318.0 44.0,51.3" fill="rgba(var(--accent-rgb),0.11)" stroke="none"/><line x1="44.0" y1="51.3" x2="314.5" y2="318.0" stroke="var(--accent)" stroke-width="2.4"/><text x="177.2" y="125.3" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)" stroke="var(--paper-raised)" stroke-width="3" paint-order="stroke">2x₁ + x₂ = 16</text><line x1="44.0" y1="318.0" x2="416.0" y2="318.0" stroke="var(--ink-soft)" stroke-width="2"/><line x1="44.0" y1="318.0" x2="44.0" y2="18.0" stroke="var(--ink-soft)" stroke-width="2"/><text x="420.0" y="311.0" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="11" font-weight="700" fill="var(--ink)">x₁</text><text x="55.0" y="29.0" text-anchor="start" direction="ltr" font-family="var(--font-mono)" font-size="11" font-weight="700" fill="var(--ink)">x₂</text><circle cx="213.1" cy="251.3" r="6" fill="var(--accent)"/><text x="213.1" y="238.3" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)" stroke="var(--paper-raised)" stroke-width="3" paint-order="stroke">(5, 4) ✓</text><circle cx="280.7" cy="268.0" r="6" fill="rgba(var(--muted-rgb),0.95)"/><text x="280.7" y="255.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--ink-soft)" stroke="var(--paper-raised)" stroke-width="3" paint-order="stroke">(7, 3) ✗</text>
+      </svg>
+    </div>
       </div>
       <div class="result-banner">
         <span class="val" style="font-size:1.05rem">(5, 4) ✓ · (7, 3) ✗</span>
@@ -1117,8 +1124,8 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
   <div class="wrap">
     <div class="sec-head">
       <span class="sec-num">תרגול</span>
-      <h2>שלושה תרגילים, עם פתרון מלא</h2>
-      <p class="sub">שני ניסוחים ובדיקת גרף אחת. מומלץ לפתור על דף לפני שפותחים את הפתרון.</p>
+      <h2>שישה תרגילים, עם פתרון מלא</h2>
+      <p class="sub">שלושה ניסוחים ושלושה תרגילי גרף ובדיקה. שימו לב לתרגילים 4 ו-5: שם נכנסים לראשונה <span class="formula-inline">Min</span> ואילוצי <span class="formula-inline">≥</span>, שבהם הצד המותר הוא דווקא הרחוק מהראשית. מומלץ לפתור על דף לפני שפותחים את הפתרון.</p>
     </div>
     <div class="practice-grid">
       <div class="pcard">
@@ -1129,7 +1136,6 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
         <details>
           <summary>הצג פתרון מלא, שלב אחר שלב</summary>
           <div class="sol">
-            
             <div class="sol-step">
               <div class="ss-head"><span class="ss-num">1</span>מגדירים משתני החלטה</div>
               <p>שואלים: מה אנחנו קובעים? כמה כוסות להכין מכל משקה. לכן:</p>
@@ -1142,8 +1148,7 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
     <div class="d-row result">
       <div class="d-name">הרווח הכולל: רווח לכוס כפול מספר הכוסות, לכל משקה, ומחברים</div>
       <div class="d-math">
-      <div class="d-sym">Max Z = 8x₁ + 6x₂</div>
-      <div class="d-num">Z = 8·x₁ + 6·x₂</div>
+      <div class="d-num">Max Z = 8x₁ + 6x₂</div>
       </div>
     </div>
     </div>
@@ -1155,21 +1160,18 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
     <div class="d-row">
       <div class="d-name">הלימונים: כל לימונדה צורכת 2, כל תה קר צורך 1, ויש 60</div>
       <div class="d-math">
-      <div class="d-sym">2x₁ + 1x₂ ≤ 60</div>
       <div class="d-num">2x₁ + x₂ ≤ 60</div>
       </div>
     </div>
     <div class="d-row">
       <div class="d-name">הסוכר: כל לימונדה צורכת כפית, כל תה קר שתיים, ויש 50</div>
       <div class="d-math">
-      <div class="d-sym">1x₁ + 2x₂ ≤ 50</div>
       <div class="d-num">x₁ + 2x₂ ≤ 50</div>
       </div>
     </div>
     <div class="d-row result">
       <div class="d-name">אי-שליליות: אי אפשר להכין מספר שלילי של כוסות</div>
       <div class="d-math">
-      <div class="d-sym">x₁ ≥ 0, x₂ ≥ 0</div>
       <div class="d-num">x₁, x₂ ≥ 0</div>
       </div>
     </div>
@@ -1246,28 +1248,24 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
     <div class="d-row">
       <div class="d-name">פונקציית המטרה: רווח למגש כפול מספר המגשים</div>
       <div class="d-math">
-      <div class="d-sym">Max Z = 90x₁ + 70x₂</div>
-      <div class="d-num">Z = 90x₁ + 70x₂</div>
+      <div class="d-num">Max Z = 90x₁ + 70x₂</div>
       </div>
     </div>
     <div class="d-row">
       <div class="d-name">הקמח: 4 ק"ג למגש לחמניות, 2 למגש בורקסים, ויש 24</div>
       <div class="d-math">
-      <div class="d-sym">4x₁ + 2x₂ ≤ 24</div>
       <div class="d-num">4x₁ + 2x₂ ≤ 24</div>
       </div>
     </div>
     <div class="d-row">
       <div class="d-name">התנור: שעה למגש, משני הסוגים, ויש 8 שעות</div>
       <div class="d-math">
-      <div class="d-sym">1x₁ + 1x₂ ≤ 8</div>
       <div class="d-num">x₁ + x₂ ≤ 8</div>
       </div>
     </div>
     <div class="d-row result">
       <div class="d-name">אי-שליליות</div>
       <div class="d-math">
-      <div class="d-sym">x₁, x₂ ≥ 0</div>
       <div class="d-num">x₁, x₂ ≥ 0</div>
       </div>
     </div>
@@ -1313,6 +1311,256 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
             <div class="result-banner" style="margin-top:.2rem">
               <span class="val" style="font-size:1rem">(4, 4) ✓ · (5, 3) ✗</span>
               <span class="interp">אותה מסקנה בדיוק תתקבל מהגרף: (4, 4) בתוך התחום הצבוע, (5, 3) מחוץ לו. משאב אחד חסר מספיק כדי לפסול תוכנית.</span>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="pcard">
+        <span class="chip">תערובת מזון</span>
+        <p class="story">חוות סוסים מכינה תערובת מזון יומית משני רכיבים: תערובת א׳ ותערובת ב׳. כל קילוגרם מתערובת א׳ מספק 3 יחידות חלבון ויחידת סידן אחת. כל קילוגרם מתערובת ב׳ מספק יחידת חלבון אחת ו-2 יחידות סידן.</p>
+        <p class="story">המזון היומי חייב לספק <strong>לפחות</strong> 24 יחידות חלבון ו<strong>לפחות</strong> 16 יחידות סידן. קילוגרם מתערובת א׳ עולה 4 שקלים, ומתערובת ב׳ 3 שקלים. החווה רוצה להוזיל את עלות התערובת.</p>
+        <p class="q">נסחו את הבעיה כבעיית תכנון ליניארי. שימו לב: כאן המטרה שונה מקודמותיה.</p>
+        <details>
+          <summary>הצג פתרון מלא, שלב אחר שלב</summary>
+          <div class="sol">
+            <div class="sol-step">
+              <div class="ss-head"><span class="ss-num">1</span>מגדירים משתני החלטה</div>
+              <p><span class="formula-inline">x₁</span> = מספר הקילוגרמים מתערובת א׳ ביום. <span class="formula-inline">x₂</span> = מספר הקילוגרמים מתערובת ב׳ ביום.</p>
+            </div>
+            <div class="sol-step">
+              <div class="ss-head"><span class="ss-num">2</span>פונקציית המטרה: הפעם מינימום</div>
+              <div class="deriv">
+<div class="d-guide">כאן מחפשים <strong>מינימום</strong>, כי מדובר בעלות ולא ברווח. המבנה זהה לחלוטין, ורק המילה בראש הביטוי מתחלפת.</div>
+    <div class="d-row result">
+      <div class="d-name">העלות הכוללת: מחיר לקילוגרם כפול מספר הקילוגרמים, ומחברים</div>
+      <div class="d-math">
+      <div class="d-num">Min Z = 4x₁ + 3x₂</div>
+      </div>
+    </div>
+    </div>
+            </div>
+            <div class="sol-step">
+              <div class="ss-head"><span class="ss-num">3</span>אילוצים: הפעם "לפחות", ולכן הסימן מתהפך</div>
+              <div class="deriv">
+<div class="d-guide">שימו לב להבדל מהתרגילים הקודמים: משאב מוגבל נותן ≤, ואילו דרישת מינימום נותנת ≥. הכיוון נקבע לפי המילים "לכל היותר" מול "לפחות".</div>
+    <div class="d-row">
+      <div class="d-name">החלבון: 3 יחידות לקילוגרם מא׳, יחידה אחת מב׳, ונדרשות לפחות 24</div>
+      <div class="d-math">
+      <div class="d-num">3x₁ + x₂ ≥ 24</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">הסידן: יחידה אחת מא׳, 2 יחידות מב׳, ונדרשות לפחות 16</div>
+      <div class="d-math">
+      <div class="d-num">x₁ + 2x₂ ≥ 16</div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">אי-שליליות: אי אפשר לערבב כמות שלילית</div>
+      <div class="d-math">
+      <div class="d-num">x₁, x₂ ≥ 0</div>
+      </div>
+    </div>
+    </div>
+            </div>
+            <div class="sol-step">
+              <div class="ss-head"><span class="ss-num">4</span>בדיקה: האם התערובת (6, 6) עומדת בדרישות?</div>
+              <p style="margin-bottom:.5rem"><strong>תזכורת מה מציבים:</strong> <span class="formula-inline">x₁</span> = ק"ג מתערובת א׳, <span class="formula-inline">x₂</span> = ק"ג מתערובת ב׳.</p>
+              <div class="deriv">
+<div class="d-guide">באילוץ מסוג "לפחות" עוברים כשהתוצאה גדולה מהדרישה או שווה לה, בדיוק הפוך מאילוץ משאב.</div>
+    <div class="d-row">
+      <div class="d-name">דרישת החלבון</div>
+      <div class="d-math">
+      <div class="d-sym">3x₁ + x₂ ≥ 24</div>
+      <div class="d-num">3×6 + 6 = 24</div>
+      <div class="d-num">24 ≥ 24 ✓</div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">דרישת הסידן</div>
+      <div class="d-math">
+      <div class="d-sym">x₁ + 2x₂ ≥ 16</div>
+      <div class="d-num">6 + 2×6 = 18</div>
+      <div class="d-num">18 ≥ 16 ✓</div>
+      </div>
+    </div>
+    </div>
+              <p>התערובת (6, 6) עומדת בשתי הדרישות, ועלותה <span class="formula-inline">4×6 + 3×6 = 24 + 18 = 42</span> שקלים ליום. האם יש תערובת זולה יותר שעדיין עומדת בדרישות? זו בדיוק השאלה שהשיטה הגרפית ב-4.2 תדע לענות עליה.</p>
+              <div class="diagram-frame">
+      <svg viewBox="0 0 442 362" style="min-width:430px" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="מערכת צירים עם קו דרישת החלבון והתחום שמעליו, ונקודה אחת בתוך התחום">
+        <line x1="44.0" y1="318.0" x2="44.0" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="44.0" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">0</text><line x1="106.0" y1="318.0" x2="106.0" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="106.0" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">2</text><line x1="168.0" y1="318.0" x2="168.0" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="168.0" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">4</text><line x1="230.0" y1="318.0" x2="230.0" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="230.0" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">6</text><line x1="292.0" y1="318.0" x2="292.0" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="292.0" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">8</text><line x1="354.0" y1="318.0" x2="354.0" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="354.0" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">10</text><line x1="416.0" y1="318.0" x2="416.0" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="416.0" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">12</text><line x1="44.0" y1="318.0" x2="416.0" y2="318.0" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="322.0" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">0</text><line x1="44.0" y1="275.1" x2="416.0" y2="275.1" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="279.1" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">2</text><line x1="44.0" y1="232.3" x2="416.0" y2="232.3" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="236.3" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">4</text><line x1="44.0" y1="189.4" x2="416.0" y2="189.4" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="193.4" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">6</text><line x1="44.0" y1="146.6" x2="416.0" y2="146.6" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="150.6" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">8</text><line x1="44.0" y1="103.7" x2="416.0" y2="103.7" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="107.7" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">10</text><line x1="44.0" y1="60.9" x2="416.0" y2="60.9" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="64.9" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">12</text><line x1="44.0" y1="18.0" x2="416.0" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="22.0" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">14</text><polygon points="292.0,318.0 416.0,318.0 416.0,18.0 147.3,18.0" fill="rgba(var(--accent-rgb),0.11)" stroke="none"/><line x1="292.0" y1="318.0" x2="147.3" y2="18.0" stroke="var(--accent)" stroke-width="2.4"/><text x="192.6" y="244.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)" stroke="var(--paper-raised)" stroke-width="3" paint-order="stroke">3x₁ + x₂ = 24</text><line x1="44.0" y1="318.0" x2="416.0" y2="318.0" stroke="var(--ink-soft)" stroke-width="2"/><line x1="44.0" y1="318.0" x2="44.0" y2="18.0" stroke="var(--ink-soft)" stroke-width="2"/><text x="420.0" y="311.0" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="11" font-weight="700" fill="var(--ink)">x₁</text><text x="55.0" y="29.0" text-anchor="start" direction="ltr" font-family="var(--font-mono)" font-size="11" font-weight="700" fill="var(--ink)">x₂</text><circle cx="230.0" cy="189.4" r="6" fill="var(--accent)"/><text x="230.0" y="176.4" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)" stroke="var(--paper-raised)" stroke-width="3" paint-order="stroke">(6, 6) ✓</text>
+      </svg>
+    </div>
+              <p style="margin-top:.6rem">שימו לב לצורת התחום: באילוץ "לפחות" הצד המותר הוא דווקא זה <strong>הרחוק</strong> מהראשית, כי הראשית (0, 0) לא מספקת שום חלבון ולכן נכשלת.</p>
+            </div>
+            <div class="result-banner" style="margin-top:.2rem">
+              <span class="val" style="font-size:1rem">Min Z = 4x₁ + 3x₂</span>
+              <span class="interp">אותו מבנה בדיוק כמו בבעיות הרווח, עם שני שינויים: <span class="formula-inline">Min</span> במקום <span class="formula-inline">Max</span>, ואילוצי <span class="formula-inline">≥</span> במקום <span class="formula-inline">≤</span>.</span>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="pcard">
+        <span class="chip">אילוץ מסוג "לפחות"</span>
+        <p class="story">נתון אילוץ יחיד: <span class="formula-inline">3x₁ + 5x₂ ≥ 30</span>. למשל, קמפיין פרסום שחייב להגיע לפחות ל-30 אלף צפיות: כל פרסום מסוג א׳ מביא 3 אלף צפיות, וכל פרסום מסוג ב׳ מביא 5 אלף.</p>
+        <p class="q">מצאו את שתי נקודות הקצה, קבעו איזה צד מותר, ובדקו את הנקודות (4, 2) ו-(6, 4).</p>
+        <details>
+          <summary>הצג פתרון מלא, שלב אחר שלב</summary>
+          <div class="sol">
+            <p style="margin-bottom:.5rem"><strong>תזכורת מה מציבים:</strong> <span class="formula-inline">x₁</span> = מספר הפרסומים מסוג א׳, <span class="formula-inline">x₂</span> = מספר הפרסומים מסוג ב׳.</p>
+            <div class="deriv">
+<div class="d-guide">אותם ארבעה צעדים כמו באילוץ ≤. ההבדל היחיד: הפעם נקודת המבחן נכשלת, ולכן הצד המותר הוא השני.</div>
+    <div class="d-row">
+      <div class="d-name">נקודת הקצה על ציר x₁: מציבים x₂ = 0 ומחלצים</div>
+      <div class="d-math">
+      <div class="d-sym">3x₁ = 30</div>
+      <div class="d-num">x₁ = 30 ÷ 3 = 10</div>
+      <div class="d-num">(10, 0)</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">נקודת הקצה על ציר x₂: מציבים x₁ = 0 ומחלצים</div>
+      <div class="d-math">
+      <div class="d-sym">5x₂ = 30</div>
+      <div class="d-num">x₂ = 30 ÷ 5 = 6</div>
+      <div class="d-num">(0, 6)</div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">נקודת מבחן לצד: הראשית (0, 0). כאן היא <strong>נכשלת</strong></div>
+      <div class="d-math">
+      <div class="d-sym">3x₁ + 5x₂ ≥ 30 ?</div>
+      <div class="d-num">3×0 + 5×0 = 0</div>
+      <div class="d-num">0 ≥ 30 ✗</div>
+      </div>
+    </div>
+    </div>
+            <p style="margin-top:.6rem"><strong>המסקנה על הצד:</strong> הראשית לא מקיימת את האילוץ, ולכן הצד המותר הוא ההפוך שלה, כלומר הצד <strong>שמעל הקו</strong>, הרחוק מהראשית. זה ההבדל היחיד בין אילוץ "לכל היותר" לאילוץ "לפחות".</p>
+            <div class="sol-step">
+              <div class="ss-head"><span class="ss-num">2</span>בודקים את שתי הנקודות</div>
+              <div class="deriv">
+    <div class="d-row">
+      <div class="d-name">הנקודה (4, 2): מציבים באילוץ</div>
+      <div class="d-math">
+      <div class="d-sym">3x₁ + 5x₂ ≥ 30</div>
+      <div class="d-num">3×4 + 5×2 = 22</div>
+      <div class="d-num">22 &lt; 30 ✗</div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">הנקודה (6, 4): מציבים באותו אילוץ</div>
+      <div class="d-math">
+      <div class="d-sym">3x₁ + 5x₂ ≥ 30</div>
+      <div class="d-num">3×6 + 5×4 = 38</div>
+      <div class="d-num">38 ≥ 30 ✓</div>
+      </div>
+    </div>
+    </div>
+              <div class="diagram-frame">
+      <svg viewBox="0 0 442 362" style="min-width:430px" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="מערכת צירים עם קו האילוץ, התחום הצבוע מעליו, ושתי נקודות: אחת מתחת לקו ואחת מעליו">
+        <line x1="44.0" y1="318.0" x2="44.0" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="44.0" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">0</text><line x1="106.0" y1="318.0" x2="106.0" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="106.0" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">2</text><line x1="168.0" y1="318.0" x2="168.0" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="168.0" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">4</text><line x1="230.0" y1="318.0" x2="230.0" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="230.0" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">6</text><line x1="292.0" y1="318.0" x2="292.0" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="292.0" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">8</text><line x1="354.0" y1="318.0" x2="354.0" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="354.0" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">10</text><line x1="416.0" y1="318.0" x2="416.0" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="416.0" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">12</text><line x1="44.0" y1="318.0" x2="416.0" y2="318.0" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="322.0" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">0</text><line x1="44.0" y1="258.0" x2="416.0" y2="258.0" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="262.0" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">2</text><line x1="44.0" y1="198.0" x2="416.0" y2="198.0" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="202.0" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">4</text><line x1="44.0" y1="138.0" x2="416.0" y2="138.0" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="142.0" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">6</text><line x1="44.0" y1="78.0" x2="416.0" y2="78.0" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="82.0" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">8</text><line x1="44.0" y1="18.0" x2="416.0" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="22.0" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">10</text><polygon points="354.0,318.0 416.0,318.0 416.0,18.0 44.0,18.0 44.0,138.0" fill="rgba(var(--accent-rgb),0.11)" stroke="none"/><line x1="44.0" y1="138.0" x2="354.0" y2="318.0" stroke="var(--accent)" stroke-width="2.4"/><text x="102.8" y="208.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)" stroke="var(--paper-raised)" stroke-width="3" paint-order="stroke">3x₁ + 5x₂ = 30</text><line x1="44.0" y1="318.0" x2="416.0" y2="318.0" stroke="var(--ink-soft)" stroke-width="2"/><line x1="44.0" y1="318.0" x2="44.0" y2="18.0" stroke="var(--ink-soft)" stroke-width="2"/><text x="420.0" y="311.0" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="11" font-weight="700" fill="var(--ink)">x₁</text><text x="55.0" y="29.0" text-anchor="start" direction="ltr" font-family="var(--font-mono)" font-size="11" font-weight="700" fill="var(--ink)">x₂</text><circle cx="168.0" cy="258.0" r="6" fill="rgba(var(--muted-rgb),0.95)"/><text x="168.0" y="245.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--ink-soft)" stroke="var(--paper-raised)" stroke-width="3" paint-order="stroke">(4, 2) ✗</text><circle cx="230.0" cy="198.0" r="6" fill="var(--accent)"/><text x="230.0" y="185.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)" stroke="var(--paper-raised)" stroke-width="3" paint-order="stroke">(6, 4) ✓</text>
+      </svg>
+    </div>
+            </div>
+            <div class="result-banner" style="margin-top:.2rem">
+              <span class="val" style="font-size:1rem">(4, 2) ✗ · (6, 4) ✓</span>
+              <span class="interp">(4, 2) מביאה 22 אלף צפיות בלבד ולכן איננה מספיקה, ואילו (6, 4) מביאה 38 אלף ועוברת בנוחות. בגרף רואים בדיוק את אותו דבר: הראשונה מתחת לקו, השנייה מעליו.</span>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="pcard">
+        <span class="chip">בית דפוס</span>
+        <p class="story">בית דפוס מדפיס שני מוצרים: פוסטרים ופליירים. הדפסת מארז פוסטרים צורכת 2 ליטר דיו ושעת מכונה אחת. הדפסת מארז פליירים צורכת ליטר דיו אחד ושעתיים מכונה.</p>
+        <p class="story">ביום נתון יש 18 ליטר דיו, והמכונה זמינה 16 שעות. הרווח ממארז פוסטרים 40 שקלים, וממארז פליירים 30 שקלים.</p>
+        <p class="q">נסחו את המודל, ובדקו האם התוכניות (7, 3) ו-(8, 4) אפשריות.</p>
+        <details>
+          <summary>הצג פתרון מלא, שלב אחר שלב</summary>
+          <div class="sol">
+            <div class="sol-step">
+              <div class="ss-head"><span class="ss-num">1</span>המודל</div>
+              <p><span class="formula-inline">x₁</span> = מארזי פוסטרים ליום. <span class="formula-inline">x₂</span> = מארזי פליירים ליום.</p>
+              <div class="deriv">
+    <div class="d-row">
+      <div class="d-name">פונקציית המטרה: רווח למארז כפול מספר המארזים</div>
+      <div class="d-math">
+      <div class="d-num">Max Z = 40x₁ + 30x₂</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">הדיו: 2 ליטר לפוסטרים, ליטר לפליירים, ויש 18</div>
+      <div class="d-math">
+      <div class="d-num">2x₁ + x₂ ≤ 18</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">שעות המכונה: שעה לפוסטרים, שעתיים לפליירים, ויש 16</div>
+      <div class="d-math">
+      <div class="d-num">x₁ + 2x₂ ≤ 16</div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">אי-שליליות</div>
+      <div class="d-math">
+      <div class="d-num">x₁, x₂ ≥ 0</div>
+      </div>
+    </div>
+    </div>
+            </div>
+            <div class="sol-step">
+              <div class="ss-head"><span class="ss-num">2</span>בודקים את התוכנית (7, 3)</div>
+              <p style="margin-bottom:.5rem"><strong>תזכורת מה מציבים:</strong> <span class="formula-inline">x₁</span> = מארזי פוסטרים, <span class="formula-inline">x₂</span> = מארזי פליירים.</p>
+              <div class="deriv">
+    <div class="d-row">
+      <div class="d-name">אילוץ הדיו</div>
+      <div class="d-math">
+      <div class="d-sym">2x₁ + x₂ ≤ 18</div>
+      <div class="d-num">2×7 + 3 = 17</div>
+      <div class="d-num">17 ≤ 18 ✓</div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">אילוץ שעות המכונה</div>
+      <div class="d-math">
+      <div class="d-sym">x₁ + 2x₂ ≤ 16</div>
+      <div class="d-num">7 + 2×3 = 13</div>
+      <div class="d-num">13 ≤ 16 ✓</div>
+      </div>
+    </div>
+    </div>
+              <p><strong>המסקנה:</strong> (7, 3) אפשרית. הרווח שלה: <span class="formula-inline">40×7 + 30×3 = 280 + 90 = 370</span> שקלים, ונשארו ליטר דיו אחד ושלוש שעות מכונה פנויות.</p>
+            </div>
+            <div class="sol-step">
+              <div class="ss-head"><span class="ss-num">3</span>בודקים את התוכנית (8, 4)</div>
+              <p style="margin-bottom:.5rem"><strong>תזכורת מה מציבים:</strong> <span class="formula-inline">x₁</span> = מארזי פוסטרים, <span class="formula-inline">x₂</span> = מארזי פליירים.</p>
+              <div class="deriv">
+<div class="d-guide">אילוץ אחד נכשל, ולכן עוצרים. התוכנית בלתי אפשרית.</div>
+    <div class="d-row result">
+      <div class="d-name">אילוץ הדיו</div>
+      <div class="d-math">
+      <div class="d-sym">2x₁ + x₂ ≤ 18</div>
+      <div class="d-num">2×8 + 4 = 20</div>
+      <div class="d-num">20 &gt; 18 ✗</div>
+      </div>
+    </div>
+    </div>
+              <p><strong>המסקנה:</strong> (8, 4) דורשת 20 ליטר דיו ויש רק 18, ולכן היא נפסלת.</p>
+            </div>
+            <div class="sol-step">
+              <div class="ss-head"><span class="ss-num">4</span>ואותה מסקנה על הגרף</div>
+              <p>מול אילוץ הדיו <span class="formula-inline">2x₁ + x₂ ≤ 18</span>: הנקודה (7, 3) בתוך התחום, והנקודה (8, 4) מחוצה לו.</p>
+              <div class="diagram-frame">
+      <svg viewBox="0 0 442 362" style="min-width:430px" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="מערכת צירים עם קו אילוץ הדיו, התחום הצבוע, ושתי נקודות">
+        <line x1="44.0" y1="318.0" x2="44.0" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="44.0" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">0</text><line x1="111.6" y1="318.0" x2="111.6" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="111.6" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">2</text><line x1="179.3" y1="318.0" x2="179.3" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="179.3" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">4</text><line x1="246.9" y1="318.0" x2="246.9" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="246.9" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">6</text><line x1="314.5" y1="318.0" x2="314.5" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="314.5" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">8</text><line x1="382.2" y1="318.0" x2="382.2" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="382.2" y="333.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">10</text><line x1="44.0" y1="318.0" x2="416.0" y2="318.0" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="322.0" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">0</text><line x1="44.0" y1="258.0" x2="416.0" y2="258.0" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="262.0" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">4</text><line x1="44.0" y1="198.0" x2="416.0" y2="198.0" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="202.0" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">8</text><line x1="44.0" y1="138.0" x2="416.0" y2="138.0" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="142.0" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">12</text><line x1="44.0" y1="78.0" x2="416.0" y2="78.0" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="82.0" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">16</text><line x1="44.0" y1="18.0" x2="416.0" y2="18.0" stroke="var(--border)" stroke-width="1"/><text x="37.0" y="22.0" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="9.5" fill="var(--ink-faint)">20</text><polygon points="44.0,318.0 348.4,318.0 44.0,48.0" fill="rgba(var(--accent-rgb),0.11)" stroke="none"/><line x1="44.0" y1="48.0" x2="348.4" y2="318.0" stroke="var(--accent)" stroke-width="2.4"/><text x="187.3" y="123.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)" stroke="var(--paper-raised)" stroke-width="3" paint-order="stroke">2x₁ + x₂ = 18</text><line x1="44.0" y1="318.0" x2="416.0" y2="318.0" stroke="var(--ink-soft)" stroke-width="2"/><line x1="44.0" y1="318.0" x2="44.0" y2="18.0" stroke="var(--ink-soft)" stroke-width="2"/><text x="420.0" y="311.0" text-anchor="end" direction="ltr" font-family="var(--font-mono)" font-size="11" font-weight="700" fill="var(--ink)">x₁</text><text x="55.0" y="29.0" text-anchor="start" direction="ltr" font-family="var(--font-mono)" font-size="11" font-weight="700" fill="var(--ink)">x₂</text><circle cx="280.7" cy="273.0" r="6" fill="var(--accent)"/><text x="280.7" y="260.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--accent-strong)" stroke="var(--paper-raised)" stroke-width="3" paint-order="stroke">(7, 3) ✓</text><circle cx="314.5" cy="258.0" r="6" fill="rgba(var(--muted-rgb),0.95)"/><text x="314.5" y="245.0" text-anchor="middle" direction="ltr" font-family="var(--font-mono)" font-size="10.5" font-weight="700" fill="var(--ink-soft)" stroke="var(--paper-raised)" stroke-width="3" paint-order="stroke">(8, 4) ✗</text>
+      </svg>
+    </div>
+            </div>
+            <div class="result-banner" style="margin-top:.2rem">
+              <span class="val" style="font-size:1rem">(7, 3) ✓ · (8, 4) ✗</span>
+              <span class="interp">שימו לב ש-(8, 4) נפסלה על הדיו בלבד. בשעות המכונה דווקא היה לה מקום (<span class="formula-inline">8 + 2×4 = 16</span> שעות בדיוק). משאב אחד חסר מספיק כדי לפסול תוכנית שלמה.</span>
             </div>
           </div>
         </details>
