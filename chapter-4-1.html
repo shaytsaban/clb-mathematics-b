@@ -633,6 +633,32 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
 </style>
 
 <style>
+.dl-box{
+  margin-top:1.6rem;display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;
+  background:var(--paper-raised);border:1px solid rgba(var(--accent-rgb),0.32);
+  border-radius:var(--r-md);padding:1.2rem 1.4rem;box-shadow:var(--shadow);
+}
+.dl-icon{flex:0 0 auto;width:54px;height:54px;}
+.dl-text{flex:1 1 260px;min-width:0;}
+.dl-text h3{font-size:1.02rem;color:var(--ink);margin-bottom:.3rem;}
+.dl-text p{font-size:.89rem;color:var(--ink-soft);line-height:1.6;}
+.dl-meta{font-size:.79rem;color:var(--ink-faint);margin-top:.45rem;}
+/* .page a{color:var(--accent-strong)} outranks a lone .dl-btn, so the button
+   colour is set at matching specificity, and pinned for hover/focus too. */
+.dl-box a.dl-btn,
+.dl-box a.dl-btn:hover,
+.dl-box a.dl-btn:focus{
+  flex:0 0 auto;display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--accent);color:var(--paper-raised);text-decoration:none;
+  font-weight:700;font-size:.92rem;padding:.7rem 1.15rem;border-radius:99px;
+  border:1px solid var(--accent);border-bottom-color:var(--accent);
+  transition:filter .15s ease;
+}
+.dl-box a.dl-btn:hover{filter:brightness(1.08);}
+</style>
+
+
+<style>
 /* labelled derivations: formula in symbols above the same formula in numbers */
 .deriv{display:flex;flex-direction:column;gap:.55rem;margin-top:.5rem;}
 .d-guide{
@@ -798,6 +824,19 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
     </div>
   </div>
 </header>
+
+<div class="wrap" style="margin-top:1.6rem">
+  <div class="dl-box">
+    <svg class="dl-icon" viewBox="0 0 48 48" role="img" aria-label="סמל קובץ Word"><rect x="7" y="4" width="27" height="40" rx="4" fill="rgba(var(--accent-rgb),0.12)" stroke="var(--accent)" stroke-width="2"/><path d="M13 14h15M13 21h15M13 28h9" stroke="var(--accent-strong)" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="34" cy="33" r="11" fill="var(--accent)"/><path d="M34 27v11M29.5 33.5 34 38l4.5-4.5" stroke="var(--paper-raised)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+    <div class="dl-text">
+      <h3>📎 חומר קריאה נוסף להורדה</h3>
+      <p>קובץ Word עם הרצאת 1.9.2026 המלאה: אותם משתני החלטה, פונקציית מטרה ואילוצים, בקצב הדרגתי אף יותר, ועם ארבע דוגמאות נוספות לתרגול עצמי (ולריה הנגרייה, ויקטור הניקיונות, האופניים של חנה, הנקניקיות של רועי).</p>
+      <div class="dl-meta">קובץ docx, כ-39KB · נפתח ב-Word, ב-Pages או ב-Google Docs · האתר כולל את כל החומר הנדרש, זהו חומר עזר בלבד</div>
+    </div>
+    <a class="dl-btn" href="files/linear-programming-4-1-lecture.docx" download="הרצאה 1.9 - תכנון לינארי מבוא - 4.1.docx">⬇ הורדת הקובץ</a>
+  </div>
+</div>
+
 
 <section id="story">
   <div class="wrap">
