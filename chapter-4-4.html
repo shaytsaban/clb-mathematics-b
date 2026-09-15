@@ -813,7 +813,10 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
     <span class="brand">מתמטיקה ב׳ · 4.4</span>
     <a href="index.html">🏠 ראשי</a>
     <a href="chapter-4-3.html">→ חזרה לתת-פרק 4.3</a>
-    <a href="#recap">תזכורת</a>
+    <a href="#story">הבעיה</a>
+    <a href="#why">למה בלי גרף</a>
+    <a href="#vars">המשתנים</a>
+    <a href="#obj">פונקציית המטרה</a>
     <a href="#sum">אילוץ סכום</a>
     <a href="#diff">אילוץ הפרש</a>
     <a href="#ratio">אילוץ יחס</a>
@@ -827,7 +830,7 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
   <div class="wrap">
     <span class="eyebrow">חלק ב׳ · פרק 4 · תת-פרק 4.4</span>
     <h1>ניסוח בעיות מורכבות: יותר משני משתנים</h1>
-    <p class="lede">בכל הפרקים הקודמים ניסחנו מודלים עם שני משתני החלטה, ופתרנו אותם גרפית. הפעם עוצרים לפני הפתרון: הבעיה של היום מורכבת מכדי לצייר על גרף דו-ממדי (יש בה ארבעה משתנים), ולכן <strong>מסתפקים בניסוח המדויק שלה</strong>, בלי לפתור.</p>
+    <p class="lede">בכל הפרקים הקודמים ניסחנו מודלים עם שני משתני החלטה, ופתרנו אותם גרפית. הפעם הבעיה גדולה יותר, ולכן נעצור בדיוק באמצע הדרך: <strong>ננסח אותה במדויק, בלי לפתור</strong>.</p>
     <p class="lede">בדרך לשם פוגשים שלושה ניסוחי משפט חדשים: אילוץ <strong>סכום</strong>, אילוץ <strong>הפרש</strong>, ואילוץ <strong>יחס</strong>, ואת הרעיון של משתנה שמייצג <strong>אפשרות הרחבה</strong> (למשל שכירת שטח נוסף).</p>
     <div class="meet-tsaban">
       <svg viewBox="0 0 100 100" role="img" aria-label="ד״ר צבאן"><use href="#tsabanFace"/></svg>
@@ -841,54 +844,149 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
   </div>
 </header>
 
-<section id="recap">
+<section id="story">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num">נקודת הפתיחה</span>
-      <h2>מה כבר יודעים, ומה חדש היום</h2>
+      <span class="sec-num">הבעיה</span>
+      <h2>כל-בו שצריך להחליט איך לחלק את השטח</h2>
+      <p class="sub">זו כל השאלה, במלואה. קראו אותה פעם אחת מההתחלה ועד הסוף, ואל תנסו לפתור שום דבר בינתיים.</p>
     </div>
     <div class="story-card">
-      <p>ב-4.1 למדנו שכל ניסוח של בעיית תכנון ליניארי בנוי מארבעה חלקים קבועים:</p>
+      <p><strong>הסיפור:</strong> כל-בו נפתח בעיר, ולהנהלה יש החלטה אחת גדולה: כמה שטח מכירה להקצות לכל מחלקה. שלוש המחלקות הן <strong>הנעלה</strong>, <strong>ביגוד</strong> ו<strong>הלבשה תחתונה</strong>.</p>
       <ul class="given-list">
-        <li><span class="tag">1</span><span><strong>משתני ההחלטה:</strong> מה בדיוק אנחנו קובעים (למשל: כמה שולחנות, כמה כיסאות).</span></li>
-        <li><span class="tag">2</span><span><strong>פונקציית המטרה:</strong> מה ממקסמים או מזערים, כתוב באמצעות משתני ההחלטה.</span></li>
-        <li><span class="tag">3</span><span><strong>האילוצים:</strong> כל המגבלות שהמצב הכתוב מטיל, כל אחד כאי-שוויון.</span></li>
-        <li><span class="tag">4</span><span><strong>אי-שליליות:</strong> כל משתני ההחלטה גדולים או שווים לאפס, כי אי אפשר לייצר כמות שלילית.</span></li>
+        <li><span class="tag">1</span><span><strong>השטח:</strong> לכל-בו 12,000 מ״ר. בנוסף אפשר לשכור שטח נוסף, בכל גודל שבין 0 ל-2,000 מ״ר, בעלות של 400 ש״ח למ״ר לחודש.</span></li>
+        <li><span class="tag">2</span><span><strong>דרישה ראשונה:</strong> שטח מחלקות ההנעלה והביגוד יחד חייב להיות לפחות 8,500 מ״ר.</span></li>
+        <li><span class="tag">3</span><span><strong>דרישה שנייה:</strong> שטח הביגוד וההלבשה התחתונה יחד לא יכול לעלות על שטח ההנעלה ביותר מ-6,000 מ״ר.</span></li>
+        <li><span class="tag">4</span><span><strong>דרישה שלישית:</strong> על כל 2 מ״ר שיוקצו להלבשה תחתונה, יוקצו לכל היותר 3 מ״ר לביגוד.</span></li>
+        <li><span class="tag">5</span><span><strong>הרווח החודשי למ״ר:</strong> הנעלה 7,500 ש״ח, ביגוד 8,500 ש״ח, הלבשה תחתונה 6,000 ש״ח.</span></li>
       </ul>
-      <p class="tool-say" style="margin-top:.6rem">ארבעת החלקים האלה לא משתנים. מה שמשתנה היום הוא מספר המשתנים, וסוגי המשפטים שצריך לתרגם.</p>
-      <div class="tool-card">
-        <span class="tool-tag">מוסכמה חשובה לכל הפרק</span>
-        <div class="big">בכל אילוץ, משתני ההחלטה באגף שמאל, המספר הקבוע לבד באגף ימין</div>
-        <p class="tool-say">משפטים מסוימים מתורגמים בקלות ישר לצורה הזו. אחרים (כמו אילוץ הפרש ואילוץ יחס) יוצאים קודם בצורה טבעית אחרת, ואז צריך לסדר אותם מחדש. השלב הזה הוא חלק קבוע מהניסוח, לא שלב אופציונלי.</p>
-      </div>
-      <p>היום כל הפרק בנוי סביב דוגמה אחת: <strong>כל-בו שצריך להקצות את השטח שלו בין שלוש מחלקות</strong>. מכירים אותה עכשיו במלואה, ואז בונים אותה חתיכה אחר חתיכה.</p>
-      <div class="data-recall">
-      <div class="dr-head">📌 תזכורת: כל הנתונים של הכל-בו, במקום אחד</div>
-      <ul>
-        <li><span class="dr-tag"><span class="formula-inline">12,000</span></span><span>מ״ר: השטח הכולל הקבוע של הכל-בו.</span></li>
-        <li><span class="dr-tag"><span class="formula-inline">2,000</span></span><span>מ״ר לכל היותר ניתן לשכור כשטח נוסף, בעלות 400 ₪ למ״ר לחודש.</span></li>
-        <li><span class="dr-tag"><span class="formula-inline">x₁, x₂, x₃</span></span><span>שטחי שלוש המחלקות: הנעלה, ביגוד, הלבשה תחתונה, בהתאמה.</span></li>
-        <li><span class="dr-tag"><span class="formula-inline">7,500 / 8,500 / 6,000</span></span><span>₪ למ״ר לחודש: הרווח של הנעלה / ביגוד / הלבשה תחתונה, בהתאמה.</span></li>
-      </ul>
+      <p style="margin-top:.9rem"><strong>הנדרש:</strong> להקצות את השטח למחלקות באופן שימקסם את הרווח החודשי של הכל-בו.</p>
     </div>
-      <p><span class="formula-inline">x₁</span> = שטח מוקצה להנעלה (מ״ר)<br><span class="formula-inline">x₂</span> = שטח מוקצה לביגוד (מ״ר)<br><span class="formula-inline">x₃</span> = שטח מוקצה להלבשה תחתונה (מ״ר)<br><span class="formula-inline">x₄</span> = שטח נוסף שנשכר (מ״ר)</p>
-      <p style="margin-top:.9rem">שימו לב: יש כאן <strong>ארבעה</strong> משתני החלטה, לא שניים. זו הסיבה שהבעיה הזו לא תיפתר גרפית: גרף דו-ממדי יכול להציג רק שני משתנים בו-זמנית. במקום זאת, המטרה היחידה של הפרק היא לנסח את המודל בצורה מלאה ומדויקת.</p>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">רגע לפני</span>
+      <h2>הפעם לא נצייר גרף, וכדאי להבין למה</h2>
+      <p class="sub">בפרקים הקודמים ניסחנו ואז פתרנו. כאן נעצור באמצע, ויש לכך סיבה טובה.</p>
+    </div>
+    <div class="story-card">
+      <p><strong>קודם כל, ספרו את הנעלמים בשאלה.</strong> שלושה שטחי מחלקות, ועוד ההחלטה כמה שטח לשכור. ארבעה דברים שאיננו יודעים, לא שניים.</p>
+      <p>ולגרף יש שני צירים בלבד. שני צירים מחזיקים בדיוק שני משתנים: ציר אחד לכל אחד. שלושה משתנים כבר היו דורשים ציור במרחב, וארבעה לא ניתנים לציור בכלל. כאן פשוט אין תמונה שאפשר לשרטט, ולא משנה כמה נתאמץ.</p>
+      <p>וזה לא מקרה חריג. בעיות אמיתיות בתחום הזה כוללות לרוב עשרות ומאות משתנים, והן נפתרות בתוכנה ייעודית. אבל יש חלק אחד שהתוכנה לא יכולה לעשות במקומנו: לקרוא בעיה כתובה בשפה רגילה ולתרגם אותה למודל מתמטי. זה החלק האנושי, וזה בדיוק מה שנתרגל כאן.</p>
+      <div class="tool-card">
+        <span class="tool-tag">המטרה של הפרק</span>
+        <div class="big">לכתוב את המודל במדויק. לא לפתור אותו.</div>
+        <p class="tool-say">ניסוח מלא בנוי תמיד מארבעה חלקים: משתני ההחלטה, פונקציית המטרה, האילוצים, ואי-שליליות. נבנה אותם עכשיו אחד אחד, לאט.</p>
+      </div>
       <details class="tsaban-note">
         <summary>
           <svg class="tn-face" viewBox="0 0 100 100"><use href="#tsabanFace"/></svg>
-          <span class="tn-q">🎓 אם לא פותרים בסוף, מה בעצם בודקים בניסוח?</span>
+          <span class="tn-q">🎓 אם לא פותרים בסוף, מה בעצם נבדק בניסוח?</span>
           <span class="tn-toggle">+</span>
         </summary>
         <div class="tn-body">
           <p>בודקים שכל משפט בשאלה קיבל תרגום מתמטי נכון: כיוון האי-שוויון, אילו משתנים מעורבים, והאם הניסוח באמת אומר את מה שהמשפט המילולי אמר.</p>
-          <p>בודקים שפונקציית המטרה כוללת את כל התרומות הרלוונטיות, כולל עלויות שיש להחסיר ולא רק רווחים שיש להוסיף.</p>
-          <p>ובודקים שכל אילוץ כתוב לפי המוסכמה: משתני החלטה באגף שמאל, מספר קבוע לבד באגף ימין.</p>
+          <p>בודקים שפונקציית המטרה כוללת את כל התרומות, כולל עלויות שצריך להחסיר ולא רק רווחים שצריך להוסיף.</p>
+          <p>ובודקים שכל אילוץ כתוב בצורה מסודרת: משתני החלטה באגף שמאל, ומספר קבוע לבד באגף ימין.</p>
         </div>
       </details>
     </div>
   </div>
 </section>
 
+<section id="vars">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">שלב ראשון</span>
+      <h2>משתני ההחלטה, אחד אחד</h2>
+      <p class="sub">משתנה החלטה הוא מספר שאנחנו קובעים. לפני שכותבים משוואה אחת, צריך להגיד בדיוק מה כל אות מייצגת ובאילו יחידות.</p>
+    </div>
+    <div class="def-grid">
+      <div class="def">
+        <div class="def-term"><span class="n">1</span><h4>שטח ההנעלה</h4></div>
+        <p><span class="formula-inline">x₁</span> = השטח שיוקצה למחלקת ההנעלה, במטרים רבועים.</p>
+        <p><strong>ושימו לב למה זה לא:</strong> לא מספר הנעליים, ולא ההכנסה מהמחלקה. שטח רצפה בלבד.</p>
+        <p>כל הנתונים בשאלה נתונים "למ״ר", ולכן זו היחידה היחידה שמסתדרת איתם.</p>
+      </div>
+      <div class="def">
+        <div class="def-term"><span class="n">2</span><h4>שטח הביגוד</h4></div>
+        <p><span class="formula-inline">x₂</span> = השטח שיוקצה למחלקת הביגוד, במטרים רבועים.</p>
+        <p>אותה יחידה בדיוק, כי בהמשך נחבר בין המשתנים. אי אפשר לחבר מ״ר עם מספר פריטים.</p>
+      </div>
+      <div class="def">
+        <div class="def-term"><span class="n">3</span><h4>שטח ההלבשה התחתונה</h4></div>
+        <p><span class="formula-inline">x₃</span> = השטח שיוקצה למחלקת ההלבשה התחתונה, במטרים רבועים.</p>
+        <p>עד כאן שלושה משתנים, אחד לכל מחלקה. אלה החלוקות שהשאלה ביקשה במפורש.</p>
+      </div>
+      <div class="def">
+        <div class="def-term"><span class="n">4</span><h4>השטח הנוסף שנשכר</h4></div>
+        <p><span class="formula-inline">x₄</span> = השטח הנוסף שיישכר, במטרים רבועים.</p>
+        <p><strong>זה המשתנה שהכי קל לשכוח.</strong> השכירות נשמעת כמו "אפשרות" ולא כמו החלטה, אבל היקפה אינו ידוע מראש, ולכן היא משתנה החלטה לכל דבר.</p>
+        <p><span class="formula-inline">x₄ = 0</span> היא אפשרות חוקית לגמרי, ומשמעותה: לא לשכור שטח נוסף כלל.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="obj">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">שלב שני</span>
+      <h2>פונקציית המטרה, איבר אחר איבר</h2>
+      <p class="sub">מה בדיוק ממקסמים? את הרווח החודשי. נרכיב אותו מארבעה איברים, ונבין כל אחד בנפרד.</p>
+    </div>
+    <div class="story-card">
+      <div class="deriv">
+<div class="d-guide">שלושת האיברים הראשונים מתווספים, והרביעי מוחסר. זה כל ההבדל בין הכנסה לבין הוצאה בתוך פונקציית המטרה.</div>
+    <div class="d-row">
+      <div class="d-name">הרווח מההנעלה: 7,500 ש״ח לכל מ״ר, כפול מספר המ״ר שהוקצו</div>
+      <div class="d-math">
+      <div class="d-num">7,500x₁</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">הרווח מהביגוד, באותו אופן</div>
+      <div class="d-math">
+      <div class="d-num">8,500x₂</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">הרווח מההלבשה התחתונה</div>
+      <div class="d-math">
+      <div class="d-num">6,000x₃</div>
+      </div>
+    </div>
+    <div class="d-row">
+      <div class="d-name">ועלות השכירות: 400 ש״ח לכל מ״ר שנשכר. זו הוצאה, ולכן היא מוחסרת</div>
+      <div class="d-math">
+      <div class="d-num">−400x₄</div>
+      </div>
+    </div>
+    <div class="d-row result">
+      <div class="d-name">מחברים הכול לפונקציית מטרה אחת</div>
+      <div class="d-math">
+      <div class="d-num">Max Z = 7,500x₁ + 8,500x₂ + 6,000x₃ − 400x₄</div>
+      </div>
+    </div>
+    </div>
+      <details class="tsaban-note">
+        <summary>
+          <svg class="tn-face" viewBox="0 0 100 100"><use href="#tsabanFace"/></svg>
+          <span class="tn-q">🎓 למה עלות השכירות נכנסת לפונקציית המטרה, ולא לאילוץ נפרד?</span>
+          <span class="tn-toggle">+</span>
+        </summary>
+        <div class="tn-body">
+          <p>אילוץ קובע מה <strong>מותר</strong> ומה אסור. פונקציית המטרה קובעת מה <strong>שווה</strong> לנו וכמה.</p>
+          <p>תקרת השכירות, 2,000 מ״ר, היא באמת אילוץ: מעבר לה פשוט אסור. וזה יופיע בהמשך כאילוץ נפרד.</p>
+          <p>אבל המחיר, 400 ש״ח למ״ר, לא אוסר כלום. הוא רק גורע מהרווח, ולכן מקומו בפונקציית המטרה, עם סימן מינוס.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
 
 <section id="sum">
   <div class="wrap">
@@ -953,7 +1051,7 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
       <p><strong>המשפט בשאלה:</strong> "שטח ביגוד והלבשה תחתונה יחד לא יכול להעלות על שטח ההנעלה ביותר מ-6,000 מ״ר."</p>
       <p>כאן יש שני צדדים: <strong>ביגוד+הלבשה תחתונה</strong> מצד אחד, <strong>הנעלה</strong> מהצד השני. המשפט אומר שהפער בין הצד הראשון לשני לא יעלה על 6,000.</p>
       <div class="deriv">
-<div class="d-guide">זה בדיוק השלב שהמוסכמה מ"תזכורת" דיברה עליו: הצורה הטבעית של המשפט לא תמיד שמה את כל המשתנים באגף שמאל מהתחלה, וצריך שלב סידור נוסף.</div>
+<div class="d-guide">כאן נכנסת מוסכמה שמלווה כל ניסוח: בסוף, כל משתני ההחלטה יושבים באגף שמאל, והמספר הקבוע לבד באגף ימין. הצורה הטבעית של המשפט לא תמיד יוצאת כך מהתחלה, ואז נדרש שלב סידור נוסף. זה חלק קבוע מהניסוח, לא שלב אופציונלי.</div>
     <div class="d-row">
       <div class="d-name">כותבים את המשפט בצורה הטבעית שלו: "ביגוד ועוד תחתונה, לא יותר מהנעלה ועוד 6,000"</div>
       <div class="d-math">
@@ -1045,14 +1143,14 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
   <div class="wrap">
     <div class="sec-head">
       <span class="sec-num">משפט חדש 4</span>
-      <h2>משתנה של אפשרות הרחבה: שכירת שטח נוסף</h2>
-      <p class="sub">כשיש אפשרות, לא חובה, להוסיף משאב בעלות נתונה. האפשרות הזו הופכת בעצמה למשתנה החלטה.</p>
+      <h2>אפשרות ההרחבה: שני אילוצים שהיא מוסיפה</h2>
+      <p class="sub">המשתנה x₄ כבר מוגדר. עכשיו נראה אילו אילוצים אפשרות השכירה מוסיפה למודל.</p>
     </div>
     <div class="data-recall">
       <div class="dr-head">📌 תזכורת: כל הנתונים הנוגעים לאילוץ הזה</div>
       <ul>
         <li><span class="dr-tag"><span class="formula-inline">x₁, x₂, x₃</span></span><span>השטח המוקצה לשלוש המחלקות (מ״ר).</span></li>
-        <li><span class="dr-tag"><span class="formula-inline">x₄</span></span><span>השטח הנוסף שנשכר (מ״ר), המשתנה החדש של הסעיף הזה.</span></li>
+        <li><span class="dr-tag"><span class="formula-inline">x₄</span></span><span>השטח הנוסף שנשכר (מ״ר), כפי שהוגדר בשלב הראשון.</span></li>
         <li><span class="dr-tag"><span class="formula-inline">12,000</span></span><span>מ״ר: השטח הבסיסי הקבוע של הכל-בו.</span></li>
         <li><span class="dr-tag"><span class="formula-inline">2,000</span></span><span>מ״ר: התקרה המרבית לשכירה.</span></li>
         <li><span class="dr-tag"><span class="formula-inline">400</span></span><span>₪ למ״ר לחודש: עלות השכירה.</span></li>
@@ -1093,7 +1191,7 @@ html.js-animate [data-animate].in-view{opacity:1;transform:none;}
     </div>
       </div>
       <div class="sol-step">
-        <div class="ss-head"><span class="ss-num">3</span>ההשפעה על פונקציית המטרה: עלות, לא רווח</div>
+        <div class="ss-head"><span class="ss-num">3</span>תזכורת: כך היא נכנסה לפונקציית המטרה</div>
         <p>שכירת שטח נוסף לא מכניסה רווח בעצמה, היא רק מאפשרת עוד שטח לשלוש המחלקות. אבל היא כן עולה כסף, ולכן היא נכנסת לפונקציית המטרה כאיבר <strong>שמחסירים</strong>.</p>
         <div class="deriv">
     <div class="d-row result">
