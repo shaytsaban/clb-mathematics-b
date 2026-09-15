@@ -55,7 +55,7 @@
 | [`chapter-4-3.html`](chapter-4-3.html) | 4.3 — אילוצים קושרים ועודפים (slack, קו אילוץ שעובר דרך הראשית, מודל מזעור עם ארבעה אילוצים) |
 | [`chapter-4-4.html`](chapter-4-4.html) | 4.4 — ניסוח בעיות מורכבות (ארבעה משתני החלטה, אילוצי סכום/הפרש/יחס, משתנה של אפשרות הרחבה; ניסוח בלבד, ללא פתרון) |
 
-בנוסף, [`files/linear-programming-4-1-lecture.docx`](files/linear-programming-4-1-lecture.docx) הוא קובץ ההרצאה המלא של 1.9.2026, ומקושר להורדה מהעמוד הראשי, בתחתית חלק ב׳.
+בנוסף, [`files/linear-programming-4-1-lecture.docx`](files/linear-programming-4-1-lecture.docx) הוא קובץ ההרצאה המלא של 1.9.2026 (תת-פרק 4.1), ו-[`files/linear-programming-4-2-lecture.xlsx`](files/linear-programming-4-2-lecture.xlsx) הוא קובץ ההרצאה של 8.9.2026 (תת-פרק 4.2, הפתרון הגרפי על כל שלביו). שניהם מקושרים להורדה מהעמוד הראשי, בתחתית חלק ב׳.
 
 ## חלק ג׳: מבחנים לדוגמה
 
